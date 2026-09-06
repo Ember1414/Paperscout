@@ -333,6 +333,7 @@ html[data-theme="dark"] .hero {
 .badge.cite { background: color-mix(in srgb, #e8590c 12%, transparent); color: #e8590c; }
 
 .paper-authors { font-size: 0.88rem; color: var(--muted); }
+.author-link:hover { color: var(--primary); text-decoration: underline !important; }
 
 .paper-abstract {
   margin-top: 8px;

@@ -391,7 +391,8 @@
       card.className = 'paper-card';
       card.style.animationDelay = Math.min(idx * 40, 400) + 'ms';
 
-      var authors = (p.authors && p.authors.length)
+      // 逐个作者转义后拼 HTML（BUG 修复：此前拼接结果被整体二次转义，标签显示为文字）
+      var authorsHtml = (p.authors && p.authors.length)
         ? p.authors.slice(0, 6).map(function (a) {
           return '<span class="author-link" data-name="' + esc(a) + '" style="cursor:pointer;text-decoration:underline dotted">' + esc(a) + '</span>';
         }).join(', ') + (p.authors.length > 6 ? ' 等' : '')
@@ -420,7 +421,7 @@
         highlight(p.title) + '</a>' + titleTr +
         '<button class="fav-btn' + (isFav ? ' active' : '') + '" title="收藏论文">' + (isFav ? '★' : '☆') + '</button></h2>' +
         '<div class="paper-meta">' + metaHtml + '</div>' +
-        '<div class="paper-authors">' + esc(authors) + '</div>' +
+        '<div class="paper-authors">' + authorsHtml + '</div>' +
         (p.abstract
           ? '<p class="paper-abstract">' + highlight(p.abstract) + '</p>' +
             '<button class="abs-toggle">展开摘要 ▾</button>'
