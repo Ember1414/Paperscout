@@ -1,0 +1,9 @@
+{
+  "name": "paperscout-warmer",
+  "main": "index.js",
+  "compatibility_date": "2026-09-01",
+  // 每 30 分钟预热一次：论文雷达实时抓取 + 热门关键词检索结果缓存
+  "triggers": {
+    "crons": ["*/30 * * * *"]
+  }
+}

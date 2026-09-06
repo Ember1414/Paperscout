@@ -1,0 +1,17 @@
+{
+  "name": "paperscout",
+  "version": "2.0.0",
+  "private": true,
+  "description": "PaperScout - 多源学术论文检索工具，部署于 Cloudflare Pages (pages.dev)",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types",
+    "tail": "wrangler pages deployment tail --project-name paperscout"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260903.1",
+    "typescript": "^5.6.0",
+    "wrangler": "^4.30.0"
+  }
+}

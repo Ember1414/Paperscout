@@ -1,0 +1,32 @@
+{
+  // Cloudflare Pages 项目配置（部署后获得 https://paperscout.pages.dev 域名）
+  "name": "paperscout",
+  "compatibility_date": "2026-09-01",
+  "pages_build_output_dir": "public",
+
+  // KV 缓存：检索结果（10 分钟）+ 爬虫热门榜单（2 分钟）+ 翻译结果（24 小时）
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "0462986b090f4dea9bb24458d5f491b7"
+    }
+  ],
+
+  // Workers AI：翻译兜底 / AI 总结 / AI 问答
+  "ai": {
+    "binding": "AI"
+  },
+
+  // D1 数据库：检索历史 + 收藏夹
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "paperscout-db",
+      "database_id": "b00f2797-f4d6-4dad-af92-35fffe0e9a39"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
+}
