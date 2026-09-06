@@ -119,15 +119,56 @@ function qualityScore(p: Paper): number {
   return citations + recency + oa + pdf;
 }
 
-export function sortPapers(papers: Paper[], sort: SearchParams['sort']): Paper[] {
+/** 构建检索词：英文按空格拆分，中文整体作为一个词 */
+function buildTerms(query: string): string[] {
+  const t = query.trim().toLowerCase();
+  if (!t) return [];
+  return t.split(/\s+/).filter((w) => w.length > 0);
+}
+
+/**
+ * 文本相关性评分（0-10+）：
+ * - 完整短语命中标题 +6 / 摘要 +2
+ * - 单个检索词命中标题 +2.5 / 摘要 +0.6
+ * 修复：此前智能排序只看被引和时效，完全不考虑与关键词的内容匹配度，
+ * 导致高被引但跑题的论文排在最前
+ */
+export function textRelevance(p: Paper, query: string): number {
+  const terms = buildTerms(query);
+  if (!terms.length) return 0;
+  const title = (p.title ?? '').toLowerCase();
+  const abstract = (p.abstract ?? '').toLowerCase();
+  let score = 0;
+
+  const phrase = query.trim().toLowerCase();
+  if (terms.length > 1) {
+    if (title.includes(phrase)) score += 6;
+    if (abstract.includes(phrase)) score += 2;
+  }
+  for (const term of terms) {
+    if (title.includes(term)) score += 2.5;
+    else if (abstract.includes(term)) score += 0.6;
+  }
+  return score;
+}
+
+export function sortPapers(papers: Paper[], sort: SearchParams['sort'], query: string): Paper[] {
   if (sort === 'newest') {
     papers.sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
   } else if (sort === 'citations') {
     papers.sort((a, b) => (b.citations ?? 0) - (a.citations ?? 0));
   } else if (sort === 'smart') {
-    papers.sort((a, b) => qualityScore(b) - qualityScore(a));
+    // 智能排序 = 文本相关性（权重 1.2）+ 质量评分
+    // 相关性占主导：先保证跑题，再在同等相关性中按被引/时效/OA 排序
+    papers.sort(
+      (a, b) =>
+        textRelevance(b, query) * 1.2 + qualityScore(b) -
+        (textRelevance(a, query) * 1.2 + qualityScore(a)),
+    );
+  } else {
+    // relevance：纯文本相关性排序（不再依赖各源返回顺序，跨源统一比较）
+    papers.sort((a, b) => textRelevance(b, query) - textRelevance(a, query));
   }
-  // relevance 保持各源原始顺序
   return papers;
 }
 

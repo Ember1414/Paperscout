@@ -71,7 +71,7 @@ async function handleSearch(request: Request, env: Env, ctx: EventContext<Env, a
   // 文献类型筛选（期刊 / 会议 / 预印本）
   const finalLists = langFiltered.map((list) => filterByType(list, params.paperType));
 
-  const papers = sortPapers(mergeResults(finalLists), params.sort);
+  const papers = sortPapers(mergeResults(finalLists), params.sort, params.query);
 
   // BUG 修复：空结果不缓存（部分源限流导致的空结果会在下下次请求中自动恢复）
   if (papers.length) {

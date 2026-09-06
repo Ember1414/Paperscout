@@ -43,7 +43,8 @@ export const crossref: SourceAdapter = {
     if (params.author) queryParts.push(params.author);
 
     const sp = new URLSearchParams({
-      query: queryParts.join(' '),
+      // query.bibliographic 按题名/作者/出版信息匹配，相关性优于通用 query
+      'query.bibliographic': queryParts.join(' '),
       rows: String(Math.min(params.limit, 40)),
       offset: String((params.page - 1) * params.limit),
       select: 'DOI,title,author,issued,container-title,URL,abstract,is-referenced-by-count,link,type',

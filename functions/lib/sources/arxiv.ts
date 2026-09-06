@@ -30,7 +30,14 @@ export const arxiv: SourceAdapter = {
 
   async search(params: SearchParams): Promise<Paper[]> {
     const terms: string[] = [];
-    if (params.query) terms.push(`all:"${params.query}"`);
+    // 多词查询：逐词 AND（召回优于整句短语匹配，跨源合并后再按相关性排序）
+    // 单词查询：直接短语匹配
+    const words = params.query.trim().split(/\s+/).filter(Boolean);
+    if (words.length > 1) {
+      terms.push(words.map((w) => `all:"${w}"`).join(' AND '));
+    } else if (params.query) {
+      terms.push(`all:"${params.query}"`);
+    }
     if (params.author) terms.push(`au:"${params.author}"`);
     // 学科领域筛选（arXiv 分类）
     const FIELD_MAP: Record<string, string> = {
