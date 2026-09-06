@@ -2,6 +2,7 @@
   "name": "paperscout",
   "version": "2.0.0",
   "private": true,
+  "license": "MIT",
   "description": "PaperScout - 多源学术论文检索工具，部署于 Cloudflare Pages (pages.dev)",
   "scripts": {
     "dev": "wrangler pages dev",

@@ -1,5 +1,7 @@
 # PaperScout · 全球论文检索
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 一站式检索国内外学术论文，聚合 **11 大学术数据源**（含爬虫源），部署于 **Cloudflare Pages**（`https://paperscout.pages.dev`），全球边缘加速。
 
 ## 功能特性
