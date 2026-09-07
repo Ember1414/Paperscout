@@ -356,11 +356,18 @@
   }
 
   /** 在已转义的 HTML 中高亮检索关键词 */
+  var HIGHLIGHT_STOP = {
+    the: 1, a: 1, an: 1, of: 1, for: 1, in: 1, on: 1, is: 1, are: 1, and: 1, or: 1,
+    to: 1, with: 1, by: 1, from: 1, at: 1, as: 1, it: 1, its: 1, this: 1, that: 1,
+    using: 1, use: 1, via: 1, based: 1, how: 1, what: 1, why: 1, can: 1, we: 1, you: 1
+  };
+
   function highlight(text) {
     var safe = esc(text);
     if (!lastQuery) return safe;
     var terms = lastQuery.split(/\s+/).filter(function (t) {
-      // 英文词至少 2 字符；中文词允许单字
+      var low = t.toLowerCase();
+      if (HIGHLIGHT_STOP[low]) return false;
       return /[\u4e00-\u9fff]/.test(t) ? t.length >= 1 : t.length >= 2;
     });
     if (!terms.length) return safe;

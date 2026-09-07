@@ -119,36 +119,59 @@ function qualityScore(p: Paper): number {
   return citations + recency + oa + pdf;
 }
 
-/** 构建检索词：英文按空格拆分，中文整体作为一个词 */
-function buildTerms(query: string): string[] {
+/** 英文停用词：无区分度的虚词，参与匹配会严重污染相关性排序 */
+const STOPWORDS = new Set([
+  'the', 'a', 'an', 'of', 'for', 'in', 'on', 'is', 'are', 'was', 'were', 'and', 'or',
+  'to', 'with', 'by', 'from', 'at', 'as', 'it', 'its', 'this', 'that', 'be', 'been',
+  'using', 'use', 'via', 'based', 'towards', 'toward', 'into', 'how', 'what', 'why',
+  'can', 'we', 'our', 'their', 'you', 'your', 'not', 'no', 'do', 'does', 'did',
+  's', 't', 'd', 'll', 're', 've', 'about', 'between', 'over', 'than', 'then',
+]);
+
+function tokenize(query: string): string[] {
   const t = query.trim().toLowerCase();
   if (!t) return [];
-  return t.split(/\s+/).filter((w) => w.length > 0);
+  const words = t.split(/\s+/).filter(Boolean);
+  const kept = words.filter((w) => !STOPWORDS.has(w));
+  // 全部被过滤时（如查询只有虚词）保留原词，避免空集
+  return kept.length ? kept : words;
+}
+
+/** ASCII 词按单词边界匹配（避免 "ai" 误命中 "said"），中文等按子串匹配 */
+function hasTerm(text: string, term: string): boolean {
+  if (/^[\x20-\x7e]+$/.test(term)) {
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\b${escaped}\\b`, 'i').test(text);
+  }
+  return text.includes(term);
 }
 
 /**
- * 文本相关性评分（0-10+）：
- * - 完整短语命中标题 +6 / 摘要 +2
- * - 单个检索词命中标题 +2.5 / 摘要 +0.6
- * 修复：此前智能排序只看被引和时效，完全不考虑与关键词的内容匹配度，
- * 导致高被引但跑题的论文排在最前
+ * 文本相关性评分（0-12）：
+ * - 标题与查询完全一致：12 分直接置顶
+ * - 完整短语命中标题 +4
+ * - 覆盖率评分：检索词在标题中的覆盖占比 ×8 + 摘要中的覆盖占比 ×2.5
  */
 export function textRelevance(p: Paper, query: string): number {
-  const terms = buildTerms(query);
+  const terms = tokenize(query);
   if (!terms.length) return 0;
   const title = (p.title ?? '').toLowerCase();
   const abstract = (p.abstract ?? '').toLowerCase();
-  let score = 0;
 
-  const phrase = query.trim().toLowerCase();
-  if (terms.length > 1) {
-    if (title.includes(phrase)) score += 6;
-    if (abstract.includes(phrase)) score += 2;
-  }
+  const phrase = tokenize(query).join(' ');
+  if (title === phrase) return 12;
+
+  let score = 0;
+  if (terms.length > 1 && title.includes(phrase)) score += 4;
+
+  let inTitle = 0;
+  let inAbstract = 0;
   for (const term of terms) {
-    if (title.includes(term)) score += 2.5;
-    else if (abstract.includes(term)) score += 0.6;
+    if (hasTerm(title, term)) inTitle++;
+    if (hasTerm(abstract, term)) inAbstract++;
   }
+  score += (inTitle / terms.length) * 8;
+  score += (inAbstract / terms.length) * 2.5;
   return score;
 }
 
