@@ -4,7 +4,8 @@ import { paramsFromUrl, searchUrl } from '../url.js';
 import { filtersHtml, bindFilters } from '../ui/filters.js';
 import { resultsHtml, bindResults, registerWorks } from '../ui/results.js';
 import { searchBarHtml, bindSearchBar } from '../ui/searchbar.js';
-import { navigate } from '../router.js';
+import { navigate, replaceUrlSilent } from '../router.js';
+import { openDrawer, drawerContentHtml } from '../ui/drawer.js';
 
 /**
  * 检索结果页（REBUILD_PLAN 4.3 三栏 / M2-05 DoD：I-01~I-12）。
@@ -97,6 +98,15 @@ export function mount(root, ctx) {
       : `${r.items.length} 条${srcPart} · ${r.ms}ms${r.cache && r.cache !== 'miss' ? ` · ${r.cache} 缓存` : ''}`;
     if (stopBtn) stopBtn.hidden = !r.loading;
     if (!r.loading && topbar.firstElementChild) topbar.innerHTML = '';
+    // sel 深链（F-21）：搜索完成后若尚未打开且 Work 在池内 → 打开
+    if (!r.loading && current.sel && !detailCol?.innerHTML && !drawerHandle) {
+      const w = state.results.items.find((x) => x.id === current.sel);
+      if (w) openFor(w);
+      else {
+        current = { ...current, sel: '' };
+        replaceUrlSilent(searchUrl(current));
+      }
+    }
   };
 
   /** @param {typeof state.results} r */
@@ -130,6 +140,39 @@ export function mount(root, ctx) {
     renderResults();
   });
 
+  /** 抽屉（M2-06）：标题点击开抽屉；sel 深链 replaceState；Esc/关闭归还焦点并清 sel */
+  /** @type {{ destroy: () => void } | null} */
+  let drawerHandle = null;
+  const detailCol = /** @type {HTMLElement | null} */ (root.querySelector('.ps-col-detail'));
+  /** @param {any} w */
+  const openFor = (w) => {
+    if (!detailCol) return;
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      detailCol.innerHTML = drawerInlineHtml(w); // 桌面右栏常驻
+    } else {
+      drawerHandle?.destroy();
+      drawerHandle = openDrawer(document.body, w, { onClose: clearSel });
+    }
+    current = { ...current, sel: String(w.id) };
+    replaceUrlSilent(searchUrl(current));
+  };
+  const clearSel = () => {
+    current = { ...current, sel: '' };
+    replaceUrlSilent(searchUrl(current));
+    if (detailCol) detailCol.innerHTML = '';
+  };
+  /** @type {(e: Event) => void} */
+  const onTitleClick = (e) => {
+    const title = /** @type {HTMLElement | null} */ ((/** @type {HTMLElement} */ (e.target)).closest?.('.r-title'));
+    if (!title) return;
+    const card = /** @type {HTMLElement | null} */ (title.closest('.result-card'));
+    const w = findWorkById(card?.dataset.workId ?? '');
+    if (w) openFor(w);
+  };
+  resultsEl.addEventListener('click', onTitleClick);
+  /** @param {string} id */
+  const findWorkById = (id) => state.results.items.find((w) => w.id === id);
+
   resultsHandle = bindResults(resultsEl, {
     onRetry: () => void runSearch(),
     onRelax: (kind) => {
@@ -154,6 +197,19 @@ export function mount(root, ctx) {
   });
 
   /** 视图切换（I-19 不闪烁：同池重渲染） */
+  /** 内联详情关闭按钮 */
+  /** @type {(e: Event) => void} */
+  const onDetailClick = (e) => {
+    if ((/** @type {HTMLElement} */ (e.target)).closest?.('.js-drawer-close')) clearSel();
+  };
+  detailCol?.addEventListener('click', onDetailClick);
+  /** Esc 关闭内联详情（抽屉路径由 drawer.js 自理） */
+  /** @type {(e: KeyboardEvent) => void} */
+  const onEsc = (e) => {
+    if (e.key === 'Escape' && current.sel && detailCol?.innerHTML) clearSel();
+  };
+  document.addEventListener('keydown', onEsc);
+
   /** @type {(e: Event) => void} */
   const onView = (e) => {
     const btn = /** @type {HTMLElement | null} */ ((/** @type {HTMLElement} */ (e.target)).closest?.('.js-view'));
@@ -175,7 +231,11 @@ export function mount(root, ctx) {
   };
   rerenderFilters();
 
-  // 首次（或导航进入）执行检索
+  // 首次（或导航进入）执行检索；sel 深链自动开抽屉（F-21）
+  if (current.sel) {
+    const w = state.results.items.find((x) => x.id === current.sel);
+    if (w) openFor(w);
+  }
   void runSearch();
 
   return {
@@ -184,6 +244,10 @@ export function mount(root, ctx) {
       filtersHandle?.destroy?.();
       resultsHandle?.destroy();
       sb?.destroy();
+      drawerHandle?.destroy();
+      resultsEl.removeEventListener('click', onTitleClick);
+      detailCol?.removeEventListener('click', onDetailClick);
+      document.removeEventListener('keydown', onEsc);
       root.removeEventListener('click', onView);
       cancelSearch();
     },
@@ -197,3 +261,9 @@ function escapeHtml(s) {
 
 /** @type {import('../router.js').View} */
 export default { render, mount };
+
+/** 桌面右栏内联详情（与抽屉同内容）
+ * @param {any} w */
+function drawerInlineHtml(w) {
+  return `<div class="result-card js-detail-inline" tabindex="-1">${drawerContentHtml(w)}</div>`;
+}

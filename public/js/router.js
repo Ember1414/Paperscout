@@ -160,3 +160,10 @@ export function navigate(href, opts = {}) {
 export function linkAttrs(href) {
   return `href="${href}" data-link`;
 }
+
+/** 仅替换地址栏（不重渲染）——抽屉深链 sel 开合专用（4.2 replaceState 规则）
+ * @param {string} href */
+export function replaceUrlSilent(href) {
+  const st = /** @type {any} */ (history.state) ?? {};
+  history.replaceState(st, '', href);
+}
