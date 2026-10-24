@@ -7,7 +7,7 @@ import { searchBarHtml, bindSearchBar } from '../ui/searchbar.js';
 import { navigate, replaceUrlSilent } from '../router.js';
 import { openDrawer, drawerContentHtml } from '../ui/drawer.js';
 import { cardHtml } from '../ui/card.js';
-import { addSearchHistory } from '../db.js';
+import { addSearchHistory, saveRecipe, getRecipes, deleteRecipe } from '../db.js';
 
 /**
  * 检索结果页（REBUILD_PLAN 4.3 三栏 / M2-05 DoD：I-01~I-12）。
@@ -33,6 +33,7 @@ export function render(ctx) {
           <span class="js-stats num" style="font-size:var(--t-sm);color:var(--fg-2)" aria-live="polite"></span>
           <span style="margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
             <button type="button" class="btn btn-sm js-share" aria-label="分享检索结果">分享</button>
+            <button type="button" class="btn btn-sm js-save-recipe" aria-label="保存检索式">保存配方</button>
             <button type="button" class="btn btn-sm btn-primary js-ai-summary" aria-label="AI 研究现状总结">AI 总结</button>
             <button type="button" class="btn btn-sm js-ai-ask" aria-label="AI 问答">AI 问答</button>
             <span class="sr-only" id="view-label">视图切换</span>

@@ -33,6 +33,7 @@ const ROUTES = [
   { pattern: '/org/:id', load: () => import('./views/org.js') },
   { pattern: '/venue/:id', load: () => import('./views/venue.js') },
   { pattern: '/field/:slug', load: () => import('./views/field.js') },
+  { pattern: '/notifications', load: () => import('./views/notifications.js') },
   { pattern: '/settings', load: () => import('./views/settings.js') },
   { pattern: '/compare', load: () => import('./views/compare.js') },
   { pattern: '/about', load: () => import('./views/about.js') },

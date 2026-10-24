@@ -2,7 +2,7 @@
 import { searchBarHtml, bindSearchBar } from '../ui/searchbar.js';
 import { searchUrl } from '../url.js';
 import { apiGet } from '../api.js';
-import { getRecentlyViewed } from '../db.js';
+import { getRecentlyViewed, getRecipes } from '../db.js';
 
 /**
  * 首页（4.3 线框 / 5.13.1 信息流）。
@@ -44,6 +44,11 @@ export function render(_ctx) {
           ${recent.length
             ? `<ul class="ps-quick-list">${recent.map((q) => `<li><a href="${searchUrl({ q })}" data-link>${escapeHtml(q)}</a></li>`).join('')}</ul>`
             : '<p style="color:var(--fg-3);font-size:var(--t-sm)">暂无最近检索——历史只保存在你的浏览器本地。</p>'}
+        </section>
+
+        <section aria-labelledby="recipes-h" class="ps-home-card">
+          <h2 id="recipes-h" style="font-size:var(--t-md)">我的配方</h2>
+          <div class="js-recipes-list"><p style="color:var(--fg-3);font-size:var(--t-sm)">加载中…</p></div>
         </section>
 
         <section aria-labelledby="fields-h" class="ps-home-card">

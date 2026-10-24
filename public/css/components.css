@@ -431,3 +431,49 @@ mark.ps-hl {
   border-radius: 2px;
   padding: 0 1px;
 }
+
+/* ---------- M9-23 打印友好样式 ---------- */
+@media print {
+  .ps-header,
+  .ps-nav,
+  .ps-footer,
+  .js-toolbar,
+  .ps-col-filters,
+  .ps-col-detail,
+  .r-actions,
+  .notice-bar,
+  .pagination,
+  .js-ai-panel,
+  .toast,
+  .top-progress,
+  .palette-overlay,
+  .drawer-overlay,
+  .modal-overlay,
+  button,
+  input,
+  select,
+  textarea {
+    display: none !important;
+  }
+  .ps-main {
+    padding: 0;
+    max-width: 100%;
+  }
+  .result-card,
+  .data-table {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+  .result-card a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+    color: #666;
+    word-break: break-all;
+  }
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+  }
+}

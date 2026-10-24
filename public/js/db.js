@@ -7,7 +7,7 @@
  */
 
 const DB_NAME = 'paperscout';
-const DB_VERSION = 3;
+const DB_VERSION = 4;
 const SNAP_TTL_MS = 10 * 60 * 1000;
 
 /** @type {Promise<IDBDatabase> | null} */
@@ -40,6 +40,10 @@ function openDb() {
       }
       if (!db.objectStoreNames.contains('settings')) {
         db.createObjectStore('settings', { keyPath: 'key' });
+      }
+      if (!db.objectStoreNames.contains('recipes')) {
+        const s = db.createObjectStore('recipes', { keyPath: 'id' });
+        s.createIndex('ws', 'workspaceId'); s.createIndex('ts', 'ts');
       }
       if (!db.objectStoreNames.contains('recentlyViewed')) {
         const s = db.createObjectStore('recentlyViewed', { keyPath: 'workId' });
@@ -327,6 +331,23 @@ export async function getRecentlyViewed(limit = 5) {
     return (/** @type {any[]} */ (all ?? [])).sort((a, b) => b.viewedAt - a.viewedAt).slice(0, limit);
   } catch { return []; }
 }
+
+/* ---------- Recipes（检索式保存 M9-21） ---------- */
+
+/**
+ * @param {{ q: string, params: Record<string, string>, name?: string }} recipe
+ */
+export async function saveRecipe(recipe) {
+  const id = 'r-' + crypto.randomUUID().slice(0, 8);
+  await put('recipes', { ...recipe, id, ts: Date.now() });
+  return id;
+}
+
+/** @returns {Promise<any[]>} */
+export async function getRecipes() { return getAll('recipes'); }
+
+/** @param {string} id */
+export async function deleteRecipe(id) { await remove('recipes', id); }
 
 /* ---------- 全量导出/导入（M5-08） ---------- */
 
