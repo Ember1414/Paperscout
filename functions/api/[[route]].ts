@@ -11,6 +11,7 @@ import { getStatus } from '../lib/services/status';
 import { searchAuthors, getAuthorDetail } from '../lib/services/author';
 import { getOrgDetail } from '../lib/services/org';
 import { getVenueDetail } from '../lib/services/venue';
+import { handleSummarize, handleAsk, handleExtract, handleDsl } from '../lib/services/ai';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
