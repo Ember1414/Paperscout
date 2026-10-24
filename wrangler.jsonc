@@ -30,7 +30,7 @@
     "enabled": true
   },
 
-  // v3 迁移 feature flag（8.5）：仅 preview 部署启用 v3 编排器，生产保持 v2 直至 M7/M8 切换。
+  // v3 迁移 feature flag（8.5）：M3 验收后生产切 v3。
   // 注意：Pages 的 env.<name> 块会使顶层绑定不继承（实测：丢 DB/KV/AI），
   // 故 preview 环境必须完整重声明绑定——与顶层保持一致，改动时须同步（DECISIONS D-013）。
   "env": {
