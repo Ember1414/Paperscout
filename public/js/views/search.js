@@ -31,7 +31,9 @@ export function render(ctx) {
         ${searchBarHtml({ value: p.q })}
         <div class="js-toolbar" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0">
           <span class="js-stats num" style="font-size:var(--t-sm);color:var(--fg-2)" aria-live="polite"></span>
-          <span style="margin-left:auto;display:flex;gap:6px;align-items:center">
+          <span style="margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <button type="button" class="btn btn-sm btn-primary js-ai-summary" aria-label="AI 研究现状总结">AI 总结</button>
+            <button type="button" class="btn btn-sm js-ai-ask" aria-label="AI 问答">AI 问答</button>
             <span class="sr-only" id="view-label">视图切换</span>
             <button type="button" class="btn btn-sm js-view" data-view="list" aria-pressed="${p.view === 'list'}">列表</button>
             <button type="button" class="btn btn-sm js-view" data-view="compact" aria-pressed="${p.view === 'compact'}">紧凑</button>
@@ -55,6 +57,7 @@ export function render(ctx) {
           </span>
         </div>
         <div class="js-topbar" aria-hidden="true"></div>
+        <div class="js-ai-panel" aria-live="polite"></div>
         <div class="js-results"></div>
       </section>
 
@@ -507,3 +510,97 @@ function groupedHtml(r, mode, viewMode, selId) {
     })
     .join('');
 }
+
+/* ==================== M6 AI 面板（summarize + ask SSE） ==================== */
+
+/**
+ * @param {HTMLElement} body
+ * @param {any} d
+ */
+function bindAI(body, d) {
+  const panel = /** @type {HTMLElement} */ (body.querySelector('.js-ai-panel'));
+  const summaryBtn = /** @type {HTMLButtonElement | null} */ (body.querySelector('.js-ai-summary'));
+  const askBtn = /** @type {HTMLButtonElement | null} */ (body.querySelector('.js-ai-ask'));
+  if (!panel || !summaryBtn) return;
+
+  /** @param {string} html */
+  const render = (html) => { panel.innerHTML = html; };
+
+  /** @param {HTMLButtonElement} btn @param {string} text */
+  const setLoading = (btn, text) => { btn.disabled = true; btn.textContent = text; };
+  const resetBtn = (/** @type {HTMLButtonElement} */ btn, /** @type {string} */ text) => { btn.disabled = false; btn.textContent = text; };
+
+  // AI 总结
+  summaryBtn.addEventListener('click', async () => {
+    const papers = state.results.items.slice(0, 12).map((w) => ({ title: w.title, abstract: w.abstract ?? '', doi: w.doi }));
+    if (!papers.length) { render('<div class="notice-bar notice-warn">请先检索获取结果</div>'); return; }
+    setLoading(summaryBtn, 'AI 总结中…');
+    render('<div class="skeleton" style="height:60px"></div>');
+    try {
+      const res = await fetch('/api/ai/summarize', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Client-Id': localStorage.getItem('ps-client-id') ?? 'anon' },
+        body: JSON.stringify({ papers }),
+      });
+      const j = await res.json();
+      if (j.error) { render(`<div class="notice-bar notice-danger">${escapeHtml(j.error.message)}</div>`); return; }
+      render(`<div class="result-card" style="padding:var(--s-3)"><p style="font-size:var(--t-sm);line-height:1.8">${escapeHtml(j.data.summary)}</p>
+        ${j.data.verified ? '<span class="badge badge-ok">引用已校验</span>' : '<span class="badge badge-warn">引用未完全校验</span>'}
+        <button type="button" class="btn btn-sm btn-ghost js-ai-close" style="margin-left:8px">关闭</button></div>`);
+      bindClose(panel);
+    } catch (e) {
+      render(`<div class="notice-bar notice-danger">AI 总结失败：${escapeHtml(e instanceof Error ? e.message : '未知')}</div>`);
+    } finally {
+      resetBtn(summaryBtn, 'AI 总结');
+    }
+  });
+
+  // AI 问答（SSE 流式）
+  askBtn?.addEventListener('click', () => {
+    const question = prompt('输入你的问题（基于当前检索结果）：');
+    if (!question?.trim()) return;
+    const papers = state.results.items.slice(0, 12).map((w) => ({ title: w.title, abstract: w.abstract ?? '', doi: w.doi }));
+    setLoading(askBtn, 'AI 问答中…');
+    render('<div class="result-card" style="padding:var(--s-3)"><p class="js-ai-answer" style="font-size:var(--t-sm);line-height:1.8;min-height:40px"></p><span class="badge badge-info">AI 生成，需核实</span> <button type="button" class="btn btn-sm btn-ghost js-ai-close">关闭</button></div>');
+    const answerEl = /** @type {HTMLElement} */ (panel.querySelector('.js-ai-answer'));
+
+    fetch('/api/ai/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Client-Id': localStorage.getItem('ps-client-id') ?? 'anon' },
+      body: JSON.stringify({ question, papers }),
+    }).then((res) => {
+      if (!res.body) { render('<div class="notice-bar notice-danger">SSE 不支持</div>'); return; }
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = '';
+      function readChunk() {
+        reader.read().then(({ done, value }) => {
+          if (done) { resetBtn(/** @type {HTMLButtonElement} */ (askBtn), 'AI 问答'); return; }
+          buf += decoder.decode(value, { stream: true });
+          for (const line of buf.split('\n\n')) {
+            if (!line.startsWith('data: ')) continue;
+            try {
+              const data = JSON.parse(line.slice(6));
+              if (data.delta) answerEl.textContent += data.delta;
+              if (data.refusal) { render(`<div class="notice-bar notice-warn">${escapeHtml(data.message ?? '文献不足以回答')}</div>`); }
+              if (data.error) { render(`<div class="notice-bar notice-danger">${escapeHtml(data.error)}</div>`); }
+            } catch { /* SSE 分块 */ }
+          }
+          buf = buf.slice(buf.lastIndexOf('\n\n') + 2);
+          readChunk();
+        }).catch(() => { resetBtn(/** @type {HTMLButtonElement} */ (askBtn), 'AI 问答'); });
+      }
+      readChunk();
+    }).catch((e) => {
+      render(`<div class="notice-bar notice-danger">AI 问答失败：${escapeHtml(e instanceof Error ? e.message : '未知')}</div>`);
+      resetBtn(/** @type {HTMLButtonElement} */ (askBtn), 'AI 问答');
+    });
+    bindClose(panel);
+  });
+
+  /** @param {HTMLElement} panelEl */
+  function bindClose(panelEl) {
+    panelEl.querySelector('.js-ai-close')?.addEventListener('click', () => { panelEl.innerHTML = ''; });
+  }
+}
+
