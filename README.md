@@ -2,6 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+> **v3 重做进行中**：施工依据见 [`docs/REBUILD_PLAN.md`](docs/REBUILD_PLAN.md)，验收清单见 [`docs/ACCEPTANCE.md`](docs/ACCEPTANCE.md)。
+> 本文档描述的是 v2 现状，v3 交付后会重写。
+
 一站式检索国内外学术论文，聚合 **11 大学术数据源**（含爬虫源），部署于 **Cloudflare Pages**（`https://paperscout.pages.dev`），全球边缘加速。
 
 ## 功能特性
