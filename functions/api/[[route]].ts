@@ -8,6 +8,9 @@ import { getWorkDetail } from '../lib/services/work';
 import { getAvailability } from '../lib/services/availability';
 import { getContexts } from '../lib/services/contexts';
 import { getStatus } from '../lib/services/status';
+import { searchAuthors, getAuthorDetail } from '../lib/services/author';
+import { getOrgDetail } from '../lib/services/org';
+import { getVenueDetail } from '../lib/services/venue';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -350,9 +353,6 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
       case 'related':
         return await relatedWorks(env, url);
 
-      case 'author':
-        return await authorProfile(env, url);
-
       case 'summarize':
         if (request.method !== 'POST') return jsonResponse({ error: '请使用 POST' }, 405);
         return await aiSummarize(env, request);
@@ -403,6 +403,35 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
       case 'status': {
         const statusResult = await getStatus(env.DB);
         return new Response(JSON.stringify(okEnvelope(statusResult, { requestId: newRequestId() })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60' } });
+      }
+
+      case 'author': {
+        const at0 = Date.now();
+        const rid = url.searchParams.get('id') ?? '';
+        const rname = url.searchParams.get('name') ?? '';
+        if (rid) {
+          const detail = await getAuthorDetail(rid);
+          return new Response(JSON.stringify(okEnvelope(detail, { requestId: newRequestId(), ms: Date.now() - at0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        }
+        if (rname) {
+          const candidates = await searchAuthors(rname);
+          return new Response(JSON.stringify(okEnvelope({ candidates }, { requestId: newRequestId(), ms: Date.now() - at0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        }
+        return new Response(JSON.stringify(errorEnvelope(new AppError('BAD_QUERY', '请提供 ?id=A123… 或 ?name=作者名'), newRequestId())), { status: 400, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+      }
+
+      case 'org': {
+        const oid = url.searchParams.get('id') ?? '';
+        const ot0 = Date.now();
+        const org = await getOrgDetail(oid);
+        return new Response(JSON.stringify(okEnvelope(org, { requestId: newRequestId(), ms: Date.now() - ot0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+      }
+
+      case 'venue': {
+        const vid = url.searchParams.get('id') ?? '';
+        const vt0 = Date.now();
+        const venue = await getVenueDetail(vid);
+        return new Response(JSON.stringify(okEnvelope(venue, { requestId: newRequestId(), ms: Date.now() - vt0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
       }
 
       case 'health':
