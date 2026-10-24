@@ -79,6 +79,7 @@ export function mount(root) {
       <p style="font-size:var(--t-xs);color:var(--fg-3)">${filtered.length} 篇${query ? `（搜索"${esc(query)}"）` : ''}</p>
       ${filtered.map((w) => `
         <div class="result-card" data-id="${esc(w.id)}">
+          <label style="position:absolute;top:8px;left:8px;cursor:pointer"><input type="checkbox" class="js-lib-check" data-check-id="${esc(w.id)}" /></label>
           <h3 class="r-title"><a href="/p/${encodeURIComponent(w.id)}" data-link>${esc(w.title)}</a></h3>
           <div class="r-meta">
             <span>${esc((w.authors ?? []).slice(0, 3).join(', '))}</span>
