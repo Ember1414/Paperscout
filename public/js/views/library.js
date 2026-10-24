@@ -1,5 +1,5 @@
 // @ts-check
-import { getSavedWorks, getNote, saveNote, moveToTrash, restoreFromTrash, getAll, exportAll, importAll } from '../db.js';
+import { getSavedWorks, getNote, saveNote, moveToTrash, restoreFromTrash, getAll, exportAll, importAll, createCollection, addWorkToCollection } from '../db.js';
 import { toBibtex, toRis, toCslJson } from '../cite-format.js';
 import { showToast } from '../ui/toast.js';
 import { icon } from '../icons.js';
@@ -31,9 +31,18 @@ export function render() {
       <div style="display:flex;gap:8px;align-items:center;margin-bottom:var(--s-3);flex-wrap:wrap">
         <input type="search" class="js-lib-search" placeholder="在文库中搜索…" style="flex:1;max-width:300px;min-height:36px" aria-label="文库搜索" />
         <button type="button" class="btn btn-sm js-trash-toggle">回收站</button>
+        <button type="button" class="btn btn-sm js-new-col">新建集合</button>
       </div>
       <div class="js-lib-body"><div class="skeleton" style="height:120px"></div></div>
       <div class="js-trash-body" hidden><h2 style="font-size:var(--t-sm);color:var(--fg-3);margin-top:var(--s-3)">回收站（7 天后自动清理）</h2><div class="js-trash-list"></div></div>
+      <div class="js-col-area" style="margin-top:var(--s-4)">
+        <h2 style="font-size:var(--t-sm);color:var(--fg-2)">集合</h2>
+        <div class="js-col-list"></div>
+        <div style="display:flex;gap:4px;margin-top:4px">
+          <input type="text" class="js-col-name" placeholder="集合名…" style="flex:0 0 160px;min-height:32px;font-size:var(--t-xs)" />
+          <button type="button" class="btn btn-sm js-col-create">创建</button>
+        </div>
+      </div>
     </section>`;
 }
 
