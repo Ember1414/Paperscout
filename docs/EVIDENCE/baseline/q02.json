@@ -1,0 +1,821 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B+%E5%B9%BB%E8%A7%89&limit=20&language=zh",
+  "response": {
+    "cached": false,
+    "total": 54,
+    "page": 1,
+    "language": "zh",
+    "paperType": "all",
+    "sourcesOk": 7,
+    "sourcesTotal": 11,
+    "cooldown": [],
+    "papers": [
+      {
+        "title": "大语言模型技术研究与应用探讨",
+        "authors": [
+          "文强 张"
+        ],
+        "year": 2025,
+        "venue": "Modern Education and Culture",
+        "abstract": "大语言模型作为当下人工智能领域一项关键的技术成果，有规模庞大、理解能力较强、生成能力颇为突出等特性，在自然语言处理的各个子领域当中呈现出了广泛的应用潜力。本文对大语言模型的发呈现状以及所面临的主要挑战做了简要探讨，还分析了其核心技术，覆盖模型训练以及预处理、结构优化、生成策略和实际应用等方面。期望能给语言模型技术的研究与实践带来一定参考。",
+        "url": "https://doi.org/10.61369/mec.2025010014",
+        "pdfUrl": "https://admin.artdesignp.com/uploads/file/asp/202507141152075ada65686.pdf",
+        "doi": "10.61369/mec.2025010014",
+        "citations": 3,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合",
+        "openAccess": true
+      },
+      {
+        "title": "大语言模型在商务日语教学的互动语用情境中的应用研究",
+        "authors": [
+          "敏 汪"
+        ],
+        "year": 2025,
+        "venue": "新时代外语",
+        "abstract": "传统商务日语教学在跨文化语用能力培养方面存在个性化支持不足、真实情境匮乏和即时反馈不足的局限。大语言模型凭借强大的自然语言处理能力和情境生成优势，能够有效弥补这些不足。以Thomas（1983）语用能力理论为参照框架，本研究探索大语言模型在语用能力培养中的应用模式。基于该理论的核心观点，设计了包含智能场景构建、沉浸式互动训练、精准化能力诊断和动态化测评的四层递进应用体系，构成“二维四层”的系统化实施路径。",
+        "url": "https://doi.org/10.70677/mwpt7194",
+        "doi": "10.70677/mwpt7194",
+        "citations": 5,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "量子货币幻觉:经典货币幻觉理论的量子重构与一般化拓展(Quantum Currency Illusion: Quantum Reconstruction and Generalized Expansion of Classical Currency Illusion Theory)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 货币幻觉是货币经济学、行为宏观经济学与消费 &mdash;储蓄理论的核心概念。经典货币幻觉理论建立在&ldquo;理性基准&mdash;偏差偏离&rdquo;二元对立框架之上,将货币幻觉定义为行为人混淆名义变量与实际变量的系统性认知偏差,并假定个体要么处于&ldquo;完全理性&rdquo;状态,要么处于&ldquo;幻觉偏差&rdquo;状态,二者互斥、唯一、静态确定。然而现实货币感知与决策行为普遍存在名义收益与实际成本同时被感知、名义快感与实际理性相互干涉、预期改变幻觉强度、政策信息触发感知切换等典型特征,经典理论无法统一解释&ldquo;名义工资上涨带来正向效用但同时被通胀侵蚀&rdquo;&ldquo;货币幻觉强度时变、因人而异、因预期而异&rdquo;&ldquo;同一信息同时产生名义感知与实际感知&rdquo;等现实悖论。 本文严格立足于人类认知决策的…",
+        "url": "https://zenodo.org/records/20312981",
+        "pdfUrl": "https://zenodo.org/api/records/20312981/files/%E9%87%8F%E5%AD%90%E8%B4%A7%E5%B8%81%E5%B9%BB%E8%A7%89%EF%BC%9A%E7%BB%8F%E5%85%B8%E8%B4%A7%E5%B8%81%E5%B9%BB%E8%A7%89%E7%90%86%E8%AE%BA%E7%9A%84%E9%87%8F%E5%AD%90%E9%87%8D%E6%9E%84%E4%B8%8E%E4%B8%80%E8%88%AC%E5%8C%96%E6%8B%93%E5%B1%95.pdf/content",
+        "doi": "10.5281/zenodo.20312981",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "大语言模型赋能探究型高职教育——以Python语言课程为例",
+        "authors": [
+          "唐颖川"
+        ],
+        "year": 2025,
+        "venue": "现代教育探索",
+        "url": "https://doi.org/10.37155/2717-5561-0606-14",
+        "doi": "10.37155/2717-5561-0606-14",
+        "citations": 3,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "基于大语言模型的大学英语写作批改模式研究",
+        "authors": [
+          "爽 薛"
+        ],
+        "year": 2025,
+        "venue": "现代教育前沿",
+        "abstract": "随着人工智能和大数据的发展，英语教学也面临着新的机遇与挑战。人工智能技术的发展，为英语教学提供了新的思路，为英语教师减轻负担，让教师能够将更多的时间和精力放在学生身上。本论文通过对智云平台的功能分析，提出了基于大语言模型的英语作文AI批改模型，将学生提交的多形式英语作文作为输入，经过语义分析、句法分析、语法分析等模块进行分析给予直接反馈与间接反馈相结合的批改结果。利用AI模型，教师能够在有限的时间里，详细的了解每一个学生写作水平和能力，进而针对性地对学生进行个性化指导。同时，教师将批改后的作文反馈给学生，在动态评价多维反馈的教学模式下让学生根据详细的反馈不断修改自己的文章，进而提升英语作文水平与学习效率。",
+        "url": "https://doi.org/10.33142/fme.v6i6.17069",
+        "pdfUrl": "https://journals.viserdata.com/index.php/fme/article/viewFile/17069/17234",
+        "doi": "10.33142/fme.v6i6.17069",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合",
+        "openAccess": true
+      },
+      {
+        "title": "中学生对基于大语言模型的英语写作平台的接受度模型",
+        "authors": [
+          "郑伊彬",
+          "叶新东"
+        ],
+        "year": 2025,
+        "venue": "教育学刊",
+        "abstract": "郑伊彬1，叶新东1,* 1.温州大学教育学院，浙江温州； 摘要：随着人工智能技术的快速发展，大语言模型在英语写作教学中展现出辅助潜力。本研究探讨了中学生对大语言模型赋能英语写作的技术接受度，重点分析学习策略、写作动机与技术接受度之间的关系。基于技术接受度模型（TAM），构建了假设模型并通过问卷调查法进行实证研究，样本为浙江省温州市一所中学的42名学生。数据分析采用SPSS和Amos软件，结果表明，中学生对基于大语言模型的英语写作平台整体接受度较高。感知有用性、感知易用性、使用态度和行为意愿呈显著正相关，学习策略与感知易用性正相关，写作兴趣对感知有用性和写作效能感产生影响。结果表明感知有用性、易用性及使用态度对行为意愿具有显著影响。研究结果为大语言模型在英语写作教学中的应用提供了理论依据值。",
+        "url": "https://doi.org/10.62836/jer.v3n2.0219",
+        "pdfUrl": "https://cn.sgsci.org/index.php/jyxk/article/download/219/218",
+        "doi": "10.62836/jer.v3n2.0219",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合",
+        "openAccess": true
+      },
+      {
+        "title": "大语言模型背景下高校外语教师数字素养自主提升路径研究",
+        "authors": [],
+        "year": 2025,
+        "venue": "理论研究学刊",
+        "url": "https://doi.org/10.62662/llyj0104018",
+        "doi": "10.62662/llyj0104018",
+        "citations": 2,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "流体中的人：决定论几何模型与选择的语言幻觉",
+        "authors": [
+          "Xiaoyang Yu"
+        ],
+        "year": 2025,
+        "abstract": "本文在硬决定论框架下，提出一种将个体视为“在时间中流动的三维几何体”的模型，并以此为基础对“选择”与“自由意志”的观念进行结构性重构。文章指出，所谓选择，实质上是一种语言命名行为——我们在一个不可分叉的流体中选取某一时间切片，并误将此命名行为理解为结构上的分叉。同时，本文揭示人类反事实构造中的“双身体幻觉”：语言将一个人拆解为两个身体——一个走现实之路，一个行未走之径，并对现实路径上的个体加以否定。最终，论文指出，选择感、后悔、责任等心理经验，并不对应任何实体分叉结构，而是语言对单一连续形体的误读与后设叙事。",
+        "url": "https://doi.org/10.31219/osf.io/b6ce9_v1",
+        "doi": "10.31219/osf.io/b6ce9_v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "语言即思维的幻觉机制：从自控到他控的归因链条",
+        "authors": [
+          "Xiaoyang Yu"
+        ],
+        "year": 2025,
+        "abstract": "本论文聚焦于“语言即思维”这一根深蒂固的文化幻觉，并在决定论框架下对其进行语言哲学与认知机制的深入分析。我们指出，个体在思考中使用语言进行建模时，往往无意识地将语言本身视为思想的真实体现，进而产生“话语=意图=控制”的幻觉链条。此链条导致人们在互动中高估语言的决定性作用，将复杂的心理与物理过程简化为对语言内容的归因，最终形成对于“他人语言导致后果”的语用责任想象。这种结构不仅扭曲了对人类行为因果机制的理解，也促成了归责型社会行为模式的普遍化。本论文通过现实对话案例与语义结构分析，展示语言如何构建自控与他控之间的虚构因果桥梁，从而揭示“语言即思维”幻觉背后的决定性机制与社会功能。",
+        "url": "https://doi.org/10.31219/osf.io/gfydj_v1",
+        "doi": "10.31219/osf.io/gfydj_v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "反事实狭隘与自由意志幻觉：桥段化反事实结构的语言偏误",
+        "authors": [
+          "Xiaoyang Yu"
+        ],
+        "year": 2025,
+        "abstract": "人类在事后反思自己或他人行为时，通常只在叙事化的有限桥段——如“左拐”与“右拐”——之间构造替代情境，进而想象“如果当时做出另一种选择，会怎样”。这种“二选一”式的反事实思维，并非源于行为者真实面临的所有可能性（包括停顿、后退、跳舞等），而是观察者基于过往经验与叙事惯例，对无限多样的行为空间进行无依据的压缩与排除。本文从硬决定论与认知语言学视角出发，剖析桥段化反事实结构如何生成自由意志幻觉，并探讨其对责任归因与后悔思维的深层影响。",
+        "url": "https://doi.org/10.31219/osf.io/5pfz4_v1",
+        "doi": "10.31219/osf.io/5pfz4_v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "大语言模型在日语N1听力中间接否定的识别能力研究",
+        "authors": [
+          "静 郭",
+          "晓丹 郑",
+          "叶 韩"
+        ],
+        "year": 2025,
+        "venue": "教研导刊",
+        "abstract": "随着人工智能技术的飞速发展，大语言模型（Large Language Models, LLMs）在自然语言处理（Natural Language Processing, NLP）任务中展现出强大的潜力。本研究系统评估大语言模型（LLMs）在日语能力考试（JLPT）N1听力材料中对“间接否定”的识别精度，并揭示其误差模式与改进路径。通过构建包含多种间接否定类型的N1听力语料库，并选用Kimi与Chat-GPT4.0两种模型进行对比实验，系统评估其在识别间接否定中的表现。实验结果显示，LLMs已具备初步的日语间接否定识别能力，Kimi模型在准确率、召回率与F1值方面均优于Chat-GPT4.0，尤其在规约性间接否定识别中表现突出。然而，在涉及文化特定表达与复杂语言结构时，两类模型的识别准确率均出现显著下降。本研究为大语言模型在语言测试领域的应用提供了实证依据，为LLMs在语言测试领域的可信应用…",
+        "url": "https://doi.org/10.64649/yh.jydk.2025100009",
+        "doi": "10.64649/yh.jydk.2025100009",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "大语言模型技术赋能Spark编程教学实践",
+        "authors": [
+          "张淼",
+          "李志飞",
+          "张龑"
+        ],
+        "year": 2025,
+        "venue": "教育学刊",
+        "url": "https://doi.org/10.62836/jer.v3n4.0314",
+        "doi": "10.62836/jer.v3n4.0314",
+        "citations": 1,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大语言模型驱动下应用型高校英语翻译教学模式创新研究",
+        "authors": [],
+        "year": 2026,
+        "venue": "科技创新发展",
+        "url": "https://doi.org/10.69979/3041-0673.26.08.093",
+        "doi": "10.69979/3041-0673.26.08.093",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "大语言模型赋能旅游型乡村“语言文字+X”实践路径研究——以西安市鄠邑区蔡家坡村为例",
+        "authors": [],
+        "year": 2026,
+        "venue": "智慧教育",
+        "url": "https://doi.org/10.69979/3029-2735.26.09.080",
+        "doi": "10.69979/3029-2735.26.09.080",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "大语言模型文本情感识别应用探究",
+        "authors": [
+          "张仁鉴"
+        ],
+        "year": 2026,
+        "venue": "数据期刊",
+        "url": "https://doi.org/10.67328/wslwpp1794",
+        "doi": "10.67328/wslwpp1794",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "应用写作中的大语言模型动态适配探究",
+        "authors": [],
+        "year": 2026,
+        "venue": "教育科学文献",
+        "url": "https://doi.org/10.62662/kxwxz0307022",
+        "doi": "10.62662/kxwxz0307022",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "大语言模型在文本情感分析中的应用研究",
+        "authors": [
+          "蒋香香"
+        ],
+        "year": 2026,
+        "venue": "数据期刊",
+        "url": "https://doi.org/10.67328/wslwpp1185",
+        "doi": "10.67328/wslwpp1185",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大语言模型支持下高校英语写作形成性评价机制研究——基于教师反馈与多模型反馈的比较",
+        "authors": [
+          "任晨扬",
+          "魏宏"
+        ],
+        "year": 2026,
+        "venue": "教育学刊",
+        "url": "https://doi.org/10.62836/jer.v4n5.1099",
+        "doi": "10.62836/jer.v4n5.1099",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于知识图谱与语义框架约束大语言模型的临床手术术语歧义消解",
+        "authors": [
+          "安祺 赵"
+        ],
+        "year": 2026,
+        "venue": "时代技术",
+        "url": "https://doi.org/10.54254/3050-2187/2026.38081",
+        "doi": "10.54254/3050-2187/2026.38081",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大语言模型在语言教学中的应用研究综述",
+        "authors": [
+          "Yuchen (蔡雨晨) Cai"
+        ],
+        "year": 2026,
+        "venue": "东亚学术研究",
+        "url": "https://doi.org/10.64699/26qysy7086",
+        "doi": "10.64699/26qysy7086",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "数智时代大语言模型对学生翻译能力影响的元分析",
+        "authors": [],
+        "year": 2026,
+        "venue": "智慧教育",
+        "url": "https://doi.org/10.69979/3029-2735.26.03.111",
+        "doi": "10.69979/3029-2735.26.03.111",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "现代文化中的因果巫术结构：决定论视角下的希望剧本与语言幻觉",
+        "authors": [
+          "Xiaoyang Yu"
+        ],
+        "year": 2025,
+        "url": "https://doi.org/10.31219/osf.io/7rqky_v1",
+        "doi": "10.31219/osf.io/7rqky_v1",
+        "citations": 0,
+        "type": "other",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大语言模型垂直化训练技术与应用",
+        "authors": [
+          "王丹颖"
+        ],
+        "year": 2025,
+        "venue": "现代教育探索",
+        "url": "https://doi.org/10.37155/2717-5561-0606-18",
+        "doi": "10.37155/2717-5561-0606-18",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "自由的局部闪现与决定性的全局：从语言结构解构量子自由的叙述幻觉",
+        "authors": [
+          "Xiaoyang Yu"
+        ],
+        "year": 2025,
+        "url": "https://doi.org/10.31219/osf.io/ghqp2_v1",
+        "doi": "10.31219/osf.io/ghqp2_v1",
+        "citations": 0,
+        "type": "other",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大语言模型赋能政务智慧化服务——以DeepSeek为例",
+        "authors": [],
+        "year": 2025,
+        "venue": "科技创新发展",
+        "url": "https://doi.org/10.69979/3041-0673.25.06.020",
+        "doi": "10.69979/3041-0673.25.06.020",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于YOLO与大语言模型的智能手语翻译",
+        "authors": [
+          "范子杨 闫屹伟，李昕明，朱志刚"
+        ],
+        "year": 2025,
+        "venue": "东方教育学刊",
+        "url": "https://doi.org/10.64216/3080-1494.25.10.053",
+        "doi": "10.64216/3080-1494.25.10.053",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大语言模型在临床诊断中的应用前景与挑战综述",
+        "authors": [],
+        "year": 2025,
+        "venue": "医学研究",
+        "url": "https://doi.org/10.69979/3029-2808.25.04.057",
+        "doi": "10.69979/3029-2808.25.04.057",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大语言模型在水利工程运行及管理中的探索",
+        "authors": [],
+        "year": 2025,
+        "venue": "当代水电科技",
+        "url": "https://doi.org/10.69979/3060-8767.25.06.043",
+        "doi": "10.69979/3060-8767.25.06.043",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于大语言模型的大学英语自适应学习系统研究——以AI驱动个性化学习路径为例",
+        "authors": [
+          "小琳 曹"
+        ],
+        "year": 2025,
+        "venue": "Educational Theory and Research",
+        "url": "https://doi.org/10.61369/etr.10858",
+        "doi": "10.61369/etr.10858",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于AI大语言模型通义的本科生学术论文引言写作方法研究",
+        "authors": [
+          "婉莹 秦",
+          "今 徐"
+        ],
+        "year": 2025,
+        "venue": "Modern Education and Culture",
+        "url": "https://doi.org/10.61369/mec.2025010004",
+        "doi": "10.61369/mec.2025010004",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "面向私有云运营场景的检索增强生成系统设计与实践",
+        "authors": [
+          "陶彦霖",
+          "张宏斌",
+          "宋欢"
+        ],
+        "year": 2026,
+        "venue": "Dianxin kexue",
+        "abstract": "在云计算等复杂行业场景下构建高效知识问答系统时往往面临着文档结构复杂、专业术语规范知识异构性强、以及回答准确性要求高等挑战。提出了一套覆盖知识库自动化构建、检索增强生成（RAG）工作流设计与持续运维优化的全流程解决方案。在知识库制备环节，系统引入了基于大语言模型（LLM）的智能分块与分层索引构建方法，有效提升知识提取质量；在检索环节，融合多种检索增强策略和技巧，显著抑制生成幻觉，提高检索准确性。系统采用模块化架构，具备良好的可扩展性与可复用性。实验结果表明，本方案在多项评估指标上显著优于传统RAG基线系统，能够有效支撑私有云场景下的精准问答需求，并在其他需要领域知识理解的业务场景中，为RAG技术的落地提供了可复用的端到端实践范例。",
+        "url": "http://www.telecomsci.com/thesisDetails#10.11959/j.issn.1000-0801.2026060",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "生成式AI的大模型提示工程：方法、现状与展望",
+        "authors": [
+          "黄峻, 林飞, 杨静, 王兴霞, 倪清桦, 王雨桐, 田永林, 李娟娟, 王飞跃"
+        ],
+        "year": 2024,
+        "venue": "智能科学与技术学报",
+        "abstract": "大语言模型和视觉语言模型在各领域的应用中展示出巨大潜力，成为研究热点。然而，幻觉、知识迁移、与人类意图对齐等问题仍然影响着大模型的性能。首先，探讨了提示工程与对齐技术基本原理，提出基于提示优化、专家反馈机制及实时调整机制的引导概念，提升了大语言模型在跨领域应用中的性能；其次，深入分析提示工程的核心技术，如多步推理处理复杂任务的原理；然后，针对各领域的实际应用，讨论提示工程的发展现状；最后，总结提示工程面临的挑战并展望其未来发展方向。提示工程在理论与应用方面的发展，为提升大模型在实际应用中的性能提供了全面的解决方案。",
+        "url": "https://www.infocomm-journal.com/znkx/CN/10.11959/j.issn.2096-6652.202424",
+        "doi": "10.11959/j.issn.2096-6652.202424",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "PeMeBench：中文儿科医疗问答基准测试方法",
+        "authors": [
+          "张芊, 陈攀峰, 冯林坤, 刘淑钰, 马丹, 陈梅, 李晖"
+        ],
+        "year": 2024,
+        "venue": "大数据",
+        "abstract": "大语言模型在医疗领域显现出巨大的应用潜力，如何评估其在医疗领域中的性能成为挑战。现有医疗评测基准测试多为选择题形式，难以全面和精准地评估模型在儿科医疗场景中的性能。为此，提出首个中文儿科医疗问答基准测试方法——PeMeBench。该方法基于双视角评估维度，参考来自10个儿科疾病系统的诊疗规范类书籍，将儿科医疗问答任务细分为疾病知识、治疗方案、用药剂量、疾病预防和药理作用5个儿科医疗问答子任务，构建超1万个开放式的问答题目，引入一种融合实体召回和检测语句幻觉的多粒度自动化评估方案，旨在对大语言模型在儿科基础医疗领域中的性能进行全面、准确的评估，深入剖析其潜在局限性，为提升医疗服务的智能化水平奠定坚实的基础。",
+        "url": "http://www.j-bigdataresearch.com.cn/thesisDetails#10.11959/j.issn.2096-0271.2024058&lang=zh",
+        "doi": "10.11959/j.issn.2096-0271.2024058",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "大数据与计算模型",
+        "authors": [
+          "李国杰 "
+        ],
+        "year": 2024,
+        "venue": "大数据",
+        "abstract": "当前，人工智能持续升温，大语言模型吸引了众多人士的关注，并在全球范围内掀起了一股热潮。人工智能的成功本质上不是大算力“出奇迹”，而是改变了计算模型。首先，肯定了数据对于人工智能的基础性作用，指出合成数据将是未来数据的主要来源。然后，回顾了计算模型的发展历程，重点介绍了神经网络模型与图灵模型的历史性竞争；指出了大模型的重要标志是机器涌现智能，强调大模型的本质是“压缩”；分析了大模型产生“幻觉”的原因。最后，呼吁科技界在智能化科研中要重视大科学模型。",
+        "url": "https://www.infocomm-journal.com/bdr/CN/10.11959/j.issn.2096-0271.2024017",
+        "doi": "10.11959/j.issn.2096-0271.2024017",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Qwen2.5-7B框架效应的行为证据:Bianco-Shiller (2026) 方法论复现研究",
+        "authors": [
+          "Kakura, Otone"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Bianco与Shiller (2026) 通过行为和机械论追踪方法,在Gemma-2-9B-it上证明了大语言模型存在可分离的痛感-快感处理机制。本文采用受控框架条件的最小二元选择任务,在Qwen2.5-7B上复现了其行为范式。在高威胁框架下,模型表现出基准偏好的决定性反转(ΔF_H = 0.63, p &lt; 0.001),从对'2'的默认偏好翻转为偏好'3'。在低威胁和中立框架下,基准偏好得以维持。这些结果证实了Bianco和Shiller的行为学发现可推广至Qwen架构系列,为后续机械论探测提供了必要的行为学基础。",
+        "url": "https://zenodo.org/records/19987732",
+        "pdfUrl": "https://zenodo.org/api/records/19987732/files/Qwen_Valence_CN.pdf/content",
+        "doi": "10.5281/zenodo.19987732",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "AI辅助语言学研究",
+        "authors": [
+          "Sheng, Jinbiao"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘要 : 本文探讨了人工智能辅助语言学研究的多种方法,特别是提示工程( Prompt Engineering )在大语言模型中的应用。提示工程通过结构化输入和角色扮演等方法,提升了模型的准确性和效用。文章还介绍了 AI 代码生成、智能学术团队的构建以及大语言模型的本地化应用。通过具体案例,如《上海地方志》的标点和翻译,展示了 AI 在语言学研究中的潜力和应用前景。 关键词 : 提示工程、大语言模型、 AI 代码生成、智能学术团队、本地化应用、 GPT4All 、 LM Studio ,检索增强生成( RAG )",
+        "url": "https://zenodo.org/records/14787637",
+        "pdfUrl": "https://zenodo.org/api/records/14787637/files/AI%E8%BE%85%E5%8A%A9%E8%AF%AD%E8%A8%80%E5%AD%A6%E7%A0%94%E7%A9%B6.pdf/content",
+        "doi": "10.5281/zenodo.14787637",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "信息熵和齐夫定律在中文自然语言处理中的应用",
+        "authors": [
+          "Sheng, Jinbiao"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "【摘要】本文档主要讨论了信息熵的概念及其在中文处理中的应用。信息熵是衡量文本平均信息量的指标,表示语言的不确定性或压缩潜力。文中提供了具体的计算示例,展示了如何计算文字符号的信息熵贡献。中文常用汉字约3500个,高频汉字(前1000个)覆盖约90%的文本。根据单字计算信息熵为9.65,英文根据字母计算的信息熵为4.08,说明中文单字的信息量大且不确定性高。但是根据双音节和三音节或以上的组合计算,中文可能具有一定的优势。 文档还介绍了信息熵在AI训练中的应用,如在大语言模型(GPT、BERT)中的作用,文本压缩和语言复杂度分析等。文档讨论了齐夫定律与信息熵的关系,用具体例子说明高频词对熵贡献小,低频词贡献大,并分析了齐夫定律在大语言模型优化中的应用。 最后,讨论了现在网络流行的一些误导性的观点:1. AI训练依靠的是向量空间的维度和权重,简单地来说是某些语言符号的共现概率,比如苹果和香蕉同时…",
+        "url": "https://zenodo.org/records/15085036",
+        "pdfUrl": "https://zenodo.org/api/records/15085036/files/%E4%BF%A1%E6%81%AF%E7%86%B5%E5%92%8C%E9%BD%90%E5%A4%AB%E5%AE%9A%E5%BE%8B%E5%9C%A8%E4%B8%AD%E6%96%87%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8.pdf/content",
+        "doi": "10.5281/zenodo.15085036",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "核物理<bold>AI</bold>研究助手与<bold>arXiv</bold>向量数据库",
+        "authors": [
+          "庞 龙刚"
+        ],
+        "year": 2025,
+        "venue": "He jishu",
+        "abstract": "面对跨学科科学文献的指数级增长与现有检索系统的局限性，本研究基于arXiv平台266万篇论文数据集，创新开发了融合向量语义检索与大型语言模型（Large Language Model，LLM）分析的智能系统。通过构建论文向量数据库实现语义相似性初筛，结合LLM上下文推理优化排序，有效解决了传统关键词搜索的语义鸿沟问题以及LLM的幻觉问题。在核物理领域的应用表明，该系统能精准定位跨学科解决方案，对比特定任务上的关键词检索和向量相似度检索，前10篇文献的查全率从10%跃升到60%，查准率从20%跃升到90%。项目开源提供三大核心模块：1）全量论文向量数据库；2）智能检索优化框架（含查询生成、相关性分析等智能体）；3）PDF深度解析工具链。本研究突破性地将语义检索与LLM推理相结合，为应对知识爆炸时代的科研挑战提供了可扩展的解决方案（开源地址：<ext-link ext-link-type=\"u…",
+        "url": "https://www.sciengine.com/doi/10.11889/j.0253-3219.2025.hjs.48.250108",
+        "doi": "10.11889/j.0253-3219.2025.hjs.48.250108",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "面向老挝学生的国际中文教师肢体行为多模态研究",
+        "authors": [
+          "JIANG, Xiao"
+        ],
+        "year": 2026,
+        "venue": "Journal of Sinology and Chinese Language",
+        "abstract": "国际中文教师肢体行为作为非言语交际核心要素,与课堂语言模态形成互补强化关系。研究基于多模态话语分析理论,以老挝某大学三位国际中文教师和六十一名初级汉语学习者为对象,采用课堂观察、问卷调查与访谈法,系统考察教师肢体行为的应用特征、有效性及学生感知情况。研究发现,三位教师的肢体行为均以手势语和头势语为核心,距离语呈现低频高效的特点;肢体行为的总量、频率、有效性及类型分布因课型差异而呈现显著分化;老挝学生对教师手势语、表情语的认可度较高,但对目光语、距离语的感知存在偏差,部分肢体行为模态存在输出与感知的不匹配现象。基于此,研究从表情语、目光语、手势语、距离语四个维度提出针对性优化建议,强调教师肢体行为需遵循功能性、兼容性与合作性原则,为提升国际中文教学质量、构建多模态协同教学模式提供参考。",
+        "url": "https://zenodo.org/records/22011517",
+        "pdfUrl": "https://zenodo.org/api/records/22011517/files/JSCLE-10(2)-5.pdf/content",
+        "doi": "10.5281/zenodo.22011517",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "结构主义视角下\"把\"字句教学模式研究——基于汉乌语法差异的实证分析STRUKTURALIZM YONDASHUVI ASOSIDA XITOY TILIDAGI \"把\" KONSTRUKSIYASINI O'QITISH MODELI: XITOY VA O'ZBEK TILLARI GRAMMATIK TAFOVUTLARI ASOSIDAGI EMPIRIK TADQIQOT",
+        "authors": [
+          "To, Kwan Lai"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Ushbu maqolada strukturaviy tilshunoslik asosida xitoy tilidagi \"ba\" konstruksiyasini o'qitish modeli tahlil qilinadi. Tadqiqot xitoy va o'zbek tillari o'rtasidagi grammatik farqlarga asoslanadi. Natijalar formulaviy yondashuv grammatikani o'zlashtirish va qo'llashni samarali oshirishini ko'rsatadi.Kalit so'zlar: strukturaviy tilshunoslik, \"ba\" konstruksiyasi, xitoy tili, o'zbek tili, grammatik ta…",
+        "url": "https://zenodo.org/records/20545643",
+        "pdfUrl": "https://zenodo.org/api/records/20545643/files/itat-eastern-011.pdf/content",
+        "doi": "10.5281/zenodo.20545643",
+        "type": "conference",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "XITOY TILIDAGI ISH YURITISH HUJJATLARIDA FE'L SINONIMLARINING FUNKSIONAL TAHLILI: \"执行\", \"实施\" VA \"落实\" MISOLIDA",
+        "authors": [
+          "Akabirov Matlubxon Isroiljon o'g'li"
+        ],
+        "year": 2026,
+        "venue": "ILM-FAN XABARNOMASI",
+        "abstract": "Ushbu maqola xitoy tilidagi ish yuritish hujjatlarida eng ko'p qo'llaniladigan fe'l sinonimlaridan biri bo'lgan \" 执 行 \" (zh&iacute;x&iacute;ng), \" 实 施 \" (sh&iacute;shī) va \" 落 实 \" (lu&ograve;sh&iacute;) birliklarining leksik-semantik, funksional va pragmatik xususiyatlarini tahlil qilishga bag'ishlangan. Mazkur fe'llar umumiy ma'noda \"amalga oshirish\" tushunchasini ifodalasa-da, ularning semantik …",
+        "url": "https://zenodo.org/records/22035644",
+        "pdfUrl": "https://zenodo.org/api/records/22035644/files/751-756.pdf/content",
+        "doi": "10.5281/zenodo.22035644",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "追忆我的良师益友和学习楷模：盛志勇院士",
+        "authors": [
+          "郭 振."
+        ],
+        "year": 2025,
+        "url": "https://europepmc.org/article/PMC/PMC11879733",
+        "pdfUrl": "https://europepmc.org/articles/PMC11879733/pdf",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "跨語言國際音標識別初探",
+        "authors": [
+          "Wang, Tianheng"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "近年来,语音识别技术迅猛发展,多语言语音识别已相当成熟,但仍局限于具体语言的正字法,只适用于已知语言,并非真正的跨语言语音识别。基于国际音标的通用音素识别的可行性尚待探索。我们整理了已收集的一些中国境内语言的录音与音标转写平行材料,构成数据集,尝试开发跨语言国际音标识别模型。经训练,模型实现了 70% 以上的绝对识别正确率。对识别错误的统计显示,其音素混淆情况反映了音素间的声学相似性,并且符合人类听感。这验证了跨语言国际音标识别的可行性。国际音标识别模型有望在田野调查、语料转写、新语言正字法设计等场景提供有力支持。",
+        "url": "https://zenodo.org/records/14643930",
+        "pdfUrl": "https://zenodo.org/api/records/14643930/files/%E8%B7%A8%E8%AA%9E%E8%A8%80%E5%9C%8B%E9%9A%9B%E9%9F%B3%E6%A8%99%E8%AD%98%E5%88%A5%E5%88%9D%E6%8E%A2.pdf/content",
+        "doi": "10.5281/zenodo.14643930",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Magnetic Induction Differential Monitoring Dataset for Left- and Right-Side Brain Hemorrhage",
+        "authors": [
+          "Chen, guochong"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "描述: 该数据集包含用于脑内出血差别磁诱导监测的模拟、幻影和动物实验数据。它包括通过多线圈系统获得的相位和幅度测量,用于检测左右脑出血。 模拟数据: 通过计算建模,利用不同出血部位和大小的脑组织来预测预期的相位反应。 幻影数据: 模拟组织幻影的测量,模拟不同出血情景,提供受控的实验验证。 动物实验数据: 在动物模型中进行体内测量,以验证系统在现实生物条件下的性能。",
+        "url": "https://zenodo.org/records/18052812",
+        "doi": "10.5281/zenodo.18052812",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "视觉-语言预训练(VLP)技术介绍",
+        "authors": [
+          "breezedeus"
+        ],
+        "year": 2022,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "对当前的视觉-语言预训练(Vision-Language Pretraining, VLP) 技术做了概要介绍,也可以看成是对当前多模态学习(Multi-Modal Learning)技术的概要介绍。 可参考对应的 B站分享视频 。 Also can be found:&nbsp; https://github.com/breezedeus/LoveShare .",
+        "url": "https://zenodo.org/records/7223269",
+        "pdfUrl": "https://zenodo.org/api/records/7223269/files/Intro-to-VLP.pdf/content",
+        "doi": "10.5281/zenodo.7223269",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "color ontology",
+        "authors": [
+          "Luo, Yuqi"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "color模型是基于OWL(网络本体语言)进行设计。color支持对颜色、色彩空间等的描述。",
+        "url": "https://zenodo.org/records/10579840",
+        "doi": "10.5281/zenodo.10579840",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "基于视觉语言模型的具身智能机器人操作研究",
+        "authors": [
+          "丽 陆"
+        ],
+        "year": 2026,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0805-3",
+        "doi": "10.37155/2717-5170-0805-3",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "大模型辅助的低空文旅起降点语言景观多模态语料库构建框架研究",
+        "authors": [
+          "艺尧 郝",
+          "思雨 夏"
+        ],
+        "year": 2026,
+        "venue": "人文社会发展",
+        "url": "https://doi.org/10.54254/3049-7825/2026.37759",
+        "doi": "10.54254/3049-7825/2026.37759",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于视觉——语言模型的医学影像描述文献综述",
+        "authors": [],
+        "year": 2024,
+        "venue": "科技创新发展",
+        "url": "https://doi.org/10.69979/3041-0673.24.6.024",
+        "doi": "10.69979/3041-0673.24.6.024",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "适应视觉语言模型实现通用深度伪造检测",
+        "authors": [
+          "Bo Liu",
+          "Qinghui He",
+          "Yang Wei",
+          "Xiuli Bi",
+          "Jianfeng Ma",
+          "Bin Xiao"
+        ],
+        "year": 2024,
+        "venue": "SCIENTIA SINICA Informationis",
+        "url": "https://doi.org/10.1360/ssi-2024-0289",
+        "doi": "10.1360/ssi-2024-0289",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "医疗广告文本的动机",
+        "authors": [
+          "Abuzalova Mehriniso Kadirovna",
+          "Nazarova Saida Axmadjanovna",
+          "Sobirova Dilnoza Rasulovna"
+        ],
+        "year": 2021,
+        "venue": "中华劳动卫生职业病杂志2021年5月第39卷第6期  Chin J Ind Hyg Occup Dis,  2021, Vol.39,  No.6",
+        "abstract": "摘要 &nbsp;&nbsp;&nbsp;&nbsp; 众所周知,广告意味着向公众介 绍产品或服务,解释其优势和机会。这个过程主要通过语言进行。广告在产品推广过程中向公众传达一定的信息,同时对其心理和智力状态产生快速影响。我们母语的潜力也体现在广告中。从这个角度来看,医疗广告的社会性和实用性研究是相关的。本文讨论了广泛用于广告中以激励消费者购买特定药物的动机。这些观点得到了媒体中医疗广告的例 子的支持。",
+        "url": "https://zenodo.org/records/5243141",
+        "doi": "10.5281/zenodo.5243141",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "乌兹别克文语法的解释和遗漏问题",
+        "authors": [
+          "Rano Raufovna Sayfullaeva",
+          "Shohida Shahabiddinovna Hoshimovna",
+          "Nazarova Saida Axmadjanovna"
+        ],
+        "year": 2021,
+        "venue": "中华劳动卫生职业病杂志2021年5月第39卷第6期  Chin J Ind Hyg Occup Dis,  2021",
+        "abstract": "摘要:复合句的基 础及其分离分类在现代乌兹别克语语言学中常见的一些现象的解释中引起了一些问题。这些问题的主要因素是 NK Dmitriev, AN Kononov, G.Abdurahmanov, M.Askarova 在他 们的作品中没有研究突厥语的共同语言,包括乌兹别克语,因为它的性质、内部法律、欧洲语言学,包括以 FF Fortunatov 、 AM Peshkovsky 、 VV Vinogradov 为首的莫斯科语言学派的理论,即以 &ldquo; 占有 &rdquo; 为中心的言语评价理论,以及复合句 . 土耳其 语 语言的语法结构不同于印欧语言的语法结构,因为形容词、动作名词形式的发展非常广泛。",
+        "url": "https://zenodo.org/records/5246672",
+        "doi": "10.5281/zenodo.5246672",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "乌兹别克语医学委婉语分类",
+        "authors": [
+          "Rano R. Sayfullaeva",
+          "Gaybullaeva I. Nafisa"
+        ],
+        "year": 2021,
+        "venue": "中华劳动卫生职业病杂志2021年5月第39卷第6期  Chin J Ind Hyg Occup Dis,  2021",
+        "abstract": "摘要 背景。在 语言学中,委婉语是许多研究的主题。科学文献对这种现象给出了不同的描述,这表明委婉语是多方面的,具有不断变化的性质。一种现代语言学的委婉语方法,用来代替社会成员之间在道德和文化上不合适的词语,尤其是医患交流中的医学委婉语,以得出新的科学和理论结论,它们的词汇语义、方法论功能、语言语用,性别和结构 解 释特征很重要。本文确定了医学委婉语的结构组。我们按以 下 顺序表示。委婉语的特点是高度的流动性。它还用于替换禁忌( tabooled ) 词。例如:去死地;就像肿瘤部位的肿瘤。在语言中使用委婉语已被塑造为与禁忌现象相关的历史民族志现象。委婉语与国家的习俗、文化水平、审美趣味和民族规范的发展有关。随着语言的发展,其中的委婉语层也在发展。在新道德、新世界观、新形式的基础上出现。委婉语是一种偶然的、个别的、语境单位,它有目的地代替某个词或短语,软化表达原意的词, &ldquo; 包在 …",
+        "url": "https://zenodo.org/records/5246429",
+        "doi": "10.5281/zenodo.5246429",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "英语和乌兹别克语次标准中的同化和野蛮的比较分析",
+        "authors": [
+          "1.\tDilafruz Satimova",
+          "2.\tAshurkhon Matkarimova",
+          "3.\tGulnora Nasirova",
+          "4.\tIrodahon Rahimova",
+          "5.\tErkinoy Turgunova",
+          "6.\tKhurshidakhon Azamjonova"
+        ],
+        "year": 2021,
+        "venue": "中华劳动卫生职业病杂志2021年5月第39卷第6期  Chin J Ind Hyg Occup Dis,  2021",
+        "abstract": "摘要 &nbsp;&nbsp;&nbsp;&nbsp; 本研究通 过实例揭示了英语和乌兹别克语不合标准的同化和野蛮行为的比较分析。在世界语言学中,对不同结构语言的相互作用和丰富性的研究受到 了极大的关注。因此,在形式和 词汇语义层面研究语言关系和同化的类型学是现代语言学的当前问题之一。世界语言学选题相关性的特点是英语和乌兹别克语在历时和同步方面的研究不足,在相关和非相关语言的词汇中间接和间接遇到。",
+        "url": "https://zenodo.org/records/5230430",
+        "doi": "10.5281/zenodo.5230430",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      }
+    ],
+    "errors": [
+      "OpenAlex: OpenAlex HTTP 429",
+      "Semantic Scholar: Semantic Scholar 限流，请稍后重试",
+      "DBLP: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "OpenAIRE: OpenAIRE HTTP 409"
+    ]
+  }
+}

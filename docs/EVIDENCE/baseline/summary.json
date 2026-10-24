@@ -1,0 +1,248 @@
+{
+  "base": "https://paperscout.pages.dev",
+  "capturedAt": "2026-10-24T04:31:31.408Z",
+  "queries": [
+    {
+      "id": "q01",
+      "query": "large language model hallucination",
+      "params": {},
+      "httpStatus": 200,
+      "elapsedMs": 14424,
+      "total": 150,
+      "papersLen": 150,
+      "sourcesOk": 9,
+      "sourcesTotal": 11,
+      "cooldownCount": 0,
+      "upstreamErrors": [
+        "OpenAlex: OpenAlex HTTP 429",
+        "DBLP: Unexpected token '<', \"<!doctype \"... is not valid JSON"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 7,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q02",
+      "query": "大语言模型 幻觉",
+      "params": {
+        "language": "zh"
+      },
+      "httpStatus": 200,
+      "elapsedMs": 13792,
+      "total": 54,
+      "papersLen": 54,
+      "sourcesOk": 7,
+      "sourcesTotal": 11,
+      "cooldownCount": 0,
+      "upstreamErrors": [
+        "OpenAlex: OpenAlex HTTP 429",
+        "Semantic Scholar: Semantic Scholar 限流，请稍后重试",
+        "DBLP: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+        "OpenAIRE: OpenAIRE HTTP 409"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q03",
+      "query": "10.1038/s41586-023-06221-2",
+      "params": {},
+      "httpStatus": 200,
+      "elapsedMs": 12816,
+      "total": 21,
+      "papersLen": 21,
+      "sourcesOk": 5,
+      "sourcesTotal": 11,
+      "cooldownCount": 0,
+      "upstreamErrors": [
+        "OpenAlex: OpenAlex HTTP 429",
+        "Semantic Scholar: Semantic Scholar 限流，请稍后重试",
+        "PubMed: PubMed HTTP 429",
+        "DBLP: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+        "OpenAIRE: OpenAIRE HTTP 409",
+        "Zenodo: Zenodo HTTP 500"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q04",
+      "query": "CRISPR base editing",
+      "params": {
+        "sources": "pubmed,openalex"
+      },
+      "httpStatus": 502,
+      "elapsedMs": 835,
+      "total": null,
+      "papersLen": 0,
+      "sourcesOk": null,
+      "sourcesTotal": null,
+      "cooldownCount": null,
+      "upstreamErrors": [],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": null,
+      "fetchError": null
+    },
+    {
+      "id": "q05",
+      "query": "graph neural network",
+      "params": {
+        "paperType": "conference"
+      },
+      "httpStatus": 200,
+      "elapsedMs": 7679,
+      "total": 41,
+      "papersLen": 41,
+      "sourcesOk": 8,
+      "sourcesTotal": 11,
+      "cooldownCount": 2,
+      "upstreamErrors": [
+        "PubMed: PubMed HTTP 429"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q06",
+      "query": "LoRA fine-tuning",
+      "params": {
+        "yearFrom": "2023"
+      },
+      "httpStatus": 200,
+      "elapsedMs": 7874,
+      "total": 118,
+      "papersLen": 118,
+      "sourcesOk": 7,
+      "sourcesTotal": 11,
+      "cooldownCount": 3,
+      "upstreamErrors": [
+        "Semantic Scholar: Semantic Scholar 限流，请稍后重试"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 6,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q07",
+      "query": "single cell RNA sequencing",
+      "params": {
+        "sort": "citations"
+      },
+      "httpStatus": 200,
+      "elapsedMs": 7910,
+      "total": 117,
+      "papersLen": 117,
+      "sourcesOk": 7,
+      "sourcesTotal": 11,
+      "cooldownCount": 3,
+      "upstreamErrors": [
+        "Semantic Scholar: Semantic Scholar 限流，请稍后重试"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q08",
+      "query": "量子计算 纠错",
+      "params": {
+        "language": "zh"
+      },
+      "httpStatus": 200,
+      "elapsedMs": 7840,
+      "total": 56,
+      "papersLen": 56,
+      "sourcesOk": 6,
+      "sourcesTotal": 11,
+      "cooldownCount": 3,
+      "upstreamErrors": [
+        "Semantic Scholar: Semantic Scholar 限流，请稍后重试",
+        "OpenAIRE: OpenAIRE HTTP 409"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q09",
+      "query": "author:yoshuabengio",
+      "params": {},
+      "httpStatus": 200,
+      "elapsedMs": 7681,
+      "total": 20,
+      "papersLen": 20,
+      "sourcesOk": 7,
+      "sourcesTotal": 11,
+      "cooldownCount": 4,
+      "upstreamErrors": [],
+      "dupByDoi": 0,
+      "dupByTitle": 14,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q10",
+      "query": "the of and",
+      "params": {},
+      "httpStatus": 200,
+      "elapsedMs": 8370,
+      "total": 80,
+      "papersLen": 80,
+      "sourcesOk": 7,
+      "sourcesTotal": 11,
+      "cooldownCount": 4,
+      "upstreamErrors": [],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q11",
+      "query": "asdfqwerzzz",
+      "params": {},
+      "httpStatus": 200,
+      "elapsedMs": 7612,
+      "total": 0,
+      "papersLen": 0,
+      "sourcesOk": 7,
+      "sourcesTotal": 11,
+      "cooldownCount": 4,
+      "upstreamErrors": [],
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "cached": false,
+      "fetchError": null
+    },
+    {
+      "id": "q12",
+      "query": "'; DROP TABLE favorites;--",
+      "params": {},
+      "httpStatus": 200,
+      "elapsedMs": 8291,
+      "total": 60,
+      "papersLen": 60,
+      "sourcesOk": 6,
+      "sourcesTotal": 11,
+      "cooldownCount": 4,
+      "upstreamErrors": [
+        "DOAJ: DOAJ HTTP 403"
+      ],
+      "dupByDoi": 0,
+      "dupByTitle": 1,
+      "cached": false,
+      "fetchError": null
+    }
+  ]
+}

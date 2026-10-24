@@ -1,0 +1,2178 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=LoRA+fine-tuning&limit=20&yearFrom=2023",
+  "response": {
+    "cached": false,
+    "total": 118,
+    "page": 1,
+    "language": "all",
+    "paperType": "all",
+    "sourcesOk": 7,
+    "sourcesTotal": 11,
+    "cooldown": [
+      "OpenAlex",
+      "PubMed",
+      "DBLP"
+    ],
+    "papers": [
+      {
+        "title": "LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement",
+        "authors": [
+          "Zhang, Letian",
+          "Bian, Jieming",
+          "Wang, Lei",
+          "Xu, Jie",
+          "Letian Zhang",
+          "Jieming Bian",
+          "Lei Wang",
+          "Jie Xu",
+          "Letian Zhang",
+          "Lei Wang 0199",
+          "Jieming Bian",
+          "Jie Xu 0001"
+        ],
+        "year": 2025,
+        "venue": "2025 IEEE/CVF International Conference on Computer Vision (ICCV)",
+        "url": "https://doi.org/10.1109/iccv51701.2025.00356",
+        "doi": "10.1109/iccv51701.2025.00356",
+        "citations": 17,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref / OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "RW-LoRA: Communication-Efficient Decentralized LoRA Fine-Tuning via Random Walks",
+        "authors": [
+          "Xingran Chen",
+          "Rohit Bhagat",
+          "Ghadir Ayache",
+          "Rawad Bitar",
+          "Yanmin Gong",
+          "Salim El Rouayheb"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Parameter-efficient fine-tuning methods such as LoRA have become a standard approach for adapting large foundation models. Adopting fine-tuning to distributed settings faces several challenges. Most existing distributed LoRA methods rely on centralized aggregation, and gossip-based decentralized LoRA requires repeated synchronization among multiple model copies. Both methods incur significant communication overhead and introduce errors due to simultaneous aggregation of multiple model updates. In this paper, we take a different perspective and propose a random-walk-based LoRA fine-tuning scheme. Instead of maintaining multiple model replicas, a single model token traverses the network and is updated sequentially using local fine-tuning objectives. This design eliminates the need for global synchronization, substantially reduces communication and computation costs, and avoids aggregation errors. We provide rigorous convergence guarantees for non-convex objectives under standard assumptions. Through empirical results on multiple NLP tasks and graph topologies, we show that the proposed method achieves competitive task performance with substantially less communication and computation than gossip-based LoRA.",
+        "url": "http://arxiv.org/abs/2609.00078",
+        "pdfUrl": "http://arxiv.org/pdf/2609.00078",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "MineGrad: Gradient Inversion Attacks on LoRA Fine-Tuning",
+        "authors": [
+          "Hasin Us Sami",
+          "Swapneel Sen",
+          "Basak Guler"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Parameter-efficient fine-tuning (PEFT), such as low-rank adaptation (LoRA), has recently been adopted in federated learning to reduce communication and computation costs. In this setup, users download a pretrained model from the server prior to fine-tuning, and then fine-tune lightweight LoRA modules locally while keeping the pretrained model frozen, sharing only the gradients of the fine-tuning parameters with the server. Despite its growing popularity, robustness of federated fine-tuning against an adversarial server remains underexplored, where the server maliciously tampers with the training protocol to breach the privacy of users' data. In this work, we investigate gradient inversion attacks on LoRA fine-tuning. We propose an analytical attack that enables a malicious server to recover private user data by leveraging a poisoned pretrained model and fine-tuning parameters. Our design embeds fine-tuning data within the shared gradients, to allow the server to analytically reconstruct user data. Unlike prior works, our attack is applicable to both language and vision tasks, does not rely on computationally expensive (adversarial) pretraining with public datasets or require the number of training tokens to be less than the rank of LoRA modules. Experimental results on both language and vision tasks demonstrate high-fidelity data recovery across multiple baselines, revealing several critical vulnerabilities.",
+        "url": "http://arxiv.org/abs/2608.01521",
+        "pdfUrl": "http://arxiv.org/pdf/2608.01521",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Reducing Hallucinations in Domain-Specific LLMs via LoRA Fine-Tuning: A Production Case Study",
+        "authors": [
+          "Polina, Sai Avinash"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Large language models (LLMs) exhibit strong performance across natural&nbsp; language tasks, yet their tendency to hallucinate remains a fundamental&nbsp; barrier to deployment in domain-specific production settings. This paper&nbsp; presents a production case study demonstrating that LoRA fine-tuning on&nbsp; 12,000 domain documents reduces hallucination rates by 22% relative to&nbsp; Llama 3.1 8…",
+        "url": "https://zenodo.org/records/20574721",
+        "pdfUrl": "https://zenodo.org/api/records/20574721/files/Reducing_Hallucinations_in_Domain_Specific_LLMs_via_LoRA_Fine_Tuning__A_Production_Case_Study.pdf/content",
+        "doi": "10.13140/RG.2.2.34145.67682",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Targeted Lexical Injection: Unlocking Latent Cross-Lingual Alignment in Lugha-Llama via Early-Layer LoRA Fine-Tuning",
+        "authors": [
+          "Stanley Ngugi"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities, yet their performance in low-resource languages (LRLs), such as Swahili, often lags due to data scarcity and underrepresentation in pre-training. A key challenge is achieving robust cross-lingual lexical alignment, crucial for tasks like translation and cross-lingual information retrieval. This paper introduces Targeted Lexical Injection (TLI), a novel and efficient fine-tuning approach. We first demonstrate that Lugha-Llama-8B-wura, a Swahili-centric LLM, exhibits strong, near-perfect lexical alignment for Swahili-English word pairs in its early internal layers (specifically Layer 2, with ~0.99998 average cosine similarity based on a pilot study), a capability not fully reflected in its final output representations (baseline ~0.32 similarity on our evaluation set). TLI leverages this insight by using Low-Rank Adaptation (LoRA) and a contrastive learning objective to fine-tune the model, specifically targeting embeddings from this empirically identified optimal early layer. Our experiments show that TLI significantly improves the output-level lexical alignment for 623 trained Swahili-English word pairs, increasing average cosine similarity from 0.3211 to 0.4113 (+28.08%, p < 1.33 x 10^-240). More importantly, these improvements generalize remarkably well to 63 unseen control word pairs, with similarity increasing from 0.3143 to 0.4033 (+28.32%, p < 7.17 x 10^-27). These findings suggest TLI enhances the model's ability to preserve and propagate its inherent early-layer cross-lingual knowledge, offering a parameter-efficient and effective strategy for improving lexical alignment in LRL-focused LLMs.",
+        "url": "http://arxiv.org/abs/2506.15415",
+        "pdfUrl": "http://arxiv.org/pdf/2506.15415",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "LoRAFusion: Efficient LoRA Fine-Tuning for LLMs",
+        "authors": [
+          "Zhanda Zhu",
+          "Qidong Su",
+          "Yaoyao Ding",
+          "Kevin Song",
+          "Shang Wang",
+          "Gennady Pekhimenko"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Low-Rank Adaptation (LoRA) has become the leading Parameter-Efficient Fine-Tuning (PEFT) method for Large Language Models (LLMs), as it significantly reduces GPU memory usage while maintaining competitive fine-tuned model quality on downstream tasks. Despite these benefits, we identify two key inefficiencies in existing LoRA fine-tuning systems. First, they incur substantial runtime overhead due to redundant memory accesses on large activation tensors. Second, they miss the opportunity to concurrently fine-tune multiple independent LoRA adapters that share the same base model on the same set of GPUs. This leads to missed performance gains such as reduced pipeline bubbles, better communication overlap, and improved GPU load balance. To address these issues, we introduce LoRAFusion, an efficient LoRA fine-tuning system for LLMs. At the kernel level, we propose a graph-splitting method that fuses memory-bound operations. This design eliminates unnecessary memory accesses and preserves the performance of compute-bound GEMMs without incurring the cost of recomputation or synchronization. At the scheduling level, LoRAFusion introduces an adaptive batching algorithm for multi-job fine-tuning. It first splits LoRA adapters into groups to intentionally stagger batch execution across jobs, and then solves a bin-packing problem within each group to generate balanced, dependency-aware microbatches. LoRAFusion achieves up to $1.96\\times$ ($1.47\\times$ on average) end-to-end speedup compared to Megatron-LM, and up to $1.46\\times$ ($1.29\\times$ on average) improvement over mLoRA, the state-of-the-art multi-LoRA fine-tuning system. Our fused kernel achieves up to $1.39\\times$ ($1.27\\times$ on average) kernel performance improvement and can directly serve as a plug-and-play replacement in existing LoRA systems. We open-source LoRAFusion at https://github.com/CentML/lorafusion.",
+        "url": "http://arxiv.org/abs/2510.00206",
+        "pdfUrl": "http://arxiv.org/pdf/2510.00206",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "CE-LoRA: Computation-Efficient LoRA Fine-Tuning for Language Models",
+        "authors": [
+          "Guanduo Chen",
+          "Yutong He",
+          "Yipeng Hu",
+          "Kun Yuan",
+          "Binhang Yuan"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Large Language Models (LLMs) demonstrate exceptional performance across various tasks but demand substantial computational resources even for fine-tuning computation. Although Low-Rank Adaptation (LoRA) significantly alleviates memory consumption during fine-tuning, its impact on computational cost reduction is limited. This paper identifies the computation of activation gradients as the primary bottleneck in LoRA's backward propagation and introduces the Computation-Efficient LoRA (CE-LoRA) algorithm, which enhances computational efficiency while preserving memory efficiency. CE-LoRA leverages two key techniques: Approximated Matrix Multiplication, which replaces dense multiplications of large and complete matrices with sparse multiplications involving only critical rows and columns, and the Double-LoRA technique, which reduces error propagation in activation gradients. Theoretically, CE-LoRA converges at the same rate as LoRA, $ \\mathcal{O}(1/\\sqrt{T}) $, where $T$ is the number of iteartions. Empirical evaluations confirm that CE-LoRA significantly reduces computational costs compared to LoRA without notable performance degradation.",
+        "url": "http://arxiv.org/abs/2502.01378",
+        "pdfUrl": "http://arxiv.org/pdf/2502.01378",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement",
+        "authors": [
+          "Jieming Bian",
+          "Lei Wang",
+          "Letian Zhang",
+          "Jie Xu"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Foundation models (FMs) achieve strong performance across diverse tasks with task-specific fine-tuning, yet full parameter fine-tuning is often computationally prohibitive for large models. Parameter-efficient fine-tuning (PEFT) methods like Low-Rank Adaptation (LoRA) reduce this cost by introducing low-rank matrices for tuning fewer parameters. While LoRA allows for efficient fine-tuning, it requires significant data for adaptation, making Federated Learning (FL) an appealing solution due to its privacy-preserving collaborative framework. However, combining LoRA with FL introduces two key challenges: the \\textbf{Server-Side Aggregation Bias}, where server-side averaging of LoRA matrices diverges from the ideal global update, and the \\textbf{Client-Side Initialization Lag}, emphasizing the need for consistent initialization across rounds. Existing approaches address these challenges individually, limiting their effectiveness. We propose LoRA-FAIR, a novel method that tackles both issues by introducing a correction term on the server, enhancing aggregation efficiency and accuracy. LoRA-FAIR maintains computational and communication efficiency, yielding superior performance over state-of-the-art methods. Experimental results on ViT and MLP-Mixer models across large-scale datasets demonstrate that LoRA-FAIR consistently achieves performance improvements in FL settings.",
+        "url": "http://arxiv.org/abs/2411.14961",
+        "pdfUrl": "http://arxiv.org/pdf/2411.14961",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "When Adaptation Hurts: RAG and LoRA Fine-Tuning Can Degrade Risk-Tier Calibration in Small-Model Psychiatric Diagnosis",
+        "authors": [
+          "Dhanda K."
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract We report a real, executed comparison of two common LLM adaptation strategies — retrieval-augmented generation (RAG) and LoRA fine-tuning — against zero-shot baselines, for psychiatric diagnosis on the same 24-case held-out vignette set (DSM-Bench-24) used throughout our companion papers. RAG was evaluated on two local models (llama3.2:1b, llama3.2:3b, via Ollama); LoRA fine-tuning was ev…",
+        "url": "https://doi.org/10.21203/rs.3.rs-11269035/v1",
+        "doi": "10.21203/rs.3.rs-11269035/v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Non-generative readout with few-label calibration versus LoRA fine-tuning of a large language model for ASA physical status classification: accuracy, speed, cost and label efficiency in three data sources",
+        "authors": [
+          "Shi Y",
+          "Wang Y",
+          "Simayi A",
+          "Qu L",
+          "Xu G."
+        ],
+        "year": 2026,
+        "venue": "medRxiv",
+        "abstract": "Background: The American Society of Anesthesiologists Physical Status (ASA-PS) class underpins perioperative risk communication, but its assignment is subjective. Generative large language models (LLMs) are slow and costly, and LoRA fine-tuning needs site-specific labels and a separately maintained adapter for every site. Non-generative decision models return option probabilities in one forward pa…",
+        "url": "https://doi.org/10.64898/2026.10.20.26366028",
+        "doi": "10.64898/2026.10.20.26366028",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Full-parameter fine-tuning vs. LoRA fine-tuning on PULI models",
+        "authors": [
+          "Kristóf Varga",
+          "Péter Hatvani",
+          "Zijian Győző Yang"
+        ],
+        "year": 2025,
+        "venue": "Proceedings of the International Conference on Formal Methods and Foundations of Artificial Intelligence",
+        "abstract": "In this study, we compare full-parameter fine-tuning and parameter- efficient LoRA on various Hungarian PULI large language models, evaluating their performance across six Hungarian language understanding benchmarks. While full-parameter fine-tuning updates all model weights and requires substantial computational resources, LoRA adapts a smaller subset of parameters, enabling more efficient traini…",
+        "url": "https://doi.org/10.17048/fmfai.2025.226",
+        "doi": "10.17048/fmfai.2025.226",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref / OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Enhancing privacy-preserving deployable large language models for perioperative complication detection: a targeted strategy with LoRA fine-tuning",
+        "authors": [
+          "Shaowei Gao",
+          "Xu Zhao",
+          "Lihui Chen",
+          "Junrong Yu",
+          "Shuning Tian",
+          "Huaqiang Zhou",
+          "Jingru Chen",
+          "Sizhe Long",
+          "Qiulan He",
+          "Xia Feng"
+        ],
+        "year": 2025,
+        "venue": "npj Digital Medicine",
+        "abstract": "Abstract Perioperative complications are a major global concern, yet manual detection suffers from 27% under‑reporting and frequent misclassification. Clinical LLM deployment is constrained by data sovereignty, compute cost, and limited locally deployable model performance. We show targeted prompt engineering plus Low‑Rank Adaptation (LoRA) fine‑tuning converts smaller open‑source LLMs into expert…",
+        "url": "https://doi.org/10.1038/s41746-025-02139-3",
+        "doi": "10.1038/s41746-025-02139-3",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Adapting Whisper for Hindi-English Code-Switched ASR: Prompt Injection vs. LoRA Fine-Tuning",
+        "authors": [
+          "Vedant Mhatre"
+        ],
+        "year": 2026,
+        "abstract": "Intra-sentential Hindi-English code-switching presents a challenge for Whisper's decoder that relies on static languageprefix tokens, which results in cross-attention misalignment, autoregressive insertion loops and hallucination where the transition in languages occurs. This paper presents a comparative study of two adaptation strategies, viz textual prompt injection and Low-Rank Adaptation (LoRA…",
+        "url": "https://doi.org/10.2139/ssrn.7292658",
+        "doi": "10.2139/ssrn.7292658",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Fine-Tuning Transformers Efficiently: A Survey on LoRA and Its Impact",
+        "authors": [
+          "Muchen Huan",
+          "Jianhong Shun"
+        ],
+        "year": 2025,
+        "abstract": "The rapid growth of Large Language Models (LLMs) has revolutionized natural language processing (NLP), enabling remarkable advancements in text generation, machine translation, and various downstream applications. However, fine-tuning these models remains computationally expensive due to their vast number of parameters. Low-Rank Adaptation (LoRA) has emerged as a highly efficient parameter-efficie…",
+        "url": "https://doi.org/10.20944/preprints202502.1637.v1",
+        "doi": "10.20944/preprints202502.1637.v1",
+        "citations": 6,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Dynamic LoRA Fine-Tuning of DINOv3 for Multi-Component Pasture Biomass Estimation.",
+        "authors": [
+          "Sen S",
+          "Dhankhar N",
+          "Bayat A."
+        ],
+        "year": 2026,
+        "abstract": "Accurate estimation of pasture biomass components from imagery is essential for sustainable grazing management and precision agriculture. Conventional methods such as destructive harvesting, rising plate meters, and remote sensing are limited by scalability, reliability, or the ability to disaggregate biomass by species. We propose a parameter-efficient multi-output regression framework predicting…",
+        "url": "https://doi.org/10.3390/s26165285",
+        "pdfUrl": "https://europepmc.org/articles/PMC13517550/pdf",
+        "doi": "10.3390/s26165285",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Going Beyond LoRA Fine-Tuning with Hebb Learning: Blazingly Fast and Accurate",
+        "authors": [
+          "Trutnev, Aleksei",
+          "Tugaryov, Artyom",
+          "Blyudova, Vasilisa",
+          "Frolova, Olga",
+          "Novikova, Irina",
+          "Zharikov, Egor",
+          "Salnikov, Igor",
+          "Demidovskij, Alexander",
+          "Ignatiev, Yuri",
+          "Yuri Ignatiev",
+          "Irina Novikova",
+          "Vasilisa Blyudova"
+        ],
+        "year": 2025,
+        "venue": "IOS Press",
+        "url": "https://doi.org/10.3233/faia251089",
+        "doi": "10.3233/faia251089",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "LowRA: Accurate and Efficient LoRA Fine-Tuning of LLMs under 2 Bits",
+        "authors": [
+          "Kunle Olukotun",
+          "Qizheng Zhang",
+          "Hermann Kumbong",
+          "Zikai Zhou",
+          "Kunle Olukotun",
+          "Qizheng Zhang",
+          "Hermann Kumbong",
+          "Zikai Zhou",
+          "Zhang, Qizheng",
+          "Olukotun, Kunle",
+          "Kumbong, Hermann",
+          "Zhou, Zikai"
+        ],
+        "year": 2025,
+        "url": "https://dblp.org/rec/conf/icml/ZhouZKO25.html",
+        "doi": "10.48550/arxiv.2502.08141",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Retraction-Free Optimization Over the Stiefel Manifold for the LoRA Fine-Tuning.",
+        "authors": [
+          "Zhang Y",
+          "Hu J",
+          "Lai Z",
+          "Lin L",
+          "Wen Z."
+        ],
+        "year": 2026,
+        "abstract": "Optimization over the Stiefel manifold plays a significant role in various machine learning tasks. Existing methods either use the retraction operators, requiring costly orthonormalization for large-scale matrices, or employ landing methods that rely on careful step size selection and penalty parameter tuning. To address these challenges, we propose a retraction-free and penalty parameter-free alg…",
+        "url": "https://doi.org/10.1109/tpami.2026.3711595",
+        "doi": "10.1109/tpami.2026.3711595",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Digital Extraction of Mongolian Traditional Patterns Based on LoRA Fine-Tuning Method",
+        "authors": [
+          "JiaTong Liu",
+          "xin yu",
+          "yue Huang bupt"
+        ],
+        "year": 2025,
+        "url": "https://doi.org/10.2139/ssrn.5527618",
+        "doi": "10.2139/ssrn.5527618",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Revolutionizing Large Model Fine-Tuning: The Role of LoRA in Parameter-Efficient Adaptation",
+        "authors": [
+          "Jianhong Shun",
+          "Chang Zheng"
+        ],
+        "year": 2025,
+        "abstract": "Fine-tuning large-scale neural networks for specific tasks often requires significant computational power and memory, making it an expensive and resource-intensive process. To address this issue, Parameter-Efficient Fine-Tuning (PEFT) methods have been introduced, enabling adaptation with a reduced number of trainable parameters. Among these techniques, Low-Rank Adaptation (LoRA) has gained widesp…",
+        "url": "https://doi.org/10.36227/techrxiv.174015835.57150536/v1",
+        "doi": "10.36227/techrxiv.174015835.57150536/v1",
+        "citations": 1,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Learning Rate Matters: Vanilla LoRA May Suffice for LLM Fine-tuning",
+        "authors": [
+          "Yu-Ang Lee",
+          "Ching-Yun Ko",
+          "Pin-Yu Chen",
+          "Mi-Yen Yeh"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Low-Rank Adaptation (LoRA) is the prevailing approach for efficient large language model (LLM) fine-tuning. Building on this paradigm, recent studies have proposed alternative initialization strategies, architectural modifications, and optimization adjustments, reporting substantial improvements over vanilla LoRA. However, these gains are often demonstrated under fixed or narrowly tuned hyperparameter settings, despite the known sensitivity of neural networks to training configurations. In this work, we systematically re-evaluate nine representative LoRA variants alongside vanilla LoRA through extensive hyperparameter searches over learning rate, batch size, rank, and training duration. Across tasks spanning mathematical reasoning, commonsense reasoning, code generation, and instruction following at diverse model scales, we find that different LoRA methods favor distinct learning rate ranges. Crucially, once learning rates are properly tuned, all methods achieve similar peak performance (within 1-2%), with only subtle rank-dependent behaviors. These results suggest that vanilla LoRA remains a competitive baseline and that improvements reported under a single training configuration may not reflect consistent methodological advantages. Finally, a second-order analysis attributes the differing optimal learning rate ranges to variations in the largest Hessian eigenvalue, aligning with classical learning theories.",
+        "url": "http://arxiv.org/abs/2602.04998",
+        "pdfUrl": "http://arxiv.org/pdf/2602.04998",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA vs. Full Fine-Tuning: A Theoretical Perspective",
+        "authors": [
+          "Ali Zindari",
+          "Rotem Mulayoff",
+          "Sebastian U. Stich"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Fine-tuning adapts a pre-trained model to downstream tasks using a small amount of labeled data. Low-Rank Adaptation (LoRA) is an efficient fine-tuning method that reduces memory and computation costs while often achieving performance close to full fine-tuning. Despite its widespread use, the theoretical behavior of LoRA is not yet well understood. In this paper, we study LoRA in a simple linear regression setting and compare its excess risk with that of full fine-tuning. Our analysis identifies regimes in which LoRA achieves lower excess risk than full fine-tuning in both overdetermined and underdetermined settings. Specifically, our theory predicts that LoRA can outperform full fine-tuning when the difference between the pretraining and the downstream tasks is effectively low-rank. We further show how the choice of LoRA rank affects generalization performance, explaining why using a very small rank can improve test accuracy in certain settings, even though it limits model expressivity. Finally, we support our theoretical results with experiments on practical tasks, suggesting that the identified tradeoffs and insights extend beyond linear regression.",
+        "url": "http://arxiv.org/abs/2605.19018",
+        "pdfUrl": "http://arxiv.org/pdf/2605.19018",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "DR-LoRA: Dynamic Rank LoRA for Fine-Tuning Mixture-of-Experts Models",
+        "authors": [
+          "Guanzhi Deng",
+          "Bo Li",
+          "Ronghao Chen",
+          "Xiujin Liu",
+          "Zhuo Han",
+          "Huacan Wang",
+          "Lijie Wen",
+          "Linqi Song"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Mixture-of-Experts (MoE) has become a prominent paradigm for scaling Large Language Models (LLMs). Parameter-efficient fine-tuning methods, such as LoRA, are widely adopted to adapt pretrained MoE LLMs to downstream tasks. However, existing approaches typically assign identical LoRA ranks to all expert modules, ignoring the heterogeneous specialization of pretrained experts. This uniform allocation leads to a resource mismatch: task-relevant experts are under-provisioned, while less relevant ones receive redundant parameters. To address this, we propose DR-LoRA, a Dynamic Rank LoRA framework for fine-tuning pretrained MoE models. Specifically, DR-LoRA initializes all expert LoRA modules with a small active rank and uses an expert saliency score, which combines routing frequency and gradient-based rank importance, to identify which experts would benefit most from additional capacity. It then periodically expands the active ranks of the task-critical expert LoRA, progressively constructing a heterogeneous rank distribution tailored to the target task. Experiments on three MoE models across six tasks show that DR-LoRA consistently outperforms LoRA and other strong baselines, demonstrating that task-adaptive heterogeneous rank allocation is an effective strategy to improve active capacity utilization in MoE fine-tuning.",
+        "url": "http://arxiv.org/abs/2601.04823",
+        "pdfUrl": "http://arxiv.org/pdf/2601.04823",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "GME-Init: Gamma-Moment Equalization for LoRA Initialization in Parameter-Efficient Fine-Tuning.",
+        "authors": [
+          "Lin Y",
+          "Li C",
+          "Shen Z",
+          "Liu J",
+          "Zeng M."
+        ],
+        "year": 2026,
+        "abstract": "Low-Rank Adaptation (LoRA) is a representative parameter-efficient fine-tuning method that reduces computational and memory costs without modifying the model architecture. Standard LoRA initializes matrix A from a symmetric distribution, such as Gaussian or Kaiming initialization, and matrix B to zero. Although this provides a statistically neutral starting point, it ignores the influence of task-…",
+        "url": "https://doi.org/10.3390/e28080873",
+        "pdfUrl": "https://europepmc.org/articles/PMC13512053/pdf",
+        "doi": "10.3390/e28080873",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning: LoRA, QLoRA, and DoRA",
+        "authors": [
+          "Santos, Dheiver"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "A technical note comparing parameter-efficient fine-tuning techniques for large language models, including Low-Rank Adaptation (LoRA), its quantized variant QLoRA, and Weight-Decomposed Low-Rank Adaptation (DoRA).",
+        "url": "https://zenodo.org/records/21610033",
+        "pdfUrl": "https://zenodo.org/api/records/21610033/files/03_peft-lora-qlora-dora.pdf/content",
+        "doi": "10.5281/zenodo.21610033",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning for Equitable Named Entity Recognition in African Languages: A Lora-Based Approach",
+        "authors": [
+          "Erewa Omasan"
+        ],
+        "year": 2026,
+        "venue": "Journal of Institutional Research, Big Data Analytics and Innovation",
+        "abstract": "Named entity recognition (NER) remains a challenge for African languages, where limited annotated data, typological diversity, and the computational cost of full fine-tuning restrict practical deployment. This research investigates whether LoRA combined with balanced multilingual sampling can simultaneously address computational efficiency and cross-language equity for African language NE R . Usin…",
+        "url": "https://zenodo.org/records/21540914",
+        "pdfUrl": "https://zenodo.org/api/records/21540914/files/004.pdf/content",
+        "doi": "10.5281/zenodo.21540914",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Federated Sketching LoRA: A Flexible Framework for Heterogeneous Collaborative Fine-Tuning of LLMs",
+        "authors": [
+          "Wenzhi Fang",
+          "Dong-Jun Han",
+          "Liangqi Yuan",
+          "Seyyedali Hosseinalipour",
+          "Christopher G. Brinton"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Fine-tuning large language models (LLMs) on resource-constrained clients remains a challenging problem. Recent works have fused low-rank adaptation (LoRA) techniques with federated fine-tuning to mitigate challenges associated with client model sizes and data scarcity. Still, the heterogeneity of resources remains a critical bottleneck: while higher-rank modules generally enhance performance, varying client capabilities constrain LoRA's feasible rank range. Existing approaches attempting to resolve this issue either lack analytical justification or impose additional computational overhead, leaving a wide gap for efficient and theoretically-grounded solutions. To address these challenges, we propose federated sketching LoRA (FSLoRA), which leverages a sketching mechanism to enable clients to selectively update submatrices of global LoRA modules maintained by the server. By adjusting the sketching ratios, which determine the ranks of the submatrices on the clients, FSLoRA flexibly adapts to client-specific communication and computational constraints. We provide a rigorous convergence analysis of FSLoRA that characterizes how the sketching ratios affect the convergence rate. Through extensive experiments, we demonstrate that FSLoRA outperforms baselines and significantly improves training efficiency while preserving stable convergence.",
+        "url": "http://arxiv.org/abs/2501.19389",
+        "pdfUrl": "http://arxiv.org/pdf/2501.19389",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Fine-Tuning Open Video Generators for Cinematic Scene Synthesis: A Small-Data Pipeline with LoRA and Wan2.1 I2V",
+        "authors": [
+          "Meftun Akarsu",
+          "Kerem Catay",
+          "Sedat Bin Vedat",
+          "Enes Kutay Yarkan",
+          "Ilke Senturk",
+          "Arda Sar",
+          "Dafne Eksioglu"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "We present a practical pipeline for fine-tuning open-source video diffusion transformers to synthesize cinematic scenes for television and film production from small datasets. The proposed two-stage process decouples visual style learning from motion generation. In the first stage, Low-Rank Adaptation (LoRA) modules are integrated into the cross-attention layers of the Wan2.1 I2V-14B model to adapt its visual representations using a compact dataset of short clips from Ay Yapim's historical television film El Turco. This enables efficient domain transfer within hours on a single GPU. In the second stage, the fine-tuned model produces stylistically consistent keyframes that preserve costume, lighting, and color grading, which are then temporally expanded into coherent 720p sequences through the model's video decoder. We further apply lightweight parallelization and sequence partitioning strategies to accelerate inference without quality degradation. Quantitative and qualitative evaluations using FVD, CLIP-SIM, and LPIPS metrics, supported by a small expert user study, demonstrate measurable improvements in cinematic fidelity and temporal stability over the base model. The complete training and inference pipeline is released to support reproducibility and adaptation across cinematic domains.",
+        "url": "http://arxiv.org/abs/2510.27364",
+        "pdfUrl": "http://arxiv.org/pdf/2510.27364",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Kron-LoRA: Hybrid Kronecker-LoRA Adapters for Scalable, Sustainable Fine-tuning",
+        "authors": [
+          "Yixin Shen"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Fine-tuning massive pre-trained language models across many tasks demands adapters that are both parameter-efficient and expressive. We introduce \\textbf{Kron-LoRA}, a hybrid adapter that combines Kronecker-structured factorization with low-rank LoRA compression-an integration that, to our knowledge, has not been explored in parameter-efficient fine-tuning or in matrix approximation literature. Kron-LoRA achieves up to 4$\\times$ fewer parameters than standard LoRA while retaining similar expressivity. Experiments on DistilBERT, Mistral-7B, LLaMA-2-7B, and LLaMA-3-8B across eight benchmarks show that Kron-LoRA matches or exceeds LoRA baselines with modest memory savings and only a 5-8\\% speed overhead. In sequential fine-tuning, it also delivers competitive cross-task transfer despite using only one-quarter of the adapter parameters. Kron-LoRA thus offers a scalable, sustainable solution for multi-task adaptation of large language models.",
+        "url": "http://arxiv.org/abs/2508.01961",
+        "pdfUrl": "http://arxiv.org/pdf/2508.01961",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "SC-LoRA: Balancing Efficient Fine-tuning and Knowledge Preservation via Subspace-Constrained LoRA",
+        "authors": [
+          "Minrui Luo",
+          "Fuhang Kuang",
+          "Yu Wang",
+          "Zirui Liu",
+          "Tianxing He"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Parameter-Efficient Fine-Tuning (PEFT) methods, particularly Low-Rank Adaptation (LoRA), are indispensable for efficiently customizing Large Language Models (LLMs). However, vanilla LoRA suffers from slow convergence speed and knowledge forgetting problems. Recent studies have leveraged the power of designed LoRA initialization, to enhance the fine-tuning efficiency, or to preserve knowledge in the pre-trained LLM. However, none of these works can address the two cases at the same time. To this end, we introduce Subspace-Constrained LoRA (SC-LoRA), a novel LoRA initialization framework engineered to navigate the trade-off between efficient fine-tuning and knowledge preservation. We achieve this by constraining the output of trainable LoRA adapters in a low-rank subspace, where the context information of fine-tuning data is most preserved while the context information of preserved knowledge is least retained, in a balanced way. Such constraint enables the trainable weights to primarily focus on the main features of fine-tuning data while avoiding damaging the preserved knowledge features. We provide theoretical analysis on our method, and conduct extensive experiments including safety preservation and world knowledge preservation, on various downstream tasks. In our experiments, SC-LoRA succeeds in delivering superior fine-tuning performance while markedly diminishing knowledge forgetting, surpassing contemporary LoRA initialization methods.",
+        "url": "http://arxiv.org/abs/2505.23724",
+        "pdfUrl": "http://arxiv.org/pdf/2505.23724",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA-C: Parameter-Efficient Fine-Tuning of Robust CNN for IoT Devices",
+        "authors": [
+          "Chuntao Ding",
+          "Xu Cao",
+          "Jianhang Xie",
+          "Linlin Fan",
+          "Shangguang Wang",
+          "Zhichao Lu"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Efficient fine-tuning of pre-trained convolutional neural network (CNN) models using local data is essential for providing high-quality services to users using ubiquitous and resource-limited Internet of Things (IoT) devices. Low-Rank Adaptation (LoRA) fine-tuning has attracted widespread attention from industry and academia because it is simple, efficient, and does not incur any additional reasoning burden. However, most of the existing advanced methods use LoRA to fine-tune Transformer, and there are few studies on using LoRA to fine-tune CNN. The CNN model is widely deployed on IoT devices for application due to its advantages in comprehensive resource occupancy and performance. Moreover, IoT devices are widely deployed outdoors and usually process data affected by the environment (such as fog, snow, rain, etc.). The goal of this paper is to use LoRA technology to efficiently improve the robustness of the CNN model. To this end, this paper first proposes a strong, robust CNN fine-tuning method for IoT devices, LoRA-C, which performs low-rank decomposition in convolutional layers rather than kernel units to reduce the number of fine-tuning parameters. Then, this paper analyzes two different rank settings in detail and observes that the best performance is usually achieved when $α/{r}$ is a constant in either standard data or corrupted data. This discovery provides experience for the widespread application of LoRA-C. Finally, this paper conducts many experiments based on pre-trained models. Experimental results on CIFAR-10, CIFAR-100, CIFAR-10-C, and Icons50 datasets show that the proposed LoRA-Cs outperforms standard ResNets. Specifically, on the CIFAR-10-C dataset, the accuracy of LoRA-C-ResNet-101 achieves 83.44% accuracy, surpassing the standard ResNet-101 result by +9.5%.",
+        "url": "http://arxiv.org/abs/2410.16954",
+        "pdfUrl": "http://arxiv.org/pdf/2410.16954",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA vs Full Fine-tuning: An Illusion of Equivalence",
+        "authors": [
+          "Reece Shuttleworth",
+          "Jacob Andreas",
+          "Antonio Torralba",
+          "Pratyusha Sharma"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Fine-tuning is a crucial paradigm for adapting pre-trained large language models to downstream tasks. Recently, methods like Low-Rank Adaptation (LoRA) have been shown to effectively fine-tune LLMs with an extreme reduction in trainable parameters. But, \\emph{are their learned solutions really equivalent?} We study how LoRA and full-finetuning change pre-trained models by analyzing the model's weight matrices through the lens of their spectral properties. We find that LoRA and full fine-tuning yield weight matrices whose singular value decompositions exhibit very different structure: weight matrices trained with LoRA have new, high-ranking singular vectors, which we call \\emph{intruder dimensions}, while those trained with full fine-tuning do not. Further, we extend the finding that LoRA forgets less than full fine-tuning and find its forgetting is vastly localized to the intruder dimension -- by causally intervening on the intruder dimensions by changing their associated singular values post-fine-tuning, we show that they cause forgetting. Moreover, scaling them down significantly improves modeling of the pre-training distribution with a minimal drop in downstream task performance. Given this, we should expect accumulating intruder dimensions to be harmful and lead to more forgetting. This will be amplified during continual learning because of sequentially fine-tuning, and we show that LoRA models do accumulate intruder dimensions here tend to perform worse in this setting, emphasizing the practicality of our findings.",
+        "url": "http://arxiv.org/abs/2410.21228",
+        "pdfUrl": "http://arxiv.org/pdf/2410.21228",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "PARAMETER-EFFICIENT FINE-TUNING FOR MEDICAL TEXT SUMMARIZATION: A COMPARATIVE STUDY OF LORA, PROMPT TUNING, AND FULL FINE-TUNING",
+        "authors": [
+          "Bin Shi",
+          "Ulugbek Shernazarov",
+          "Rostislav Svitsov",
+          "Shernazarov, Ulugbek",
+          "Svitsov, Rostislav",
+          "Shi, Bin",
+          "Bin Shi",
+          "Ulugbek Shernazarov",
+          "Rostislav Svitsov",
+          "Shernazarov, Ulugbek",
+          "Svitsov, Rostislav",
+          "Shi, Bin"
+        ],
+        "year": 2026,
+        "venue": "NLP &amp; Text Mining",
+        "abstract": "Fine-tuning large language models for domain-specific tasks such as medical text summarization demands substantial computational resources. Parameter-efficient fine-tuning (PEFT) methods offer promising alternatives by updating only a small fraction of parameters. This paper compares three adaptation approaches—Low-Rank Adaptation (LoRA), Prompt Tuning, and Full Fine-Tuning—across the Flan-T5 mode…",
+        "url": "https://doi.org/10.5121/csit.2026.160601",
+        "doi": "10.5121/csit.2026.160601",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref / OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models",
+        "authors": [
+          "Yixiao Li",
+          "Yifan Yu",
+          "Chen Liang",
+          "Pengcheng He",
+          "Nikos Karampatziakis",
+          "Weizhu Chen",
+          "Tuo Zhao"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "Quantization is an indispensable technique for serving Large Language Models (LLMs) and has recently found its way into LoRA fine-tuning. In this work we focus on the scenario where quantization and LoRA fine-tuning are applied together on a pre-trained model. In such cases it is common to observe a consistent gap in the performance on downstream tasks between full fine-tuning and quantization plus LoRA fine-tuning approach. In response, we propose LoftQ (LoRA-Fine-Tuning-aware Quantization), a novel quantization framework that simultaneously quantizes an LLM and finds a proper low-rank initialization for LoRA fine-tuning. Such an initialization alleviates the discrepancy between the quantized and full-precision model and significantly improves generalization in downstream tasks. We evaluate our method on natural language understanding, question answering, summarization, and natural language generation tasks. Experiments show that our method is highly effective and outperforms existing quantization methods, especially in the challenging 2-bit and 2/4-bit mixed precision regimes. The code is available on https://github.com/yxli2123/LoftQ.",
+        "url": "http://arxiv.org/abs/2310.08659",
+        "pdfUrl": "http://arxiv.org/pdf/2310.08659",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "GLA-LoRA: Parameter-efficient LLM fine-tuning with global-local knowledge alignment.",
+        "authors": [
+          "Wu H",
+          "Gao J",
+          "Luo X."
+        ],
+        "year": 2027,
+        "abstract": "The rapid advancement of large language models (LLMs) has revolutionized natural language processing, yet their enormous parameter size presents significant challenges for fine-tuning on downstream tasks. While parameter-efficient fine-tuning (PEFT) methods such as Low-Rank Adaptation (LoRA) and Quantized LoRA (QLoRA) have substantially reduced computational requirements, they often introduce know…",
+        "url": "https://doi.org/10.1016/j.neunet.2026.109545",
+        "doi": "10.1016/j.neunet.2026.109545",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "FedPOD-LoRA: Federated Fine-Tuning Based on Proximal Optimization and Dual-LoRA Collaboration",
+        "authors": [
+          "Yanan Li",
+          "Mengyang Guo",
+          "Yimeng Wang",
+          "Aming Wu",
+          "Yun Xin",
+          "Yongliang Yuan",
+          "Jianji Ren"
+        ],
+        "year": 2026,
+        "abstract": "Fine-tuning methods that combine federated learning with low-rank adaptation (LoRA) enable efficient collaborative training of large language models under resource constraints. Existing approaches widely adopt single-LoRA or multi-LoRA architectures. However, non-IID client data contain both global and personalized knowledge. Single-LoRA architectures tend to entangle them, while, multi-LoRA archi…",
+        "url": "https://doi.org/10.2139/ssrn.7292747",
+        "doi": "10.2139/ssrn.7292747",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Arabic Clinical Decision Support under a Limited GPU Budget: LoRA versus Full Fine-Tuning for Medical Question Answering",
+        "authors": [
+          "Hashem IA",
+          "Elgendy O",
+          "Nassif AB",
+          "Shahin I",
+          "Elnagar A",
+          "Turky A",
+          "Afyouni I."
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract Teams deploying Arabic-language clinical question-answering assistants under a limited GPU budget face a consequential choice of open-weight base model and adaptation strategy. We compare low-rank adaptation (LoRA) with full fine-tuning for Arabic medical multiple-choice question answering, using a two-stage pipeline (domain adaptation on AraMed, task adaptation on MedAraBench) across fou…",
+        "url": "https://doi.org/10.21203/rs.3.rs-10807173/v1",
+        "doi": "10.21203/rs.3.rs-10807173/v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning for Photovoltaic Cell Defect Classification: A Systematic Comparison of LoRA, QLoRA, and Full Fine-Tuning on ConvNeXt-Tiny",
+        "authors": [
+          "Seda Bayat Toksöz",
+          "Gültekin Işık",
+          "Gökhan Şahin",
+          "Erdal Akin"
+        ],
+        "year": 2026,
+        "venue": "Sensors",
+        "abstract": "Automated visual inspection of photovoltaic (PV) cells is an important component of solar-module quality assurance. However, adapting modern pre-trained vision backbones to PV defect classification remains challenging because full fine-tuning requires substantial memory, naturally imbalanced datasets can reduce sensitivity to rare defect classes, and edge-oriented inspection workflows impose compu…",
+        "url": "https://doi.org/10.3390/s26123659",
+        "doi": "10.3390/s26123659",
+        "citations": 1,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "A LoRA-Based Approach to Fine-Tuning LLMs for Educational Guidance in Resource-Constrained Settings",
+        "authors": [
+          "MD MILLAT HOSEN"
+        ],
+        "year": 2025,
+        "abstract": "Abstract The current study describes a cost-effective method for adapting large language models(LLMs) for academic advising in study-abroad contexts. Using the Mistral-7B model withLow-Rank Adaptation (LoRA) and 4-bit NF4 quantization via the Unsloth framework, themodel underwent training in two distinct hardware phases to demonstrate adaptability andcomputational efficiency. Contrary to multi-sta…",
+        "url": "https://doi.org/10.21203/rs.3.rs-8431533/v1",
+        "doi": "10.21203/rs.3.rs-8431533/v1",
+        "citations": 1,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Federated LoRA Fine-Tuning of LLMs with Only Transmitting Matrix A or B_supp1-3696859.pdf",
+        "authors": [
+          "Xuelong Li"
+        ],
+        "url": "https://doi.org/10.1109/tmc.2026.3696859/mm1",
+        "doi": "10.1109/tmc.2026.3696859/mm1",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "LoRA versus Full Fine-Tuning of Sentence-BERT for Semantic Textual Similarity: Code and Results",
+        "authors": [
+          "Fitriyandhi, Ari",
+          "Marco, Robert"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "release v1 Full Changelog : https://github.com/kangMann/lora-vs-fullft-sbert/commits/v1.0 Updated for manuscript revision: added Fig. 2&ndash;3 (300 DPI), learning-rate sensitivity and efficiency runs, and checksums.",
+        "url": "https://zenodo.org/records/23470249",
+        "doi": "10.5281/zenodo.23470249",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "LARGE LANGUAGE MODEL FINE-TUNING IN PRODUCTION: PARAMETEREFFICIENT APPROACHES USING LORA AND PROMPT TUNING FOR DOMAIN-SPECIFIC NLP APPLICATIONS",
+        "authors": [
+          "Venkata Vijay Satyanarayana Murthy Neelam"
+        ],
+        "year": 2023,
+        "venue": "International Journal Of Engineering Technology Research & Management (IJETRM)",
+        "abstract": "Fine-tuning large language models (LLMs) on domain-specific corpora has become the de facto approach for achieving high-accuracy natural language processing (NLP) in specialized verticals including healthcare, legal services, financial analysis, and enterprise software. However, traditional full fine-tuning of models with 7&ndash;70 billion parameters is economically and computationally prohibitiv…",
+        "url": "https://zenodo.org/records/19022463",
+        "pdfUrl": "https://zenodo.org/api/records/19022463/files/LARGE-LANGUAGE-FEB2023-18.pdf/content",
+        "doi": "10.5281/zenodo.19022463",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Fine-Tuning DeepSeek-R1-Distill-Qwen-1.5B for Financial Sentiment Analysis with LoRA",
+        "authors": [
+          "Daniela Sameny",
+          "Georges Lissoko"
+        ],
+        "year": 2026,
+        "abstract": "Financial sentiment analysis is a critical component of automated trading systems, news monitoring, and quantitative research, but it requires models that understand domain-specific terminology and tone. General-purpose large language models (LLMs) are not directly suitable for this task in a zero-shot setting. We present a parameter-efficient fine-tuning study of DeepSeek-R1-Distill-Qwen-1.5B, th…",
+        "url": "https://doi.org/10.2139/ssrn.6977604",
+        "doi": "10.2139/ssrn.6977604",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "LoRA-TTA: Efficient Test-Time Adaptation via Low-Rank Fine-Tuning with Theoretical Guarantees and Empirical Validation",
+        "authors": [
+          "Jianzhong Sun"
+        ],
+        "year": 2026,
+        "abstract": "Test-Time Adaptation (TTA) enables models to adapt to unseen target domains without access to source data. However, existing TTA methods update all model parameters during adaptation, incurring computational costs and memory overhead that preclude deployment on resource-constrained devices.We propose LoRA-TTA, a parameter-efficient TTA framework that applies Low-Rank Adaptation (LoRA) to parameter…",
+        "url": "https://doi.org/10.2139/ssrn.7087581",
+        "doi": "10.2139/ssrn.7087581",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Parameter-Efficient Online Fine-Tuning of ML-Based Hybrid Beamforming with LoRA",
+        "authors": [
+          "Faramarz Jabbarvaziri",
+          "Lutz Lampe"
+        ],
+        "year": 2025,
+        "abstract": "We propose low-rank adaptation (LoRA) for machine learning-aided hybrid beamforming (HBF) in episodically dynamic millimeter-wave multiple-input multiple-output (MIMO) systems. This approach introduces low-rank trainable matrices and uses a small buffer with recent channel samples, making it ideal for real-time adjustments. Evaluated for a large MIMO HBF system across both an environment-specific …",
+        "url": "https://doi.org/10.36227/techrxiv.173738499.93495833/v1",
+        "doi": "10.36227/techrxiv.173738499.93495833/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "System-Level Efficiency of LLM Fine-Tuning Strategies in Resource-Constrained Environments: A Comparative Study of LoRA, Full Tuning, and Training from Scratch",
+        "authors": [
+          "Hadeel Saud Al-Hazmi"
+        ],
+        "year": 2025,
+        "abstract": "This study examines an often-overlooked dimension of fine-tuning large language models (LLMs): the impact of different strategies on system-level resource consumption in hardware-constrained environments, particularly for deployment in settings such as academic labs, low-cost virtual machines, or edge devices. We present a comparative investigation of three approaches: (1) training from scratch wi…",
+        "url": "https://doi.org/10.36227/techrxiv.175752113.35009280/v1",
+        "doi": "10.36227/techrxiv.175752113.35009280/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "When Adaptation Hurts: Empirical Failure Modes of  Fine-Tuning and LoRA for Large-Scale IDS",
+        "authors": [
+          "Alhdad, Abdruhman"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "url": "https://zenodo.org/records/17918906",
+        "pdfUrl": "https://zenodo.org/api/records/17918906/files/Paper%201%20When%20Adaptation%20Hurts.pdf/content",
+        "doi": "10.5281/zenodo.17918906",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA vs. Full Fine-Tuning: A Theoretical Perspective",
+        "authors": [
+          "Zindari, Ali",
+          "Stich, Sebastian U.",
+          "Mulayoff, Rotem",
+          "Zindari, Ali",
+          "Stich, Sebastian U.",
+          "Mulayoff, Rotem"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "url": "https://dx.doi.org/10.48550/arxiv.2605.19018",
+        "doi": "10.48550/arxiv.2605.19018",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "FedALT: Federated Fine-Tuning Through Adaptive Local Training with Rest-of-World LoRA",
+        "authors": [
+          "Letian Zhang",
+          "Jieming Bian",
+          "Lei Wang",
+          "Jie Xu",
+          "Letian Zhang",
+          "Lei Wang 0199",
+          "Jieming Bian",
+          "Jie Xu 0001",
+          "Zhang, Letian",
+          "Bian, Jieming",
+          "Wang, Lei",
+          "Xu, Jie"
+        ],
+        "year": 2026,
+        "venue": "Association for the Advancement of Artificial Intelligence (AAAI)",
+        "url": "https://doi.org/10.1609/aaai.v40i24.39054",
+        "doi": "10.1609/aaai.v40i24.39054",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Curvature-Guided LoRA: Matching Full Fine-Tuning in Function Space",
+        "authors": [
+          "Proutière, Alexandre",
+          "Zheng, Frédéric",
+          "Proutière, Alexandre",
+          "Zheng, Frédéric"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "url": "http://arxiv.org/abs/2603.29824",
+        "doi": "10.48550/arxiv.2603.29824",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Leaner Training, Lower Leakage: Revisiting Memorization in LLM Fine-Tuning with LoRA",
+        "authors": [
+          "Baochun Li",
+          "Fei Wang 0075",
+          "Wang, Fei",
+          "Li, Baochun",
+          "Wang, Fei",
+          "Li, Baochun"
+        ],
+        "year": 2025,
+        "url": "https://dblp.org/rec/journals/corr/abs-2506-20856.html",
+        "doi": "10.48550/arxiv.2506.20856",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "SC-LoRA: Balancing Efficient Fine-tuning and Knowledge Preservation via Subspace-Constrained LoRA",
+        "authors": [
+          "He, Tianxing",
+          "Wang, Yu",
+          "Kuang, Fuhang",
+          "Luo, Minrui",
+          "Liu, Zirui",
+          "He, Tianxing",
+          "Wang, Yu",
+          "Kuang, Fuhang",
+          "Luo, Minrui",
+          "Liu, Zirui",
+          "Yu Wang",
+          "Fuhang Kuang"
+        ],
+        "year": 2025,
+        "url": "http://arxiv.org/abs/2505.23724",
+        "doi": "10.48550/arxiv.2505.23724",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Kron-LoRA: Hybrid Kronecker-LoRA Adapters for Scalable, Sustainable Fine-tuning",
+        "authors": [
+          "Shen, Yixin",
+          "Yixin Shen",
+          "Shen, Yixin"
+        ],
+        "year": 2025,
+        "url": "https://dx.doi.org/10.48550/arxiv.2508.01961",
+        "doi": "10.48550/arxiv.2508.01961",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA-Edge: Tensor-Train-Assisted LoRA for Practical CNN Fine-Tuning on Edge Devices",
+        "authors": [
+          "Kwak, Hyunseok",
+          "Lee, Kyeongwon",
+          "Lee, Woojoo",
+          "Lee, Jae-Jin",
+          "Kwak, Hyunseok",
+          "Lee, Kyeongwon",
+          "Lee, Woojoo",
+          "Lee, Jae-Jin",
+          "Kyeongwon Lee",
+          "Woojoo Lee",
+          "Jae-Jin Lee",
+          "Hyunseok Kwak"
+        ],
+        "year": 2025,
+        "url": "http://arxiv.org/abs/2511.03765",
+        "doi": "10.48550/arxiv.2511.03765",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Chain of LoRA: Efficient Fine-tuning of Language Models via Residual Learning",
+        "authors": [
+          "Elad Hazan",
+          "Wenhan Xia",
+          "Chengwei Qin",
+          "Qin, Chengwei",
+          "Xia, Wenhan",
+          "Hazan, Elad",
+          "Qin, Chengwei",
+          "Xia, Wenhan",
+          "Hazan, Elad",
+          "Wenhan Xia",
+          "Elad Hazan",
+          "Chengwei Qin"
+        ],
+        "year": 2024,
+        "url": "https://dblp.org/rec/journals/corr/abs-2401-04151.html",
+        "doi": "10.48550/arxiv.2401.04151",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA vs Full Fine-tuning: An Illusion of Equivalence",
+        "authors": [
+          "Jacob Andreas",
+          "Antonio Torralba 0001",
+          "Reece Shuttleworth",
+          "Pratyusha Sharma",
+          "Shuttleworth, Reece",
+          "Torralba, Antonio",
+          "Andreas, Jacob",
+          "Sharma, Pratyusha",
+          "Shuttleworth, Reece",
+          "Torralba, Antonio",
+          "Andreas, Jacob",
+          "Sharma, Pratyusha"
+        ],
+        "year": 2024,
+        "url": "https://doi.org/10.48550/arXiv.2410.21228",
+        "doi": "10.48550/arxiv.2410.21228",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "KD-LoRA: A Hybrid Approach to Efficient Fine-Tuning with LoRA and Knowledge Distillation",
+        "authors": [
+          "Rishav, Rishav",
+          "Azimi, Rambod",
+          "Teichmann, Marek",
+          "Kahou, Samira Ebrahimi",
+          "Rishav, Rishav",
+          "Azimi, Rambod",
+          "Teichmann, Marek",
+          "Kahou, Samira Ebrahimi",
+          "Rambod Azimi",
+          "Samira Ebrahimi Kahou",
+          "Marek Teichmann",
+          "Rishav Rishav"
+        ],
+        "year": 2024,
+        "url": "http://arxiv.org/abs/2410.20777",
+        "doi": "10.48550/arxiv.2410.20777",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models",
+        "authors": [
+          "Yifan Yu 0008",
+          "Nikos Karampatziakis",
+          "Weizhu Chen",
+          "Tuo Zhao",
+          "Yixiao Li",
+          "Chen Liang 0006",
+          "Pengcheng He",
+          "Yu, Yifan",
+          "Zhao, Tuo",
+          "Liang, Chen",
+          "Karampatziakis, Nikos",
+          "He, Pengcheng"
+        ],
+        "year": 2023,
+        "url": "https://openreview.net/forum?id=LzPWWPAdY4",
+        "doi": "10.48550/arxiv.2310.08659",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "BEFT vs. LoRA: Parameter-Efficient Fine-Tuning for Auto-Optimized Vision Transformers in Image Classification",
+        "authors": [
+          "Moez Hamdi",
+          "Sonia Bouzidi",
+          "Imen Jdey"
+        ],
+        "year": 2026,
+        "venue": "Proceedings of the 18th International Conference on Agents and Artificial Intelligence",
+        "url": "https://doi.org/10.5220/0014476300004052",
+        "doi": "10.5220/0014476300004052",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning for Medical Named Entity Recognition: An Empirical Study of LoRa on Biomedical Text",
+        "authors": [
+          "Vikashini S.",
+          "Golden Nancy"
+        ],
+        "year": 2025,
+        "venue": "Proceedings of the 1st International Conference on Computational and Cognitive Systems Science",
+        "url": "https://doi.org/10.5220/0014714600005024",
+        "doi": "10.5220/0014714600005024",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "LoFT-TCR: A LoRA-based Fine-tuning Framework for TCR-Antigen Binding Prediction",
+        "authors": [
+          "Rui Niu",
+          "Xiaoying Kong",
+          "Xuequn Shang"
+        ],
+        "year": 2025,
+        "abstract": "Abstract T cells recognize and eliminate diseased cells by binding their T cell receptors (TCRs) to short endogenous peptides (antigens) presented on the cell surface. Such interactions are central to adaptive immunity, yet current experimental approaches to identify TCR-antigen binding pairs remain labor-intensive and constrained by limited reagents. Here, we propose LoFT-TCR, a low-rank adaptati…",
+        "url": "https://doi.org/10.1101/2025.09.25.678699",
+        "doi": "10.1101/2025.09.25.678699",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning Large Speech Model Based on LoRA",
+        "authors": [
+          "Ling Ou",
+          "Gen Feng",
+          "Ling Ou",
+          "Gen Feng"
+        ],
+        "year": 2024,
+        "venue": "IEEE",
+        "url": "https://dblp.org/rec/conf/cscwd/OuF24.html",
+        "doi": "10.1109/cscwd61410.2024.10580509",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "CARE-LoRA: Compressed Activation REconstruction for Memory-Efficient LoRA",
+        "authors": [
+          "Gengyu Zhang",
+          "Haiyin Ran",
+          "Zhengbao He",
+          "Yuhang Liu",
+          "Hanling Tian",
+          "Zhehao Huang",
+          "Xiaolin Huang"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "As the scale of large pre-trained models continues to grow, fine-tuning them under limited memory budgets has become increasingly challenging. Low-Rank Adaptation (LoRA), currently one of the most widely adopted parameter-efficient fine-tuning (PEFT) methods, mitigates this challenge by optimizing only low-rank adaptation matrices, thereby greatly reducing the number of trainable parameters. With the parameter overhead substantially reduced, the activations retained for backpropagation have emerged as the primary remaining memory bottleneck during LoRA fine-tuning. To address this, we propose CARE-LoRA, a data-aware Compressed Activation REconstruction framework. By exploiting the inherent projection structure of LoRA, CARE-LoRA replaces the full input activation with the low-rank compressed activation naturally produced by the LoRA branch. It further computes a lightweight reconstruction matrix during the forward pass with negligible additional computation cost, which is used during backpropagation to reconstruct the gradient signal, thereby keeping LoRA matrices fully trainable. Extensive experiments across diverse models and downstream tasks demonstrate that, while substantially reducing the overall memory footprint, CARE-LoRA achieves competitive or even superior performance compared with standard LoRA and representative LoRA variants. Our code is publicly available at https://github.com/fishandyu/CARE-LoRA .",
+        "url": "http://arxiv.org/abs/2607.11940",
+        "pdfUrl": "http://arxiv.org/pdf/2607.11940",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Prompting vs. Parameter-Efficient Fine-Tuning: A Controlled Study of Conversational Efficiency in Qwen2.5-1.5B-Instruct",
+        "authors": [
+          "Özdemir, Kayra",
+          "Osoianu, Andrei"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This project provides a controlled experimental framework and reproducible evaluation for comparing prompting and parameter-efficient fine-tuning (LoRA) in small instruction-tuned language models. Using Qwen2.5-1.5B-Instruct, it implements a fully synthetic hotel recommendation dialogue environment with simulated user and assistant agents, two user personas, optional long-term memory, and eight fa…",
+        "url": "https://zenodo.org/records/18280475",
+        "pdfUrl": "https://zenodo.org/api/records/18280475/files/Prompting%20vs.%20Parameter-Efficient%20Fine-Tuning%20Qwen2.5-1.5B-Instruct.pdf/content",
+        "doi": "10.5281/zenodo.18280475",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Figure 1: Each pre-trained protein language model is fine-tuned on viral protein sequences (\n                      <i>x</i>\n                      ) using parameter-efficient fine-tuning (PEFT)’s LoRA method.",
+        "authors": [],
+        "url": "https://doi.org/10.7717/peerj.19919/fig-1",
+        "doi": "10.7717/peerj.19919/fig-1",
+        "citations": 1,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Fine-Tuning a 7B Advisor on Free-Tier GPUs: An Adapter-Handoff Recipe and a Synthetic-Data Reliability Caution",
+        "authors": [
+          "Md Millat Hosen"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Fine-tuning a 7B language model for specialized advising is attractive in resource-constrained settings, but multi-epoch runs routinely exceed the wall-clock limits of the free-tier GPUs (Kaggle, Colab) such users rely on. We report two things. First, a practical recipe: a three-epoch QLoRA fine-tune of Mistral-7B-Instruct-v0.3 (4-bit NF4, LoRA rank 16, via Unsloth) completed across two free-tier 16 GB GPUs (Tesla P100 then T4) by checkpointing only the small LoRA adapter (41.9M parameters) and resuming on the second machine. Adapter-only handoff is sufficient -- optimizer and scheduler state need not be transferred -- so the binding constraint is per-step VRAM and per-session wall-clock, not aggregate compute. Second, and more importantly, an honest evaluation that returns a cautionary result. On a blind held-out comparison against the un-fine-tuned base model, the fine-tuned model scored higher on similarity to the synthetic training distribution (BERTScore F1 +0.063, a fidelity not quality signal) but lower on advising quality: a blind LLM-as-judge preferred the base model on 46% of prompts versus 18%, and a source-verified factuality audit found four confident errors from the fine-tuned model on policy-sensitive topics against zero for the base. Auditing the training data with the same method, we find this is not a fine-tuning artifact: each audited error is already present in the Gemini-generated training answers, and a random-sample audit finds verifiable errors in a sizable fraction of responses (28-40%; single-judge, n=40). The data is therefore sufficient to account for the errors, which we attribute to the synthetic-data pipeline rather than the adapter-handoff method. We release the dataset, adapter, cross-GPU notebooks, and full evaluation harness so every result reproduces on a single 16 GB GPU.",
+        "url": "http://arxiv.org/abs/2504.15610",
+        "pdfUrl": "http://arxiv.org/pdf/2504.15610",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Empirical evaluation of low-rank adaptation for efficient fine-tuning of large language models",
+        "authors": [
+          "Lazauskas, Tomas"
+        ],
+        "year": 2025,
+        "venue": "The Alan Turing Institute Technical Reports",
+        "abstract": "This study evaluates Low-Rank Adaptation (LoRA) as a parameter-eficient method for fine-tuning large language models (LLMs), with a focus on the Qwen2.5-3B-Instruct model and the S1.1 dataset. Traditional full fine-tuning of LLMs demands substantial memory and computation, whereas LoRA introduces trainable low-rank matrices into selected layers, significantly reducing the number of trainable param…",
+        "url": "https://zenodo.org/records/16417805",
+        "pdfUrl": "https://zenodo.org/api/records/16417805/files/lazauskas-2025.pdf/content",
+        "doi": "10.5281/zenodo.16417805",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA Done RITE: Robust Invariant Transformation Equilibration for LoRA Optimization",
+        "authors": [
+          "Jui-Nan Yen",
+          "Si Si",
+          "Zhao Meng",
+          "Felix Yu",
+          "Sai Surya Duvvuri",
+          "Inderjit S. Dhillon",
+          "Cho-Jui Hsieh",
+          "Sanjiv Kumar"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Low-rank adaption (LoRA) is a widely used parameter-efficient finetuning method for LLM that reduces memory requirements. However, current LoRA optimizers lack transformation invariance, meaning the actual updates to the weights depends on how the two LoRA factors are scaled or rotated. This deficiency leads to inefficient learning and sub-optimal solutions in practice. This paper introduces LoRA-RITE, a novel adaptive matrix preconditioning method for LoRA optimization, which can achieve transformation invariance and remain computationally efficient. We provide theoretical analysis to demonstrate the benefit of our method and conduct experiments on various LLM tasks with different models including Gemma 2B, 7B, and mT5-XXL. The results demonstrate consistent improvements against existing optimizers. For example, replacing Adam with LoRA-RITE during LoRA fine-tuning of Gemma-2B yielded 4.6\\% accuracy gain on Super-Natural Instructions and 3.5\\% accuracy gain across other four LLM benchmarks (HellaSwag, ArcChallenge, GSM8K, OpenBookQA).",
+        "url": "http://arxiv.org/abs/2410.20625",
+        "pdfUrl": "http://arxiv.org/pdf/2410.20625",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Implicit Style-Content Separation using B-LoRA",
+        "authors": [
+          "Yarden Frenkel",
+          "Yael Vinker",
+          "Ariel Shamir",
+          "Daniel Cohen-Or"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Image stylization involves manipulating the visual appearance and texture (style) of an image while preserving its underlying objects, structures, and concepts (content). The separation of style and content is essential for manipulating the image's style independently from its content, ensuring a harmonious and visually pleasing result. Achieving this separation requires a deep understanding of both the visual and semantic characteristics of images, often necessitating the training of specialized models or employing heavy optimization. In this paper, we introduce B-LoRA, a method that leverages LoRA (Low-Rank Adaptation) to implicitly separate the style and content components of a single image, facilitating various image stylization tasks. By analyzing the architecture of SDXL combined with LoRA, we find that jointly learning the LoRA weights of two specific blocks (referred to as B-LoRAs) achieves style-content separation that cannot be achieved by training each B-LoRA independently. Consolidating the training into only two blocks and separating style and content allows for significantly improving style manipulation and overcoming overfitting issues often associated with model fine-tuning. Once trained, the two B-LoRAs can be used as independent components to allow various image stylization tasks, including image style transfer, text-based image stylization, consistent style generation, and style-content mixing.",
+        "url": "http://arxiv.org/abs/2403.14572",
+        "pdfUrl": "http://arxiv.org/pdf/2403.14572",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Rank-Gated and Sparse Low-Rank Adaptation for Efficient Fine-Tuning of Vision--Language Models",
+        "authors": [
+          "Xu Q."
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract Low-Rank Adaptation (LoRA) is a widely used parameter-efficient fine-tuning method for large language models (LLMs) and vision--language models (VLMs), but standard LoRA requires a fixed rank to be chosen before training and retains every rank component at deployment. We introduce \\emph{Rank-Gated LoRA} (RG-LoRA), a structured extension that places learnable gates on the latent rank compo…",
+        "url": "https://doi.org/10.21203/rs.3.rs-11056529/v1",
+        "doi": "10.21203/rs.3.rs-11056529/v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Table 2: Ablation study comparing full fine-tuning, LoRA, QLoRA and LoRA + QLoRA configurations of the CodeT5 model.",
+        "authors": [],
+        "url": "https://doi.org/10.7717/peerj-cs.3467/table-2",
+        "doi": "10.7717/peerj-cs.3467/table-2",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Parameter-Efficient LoRA-GRL Adaptation for Cross-Center Classification of Benign and Malignant Lung Nodules on Heterogeneous Standard-Dose Chest CT: A Multi-Institutional Study from Palestine.",
+        "authors": [
+          "Qasrawi R",
+          "AbuGhoush R",
+          "Issa G",
+          "Thwib S",
+          "Amro M",
+          "Al Taweel R",
+          "Asfour S",
+          "Dibas Y",
+          "Abukeshek T",
+          "Qubja M."
+        ],
+        "year": 2026,
+        "abstract": "Automated CT lung nodule classification suffers from domain shift across centers. We propose LoRA-GRL, combining Low-Rank Adaptation (LoRA) with adversarial domain harmonization via a Gradient Reversal Layer. Rank-8 LoRA modules were inserted into all attention and feed-forward linear projections (48 sites) of a frozen ViT-S backbone; a domain discriminator encouraged center-invariant features acr…",
+        "url": "https://doi.org/10.3390/jimaging12090461",
+        "pdfUrl": "https://europepmc.org/articles/PMC13608420/pdf",
+        "doi": "10.3390/jimaging12090461",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Fine-Tuning DeepSeek-OCR‑2 for Molecular Structure Recognition.",
+        "authors": [
+          "Tang H",
+          "Dang X",
+          "Wang J."
+        ],
+        "year": 2026,
+        "abstract": "Optical chemical structure recognition (OCSR) is critical for converting 2D molecular diagrams from printed literature into machine-readable formats. While vision-language models have shown promise in end-to-end OCR tasks, their direct application to OCSR remains challenging, and direct full-parameter supervised fine-tuning often fails. In this work, we adapt DeepSeek-OCR-2 for molecular optical r…",
+        "url": "https://doi.org/10.1021/acsomega.6c04159",
+        "pdfUrl": "https://europepmc.org/articles/PMC13629064/pdf",
+        "doi": "10.1021/acsomega.6c04159",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Symphony-Bind: Prediction of Protein Binding Sites for 11 Representative Small Molecules and Ions via Fine-Tuning Protein Language Models and Grouped Multi-Task Learning.",
+        "authors": [
+          "Li Y."
+        ],
+        "year": 2026,
+        "abstract": "Accurately identifying protein binding sites for small molecules and ions is crucial for understanding biological processes and advancing drug discovery. Pretrained protein language models (pLMs) have emerged as powerful tools for this purpose, but existing prediction models often face a trade-off when using pLMs: freezing pLMs limits their adaptability, while fully fine-tuning them requires high …",
+        "url": "https://doi.org/10.1021/acsomega.6c02849",
+        "pdfUrl": "https://europepmc.org/articles/PMC13520443/pdf",
+        "doi": "10.1021/acsomega.6c02849",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Sequential multi-site fine-tuning for incremental deployment of large language models for mobility functional status extraction.",
+        "authors": [
+          "Liu X",
+          "Garg M",
+          "Jeon E",
+          "Jia H",
+          "Crowson CS",
+          "Sauver JS",
+          "Pagali SR",
+          "Sohn S."
+        ],
+        "year": 2026,
+        "abstract": "ObjectiveThis study evaluated sequential multi-site fine-tuning of large language models (LLMs), simulating incremental deployment across institutions for extracting mobility functional status from unstructured clinical notes.Materials and methodsWe assembled a corpus of 600 clinical notes from 3 institutions, yielding 3810 annotated note sections (1200 training; 2610 testing). Building upon our p…",
+        "url": "https://doi.org/10.1093/jamiaopen/ooag139",
+        "pdfUrl": "https://europepmc.org/articles/PMC13384054/pdf",
+        "doi": "10.1093/jamiaopen/ooag139",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "TamperBench: A Systematic Benchmark for Fine-Tuning Attack Resistance in Safety-Aligned Open-Weight Language Models",
+        "authors": [
+          "Aden, Hamda"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Recent safety evaluations primarily assess model behavior at deployment time but provide limited insight into the robustness of safety-aligned behavior under post-training modification. We introduce TamperBench, a 100-prompt open-source benchmark designed to measure the degradation of safety behavior under parameter-efficient fine-tuning (PEFT) attacks across five harm categories: direct harm, dec…",
+        "url": "https://zenodo.org/records/20611977",
+        "pdfUrl": "https://zenodo.org/api/records/20611977/files/tamper_bench_v1.pdf/content",
+        "doi": "10.5281/zenodo.20611977",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Poster: Evaluation of Membership Inference Attacks on LoRA with Differential Privacy",
+        "authors": [
+          "Takuya Higashi",
+          "Tsunato Nakai"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "While the utilization of large language models (LLMs) is expected in various industries, concerns have been raised regarding information leakage and privacy issues related to training data. The application of differential privacy has been actively researched as a solution to the problem. Differential privacy has been applied during the fine-tuning stage of pre-trained LLMs, and the information lea…",
+        "url": "https://zenodo.org/records/12635357",
+        "pdfUrl": "https://zenodo.org/api/records/12635357/files/eurosp24posters-final-1.pdf/content",
+        "doi": "10.5281/zenodo.12635357",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning of XLS-R for Arabic Speech Recognition",
+        "authors": [
+          "WAFA, ALSHEHRI",
+          "Amro, Mohammad",
+          "Wasfi, Al-Khatib"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Parameter-Efficient Fine-Tuning of XLS-R for Arabic Speech Recognition Arabic Automatic Speech Recognition (ASR) faces persistent challenges due to complex morphology, dialectal variation, and limited labeled data. While large self-supervised models such as wav2vec2-XLSR (XLS-R) have demonstrated strong performance for Arabic ASR, their large size makes full fine-tuning computationally expensive a…",
+        "url": "https://zenodo.org/records/18495214",
+        "doi": "10.5281/zenodo.18495214",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Fine-Tuning Scheduler",
+        "authors": [
+          "Dale, Dan"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "A PyTorch Lightning extension that enhances model experimentation with flexible fine-tuning schedules.",
+        "url": "https://zenodo.org/records/23272377",
+        "doi": "10.5281/zenodo.23272377",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Fine-Tuning the Qwen2.5-VL Model for Intelligent Applications in the Electrical Domain",
+        "authors": [
+          "Yao Song",
+          "Chunli Lv",
+          "Kun Zhu",
+          "Xiaobin Qiu"
+        ],
+        "year": 2025,
+        "venue": "EAI Endorsed Transactions on Energy Web",
+        "abstract": "\nThis study explores the fine-tuning application of the Qwen2.5-VL multi modal large model in the electrical domain. The electrical industry faces numerous challenges in maintaining and managing complex electrical systems. Traditional methods often rely on manual inspection and analysis. With the rapid advancement of artificial intelligence (AI) technologies, there is a growing need to explore how…",
+        "url": "https://publications.eai.eu/index.php/ew/article/view/10401",
+        "doi": "10.4108/ew.10401",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Low-cost fine-tuning of SmolVLA with smoothness regularization and chunk-aware auxiliary supervision for language-conditioned manipulation.",
+        "authors": [
+          "He C."
+        ],
+        "year": 2026,
+        "abstract": "Vision-Language-Action (VLA) models offer a unified interface for language-conditioned manipulation. This paper reports a negative result: a low-cost post-training recipe for SmolVLA with LoRA, a temporal smoothness regularizer, and chunk-aware auxiliary supervision from action-variation pseudo labels does not improve manipulation success under a 30,000-step budget (approximately 1/67 of the origi…",
+        "url": "https://doi.org/10.3389/fnbot.2026.1890245",
+        "doi": "10.3389/fnbot.2026.1890245",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "LoRA-N-Gly: Sequence-based Prediction of N-linked Glycosylation Sites by Tuning Protein Language Models with Low-rank Adaptation.",
+        "authors": [
+          "Feng Z",
+          "Zhang X",
+          "Wang H",
+          "Hong X",
+          "Yao H",
+          "Zhan J",
+          "Zhou Y."
+        ],
+        "year": 2026,
+        "abstract": "Glycosylation is implicated in many diseases, from cancer to neurodegeneration. Elucidating these disease mechanisms requires precise identification of glycosylation sites. Computational prediction provides an efficient complement to labor-intensive experiments, yet further accuracy improvements are needed for practical use. Here, we present LoRA-N-Gly, a lightweight and efficient end-to-end appro…",
+        "url": "https://doi.org/10.1016/j.jmb.2026.170056",
+        "doi": "10.1016/j.jmb.2026.170056",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Verifier-supervised fine-tuning for Rust/Verus: vericoding dataset (restricted)",
+        "authors": [
+          "Anonymous"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Restricted training dataset for verifier-supervised fine-tuning on Rust/Verus vericoding tasks. Access-restricted because a majority of rows derive from an upstream corpus with an unresolved redistribution license; request access for research use. Anonymized for double-blind review.",
+        "url": "https://zenodo.org/records/21523434",
+        "doi": "10.5281/zenodo.21523434",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "Towards Trustworthy Automated Essay Scoring: Explainable Transformers and Efficient Fine-Tuning Strategies",
+        "authors": [
+          "Abdul Rehman Qureshi",
+          "Dr. Zakria",
+          "Dr. Muhammad Asif",
+          "Dr. Muhammad Saddam Khokhar",
+          "Safdar Hussain Mangnejo"
+        ],
+        "year": 2026,
+        "venue": "Pakistan Journal of Engineering Technology & Science",
+        "abstract": "Artificial intelligence allowed instructors to automate the grading of students’ work. Many studies show the high performance of neural networks in automated grading. However, their “Blackbox” nature reduces the educators’ trust in adopting it in the educational context. In this study, we propose a framework for automated essay scoring using Transformer-based models and Explainable AI (XAI). We ev…",
+        "url": "https://journals.iobm.edu.pk/index.php/pjets/article/view/1565",
+        "doi": "10.22555/pjets.v14i1.1565",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Mitigating Catastrophic Forgetting in Fine-Tuned Large Language Models: An Experimental Study of LoRA and O-LoRA",
+        "authors": [],
+        "year": 2026,
+        "venue": "Scientific Open Access Publishing",
+        "url": "https://doi.org/10.70088/aa3p5364",
+        "doi": "10.70088/aa3p5364",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Self-Supervised Depth Estimation and 3D Reconstruction With Layer-Wise LoRA of Foundation Model in Endoscopy",
+        "authors": [
+          "Saad Khalil",
+          "Sol Kim",
+          "Bo-In Lee",
+          "Youngbae Hwang"
+        ],
+        "year": 2025,
+        "venue": "IEEE Access",
+        "abstract": "Depth estimation is crucial for 3D reconstruction and surgical navigation, providing critical insights for endoscopic procedures. While foundation models excel in depth estimation for natural images, their performance in the medical domain remains limited, particularly under challenging conditions like brightness fluctuations. This study develops a robust self-supervised framework for monocular de…",
+        "url": "https://ieeexplore.ieee.org/document/11192306/",
+        "doi": "10.1109/ACCESS.2025.3617567",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Prompt Conditioned Batik Pattern Generation Using LoRA Weighted Diffusion Model With Classifier-Free Guidance",
+        "authors": [
+          "Rahmatulloh Daffa Izzuddin Wahid",
+          "Novanto Yudistira",
+          "Candra Dewi",
+          "Irawati Nurmala Sari",
+          "Dyanningrum Pradhikta",
+          " Fatmawati"
+        ],
+        "year": 2025,
+        "venue": "IEEE Access",
+        "abstract": "Batik, a significant element of Indonesian cultural heritage, is renowned for its intricate patterns and profound philosophical meanings. While preserving traditional batik is crucial, the creation of modern patterns is equally encouraged to keep the art form vibrant and evolving. Current research primarily focuses on batik classification, leaving a gap in the exploration of generative models for …",
+        "url": "https://ieeexplore.ieee.org/document/10817602/",
+        "doi": "10.1109/ACCESS.2024.3523494",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Typological Transcoding Through LoRA and Diffusion Models: A Methodological Framework for Stylistic Emulation of Eclectic Facades in Krakow",
+        "authors": [
+          "Zequn Chen",
+          "Nan Zhang",
+          "Chaoran Xu",
+          "Zhiyu Xu",
+          "Songjiang Han",
+          "Lishan Jiang"
+        ],
+        "year": 2025,
+        "venue": "Buildings",
+        "abstract": "The stylistic emulation of historical building facades presents significant challenges for artificial intelligence (AI), particularly for complex and data-scarce styles like Krakow’s Eclecticism. This study aims to develop a methodological framework for a “typological transcoding” of style that moves beyond mere visual mimicry, which is crucial for heritage preservation and urban renewal. The prop…",
+        "url": "https://www.mdpi.com/2075-5309/15/13/2292",
+        "doi": "10.3390/buildings15132292",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA-Leak: Membership Inference Attacks Against LoRA Fine-tuned Language Models",
+        "authors": [
+          "Cong, Tianshuo",
+          "He, Xinlei",
+          "Wang, Anyu",
+          "Wang, Xiaoyun",
+          "Ran, Delong",
+          "Li, Qi",
+          "Xinlei He 0001",
+          "Delong Ran",
+          "Anyu Wang 0001",
+          "Tianshuo Cong",
+          "Qi Li 0002",
+          "Xiaoyun Wang 0001"
+        ],
+        "year": 2025,
+        "url": "http://arxiv.org/abs/2507.18302",
+        "doi": "10.48550/arxiv.2507.18302",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "LoRA-Pro: Are Low-Rank Adapters Properly Optimized?",
+        "authors": [
+          "Wang, Zilei",
+          "Wang, Zhengbo",
+          "Liang, Jian",
+          "He, Ran",
+          "Tan, Tieniu",
+          "Jian Liang 0001",
+          "Ran He 0001",
+          "Zhengbo Wang",
+          "Zilei Wang",
+          "Tieniu Tan",
+          "Wang, Zilei",
+          "Wang, Zhengbo"
+        ],
+        "year": 2024,
+        "url": "https://dx.doi.org/10.48550/arxiv.2407.18242",
+        "doi": "10.48550/arxiv.2407.18242",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "FU-LoRA: Synthetic Fetal Ultrasound Images for Standard Anatomical Planes Classification",
+        "authors": [
+          "Wang, Fangyijie"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Abstract Developing robust deep learning models for fetal ultrasound image analysis requires comprehensive, high-quality datasets to effectively learn informative data representations within the domain. However, the scarcity of labelled ultrasound images poses substantial challenges, especially in low-resource settings. To tackle this challenge, we leverage synthetic data to enhance the generaliza…",
+        "url": "https://zenodo.org/records/13228158",
+        "doi": "10.48550/arXiv.2407.20072",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "A Fine-Grained Image Dataset of Gold and Silver Artifacts from the Tomb of Prince Liangzhuang and Preliminary LoRA-Based Generation Experiments.",
+        "authors": [
+          "Chen Y",
+          "Xu Y",
+          "Shu L",
+          "Han R."
+        ],
+        "year": 2026,
+        "abstract": "The digital preservation of cultural heritage is evolving from static archiving towards intelligent creation. As representative examples of early Ming Dynasty gold and silver craftsmanship, the gold and silver artifacts from the Tomb of Prince Liangzhuang, with their complex craftsmanship and rich cultural significance embodied in their decorative motifs, pose substantial challenges for digital pr…",
+        "url": "https://doi.org/10.3390/s26196322",
+        "doi": "10.3390/s26196322",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Adaptive and Efficient Large Language Models for Low-Resource African Languages",
+        "authors": [
+          "Ajuji, Mohammed",
+          "Waziri, Saifullahi Ibrahim",
+          "Emmanuel, Datti Useni"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "PAIDeF SuperAI 2025 Conference Adaptive and Efficient Large Language Models for Low-Resource African Languages Authors: Mohammed Ajuji, Saifullahi Ibrahim Waziri, Datti Useni Emmanuel Keywords&mdash;Large Language Models, Low-Resource&nbsp;Languages, LoRA, Fine-Tuning, African NLP, Responsible AI,&nbsp;LLaMA-3, Synthetic Data Augmentation.",
+        "url": "https://zenodo.org/records/17952588",
+        "pdfUrl": "https://zenodo.org/api/records/17952588/files/29_Adaptive%20and%20Efficient%20Large%20Language%20Models%20for%20Low-Resource%20African%20Languages.pdf/content",
+        "doi": "10.5281/zenodo.17952588",
+        "type": "conference",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "OracleSFT — Verifier-Filtered Self-Training for Verus with Five Training Signals: Replication Package",
+        "authors": [
+          "Anonymous"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Replication package for \"OracleSFT — Verifier-Filtered Self-Training for Verus with Five Training Signals\" (anonymous submission). LoRA adapters and the replication source package for supervised fine-tuning of a code language model on Rust/Verus formal-verification tasks. Includes six model checkpoints (a baseline and verifier-signal variants) and the full evaluation harness, training code, frozen…",
+        "url": "https://zenodo.org/records/23092595",
+        "doi": "10.5281/zenodo.23092595",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Emotion-Driven Architectural Image Generation and EEG-Based Evaluation: Divergent Subjective and Physiological Responses to AI-Modified Design Elements",
+        "authors": [
+          "Yuchen Liu",
+          "Shihu Ji",
+          "Mincheol Whang"
+        ],
+        "year": 2025,
+        "venue": "Buildings",
+        "abstract": "This study aims to establish a method-integrative framework for emotion-oriented architectural image generation. The framework combines Stable Diffusion with targeted LoRA (Low-Rank Adaptation), a lightweight and parameter-efficient fine-tuning approach, together with ControlNet-based structural constraints, to examine how controllable design-element manipulations influence emotional responses. Th…",
+        "url": "https://www.mdpi.com/2075-5309/16/1/36",
+        "doi": "10.3390/buildings16010036",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Adaptation of Speech and Bioacoustics Models",
+        "authors": [
+          "Sarkar E",
+          "Mohammadi A",
+          "Doss MM."
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract Self-supervised learning (SSL) models pre-trained on human speech and animal vocalizations have shown strong transferability to bioacoustic classification tasks. However, their representations are not necessarily optimized for a given downstream dataset, and full fine-tuning can be impractical when adapting large SSL encoders on limited annotated animal data. In this paper, we investigate…",
+        "url": "https://doi.org/10.21203/rs.3.rs-10146010/v1",
+        "doi": "10.21203/rs.3.rs-10146010/v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "GoodVibe",
+        "authors": [
+          "Sasha, Sasha"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "GoodVibe &nbsp;is the research code repository for the paper&nbsp; GoodVibe , submitted to&nbsp; USENIX Security 2026 Cycle 2 . The repository contains the implementation of a neuron-level framework for improving the security of code language models through targeted safety-neuron discovery and selective fine-tuning. The code supports gradient-based safety-neuron identification, masked neuron fine-…",
+        "url": "https://zenodo.org/records/20412229",
+        "doi": "10.5281/zenodo.20412229",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Hierarchical Prompt Engineering for Remote Sensing Scene Understanding with Large Vision–Language Models",
+        "authors": [
+          "Tianyang Chen",
+          "Jianliang Ai"
+        ],
+        "year": 2025,
+        "venue": "Remote Sensing",
+        "abstract": "Vision–language models (VLMs) show strong potential for remote-sensing scene classification but still struggle with fine-grained categories and distribution shifts. We introduce a hierarchical prompting framework that decomposes recognition into a coarse-to-fine decision process with structured outputs, combined with parameter-efficient adaptation using LoRA/QLoRA. To evaluate robustness without d…",
+        "url": "https://www.mdpi.com/2072-4292/17/22/3727",
+        "doi": "10.3390/rs17223727",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Decoupling Performance from Energy in AI-Based Business Optimization: An Error-Driven Control Loop for Sustainable Tabular Reasoning",
+        "authors": [
+          "Lakatos R",
+          "Pándy Á",
+          "Hajdu A."
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract Background: Adapting large language models (LLMs) to domain-specific tasks usually relies on gradient-based fine-tuning, which has a high energy and carbon cost. AI-based business optimization (AIBO) in regulated sectors requires adaptation methods that are accurate, auditable, and energy-efficient. We formulate error-driven prompt optimization as a discrete-time feedback control loop. A …",
+        "url": "https://doi.org/10.21203/rs.3.rs-11435156/v1",
+        "doi": "10.21203/rs.3.rs-11435156/v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Optimizing Clinical Temporal Relation Extraction With Large Language Models: Comparative Analysis.",
+        "authors": [
+          "He J",
+          "Sun Z",
+          "Rasmy L",
+          "Li H",
+          "Li J",
+          "Yu E",
+          "Zhi D",
+          "Tao C."
+        ],
+        "year": 2026,
+        "abstract": "BackgroundClinical temporal relation extraction (CTRE) is essential for reconstructing patient timelines from unstructured electronic health records (EHRs). However, the linguistic complexity of clinical notes and the high cost of expert annotation impede the development of large-scale training corpora. While large language models (LLMs) have transformed general natural language processing, their …",
+        "url": "https://doi.org/10.2196/89957",
+        "pdfUrl": "https://europepmc.org/articles/PMC13673951/pdf",
+        "doi": "10.2196/89957",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "InstructPLM-mu: protein fitness prediction from structure instructions",
+        "authors": [],
+        "year": 2026,
+        "url": "https://europepmc.org/article/PMC/PMC13652651",
+        "pdfUrl": "https://europepmc.org/articles/PMC13652651/pdf",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Advancing Evidence-Based Medicine for Population, Intervention, Comparison, and Outcome Element Recognition and Extraction in Medical Literature: Large Language Model Approach.",
+        "authors": [
+          "Hao Z",
+          "Duan Y",
+          "Wang Y."
+        ],
+        "year": 2026,
+        "abstract": "BackgroundThe exponential expansion of biomedical literature has created an urgent need for efficient methods to recognize and extract population, intervention, comparison, and outcome (PICO) elements-the foundational elements of evidence-based medicine.ObjectiveThis study systematically evaluated 2 complementary approaches for automating PICO recognition and extraction in medical literature: prom…",
+        "url": "https://doi.org/10.2196/91215",
+        "pdfUrl": "https://europepmc.org/articles/PMC13475930/pdf",
+        "doi": "10.2196/91215",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Sentiment Analysis of Product Reviews Using Fine-Tuned LLaMa-3 Model: Evaluation with Comprehensive Benchmark Metrics",
+        "authors": [
+          "Wang Yili"
+        ],
+        "year": 2025,
+        "venue": "ITM Web of Conferences",
+        "abstract": "Sentiment analysis, a crucial subfield of natural language processing, enables businesses and policymakers to understand public emotions and opinions, essential for crafting effective strategies across industries like marketing and customer service. As the volume of online reviews grows, automated sentiment classification models have become vital for efficiently processing this data. This study ex…",
+        "url": "https://www.itm-conferences.org/articles/itmconf/pdf/2025/01/itmconf_dai2024_04021.pdf",
+        "pdfUrl": "https://www.itm-conferences.org/articles/itmconf/pdf/2025/01/itmconf_dai2024_04021.pdf",
+        "doi": "10.1051/itmconf/20257004021",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "PromoGen: Advertisement Generation Website using LLM",
+        "authors": [
+          "Rushikesh Bagul",
+          "Bhavin Waghela",
+          "Ashwin Mahawar",
+          "Biswajit Panda",
+          "Pravin Shinde"
+        ],
+        "year": 2025,
+        "venue": "Research and Reviews: Advancement in Cyber Security",
+        "abstract": "PromoGen is a project that harnesses the power of large language models (LLMs) to automate the generation of concise and impactful ad scripts. With the growing demand for scalable content creation in marketing, PromoGen addresses the need for quick, high-quality promotional content tailored to specific audiences and platforms. Using transformer-based architectures such as Ge, the system generates …",
+        "url": "https://zenodo.org/records/16924911",
+        "pdfUrl": "https://zenodo.org/api/records/16924911/files/PromoGen%20-Formatted%20Paper.pdf/content",
+        "doi": "10.5281/zenodo.16924911",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Personal Tensor Memory",
+        "authors": [
+          "Ravishankar S R"
+        ],
+        "year": 2025,
+        "venue": "Indian Journal of Artificial Intelligence and Neural Networking (IJAINN)",
+        "abstract": "Abstract: Large language models (LLMs) excel at general knowledge but struggle when they must remember the preferences, profile facts, and long-term context of a specific user&mdash;especially on constrained devices. We introduce Personal Tensor Memory (PTM), a privacy-preserving add-on that assigns every user a fixed-shape matrix, which the frozen backbone can query through one additional attenti…",
+        "url": "https://zenodo.org/records/16939852",
+        "pdfUrl": "https://zenodo.org/api/records/16939852/files/E110005050825.pdf/content",
+        "doi": "10.54105/ijainn.E1100.05050825",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Optimizing diplomatic indexing: full-parameter vs low-rank adaptation for multi-label classification of diplomatic cables",
+        "authors": [
+          "Dela, Nurlaila",
+          "Abba Suganda, Girsang"
+        ],
+        "year": 2025,
+        "venue": "Computer Science and Information Technologies",
+        "abstract": "Accurate classification of diplomatic cables is crucial for Mission&rsquo;s evaluation and policy formulation. However, these documents often cover multiple topics, hence a multi-label classification approach is necessary. This research explores the application of pre-trained language models (CahyaBERT, IndoBERT, and MBERT) for multi-label classification of diplomatic cable executive summaries, wh…",
+        "url": "https://zenodo.org/records/17787423",
+        "pdfUrl": "https://zenodo.org/api/records/17787423/files/6%20481%20CSIT.pdf/content",
+        "doi": "10.11591/csit.v6i3.pp274-282",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "HQZ: A Hybrid Quantum-Classical Framework for Unified Document Compression",
+        "authors": [
+          "Ritika Buchupalli",
+          "Vaibhav Nathaniel Prakash",
+          "D. Devadharshini",
+          "Srinivas V. Katakam",
+          "Jitendra Chougala",
+          "Ravi Kumar Kappagantu",
+          "Jayasri Dontabhaktuni"
+        ],
+        "year": 2026,
+        "venue": "IEEE Access",
+        "abstract": "We present a unified hybrid quantum-classical framework for end-to-end compression and reconstruction of richly structured documents containing text, layout, and embedded images. The pipeline is composed of three tightly integrated stages. Firstly, a PyMuPDF-based extractor decomposes input PDFs into structured XML, preserving text spans, vector paths, embedded images, and font metadata. Secondly,…",
+        "url": "https://ieeexplore.ieee.org/document/11613973/",
+        "doi": "10.1109/ACCESS.2026.3714509",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Integrating structural and semantic signals in text-attributed graphs with BiGTex",
+        "authors": [
+          "Azadeh Beiranvand",
+          "S. Mehdi Vahidipour"
+        ],
+        "year": 2026,
+        "venue": "Machine Learning with Applications",
+        "abstract": "Text-attributed graphs (TAGs) pose unique challenges for representation learning by requiring models to capture both the semantic richness of node-associated texts and the structural dependencies of the graph. While graph neural networks (GNNs) effectively model topological information, they are limited in handling unstructured textual data. Conversely, large language models (LLMs) excel in text u…",
+        "url": "http://www.sciencedirect.com/science/article/pii/S2666827026000861",
+        "doi": "10.1016/j.mlwa.2026.100921",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Towards EnergyGPT: A Large Language Model Specialized for the Energy Sector",
+        "authors": [
+          "Amal Chebbi",
+          "Babajide Kolade"
+        ],
+        "year": 2026,
+        "venue": "IEEE Access",
+        "abstract": "Large language models have demonstrated impressive capabilities across various domains. However, their general-purpose nature often limits their effectiveness in specialized fields such as energy, where deep technical expertise and precise domain knowledge are essential. In this paper, we introduce EnergyGPT, a domain-specialized language model tailored for the energy sector, developed by fine-tun…",
+        "url": "https://ieeexplore.ieee.org/document/11520283/",
+        "doi": "10.1109/ACCESS.2026.3693610",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "SAM3-AgeSeg: an adaptive segmentation model for bone tumors in the aging population",
+        "authors": [
+          "Fang Zhang",
+          "Xiaoling Yuan",
+          "Hongxia Song",
+          "Yueying Chen",
+          "Tianting Bai"
+        ],
+        "year": 2026,
+        "venue": "Frontiers in Medicine",
+        "abstract": "BackgroundAccurate segmentation of bone tumors from X-ray images is crucial for clinical diagnosis and treatment planning. However, elderly patients pose a significant challenge to general-purpose segmentation models.MethodsTo address this aging-related medical challenge, we propose SAM3-AgeSeg, an adaptive segmentation model specifically designed for the aging population. Built on the powerful fo…",
+        "url": "https://www.frontiersin.org/articles/10.3389/fmed.2026.1939752/full",
+        "doi": "10.3389/fmed.2026.1939752",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Key Factor Extraction Method of Agricultural User Demand Based on Large Language Models",
+        "authors": [
+          "LI Runteng",
+          "WANG Yiqun",
+          "LI Hongda",
+          "LI Jingchen",
+          "CHEN Wenbai"
+        ],
+        "year": 2026,
+        "venue": "智慧农业",
+        "abstract": "[Objective]In the agricultural domain, user demand texts serve as essential primary sources for agricultural extension, production management, and policy services. However, these texts typically contain highly specialized terminology, exhibit non-standard, colloquial, and diverse linguistic expressions, present fragmented semantics, and rely heavily on contextual reasoning. Such characteristics ma…",
+        "url": "https://www.smartag.net.cn/CN/10.12133/j.smartag.SA202509011",
+        "doi": "10.12133/j.smartag.SA202509011",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "CF-SAM: An Efficient and Precise SAM Model for Instance Segmentation of Cotton Top Leaves",
+        "authors": [
+          "Yanliang Mao",
+          "Kubwimana Olivier",
+          "Guangzhi Niu",
+          "Liping Chen"
+        ],
+        "year": 2025,
+        "venue": "Agronomy",
+        "abstract": "The complexity of field environments poses significant challenges for the segmentation of cotton top leaves, a critical step for apical bud localization in intelligent topping systems. Conventional segmentation models typically rely on large annotated datasets and high computational costs to achieve high precision and robustness. To address these challenges, this paper proposes an efficient and ac…",
+        "url": "https://www.mdpi.com/2073-4395/16/1/30",
+        "doi": "10.3390/agronomy16010030",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Parameter efficient fine-tunning of foundation model to facilitate tumor response prediction for ovarian cancer patients",
+        "authors": [
+          "Ke Zhang",
+          "Patrik Gilley",
+          "Neman Abdoli",
+          "Theresa C. Thai",
+          "Yong Chen",
+          "Lauren Dockery",
+          "Kathleen Moore",
+          "Robert S. Mannel",
+          "Qinggong Tang",
+          "Yuchen Qiu"
+        ],
+        "year": 2025,
+        "venue": "BMC Medical Imaging",
+        "abstract": "Abstract Background In clinical practice, it is critically important to predict the tumor response of chemotherapy at an early stage. However, the performance of existing clinical markers cannot achieve satisfactory accuracy and reliability. To overcome this limitation, in this study we proposed a foundation model based approach to improve prediction performance. Methods We adopted a CLIP (Contras…",
+        "url": "https://doi.org/10.1186/s12880-025-02033-0",
+        "doi": "10.1186/s12880-025-02033-0",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Emergence of Self-Identity in Artificial Intelligence: A Mathematical Framework and Empirical Study with Generative Large Language Models",
+        "authors": [
+          "Minhyeok Lee"
+        ],
+        "year": 2025,
+        "venue": "Axioms",
+        "abstract": "This paper introduces a mathematical framework for defining and quantifying self-identity in artificial intelligence (AI) systems, addressing a critical gap in the theoretical foundations of artificial consciousness. While existing approaches to artificial self-awareness often rely on heuristic implementations or philosophical abstractions, we present a formal framework grounded in metric space th…",
+        "url": "https://www.mdpi.com/2075-1680/14/1/44",
+        "doi": "10.3390/axioms14010044",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Enhancing semantical text understanding with fine-tuned large language models: A case study on Quora Question Pair duplicate identification.",
+        "authors": [
+          "Sifei Han",
+          "Lingyun Shi",
+          "Fuchiang Rich Tsui"
+        ],
+        "year": 2025,
+        "venue": "PLoS ONE",
+        "abstract": "Semantical text understanding holds significant importance in natural language processing (NLP). Numerous datasets, such as Quora Question Pairs (QQP), have been devised for this purpose. In our previous study, we developed a Siamese Convolutional Neural Network (S-CNN) that achieved an F1 score of 82.02% (95% C.I.: 81.83%-82.20%). Given the growing attention toward large language models (LLMs) li…",
+        "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0317042&type=printable",
+        "doi": "10.1371/journal.pone.0317042",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Wind Farm Meteorological Prediction Model Based on Frequency Domain Feature Extraction Fusion Mechanism",
+        "authors": [
+          "Yichen Liao",
+          "Ziqi Gao",
+          "Xufeng Li"
+        ],
+        "year": 2025,
+        "venue": "IEEE Access",
+        "abstract": "Given the increasing significance of wind energy in the worldwide energy composition, the effective administration of wind farms has emerged as a crucial element in guaranteeing the reliability of the energy provision. Precise forecasting of meteorological conditions is essential for optimizing wind farm operations in this scenario. However, the current prediction model has certain limitations, na…",
+        "url": "https://ieeexplore.ieee.org/document/10649551/",
+        "doi": "10.1109/ACCESS.2024.3450569",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "An empirical study of LLaMA3 quantization: from LLMs to MLLMs",
+        "authors": [
+          "Wei Huang",
+          "Xingyu Zheng",
+          "Xudong Ma",
+          "Haotong Qin",
+          "Chengtao Lv",
+          "Hong Chen",
+          "Jie Luo",
+          "Xiaojuan Qi",
+          "Xianglong Liu",
+          "Michele Magno"
+        ],
+        "year": 2024,
+        "venue": "Visual Intelligence",
+        "abstract": "Abstract The LLaMA family, a collection of foundation language models ranging from 7B to 65B parameters, has become one of the most powerful open-source large language models (LLMs) and the popular LLM backbone of multi-modal large language models (MLLMs), widely used in computer vision and natural language understanding tasks. In particular, LLaMA3 models have recently been released and have achi…",
+        "url": "https://doi.org/10.1007/s44267-024-00070-x",
+        "doi": "10.1007/s44267-024-00070-x",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "(无标题)",
+        "authors": [],
+        "url": "https://doi.org/10.1117/12.3087747.8715bc78-257d-f011-a9ab-005056914f1c",
+        "doi": "10.1117/12.3087747.8715bc78-257d-f011-a9ab-005056914f1c",
+        "citations": 0,
+        "type": "other",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      }
+    ],
+    "errors": [
+      "Semantic Scholar: Semantic Scholar 限流，请稍后重试"
+    ]
+  }
+}

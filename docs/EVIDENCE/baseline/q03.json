@@ -1,0 +1,362 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=10.1038%2Fs41586-023-06221-2&limit=20",
+  "response": {
+    "cached": false,
+    "total": 21,
+    "page": 1,
+    "language": "all",
+    "paperType": "all",
+    "sourcesOk": 5,
+    "sourcesTotal": 11,
+    "cooldown": [],
+    "papers": [
+      {
+        "title": "Scientific discovery in the age of artificial intelligence.",
+        "authors": [
+          "Wang H",
+          "Fu T",
+          "Du Y",
+          "Gao W",
+          "Huang K",
+          "Liu Z",
+          "Chandak P",
+          "Liu S",
+          "Van Katwyk P",
+          "Deac A",
+          "Anandkumar A",
+          "Bergen K"
+        ],
+        "year": 2023,
+        "abstract": "Artificial intelligence (AI) is being increasingly integrated into scientific discovery to augment and accelerate research, helping scientists to generate hypotheses, design experiments, collect and interpret large datasets, and gain insights that might not have been possible using traditional scientific methods alone. Here we examine breakthroughs over the past decade that include self-supervised…",
+        "url": "https://doi.org/10.1038/s41586-023-06221-2",
+        "doi": "10.1038/s41586-023-06221-2",
+        "citations": 650,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Quantum Quivers and Hall/Hole Halos",
+        "authors": [
+          "Frederik Denef"
+        ],
+        "year": 2002,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/2002/10/023",
+        "doi": "10.1088/1126-6708/2002/10/023",
+        "citations": 227,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "The shape dependence of Vainshtein screening in the cosmic matter bispectrum",
+        "authors": [
+          "Clare Burrage",
+          "Johannes Dombrowski",
+          "Daniela Saadeh"
+        ],
+        "year": 2019,
+        "venue": "Journal of Cosmology and Astroparticle Physics",
+        "url": "https://doi.org/10.1088/1475-7516/2019/10/023",
+        "pdfUrl": "https://iopscience.iop.org/article/10.1088/1475-7516/2019/10/023/pdf",
+        "doi": "10.1088/1475-7516/2019/10/023",
+        "citations": 12,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Ultraviolet behavior of transverse gravity",
+        "authors": [
+          "Enrique Álvarez",
+          "Antón F Faedo",
+          "J.J López-Villarejo"
+        ],
+        "year": 2008,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/2008/10/023",
+        "doi": "10.1088/1126-6708/2008/10/023",
+        "citations": 33,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Warped AdS near-horizon geometry of completely localized intersections of M5-branes",
+        "authors": [
+          "Ansar Fayyazuddin",
+          "Douglas J Smith"
+        ],
+        "year": 2000,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/2000/10/023",
+        "doi": "10.1088/1126-6708/2000/10/023",
+        "citations": 32,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Primordial inhomogeneities from massive defects during inflation",
+        "authors": [
+          "Hassan Firouzjahi",
+          "Asieh Karami",
+          "Tahereh Rostami"
+        ],
+        "year": 2016,
+        "venue": "Journal of Cosmology and Astroparticle Physics",
+        "url": "https://doi.org/10.1088/1475-7516/2016/10/023",
+        "pdfUrl": "http://stacks.iop.org/1475-7516/2016/i=10/a=023/pdf",
+        "doi": "10.1088/1475-7516/2016/10/023",
+        "citations": 10,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Hard colour singlet exchange at the Tevatron",
+        "authors": [
+          "Brian Cox",
+          "Jeff Forshaw",
+          "Leif Lönnblad"
+        ],
+        "year": 1999,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/1999/10/023",
+        "doi": "10.1088/1126-6708/1999/10/023",
+        "citations": 26,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Planckian scattering and black holes",
+        "authors": [
+          "Sebastian de Haro"
+        ],
+        "year": 1998,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/1998/10/023",
+        "doi": "10.1088/1126-6708/1998/10/023",
+        "citations": 25,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Levitating dark matter",
+        "authors": [
+          "Nemanja Kaloper",
+          "Antonio Padilla"
+        ],
+        "year": 2009,
+        "venue": "Journal of Cosmology and Astroparticle Physics",
+        "url": "https://doi.org/10.1088/1475-7516/2009/10/023",
+        "doi": "10.1088/1475-7516/2009/10/023",
+        "citations": 18,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Streptenols F–I Isolated from the Marine-Derived <i>Streptomyces misionensis</i> BAT-10-03-023",
+        "authors": [
+          "Guillermo Tarazona",
+          "Carmen Schleissner",
+          "Pilar Rodríguez",
+          "Marta Pérez",
+          "Librada M Cañedo",
+          "Carmen Cuevas"
+        ],
+        "year": 2017,
+        "venue": "Journal of Natural Products",
+        "url": "https://doi.org/10.1021/acs.jnatprod.6b01057",
+        "doi": "10.1021/acs.jnatprod.6b01057",
+        "citations": 7,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Closed string field theory with dynamical D-brane",
+        "authors": [
+          "Tsuguhiko Asakawa",
+          "Shinpei Kobayashi",
+          "So Matsuura"
+        ],
+        "year": 2003,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/2003/10/023",
+        "doi": "10.1088/1126-6708/2003/10/023",
+        "citations": 7,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Presentación",
+        "authors": [
+          "Nadia Katherine Rodríguez Rodríguez"
+        ],
+        "year": 2026,
+        "venue": "Interfases",
+        "url": "https://doi.org/10.26439/interfases2022.n016.6173",
+        "pdfUrl": "https://revistas.ulima.edu.pe/index.php/Interfases/article/download/6173/8569",
+        "doi": "10.26439/interfases2022.n016.6173",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Trial and error as an explanation for the illusion of moral decline. Response to https://www.nature.com/articles/s41586-023-06137-x",
+        "authors": [
+          "Dan Costa Baciu"
+        ],
+        "year": 2023,
+        "abstract": "On June 7, 2023, Nature has published the article “The illusion of moral decline” by Mastroianni and Gilbert. The article substantiates that people believe in moral decline, and it reconfirms that this belief may be an illusion. The evidence provided is partly archival and partly experimental. To explain why the belief in moral decline is so pervasive although it may be an illusion, the authors fu…",
+        "url": "https://doi.org/10.31219/osf.io/hzfkx",
+        "doi": "10.31219/osf.io/hzfkx",
+        "citations": 1,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Confinement with Kalb-Ramond fields",
+        "authors": [
+          "Ulrich Ellwanger",
+          "Nicolás Wschebor"
+        ],
+        "year": 2001,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/2001/10/023",
+        "doi": "10.1088/1126-6708/2001/10/023",
+        "citations": 5,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Supersymmetry of noncompact MQCD-like membrane instantons and heat kernel asymptotics",
+        "authors": [
+          "Kanishka Belani",
+          "Payal Kaura",
+          "Aalok Misra"
+        ],
+        "year": 2006,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/2006/10/023",
+        "doi": "10.1088/1126-6708/2006/10/023",
+        "citations": 4,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "HEAD COUNT",
+        "authors": [
+          "Marina Gusenko"
+        ],
+        "year": 2018,
+        "venue": "Current Digest of the Russian Press, The",
+        "url": "https://doi.org/10.21557/dsp.51474962",
+        "doi": "10.21557/dsp.51474962",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Membership Applications Received",
+        "authors": [],
+        "year": 1993,
+        "venue": "The Leading Edge",
+        "abstract": "Applications for Active membership have been received from the candidates listed below. This publication does not constitute election but places the names before the membership at large, in accordance with SEG's Bylaws, Article III, Section 4. If any member has information bearing on the qualifications of these candidates, it should be sent to the President within 30 days.",
+        "url": "https://doi.org/10.1190/tle12101038.1",
+        "pdfUrl": "https://pubs.geoscienceworld.org/seg/tle/article-pdf/12/10/1038/7380089/tle12101038.1.pdf",
+        "doi": "10.1190/tle12101038.1",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Streptenols FI Isolated from the Marine-Derived Streptomyces misionensis BAT-10-03-023",
+        "authors": [],
+        "url": "https://doi.org/10.1021/acs.jnatprod.6b01057.s001",
+        "doi": "10.1021/acs.jnatprod.6b01057.s001",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "DIN EN 3155-023:2006-10, Luft- und Raumfahrt_- Elektrische Kontakte zur Verwendung in Verbindungselementen_- Teil_023: Elektrische Buchsenkontakte rechteckig, Typ_A, crimpbar, Klasse_R_- Produktnorm; Deutsche und Englische Fassung EN_3155-023:2006",
+        "authors": [],
+        "url": "https://doi.org/10.31030/9720429",
+        "doi": "10.31030/9720429",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Non-Extreme Black Holes from D-branes at Angles",
+        "authors": [
+          "Satoshi Nagaoka"
+        ],
+        "year": 2004,
+        "venue": "Journal of High Energy Physics",
+        "url": "https://doi.org/10.1088/1126-6708/2004/10/023",
+        "doi": "10.1088/1126-6708/2004/10/023",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "BERICHTIGUNGEN",
+        "authors": [],
+        "year": 1955,
+        "venue": "Zeitschrift für Naturforschung A",
+        "url": "https://doi.org/10.1515/zna-1955-1223",
+        "doi": "10.1515/zna-1955-1223",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      }
+    ],
+    "errors": [
+      "OpenAlex: OpenAlex HTTP 429",
+      "Semantic Scholar: Semantic Scholar 限流，请稍后重试",
+      "PubMed: PubMed HTTP 429",
+      "DBLP: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+      "OpenAIRE: OpenAIRE HTTP 409",
+      "Zenodo: Zenodo HTTP 500"
+    ]
+  }
+}

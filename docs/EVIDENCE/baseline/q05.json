@@ -1,0 +1,756 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=graph+neural+network&limit=20&paperType=conference",
+  "response": {
+    "cached": false,
+    "total": 41,
+    "page": 1,
+    "language": "all",
+    "paperType": "conference",
+    "sourcesOk": 8,
+    "sourcesTotal": 11,
+    "cooldown": [
+      "OpenAlex",
+      "DBLP"
+    ],
+    "papers": [
+      {
+        "title": "The Graph Neural Network Model",
+        "authors": [
+          "F. Scarselli",
+          "M. Gori",
+          "A. Tsoi",
+          "M. Hagenbuchner",
+          "G. Monfardini"
+        ],
+        "year": 2009,
+        "venue": "IEEE Transactions on Neural Networks",
+        "abstract": "Many underlying relationships among data in several areas of science and engineering, e.g., computer vision, molecular chemistry, molecular biology, pattern recognition, and data mining, can be represented in terms of graphs. In this paper, we propose a new neural network model, called graph neural network (GNN) model, that extends existing neural network methods for processing the data represente…",
+        "url": "https://www.semanticscholar.org/paper/3efd851140aa28e95221b55fcc5659eea97b172d",
+        "pdfUrl": "https://figshare.com/articles/journal_contribution/The_graph_neural_network_model/27757629",
+        "doi": "10.1109/TNN.2008.2005605",
+        "citations": 10034,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "BrainGNN: Interpretable Brain Graph Neural Network for fMRI Analysis",
+        "authors": [
+          "Xiaoxiao Li",
+          "Yuan Zhou",
+          "Siyuan Gao",
+          "N. Dvornek",
+          "Muhan Zhang",
+          "Juntang Zhuang",
+          "Shi Gu",
+          "D. Scheinost",
+          "L. Staib",
+          "P. Ventola",
+          "J. Duncan"
+        ],
+        "year": 2020,
+        "venue": "bioRxiv",
+        "abstract": "Understanding how certain brain regions relate to a specific neurological disorder or cognitive stimuli has been an important area of neuroimaging research. We propose BrainGNN, a graph neural network (GNN) framework to analyze functional magnetic resonance images (fMRI) and discover neurological biomarkers. Considering the special property of brain graphs, we design novel ROI-aware graph convolut…",
+        "url": "https://www.semanticscholar.org/paper/aa9635e531de729d47c9f166c388cd5ff0feeaaf",
+        "pdfUrl": "https://www.biorxiv.org/content/biorxiv/early/2021/06/07/2020.05.16.100057.full.pdf",
+        "doi": "10.1101/2020.05.16.100057",
+        "citations": 904,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Graph Neural Network for Traffic Forecasting: A Survey",
+        "authors": [
+          "Wei-Wei Jiang",
+          "Jiayun Luo"
+        ],
+        "year": 2021,
+        "venue": "Expert systems with applications",
+        "abstract": "Traffic forecasting is important for the success of intelligent transportation systems. Deep learning models, including convolution neural networks and recurrent neural networks, have been extensively applied in traffic forecasting problems to model spatial and temporal dependencies. In recent years, to model the graph structures in transportation systems as well as contextual information, graph n…",
+        "url": "https://www.semanticscholar.org/paper/bad3534cc797606d1fe3cb09713407783e77cac4",
+        "pdfUrl": "https://arxiv.org/pdf/2101.11174",
+        "doi": "10.1016/j.eswa.2022.117921",
+        "citations": 1360,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Self-supervised Heterogeneous Graph Neural Network with Co-contrastive Learning",
+        "authors": [
+          "Xiao Wang",
+          "Nian Liu",
+          "Hui-jun Han",
+          "Chuan Shi"
+        ],
+        "year": 2021,
+        "venue": "Knowledge Discovery and Data Mining",
+        "abstract": "Heterogeneous graph neural networks (HGNNs) as an emerging technique have shown superior capacity of dealing with heterogeneous information network (HIN). However, most HGNNs follow a semi-supervised learning manner, which notably limits their wide use in reality since labels are usually scarce in real applications. Recently, contrastive learning, a self-supervised method, becomes one of the most …",
+        "url": "https://www.semanticscholar.org/paper/e70930b8a8c7ba7af5f3df13ecf7b60364a4c189",
+        "pdfUrl": "https://arxiv.org/pdf/2105.09111",
+        "doi": "10.1145/3447548.3467415",
+        "citations": 574,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Pitfalls of Graph Neural Network Evaluation",
+        "authors": [
+          "Oleksandr Shchur",
+          "Maximilian Mumme",
+          "Aleksandar Bojchevski",
+          "Stephan Günnemann"
+        ],
+        "year": 2018,
+        "venue": "arXiv.org",
+        "abstract": "Semi-supervised node classification in graphs is a fundamental problem in graph mining, and the recently proposed graph neural networks (GNNs) have achieved unparalleled results on this task. Due to their massive success, GNNs have attracted a lot of attention, and many novel architectures have been put forward. In this paper we show that existing evaluation strategies for GNN models have serious …",
+        "url": "https://www.semanticscholar.org/paper/c2d40522eaa5523d67a0de5e4098e7031fdccb3d",
+        "citations": 1945,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Atomistic Line Graph Neural Network for improved materials property predictions",
+        "authors": [
+          "Kamal Choudhary",
+          "Brian L. DeCost"
+        ],
+        "year": 2021,
+        "venue": "npj Computational Materials",
+        "abstract": "Graph neural networks (GNN) have been shown to provide substantial performance improvements for atomistic material representation and modeling compared with descriptor-based machine learning models. While most existing GNN models for atomistic predictions are based on atomic distance information, they do not explicitly incorporate bond angles, which are critical for distinguishing many atomic stru…",
+        "url": "https://www.semanticscholar.org/paper/28b5dfe6035013e9345ec4a3eef5f0c5307a3fcb",
+        "pdfUrl": "https://www.nature.com/articles/s41524-021-00650-1.pdf",
+        "doi": "10.1038/s41524-021-00650-1",
+        "citations": 893,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Heterogeneous Graph Neural Network",
+        "authors": [
+          "Chuxu Zhang",
+          "Dong-Jin Song",
+          "Chao Huang",
+          "A. Swami",
+          "N. Chawla"
+        ],
+        "year": 2019,
+        "venue": "Knowledge Discovery and Data Mining",
+        "abstract": "Representation learning in heterogeneous graphs aims to pursue a meaningful vector representation for each node so as to facilitate downstream applications such as link prediction, personalized recommendation, node classification, etc. This task, however, is challenging not only because of the demand to incorporate heterogeneous structural (graph) information consisting of multiple types of nodes …",
+        "url": "https://www.semanticscholar.org/paper/e3d662bbd0e5539fe22a85f3518f960595b9914e",
+        "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3292500.3330961",
+        "doi": "10.1145/3292500.3330961",
+        "citations": 1712,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Enhancing Graph Neural Network-based Fraud Detectors against Camouflaged Fraudsters",
+        "authors": [
+          "Yingtong Dou",
+          "Zhiwei Liu",
+          "Li Sun",
+          "Yutong Deng",
+          "Hao Peng",
+          "Philip S. Yu"
+        ],
+        "year": 2020,
+        "venue": "International Conference on Information and Knowledge Management",
+        "abstract": "Graph Neural Networks (GNNs) have been widely applied to fraud detection problems in recent years, revealing the suspiciousness of nodes by aggregating their neighborhood information via different relations. However, few prior works have noticed the camouflage behavior of fraudsters, which could hamper the performance of GNN-based fraud detectors during the aggregation process. In this paper, we i…",
+        "url": "https://www.semanticscholar.org/paper/14156438bafed28a626738630b5181b83ed5d79c",
+        "pdfUrl": "https://arxiv.org/pdf/2008.08692",
+        "doi": "10.1145/3340531.3411903",
+        "citations": 830,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "MAGNN: Metapath Aggregated Graph Neural Network for Heterogeneous Graph Embedding",
+        "authors": [
+          "Xinyu Fu",
+          "Jia-Ni Zhang",
+          "Ziqiao Meng",
+          "Irwin King"
+        ],
+        "year": 2020,
+        "venue": "The Web Conference",
+        "abstract": "A large number of real-world graphs or networks are inherently heterogeneous, involving a diversity of node types and relation types. Heterogeneous graph embedding is to embed rich structural and semantic information of a heterogeneous graph into low-dimensional node representations. Existing models usually define multiple metapaths in a heterogeneous graph to capture the composite relations and g…",
+        "url": "https://www.semanticscholar.org/paper/c7fd29fdd2e0b50a571db4f607eab138e9ecb644",
+        "pdfUrl": "https://doi.org/10.1145/3366423.3380297",
+        "doi": "10.1145/3366423.3380297",
+        "citations": 1268,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Adaptive Universal Generalized PageRank Graph Neural Network",
+        "authors": [
+          "Eli Chien",
+          "Jian-Hao Peng",
+          "Pan Li",
+          "O. Milenkovic"
+        ],
+        "year": 2020,
+        "venue": "International Conference on Learning Representations",
+        "abstract": "In many important graph data processing applications the acquired information includes both node features and observations of the graph topology. Graph neural networks (GNNs) are designed to exploit both sources of evidence but they do not optimally trade-off their utility and integrate them in a manner that is also universal. Here, universality refers to independence on homophily or heterophily g…",
+        "url": "https://www.semanticscholar.org/paper/0ee0801ba010a441403f9ed666ef9bf006b3aa07",
+        "citations": 1118,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "GCC: Graph Contrastive Coding for Graph Neural Network Pre-Training",
+        "authors": [
+          "Jie-Zhong Qiu",
+          "Qibin Chen",
+          "Yu-Xiao Dong",
+          "Jing Zhang",
+          "Hong-Xia Yang",
+          "Ming Ding",
+          "Kuansan Wang",
+          "Jie Tang"
+        ],
+        "year": 2020,
+        "venue": "Knowledge Discovery and Data Mining",
+        "abstract": "Graph representation learning has emerged as a powerful technique for addressing real-world problems. Various downstream graph learning tasks have benefited from its recent developments, such as node classification, similarity search, and graph classification. However, prior arts on graph representation learning focus on domain specific problems and train a dedicated model for each graph dataset, …",
+        "url": "https://www.semanticscholar.org/paper/91fb815361fdbf80ff15ce4d783a41846bd99232",
+        "pdfUrl": "https://arxiv.org/pdf/2006.09963",
+        "doi": "10.1145/3394486.3403168",
+        "citations": 1184,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Graph Neural Networks: A Review of Methods and Applications",
+        "authors": [
+          "Jie Zhou",
+          "Ganqu Cui",
+          "Sheng-Ding Hu",
+          "Zhengyan Zhang",
+          "Cheng Yang",
+          "Zhiyuan Liu",
+          "Li-Feng Wang",
+          "Chang-Chang Li",
+          "Maosong Sun"
+        ],
+        "year": 2018,
+        "venue": "AI Open",
+        "abstract": "Lots of learning tasks require dealing with graph data which contains rich relation information among elements. Modeling physics system, learning molecular fingerprints, predicting protein interface, and classifying diseases require a model to learn from graph inputs. In other domains such as learning from non-structural data like texts and images, reasoning on extracted structures, like the depen…",
+        "url": "https://www.semanticscholar.org/paper/ea5dd6a3d8f210d05e53a7b6fa5e16f1b115f693",
+        "pdfUrl": "https://doi.org/10.1016/j.aiopen.2021.01.001",
+        "doi": "10.1016/J.AIOPEN.2021.01.001",
+        "citations": 7530,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Graph Neural Network-Based Anomaly Detection in Multivariate Time Series",
+        "authors": [
+          "Ai-Lin Deng",
+          "Bryan Hooi"
+        ],
+        "year": 2021,
+        "venue": "AAAI Conference on Artificial Intelligence",
+        "abstract": "Given high-dimensional time series data (e.g., sensor data), how can we detect anomalous events, such as system faults and attacks? More challengingly, how can we do this in a way that captures complex inter-sensor relationships, and detects and explains anomalies which deviate from these relationships? Recently, deep learning approaches have enabled improvements in anomaly detection in high-dimen…",
+        "url": "https://www.semanticscholar.org/paper/21d2742e38f7167354dafcf7f565d3894b31d008",
+        "pdfUrl": "https://doi.org/10.1609/aaai.v35i5.16523",
+        "doi": "10.1609/aaai.v35i5.16523",
+        "citations": 1627,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Parameterized Explainer for Graph Neural Network",
+        "authors": [
+          "Dongsheng Luo",
+          "Wei Cheng",
+          "Dongkuan Xu",
+          "Wen-Chao Yu",
+          "Bo Zong",
+          "Hai-Feng Chen",
+          "Xiang Zhang"
+        ],
+        "year": 2020,
+        "venue": "Neural Information Processing Systems",
+        "abstract": "Despite recent progress in Graph Neural Networks (GNNs), explaining predictions made by GNNs remains a challenging open problem. The leading method independently addresses the local explanations (i.e., important subgraph structure and node features) to interpret why a GNN model makes the prediction for a single instance, e.g. a node or a graph. As a result, the explanation generated is painstaking…",
+        "url": "https://www.semanticscholar.org/paper/d9f5ec342df97e060b527a8bc18ae4e97401f246",
+        "citations": 903,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "BigST: Linear Complexity Spatio-Temporal Graph Neural Network for Traffic Forecasting on Large-Scale Road Networks",
+        "authors": [
+          "Jin-Dong Han",
+          "Wei-Jiao Zhang",
+          "Hao Liu",
+          "Tao Tao",
+          "Naiqiang Tan",
+          "Hui Xiong"
+        ],
+        "year": 2024,
+        "venue": "Proceedings of the VLDB Endowment",
+        "abstract": "\n Spatio-Temporal Graph Neural Network (STGNN) has been used as a common workhorse for traffic forecasting. However, most of them require prohibitive quadratic computational complexity to capture long-range spatio-temporal dependencies, thus hindering their applications to long historical sequences on large-scale road networks in the real-world. To this end, in this paper, we propose BigST, a line…",
+        "url": "https://www.semanticscholar.org/paper/10267df58122e8183d1ed151c574e3ccf33764c8",
+        "doi": "10.14778/3641204.3641217",
+        "citations": 138,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Flexible Job-Shop Scheduling via Graph Neural Network and Deep Reinforcement Learning",
+        "authors": [
+          "Wen Song",
+          "Xin-Yang Chen",
+          "Qi-Qiang Li",
+          "Zhiguang Cao"
+        ],
+        "year": 2023,
+        "venue": "IEEE Transactions on Industrial Informatics",
+        "abstract": "Recently, deep reinforcement learning (DRL) has been applied to learn priority dispatching rules (PDRs) for solving complex scheduling problems. However, the existing works face challenges in dealing with flexibility, which allows an operation to be scheduled on one out of multiple machines and is often required in practice. Such one-to-many relationship brings additional complexity in both decisi…",
+        "url": "https://www.semanticscholar.org/paper/3dd5145f96cc39ae8ed8350f829dd942e4ee45d1",
+        "pdfUrl": "https://ink.library.smu.edu.sg/context/sis_research/article/9200/viewcontent/2022_TII_songwen.pdf",
+        "doi": "10.1109/TII.2022.3189725",
+        "citations": 442,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Spatio-temporal Graph Convolutional Neural Network: A Deep Learning Framework for Traffic Forecasting",
+        "authors": [
+          "Ting Yu",
+          "Hao-Teng Yin",
+          "Zhanxing Zhu"
+        ],
+        "year": 2017,
+        "venue": "International Joint Conference on Artificial Intelligence",
+        "abstract": "Timely accurate traffic forecast is crucial for urban traffic control and guidance. Due to the high nonlinearity and complexity of traffic flow, traditional methods cannot satisfy the requirements of mid-and-long term prediction tasks and often neglect spatial and temporal dependencies. In this paper, we propose a novel deep learning framework, Spatio-Temporal Graph Convolutional Networks (STGCN),…",
+        "url": "https://www.semanticscholar.org/paper/72edcb3788f9c141a3ed28e6d36f75ca4977d27e",
+        "pdfUrl": "https://www.ijcai.org/proceedings/2018/0505.pdf",
+        "doi": "10.24963/ijcai.2018/505",
+        "citations": 5642,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Neural Bellman-Ford Networks: A General Graph Neural Network Framework for Link Prediction",
+        "authors": [
+          "Zhaocheng Zhu",
+          "Zuo-Bai Zhang",
+          "Louis-Pascal Xhonneux",
+          "Jian Tang"
+        ],
+        "year": 2021,
+        "venue": "Neural Information Processing Systems",
+        "abstract": "Link prediction is a very fundamental task on graphs. Inspired by traditional path-based methods, in this paper we propose a general and flexible representation learning framework based on paths for link prediction. Specifically, we define the representation of a pair of nodes as the generalized sum of all path representations, with each path representation as the generalized product of the edge r…",
+        "url": "https://www.semanticscholar.org/paper/76305acf2bf94e3a5677f7547098eeffb6649706",
+        "citations": 559,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "GNN-IDS: Graph Neural Network based Intrusion Detection System",
+        "authors": [
+          "Zhen Sun",
+          "André M. H. Teixeira",
+          "Salman Toor"
+        ],
+        "year": 2024,
+        "venue": "ARES",
+        "abstract": "Intrusion detection systems (IDSs) are widely used to identify anomalies in computer networks and raise alarms on intrusive behaviors. ML-based IDSs generally take network traces or host logs as input to extract patterns from individual samples, whereas the inter-dependencies of network are often not captured and learned, which may result in large amounts of uncertain predictions, false positives,…",
+        "url": "https://www.semanticscholar.org/paper/8c84c917ccef9940b2749bf1f10f3ae053c56360",
+        "pdfUrl": "https://doi.org/10.1145/3664476.3664515",
+        "doi": "10.1145/3664476.3664515",
+        "citations": 88,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Reconstructed Graph Neural Network With Knowledge Distillation for Lightweight Anomaly Detection",
+        "authors": [
+          "Xiao-Kang Zhou",
+          "Jiayi Wu",
+          "Wei Liang",
+          "Kevin I-Kai Wang",
+          "Zheng Yan",
+          "Laurence T. Yang",
+          "Qun Jin"
+        ],
+        "year": 2024,
+        "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+        "abstract": "The proliferation of Internet-of-Things (IoT) technologies in modern smart society enables massive data exchange for offering intelligent services. It becomes essential to ensure secure communications while exchanging highly sensitive IoT data efficiently, which leads to high demands for lightweight models or algorithms with limited computation capability provided by individual IoT devices. In thi…",
+        "url": "https://www.semanticscholar.org/paper/9dcfcd04d7ec07fb930c356e8e12cc459617d402",
+        "doi": "10.1109/TNNLS.2024.3389714",
+        "citations": 141,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Knowledge Graph Embedding Based on Graph Neural Network",
+        "authors": [
+          "Shuang Liang"
+        ],
+        "year": 2023,
+        "venue": "2023 IEEE 39th International Conference on Data Engineering (ICDE)",
+        "url": "https://doi.org/10.1109/icde55515.2023.00379",
+        "doi": "10.1109/icde55515.2023.00379",
+        "citations": 23,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Real-Time Transaction Fraud Detection via Heterogeneous Temporal Graph Neural Network",
+        "authors": [
+          "Hang Nguyen",
+          "Bac Le"
+        ],
+        "year": 2025,
+        "venue": "Proceedings of the 17th International Conference on Agents and Artificial Intelligence",
+        "url": "https://doi.org/10.5220/0013161300003890",
+        "doi": "10.5220/0013161300003890",
+        "citations": 9,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "TransGNN: A Transductive Graph Neural Network with Graph Dynamic Embedding",
+        "authors": [
+          "Leandro Anghinoni",
+          "Yu-tao Zhu",
+          "Donghong Ji",
+          "Liang Zhao"
+        ],
+        "year": 2023,
+        "venue": "2023 International Joint Conference on Neural Networks (IJCNN)",
+        "url": "https://doi.org/10.1109/ijcnn54540.2023.10191134",
+        "doi": "10.1109/ijcnn54540.2023.10191134",
+        "citations": 7,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "GNNDLD: Graph Neural Network with Directional Label Distribution",
+        "authors": [
+          "Chandramani Chaudhary",
+          "Nirmal Boran",
+          "N. Sangeeth",
+          "Virendra Singh"
+        ],
+        "year": 2024,
+        "venue": "Proceedings of the 16th International Conference on Agents and Artificial Intelligence",
+        "url": "https://doi.org/10.5220/0012321400003636",
+        "doi": "10.5220/0012321400003636",
+        "citations": 4,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "GraphMP: Graph Neural Network-based Motion Planning with Efficient Graph Search",
+        "authors": [
+          "Xiao Zang",
+          "Miao Yin",
+          "Jinqi Xiao",
+          "Saman Zonouz",
+          "Bo Yuan"
+        ],
+        "year": 2023,
+        "venue": "Advances in Neural Information Processing Systems 36",
+        "url": "https://doi.org/10.52202/075280-0138",
+        "doi": "10.52202/075280-0138",
+        "citations": 3,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Geodesic Graph Neural Network for Efficient Graph Representation Learning",
+        "authors": [
+          "Lecheng Kong",
+          "Yixin Chen",
+          "Muhan Zhang"
+        ],
+        "year": 2022,
+        "venue": "Advances in Neural Information Processing Systems 35",
+        "url": "https://doi.org/10.52202/068431-0427",
+        "doi": "10.52202/068431-0427",
+        "citations": 3,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Fault Diagnosis of Process Systems Based on Graph Neural Network",
+        "authors": [
+          "Wentao Ouyang",
+          "Yang Jin"
+        ],
+        "year": 2024,
+        "venue": "Proceedings of the 1st International Conference on Data Mining, E-Learning, and Information Systems",
+        "url": "https://doi.org/10.5220/0012876300004536",
+        "doi": "10.5220/0012876300004536",
+        "citations": 2,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Rewiring Knowledge Graphs by Graph Neural Network Link Predictions",
+        "authors": [
+          "Alex Romanova"
+        ],
+        "year": 2023,
+        "venue": "Proceedings of the 15th International Conference on Agents and Artificial Intelligence",
+        "url": "https://doi.org/10.5220/0011664400003393",
+        "doi": "10.5220/0011664400003393",
+        "citations": 2,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Bilinear Multi-Head Attention Graph Neural Network for Traffic Prediction",
+        "authors": [
+          "Haibing Hu",
+          "Kai Han",
+          "Zhizhuo Yin"
+        ],
+        "year": 2022,
+        "venue": "Proceedings of the 14th International Conference on Agents and Artificial Intelligence",
+        "url": "https://doi.org/10.5220/0010763400003116",
+        "doi": "10.5220/0010763400003116",
+        "citations": 2,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Research on Classification Algorithm of Graph Neural Network Based on Combination of Graph Neural Network and LSTM",
+        "authors": [
+          "Zhilin Wang"
+        ],
+        "year": 2024,
+        "venue": "2024 International Conference on Electrical Drives, Power Electronics &amp;amp; Engineering (EDPEE)",
+        "url": "https://doi.org/10.1109/edpee61724.2024.00117",
+        "doi": "10.1109/edpee61724.2024.00117",
+        "citations": 1,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "A Novel Graph Neural Network Approach for Social Network Fake News Identification in Arabic",
+        "authors": [
+          "Fériel Ben Fraj",
+          "Yathreb Mannai"
+        ],
+        "year": 2026,
+        "venue": "Proceedings of the 18th International Conference on Agents and Artificial Intelligence",
+        "url": "https://doi.org/10.5220/0014343200004052",
+        "doi": "10.5220/0014343200004052",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "GIN-Graph: A Generative Interpretation Network for Model-Level Explanation of Graph Neural Networks",
+        "authors": [
+          "Xiao Yue",
+          "Guangzhi Qu"
+        ],
+        "year": 2026,
+        "venue": "2026 International Joint Conference on Neural Networks (IJCNN)",
+        "url": "https://doi.org/10.1109/ijcnn69854.2026.11730070",
+        "doi": "10.1109/ijcnn69854.2026.11730070",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Credit Fraud Detection Strategy Based on Graph Neural Network",
+        "authors": [
+          "Congling Zheng"
+        ],
+        "year": 2025,
+        "venue": "Proceedings of the 3rd International Conference on Data Analysis and Machine Learning",
+        "url": "https://doi.org/10.5220/0014773300004818",
+        "doi": "10.5220/0014773300004818",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Graph Neural Network: Review of Models, Challenges and Frontier Applications",
+        "authors": [
+          "Zirui Zhu"
+        ],
+        "year": 2025,
+        "venue": "Proceedings of the 3rd International Conference on Data Science, Advanced Algorithms, and Intelligent Computing",
+        "url": "https://doi.org/10.5220/0014376900004861",
+        "doi": "10.5220/0014376900004861",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Violating Content Detection Based on Knowledge Graph and Heterogeneous Graph Neural Network",
+        "authors": [
+          "Shuyue Zhang",
+          "Xinyi Zhou",
+          "Xiongtao Sun",
+          "Hui Li"
+        ],
+        "year": 2025,
+        "venue": "2025 International Joint Conference on Neural Networks (IJCNN)",
+        "url": "https://doi.org/10.1109/ijcnn64981.2025.11228069",
+        "doi": "10.1109/ijcnn64981.2025.11228069",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "NuGraph2: A Graph Neural Network for Neutrino Event Reconstruction",
+        "authors": [
+          "Giuseppe Cerati"
+        ],
+        "year": 2024,
+        "venue": "NuGraph2: A Graph Neural Network for Neutrino Event Reconstruction",
+        "url": "https://doi.org/10.2172/2432449",
+        "doi": "10.2172/2432449",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "A Multipurpose Graph Neural Network for Reconstruction in LArTPC Detectors",
+        "authors": [
+          "Giuseppe Cerati",
+          "V. Hewes"
+        ],
+        "year": 2023,
+        "venue": "A Multipurpose Graph Neural Network for Reconstruction in LArTPC Detectors",
+        "url": "https://doi.org/10.2172/2361065",
+        "doi": "10.2172/2361065",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "PMGNN: A Pioneer-Master Graph Neural Network for Graph Classification",
+        "authors": [
+          "Ruifeng Tan",
+          "Yuanyuan Zhu"
+        ],
+        "year": 2022,
+        "venue": "2022 International Joint Conference on Neural Networks (IJCNN)",
+        "url": "https://doi.org/10.1109/ijcnn55064.2022.9892849",
+        "doi": "10.1109/ijcnn55064.2022.9892849",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Graph Neural Network Bandits",
+        "authors": [
+          "Parnian Kassraie",
+          "Andreas Krause",
+          "Ilija Bogunovic"
+        ],
+        "year": 2022,
+        "venue": "Advances in Neural Information Processing Systems 35",
+        "url": "https://doi.org/10.52202/068431-2501",
+        "doi": "10.52202/068431-2501",
+        "citations": 0,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Graph Intention Neural Network for Knowledge Graph Reasoning",
+        "authors": [
+          "Weihao Jiang",
+          "Yao Fu",
+          "Hong Zhao",
+          "Junhong Wan",
+          "Shiliang Pu"
+        ],
+        "year": 2022,
+        "venue": "2022 International Joint Conference on Neural Networks (IJCNN)",
+        "url": "https://doi.org/10.1109/ijcnn55064.2022.9892730",
+        "doi": "10.1109/ijcnn55064.2022.9892730",
+        "citations": 5,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "GCRINT: Network Traffic Imputation Using Graph Convolutional Recurrent Neural Network",
+        "authors": [
+          "Van An Le et al."
+        ],
+        "year": 2021,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Missing values appear in most multivariate time series, especially in the monitored network traffic data due to high measurement cost and unavoidable loss. In the networking fields, missing data prevents advanced analysis and downgrades downstream applications such as traffic engineering and anomaly detection. Despite the great potential, existing imputation approaches based on tensor decompositio…",
+        "url": "https://zenodo.org/records/5105957",
+        "pdfUrl": "https://zenodo.org/api/records/5105957/files/m89464-le.pdf/content",
+        "doi": "10.5281/zenodo.5105957",
+        "type": "conference",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      }
+    ],
+    "errors": [
+      "PubMed: PubMed HTTP 429"
+    ]
+  }
+}
