@@ -29,8 +29,9 @@ const ROUTES = [
   { pattern: '/search', load: () => import('./views/search.js') },
   { pattern: '/advanced', load: () => import('./views/advanced.js') },
   { pattern: '/library', load: () => import('./views/notfound.js') }, // M5 接管
-  { pattern: '/about', load: () => import('./views/notfound.js') }, // M3 接管
-  { pattern: '/p/:id', load: () => import('./views/notfound.js') }, // M3 接管
+  { pattern: '/about', load: () => import('./views/notfound.js') }, // M3-11 接管
+  { pattern: '/status', load: () => import('./views/notfound.js') }, // M3-10 接管
+  { pattern: '/p/:id', load: () => import('./views/paper.js') },
 ];
 
 /** @type {Map<string, { view: View }>} */

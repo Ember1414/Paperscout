@@ -4,6 +4,7 @@ import { AppError, errorEnvelope, internalEnvelope, okEnvelope } from '../lib/er
 import { logError, logInfo, newRequestId } from '../lib/infra/log';
 import { writeSearchLog } from '../lib/infra/metrics';
 import { getSuggestions, validateSuggestParams } from '../lib/services/suggest';
+import { getWorkDetail } from '../lib/services/work';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -358,6 +359,14 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
 
       case 'stats':
         return await keywordStats(env);
+
+      case 'work': {
+        const wid = url.searchParams.get('id') ?? '';
+        if (!wid) return new Response(JSON.stringify(errorEnvelope(new AppError('BAD_QUERY', '缺少文献 id（?id=doi:10.x/y）'), newRequestId())), { status: 400, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        const wt0 = Date.now();
+        const detail = await getWorkDetail(wid, env);
+        return new Response(JSON.stringify(okEnvelope(detail, { requestId: newRequestId(), ms: Date.now() - wt0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+      }
 
       case 'suggest': {
         const q = validateSuggestParams(url);
