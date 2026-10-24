@@ -10,7 +10,7 @@ import { paramsFromUrl, toApiQuery } from './url.js';
 /**
  * @typedef {object} AppState
  * @property {{ raw: string, params: import('./url.js').SearchUiParams }} query
- * @property {{ items: any[], poolSize: number, page: number, limit: number, hasMore: boolean, exhausted: boolean, loading: boolean, error: {code: string, message: string, retryable: boolean} | null, partial: boolean, sources: any[], parsed: any, requestId: string, cache: string, ms: number }} results
+ * @property {{ items: any[], poolSize: number, page: number, limit: number, hasMore: boolean, exhausted: boolean, loading: boolean, error: {code: string, message: string, retryable: boolean} | null, partial: boolean, stale: boolean, sources: any[], parsed: any, requestId: string, cache: string, ms: number }} results
  * @property {{ theme: string, view: string, drawerId: string, paletteOpen: boolean, filtersOpen: boolean, density: string }} ui
  * @property {{ clientId: string }} user
  */
@@ -20,7 +20,7 @@ export const state = {
   query: { raw: '', params: paramsFromUrl(new URL(location.href)) },
   results: {
     items: [], poolSize: 0, page: 1, limit: 20, hasMore: false, exhausted: false,
-    loading: false, error: null, partial: false, sources: [], parsed: null, requestId: '', cache: '', ms: 0,
+    loading: false, error: null, partial: false, stale: false, sources: [], parsed: null, requestId: '', cache: '', ms: 0,
   },
   ui: { theme: document.documentElement.getAttribute('data-theme') ?? 'light', view: 'list', drawerId: '', paletteOpen: false, filtersOpen: false, density: 'comfortable' },
   user: { clientId: ensureClientId() },
@@ -95,7 +95,7 @@ export async function runSearch(url = new URL(location.href)) {
     setState({
       results: {
         ...state.results,
-        items: r.items, poolSize: r.poolSize, hasMore: r.hasMore, exhausted: r.exhausted,
+        items: r.items, poolSize: r.poolSize, hasMore: r.hasMore, exhausted: r.exhausted, stale: Boolean(r.stale),
         loading: false, error: null, partial: r.partial, sources: r.sources, parsed: r.parsed,
         requestId: r.requestId, cache: r.cache, ms: r.ms,
       },

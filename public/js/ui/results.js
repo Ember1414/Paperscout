@@ -21,7 +21,18 @@ import { icon } from '../icons.js';
  * @property {boolean} exhausted
  * @property {number} poolSize
  * @property {string} view
+ * @property {boolean} [stale]
  */
+
+/** 查询内容词（与 eval 口径一致：长度≥2 去停用词）
+ * @param {string} q */
+export function highlightTerms(q) {
+  return (q ?? '')
+    .toLowerCase()
+    .split(/\s|,|;+/)
+    .map((w) => w.replace(/["'()`]/g, ''))
+    .filter((w) => w.length >= 2 && !['the', 'a', 'an', 'of', 'and', 'for', 'in', 'on', 'to', 'with', '的', '和', '与', '在'].includes(w));
+}
 
 /**
  * @param {ResultsState} st
@@ -41,6 +52,9 @@ export function resultsHtml(st, ctx) {
   if (!st.items.length) {
     return emptyHtml(ctx.q);
   }
+  const staleBar = st.stale
+    ? '<div class="notice-bar notice-warn" role="status">数据源暂时都不可用，以下为 10 分钟内的缓存结果（可稍后重试）</div>'
+    : '';
   const okCount = st.sources.filter((s) => s.status === 'ok' || s.status === undefined).length;
   const partialBar = st.partial
     ? `<div class="notice-bar notice-warn" role="status">
@@ -49,11 +63,12 @@ export function resultsHtml(st, ctx) {
        </div>`
     : '';
   const view = st.view;
+  const hl = highlightTerms(ctx.q);
   const listHtml = view === 'compact'
-    ? st.items.map((w) => cardHtml(w, { citationsTopDecile: ctx.citationsTopDecile, density: 'compact', current: w.id === ctx.currentId })).join('')
-    : st.items.map((w) => cardHtml(w, { citationsTopDecile: ctx.citationsTopDecile, density: 'list', current: w.id === ctx.currentId })).join('');
+    ? st.items.map((w) => cardHtml(w, { citationsTopDecile: ctx.citationsTopDecile, density: 'compact', current: w.id === ctx.currentId }, hl)).join('')
+    : st.items.map((w) => cardHtml(w, { citationsTopDecile: ctx.citationsTopDecile, density: 'list', current: w.id === ctx.currentId }, hl)).join('');
   return `
-    ${partialBar}
+    ${staleBar}${partialBar}
     <div class="js-results-list" role="list" aria-live="polite" aria-busy="false">${listHtml}</div>
     ${paginationHtml(st)}`;
 }

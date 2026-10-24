@@ -81,6 +81,12 @@ async function evalOne(c) {
   });
   const effectiveSkip = skipCoverage || allTerms.length === 0;
   const offTopic = covs.filter((cv) => cv === 0).length;
+  const venueCount = new Map();
+  for (const w of items.slice(0, 10)) {
+    const v = String(w.venue ?? '—').toLowerCase();
+    venueCount.set(v, (venueCount.get(v) ?? 0) + 1);
+  }
+  const topVenueShare = top.length ? Math.max(...venueCount.values()) / top.length : null; // 多样性：Top10 最大同 venue 占比
   const dois = items.map((w) => normDoi(w.doi)).filter(Boolean);
   const fps = items.map((w) => titleFp(w.title)).filter(Boolean);
   const dupDoi = dois.length - new Set(dois).size;
@@ -95,6 +101,7 @@ async function evalOne(c) {
     offTopicRatio: effectiveSkip ? null : covs.length ? +(offTopic / covs.length).toFixed(3) : null,
     coverageNote: effectiveSkip ? 'skipped' : isWeak ? 'weak(sort!=smart)' : '',
     dupByDoi: dupDoi, dupByTitle: dupTitle,
+    topVenueShare: topVenueShare === null ? null : +topVenueShare.toFixed(2),
     sampleTitles: items.slice(0, 3).map((w) => String(w.title).slice(0, 50)),
   };
 }
@@ -107,8 +114,8 @@ const outFile = `docs/EVIDENCE/eval-${LABEL}.json`;
 await writeFile(outFile, JSON.stringify({ base: BASE, label: LABEL, at: new Date().toISOString(), rows }, null, 2));
 
 console.log(`# 检索质量评测 · ${LABEL} · ${BASE}\n`);
-console.log('| # | 查询 | HTTP | ms | 结果数 | 源OK | Top10覆盖 | 跑题占比 | 重复(D+T) |');
-console.log('|---|------|------|----|--------|------|-----------|----------|-----------|');
+console.log('| # | 查询 | HTTP | ms | 结果数 | 源OK | Top10覆盖 | 跑题占比 | 重复(D+T) | Top Venue 占比 |');
+console.log('|---|------|------|----|--------|------|-----------|----------|-----------|----------------|');
 for (const r of rows) {
   console.log(`| ${r.id} | ${r.q.slice(0, 26).replace(/\|/g, '\\|')} | ${r.httpStatus}${r.err ? ' ' + r.err : ''} | ${r.ms} | ${r.resultCount} | ${r.sourcesOk}/${r.sourcesTotal} | ${r.top10Coverage ?? '—'} | ${r.offTopicRatio ?? '—'} | ${r.dupByDoi}+${r.dupByTitle} |`);
 }

@@ -415,3 +415,11 @@
   margin-left: auto;
   color: var(--fg-3);
 }
+
+/* ---------- M2-15 关键词高亮 ---------- */
+mark.ps-hl {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 2px;
+  padding: 0 1px;
+}

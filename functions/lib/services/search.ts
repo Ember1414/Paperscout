@@ -5,6 +5,8 @@ import { canonicalHash, l0Get, l0Put, l1Get, l1Put, l2Get } from '../infra/cache
 import { Semaphore } from '../infra/semaphore';
 import { parseQuery, extractDoi } from '../query/parse';
 import { expandQuery } from '../query/dict';
+import { coolDown, isCoolingDown } from '../infra/cooldown';
+import { diversifyByVenue } from '../core/diversify';
 import { activeSources, DEFAULT_CORE_SOURCES, SOURCES, truncateByTier } from '../sources/registry';
 import { fuseRecords } from '../core/fusion';
 import { rankWorks } from '../core/rank';
@@ -63,6 +65,8 @@ export interface V3SearchResult {
   queryHash: string;
   /** 命中的缓存层（X-Cache 头用）；undefined = miss */
   cacheLayer?: 'l0' | 'l1' | 'l2';
+  /** 全部源失败时返回的 L1 旧池（7.7 降级，前端显示提示条） */
+  stale?: boolean;
 }
 
 export interface OrchestratorDeps {
@@ -297,6 +301,10 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
 
   const recallRound = async (baseOffsets: Record<string, number>): Promise<void> => {
     const tasks = usable.map(async (def) => {
+      if (isCoolingDown(def.id)) {
+        statuses[def.id] = { id: def.id, name: def.name, status: 'skipped', ms: 0, count: 0 };
+        return;
+      }
       const offset = baseOffsets[def.id] ?? 0;
       const startedAt = Date.now();
       let result: RawFetchResult;
@@ -315,6 +323,8 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
           ms, count: result.records.length,
         };
       }
+      // M2-15：429 → 本 isolate 内冷却 60s（不写 KV；追加轮直接跳过冷却中的源）
+      if (result.error?.kind === 'rate_limited') coolDown(def.id);
       collected.push(...result.records);
       offsets[def.id] = offset + SEARCH.PER_SOURCE_LIMIT;
     });
@@ -332,9 +342,21 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   await recallRound(offsets);
   // 全部源失败且无任何结果 → 503（7.7；L1/L2 旧结果兜底在 M1-09 接入）
   if (!collected.length && statuses && !Object.values(statuses).some((s) => s.status === 'ok')) {
+    // 7.7 全部源失败：有 L1 旧池 → 返回旧结果 + stale 标记；否则 503
+    const stale = await l1Get<SearchPool>(queryHash);
+    if (stale.value?.items?.length) {
+      const sp = slicePage(stale.value, params.page, params.limit, stale.value.exhausted ?? true);
+      return {
+        items: sp.items, total: sp.items.length, poolSize: stale.value.items.length,
+        page: params.page, limit: params.limit, hasMore: sp.hasMore, exhausted: sp.exhausted,
+        stale: true, cacheLayer: 'l1', sources: Object.values(statuses), ...meta(true),
+      };
+    }
     throw new AppError('ALL_SOURCES_FAILED', '数据源暂时都不可用', { retryable: true });
   }
-  let poolItems = rankWorks(applyFilters(fuseRecords(collected)), scoredParsed, sort);
+  let ranked0 = rankWorks(applyFilters(fuseRecords(collected)), scoredParsed, sort);
+  if (sort === 'smart') ranked0 = diversifyByVenue(ranked0, { maxInARow: 2 }); // M2-15 多样性：同 venue 连续 ≤2
+  let poolItems = ranked0;
   let pool: SearchPool = { ...createPool(queryHash, poolItems), offsets: { ...offsets } };
 
   // 追加召回（池不足且未耗尽，最多 3 轮；召回原始记录独立融合后并入，全池重排保证跨页一致）
@@ -353,7 +375,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       if (!fresh.length) break;
       const fusedBatch = rankWorks(applyFilters(fuseRecords(fresh)), scoredParsed, sort);
       pool = markOffsets(appendToPool(pool, fusedBatch), offsets);
-      pool.items = rankWorks(pool.items, scoredParsed, sort);
+      pool.items = sort === 'smart' ? diversifyByVenue(rankWorks(pool.items, scoredParsed, sort), { maxInARow: 2 }) : rankWorks(pool.items, scoredParsed, sort);
     }
   }
 

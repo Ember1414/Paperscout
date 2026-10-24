@@ -96,6 +96,7 @@ export async function searchApi(query, opts = {}) {
     hasMore: /** @type {boolean} */ (Boolean(data?.hasMore)),
     exhausted: /** @type {boolean} */ (Boolean(data?.exhausted)),
     partial: /** @type {boolean} */ (Boolean(data?.partial)),
+    stale: /** @type {boolean} */ (Boolean(data?.stale)),
     sources: /** @type {any[]} */ (Array.isArray(data?.sources) ? data.sources : []),
     parsed: /** @type {any} */ (data?.parsed ?? {}),
   };

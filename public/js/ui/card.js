@@ -9,6 +9,29 @@ import { icon } from '../icons.js';
 /** @typedef {any} Work */
 
 /**
+ * 关键词高亮（功能全景 B 组 P0）：先 HTML 转义再包 <mark>，terms 同步转义后匹配。
+ * @param {string} text
+ * @param {string[]} terms
+ * @returns {string}
+ */
+export function highlightHtml(text, terms) {
+  const escaped = escapeHtml(String(text ?? ''));
+  if (!terms.length) return escaped;
+  /** @type {RegExp[]} */
+  const res = [];
+  for (const t of terms.slice(0, 6)) {
+    const et = escapeHtml(t);
+    if (et.length < 2) continue;
+    const safe = et.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (/^[a-z0-9]+$/.test(et)) res.push(new RegExp('\\b(' + safe + ')\\b', 'gi'));
+    else res.push(new RegExp('(' + safe + ')', 'gi'));
+  }
+  let out = escaped;
+  for (const re of res) out = out.replace(re, '<mark class="ps-hl">$1</mark>');
+  return out;
+}
+
+/**
  * @param {Work} w
  * @param {{ citationsTopDecile: number }} poolCtx
  * @returns {string[]}
@@ -42,7 +65,12 @@ function isTopVenueName(venue) {
  * @param {Work} w
  * @param {{ citationsTopDecile: number, density: 'list'|'compact', current?: boolean }} opts
  */
-export function cardHtml(w, opts) {
+/**
+ * @param {Work} w
+ * @param {{ citationsTopDecile: number, density: 'list'|'compact', current?: boolean }} opts
+ * @param {string[]} [highlightTerms]
+ */
+export function cardHtml(w, opts, highlightTerms = []) {
   const chips = chipsFor(w, opts);
   const authors = (/** @type {any[]} */ (w.authors ?? [])).map((a) => (typeof a === 'string' ? a : a?.name)).filter(Boolean);
   const authorText = authors.length ? `${authors.slice(0, 3).join(', ')}${authors.length > 3 ? ` 等 ${authors.length} 人` : ''}` : '作者未知';
@@ -57,7 +85,7 @@ export function cardHtml(w, opts) {
   void typeIcons;
   return `
     <article class="result-card${opts.current ? ' is-current' : ''}${opts.density === 'compact' ? ' is-compact' : ''}" data-work-id="${escapeAttr(w.id)}" data-key="${escapeAttr(w.id)}" tabindex="0" aria-label="${escapeAttr(w.title)}">
-      ${opts.density !== 'compact' ? `<h3 class="r-title">${escapeHtml(w.title)}</h3>` : `<h3 class="r-title" style="font-size:var(--t-sm);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;-webkit-line-clamp:unset">${escapeHtml(w.title)}</h3>`}
+                  ${opts.density !== 'compact' ? `<h3 class="r-title">${highlightHtml(w.title, highlightTerms)}</h3>` : `<h3 class="r-title" style="font-size:var(--t-sm);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;-webkit-line-clamp:unset">${escapeHtml(w.title)}</h3>`}
       <div class="r-meta">
         <span>${escapeHtml(authorText)}</span>
         <span>${escapeHtml(String(w.venue ?? '出版方未知'))}</span>
@@ -65,7 +93,7 @@ export function cardHtml(w, opts) {
         ${citations !== null ? `<span class="num">被引 ${citations.toLocaleString('zh-CN')}</span>` : ''}
         ${badges.map((b) => `<span class="badge">${escapeHtml(b)}</span>`).join('')}
       </div>
-      ${opts.density !== 'compact' && w.abstract ? `<p class="r-abstract">${escapeHtml(String(w.abstract).slice(0, 240))}…</p>` : ''}
+                  ${opts.density !== 'compact' && w.abstract ? `<p class="r-abstract">${highlightHtml(String(w.abstract).slice(0, 240) + '…', highlightTerms)}</p>` : ''}
       ${opts.density !== 'compact' && chips.length ? `<div class="r-chips" style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">${chips.map((c) => `<span class="chip">${escapeHtml(c)}</span>`).join('')}</div>` : ''}
       ${opts.density !== 'compact' && w.sources?.length ? `<div class="r-sources" style="margin-top:6px;font-size:var(--t-xs);color:var(--fg-3)">收录于 ${w.sources.length} 源：${escapeHtml(w.sources.map((/** @type {any} */ s) => s.sourceName).join(' / '))}</div>` : ''}
       <div class="r-actions">
