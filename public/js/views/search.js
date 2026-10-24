@@ -32,6 +32,7 @@ export function render(ctx) {
         <div class="js-toolbar" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0">
           <span class="js-stats num" style="font-size:var(--t-sm);color:var(--fg-2)" aria-live="polite"></span>
           <span style="margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <button type="button" class="btn btn-sm js-share" aria-label="分享检索结果">分享</button>
             <button type="button" class="btn btn-sm btn-primary js-ai-summary" aria-label="AI 研究现状总结">AI 总结</button>
             <button type="button" class="btn btn-sm js-ai-ask" aria-label="AI 问答">AI 问答</button>
             <span class="sr-only" id="view-label">视图切换</span>

@@ -1,11 +1,11 @@
 {
-  "name": "PaperScout · 全球论文检索",
+  "name": "PaperScout · 证据可溯源的学术研究工作台",
   "short_name": "PaperScout",
-  "description": "一站式检索国内外学术论文，聚合 11 大权威学术数据源",
+  "description": "多源学术论文聚合检索：智能去重、排序可解释、证据可溯源",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f6f7fb",
-  "theme_color": "#4056d6",
+  "background_color": "#FBFAF8",
+  "theme_color": "#B8791A",
   "icons": [
     {
       "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔭</text></svg>",
