@@ -11,3 +11,4 @@
 | D-005 | 2026-10-24 | M0-01 基线重复率口径：响应内按"归一化 DOI"与"标题指纹（去标点、小写）"双口径统计重复条数。v2 无去重统计接口，由 `scripts/baseline.mjs` 独立计算 | 已定 |
 | D-006 | 2026-10-24 | M0-07 邮箱 `2669788267@qq.com`（owner 提供）写入 `functions/lib/config.ts` 的 `CONTACT_EMAIL`，OpenAlex 请求与 User-Agent 接入；Crossref 的 mailto 接入留待 M1（M0-07 DoD 仅要求 OpenAlex） | 已定 |
 | D-007 | 2026-10-24 | 站点 origin 读取环境变量 `SITE_ORIGIN`（preview 可覆盖），缺省值仅作为构造上游自述（User-Agent / 礼貌池）的最后兜底；功能逻辑不依赖该常量做路由判断。红线"不写死域名"指功能绑定，UA 自述必须有值（5.1.3），与 Warmer 的 `TARGET_ORIGIN` 同一模式 | ⏳ M0 验收 |
+| D-008 | 2026-10-24 | `typecheck:web`（G-03）范围排除 `public/sw.js`：Service Worker 运行在独立上下文需 WebWorker lib，且 sw 将在 M8-02 重写（A-21）；届时用独立 tsconfig 纳管。主应用 JS 仍全量 checkJs | 已定 |
