@@ -82,7 +82,8 @@ export function bindSearchBar(root, opts = {}) {
       .catch(() => renderList(local)); // 离线/失败：纯本地建议，不阻塞输入
   };
 
-  /** 本地历史前缀匹配（M2-11 迁 IndexedDB，此处读简版存储） */
+  /** 本地历史前缀匹配（M2-11 迁 IndexedDB，此处读简版存储）
+   * @param {string} q */
   const localHistory = (q) => {
     try {
       const raw = /** @type {string | null} */ (localStorage.getItem('ps-recent-q'));
