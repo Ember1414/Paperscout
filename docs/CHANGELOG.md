@@ -48,7 +48,8 @@
 ### 增补（M2-14/M2-15，验收前 owner 增补包）
 - M2-14 检索准确性/广泛性：中英互译扩展词典（76 对，`dict.ts`）、`author:`/`year:` 意图落地、OpenAlex 作者名回退、`npm run eval` 自动评测（v2 vs v3：跑题 -33%、冗余 -72%+、DOI/author 质变）、空池缓存防投毒（60s 防抖）
 - M2-15 稳定性与可读性：源级 429 isolate 内存冷却（D-015）、全源失败 stale 兜底（7.7 预案）、venue 多样性（Top10 同源连续 ≤2）、关键词高亮（B 组 P0 补齐，XSS 安全断言）、eval 多样性指标
-- 单测 152 → 209 例
+- M2-16 弱查询容错：同义词/相关词并入召回（llm→large language model 实测 20/20）、空结果自动拼写纠正重试（retriedFrom）、结果池 sessionStorage 快照 SWR 秒开（10min TTL）
+- 单测 152 → 201 例
 
 ### 修复
 - A-02 跨源分页错位（池切片）/ A-04 类型筛选失效（严格过滤）/ A-05 语言判定不对称 / A-06 熔断 KV 写（在线 0 写）/ A-07 缓存写挂 waitUntil / A-08 缓存 key 含分页
