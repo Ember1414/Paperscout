@@ -15,3 +15,4 @@
 | D-009 | 2026-10-24 | v2 适配器的 `search()` 实现冻结不动（保护生产行为），v3 走各 adapter 文件内新增的并行 `fetchRaw()` 层（统一 RawRecord）；8.5 说的"改为返回 RawRecord"按此解释——M7 删除清单时连同 legacy 路径一起移除重复 | ⏳ M1 验收 |
 | D-010 | 2026-10-24 | PubMed 能力矩阵的"返回摘要"冻结为 false：esummary 不含摘要，补齐需第三次 efetch 调用；生医摘要覆盖由 Europe PMC（M1-03）承担。若 M3 评测显示 PubMed 相关性受损再评估 | ⏳ M1 验收 |
 | D-011 | 2026-10-24 | G-10 在 M1 档强制后，legacy 翻译路径的 4 处静默 catch 以补日志方式消除（行为不变，走备用通道的逻辑保留）；M6-05 重构 translate 时彻底收敛为单通道+规范错误对象 | 已定 |
+| D-012 | 2026-10-24 | A-01（检索历史从未写入）拆两段关闭：服务端统计（search_log，含 query_sample）M1 已落；**用户侧检索历史改本地优先**（IndexedDB，D-05/D-11），M2-11 由前端实现并关闭缺陷本体——不再恢复 v2 的 D1 history 写入。A-03（热词未累加）同口径：search_log M1 真实写入，keyword_daily 聚合由 M7-01 Warmer 完成，/api/stats 热词在 M7 切到 D1 派生 | ⏳ M1 验收 |
