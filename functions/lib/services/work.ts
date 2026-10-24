@@ -182,7 +182,7 @@ export async function getWorkDetail(id: string, env?: { CACHE?: KVNamespace }): 
   const path = resolveOpenAlexPath(id);
   if (!path) throw new AppError('NOT_FOUND', '没有找到这篇文献（仅支持 DOI 或 OpenAlex id）');
 
-  const cacheKey = `work:${path}`;
+  const cacheKey = `work:v2:${path}`; // v2 前缀 bust Cloudflare 边缘旧缓存
   try {
     const cached = await l1Get<WorkDetailResult>(cacheKey);
     if (cached.value) return cached.value;
@@ -227,8 +227,8 @@ export async function getWorkDetail(id: string, env?: { CACHE?: KVNamespace }): 
   };
 
   try {
-    // 防坏缓存：三列表全空且无摘要（上游部分失败的形态）不写 24h 缓存
-    const substantial = result.references.length > 0 || result.citedBy.length > 0 || result.similar.length > 0 || Boolean(work.abstract);
+    // 防坏缓存：引用列表全空（Crossref 兜底/上游部分失败）不写 24h 缓存
+    const substantial = result.references.length > 0 || result.citedBy.length > 0 || result.similar.length > 0;
     if (work.title && substantial) await l1Put(cacheKey, result, 86_400); // 5.5：24h
   } catch (e) {
     console.warn('work:l1-write-failed', e instanceof Error ? e.message : String(e));
