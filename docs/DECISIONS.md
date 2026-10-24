@@ -12,3 +12,6 @@
 | D-006 | 2026-10-24 | M0-07 邮箱 `2669788267@qq.com`（owner 提供）写入 `functions/lib/config.ts` 的 `CONTACT_EMAIL`，OpenAlex 请求与 User-Agent 接入；Crossref 的 mailto 接入留待 M1（M0-07 DoD 仅要求 OpenAlex） | 已定 |
 | D-007 | 2026-10-24 | 站点 origin 读取环境变量 `SITE_ORIGIN`（preview 可覆盖），缺省值仅作为构造上游自述（User-Agent / 礼貌池）的最后兜底；功能逻辑不依赖该常量做路由判断。红线"不写死域名"指功能绑定，UA 自述必须有值（5.1.3），与 Warmer 的 `TARGET_ORIGIN` 同一模式 | ⏳ M0 验收 |
 | D-008 | 2026-10-24 | `typecheck:web`（G-03）范围排除 `public/sw.js`：Service Worker 运行在独立上下文需 WebWorker lib，且 sw 将在 M8-02 重写（A-21）；届时用独立 tsconfig 纳管。主应用 JS 仍全量 checkJs | 已定 |
+| D-009 | 2026-10-24 | v2 适配器的 `search()` 实现冻结不动（保护生产行为），v3 走各 adapter 文件内新增的并行 `fetchRaw()` 层（统一 RawRecord）；8.5 说的"改为返回 RawRecord"按此解释——M7 删除清单时连同 legacy 路径一起移除重复 | ⏳ M1 验收 |
+| D-010 | 2026-10-24 | PubMed 能力矩阵的"返回摘要"冻结为 false：esummary 不含摘要，补齐需第三次 efetch 调用；生医摘要覆盖由 Europe PMC（M1-03）承担。若 M3 评测显示 PubMed 相关性受损再评估 | ⏳ M1 验收 |
+| D-011 | 2026-10-24 | G-10 在 M1 档强制后，legacy 翻译路径的 4 处静默 catch 以补日志方式消除（行为不变，走备用通道的逻辑保留）；M6-05 重构 translate 时彻底收敛为单通道+规范错误对象 | 已定 |

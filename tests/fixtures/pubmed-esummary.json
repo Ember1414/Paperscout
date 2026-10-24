@@ -1,0 +1,23 @@
+{
+  "result": {
+    "37734567": {
+      "uid": "37734567",
+      "pubdate": "2023 Sep 20",
+      "title": "CRISPR base editing of CD3 in T cells",
+      "authors": [{ "name": "Choi J" }, { "name": "Smith A" }],
+      "fulljournalname": "Nature Biotechnology",
+      "articleids": [
+        { "idtype": "pmid", "value": "37734567" },
+        { "idtype": "pmc", "value": "PMC10540001" }
+      ]
+    },
+    "36925542": {
+      "uid": "36925542",
+      "pubdate": "2023 Mar 1",
+      "title": "Single cell atlas without PMC",
+      "authors": [{ "name": "Doe J" }],
+      "fulljournalname": "Cell",
+      "articleids": [{ "idtype": "pmid", "value": "36925542" }]
+    }
+  }
+}

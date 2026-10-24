@@ -1,0 +1,32 @@
+{
+  "result": {
+    "hits": {
+      "@sent": 2,
+      "hit": [
+        {
+          "info": {
+            "key": "conf/neurips/Vaswani17",
+            "title": "Attention is all you need.",
+            "year": "2017",
+            "venue": "NeurIPS",
+            "doi": "10.5555/3295222.3295349",
+            "ee": "https://doi.org/10.5555/3295222.3295349",
+            "type": "Conference Paper",
+            "authors": { "author": [{ "text": "Ashish Vaswani" }, { "text": "Noam Shazeer" }] }
+          }
+        },
+        {
+          "info": {
+            "key": "journals/nature/Doe24",
+            "title": "A journal article",
+            "year": "2024",
+            "venue": ["Nature", "Nat"],
+            "ee": "https://nature.com/articles/x.pdf",
+            "type": "Journal Article",
+            "authors": { "author": { "text": "Jane Doe" } }
+          }
+        }
+      ]
+    }
+  }
+}

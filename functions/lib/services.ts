@@ -339,8 +339,9 @@ export async function bumpKeywordStats(env: Env, query: string): Promise<void> {
     await env.CACHE.put('stats:keywords', JSON.stringify(Object.fromEntries(top)), {
       expirationTtl: 86400 * 30,
     });
-  } catch {
-    /* 统计失败不影响主流程 */
+  } catch (e) {
+    // 统计失败不影响主流程，但必须留痕（G-10）
+    console.warn('stats:bump-failed', e instanceof Error ? e.message : String(e));
   }
 }
 

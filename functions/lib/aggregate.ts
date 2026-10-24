@@ -1,4 +1,4 @@
-import type { LanguageFilter, Paper, PaperTypeFilter, SearchParams, SourceId } from './types';
+import type { LanguageFilter, LegacySourceId, Paper, PaperTypeFilter, SearchParams } from './types';
 import { ADAPTERS, VALID_SOURCES } from './adapters';
 
 /** 参数解析与结果聚合 */
@@ -26,8 +26,8 @@ export function parseParams(url: URL): SearchParams {
 
   const rawSources = (q.get('sources') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
   const sources = (rawSources.length ? rawSources : [...VALID_SOURCES]).filter((s) =>
-    VALID_SOURCES.includes(s as SourceId),
-  ) as SourceId[];
+    VALID_SOURCES.includes(s as LegacySourceId),
+  ) as LegacySourceId[];
   if (!sources.length) sources.push('openalex');
 
   const limit = Math.min(Math.max(Number(q.get('limit')) || 20, 5), 60);

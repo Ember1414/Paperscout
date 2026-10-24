@@ -1,4 +1,4 @@
-import type { Env, Paper } from '../lib/types';
+import type { Env, LegacySourceId, Paper } from '../lib/types';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -36,7 +36,7 @@ async function handleSearch(request: Request, env: Env, ctx: EventContext<Env, a
       if (isCoolingDown(health, s)) {
         return Promise.resolve({ __cooldown: true });
       }
-      return ADAPTERS[s].search(params).then(
+      return ADAPTERS[s as LegacySourceId].search(params).then(
         (v) => {
           ctx.waitUntil(recordSuccess(env, s));
           return v;
@@ -53,7 +53,7 @@ async function handleSearch(request: Request, env: Env, ctx: EventContext<Env, a
   const cooldown: string[] = [];
   const lists: Paper[][] = [];
   settled.forEach((r, i) => {
-    const name = ADAPTERS[params.sources[i]].name;
+    const name = ADAPTERS[params.sources[i] as LegacySourceId].name;
     if (r.status === 'fulfilled') {
       if (Array.isArray(r.value)) lists.push(r.value);
       else cooldown.push(name); // 熔断冷却中，自动跳过
@@ -124,8 +124,9 @@ async function handleTranslate(url: URL, env: Env, ctx: EventContext<Env, any, a
       translated = (data?.[0] ?? []).map((seg: any) => seg?.[0] ?? '').join('').trim();
       if (translated) provider = 'google';
     }
-  } catch {
-    /* 走备用通道 */
+  } catch (e) {
+    // 走备用通道，但必须留痕（G-10）
+    console.warn('translate:channel-failed', e instanceof Error ? e.message : String(e));
   }
 
   // 通道 2：MyMemory（备用）
@@ -154,8 +155,9 @@ async function handleTranslate(url: URL, env: Env, ctx: EventContext<Env, any, a
       });
       translated = String(r?.translated_text ?? '').trim();
       if (translated) provider = 'workers-ai';
-    } catch {
-      /* 走最后兜底 */
+    } catch (e) {
+      // 走最后兜底，但必须留痕（G-10）
+      console.warn('translate:channel-failed', e instanceof Error ? e.message : String(e));
     }
   }
 
@@ -177,8 +179,9 @@ async function handleTranslate(url: URL, env: Env, ctx: EventContext<Env, any, a
       });
       translated = String(r?.response ?? '').trim();
       if (translated) provider = 'workers-ai-llm';
-    } catch {
-      /* 全部通道失败 */
+    } catch (e) {
+      // 全部通道失败，留痕（G-10）后由 502 兜底
+      console.warn('translate:all-channels-failed', e instanceof Error ? e.message : String(e));
     }
   }
 
@@ -205,7 +208,6 @@ async function handleDiag(): Promise<Response> {
     ['EuropePMC', 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=test&format=json&pageSize=1', 200],
     ['OpenAIRE', 'https://api.openaire.eu/search/publications?keywords=test&size=1', 200],
     ['Zenodo', 'https://zenodo.org/api/records?q=test&size=1', 200],
-    ['百度学术', 'https://xueshu.baidu.com/s?wd=test', 200],
     ['翻译(Google)', 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CN&dt=t&q=hi', 200],
     ['翻译(MyMemory)', 'https://api.mymemory.translated.net/get?q=hi&langpair=en|zh-CN', 200],
   ];
