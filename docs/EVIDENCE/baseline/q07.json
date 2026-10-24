@@ -1,0 +1,2360 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=single+cell+RNA+sequencing&limit=20&sort=citations",
+  "response": {
+    "cached": false,
+    "total": 117,
+    "page": 1,
+    "language": "all",
+    "paperType": "all",
+    "sourcesOk": 7,
+    "sourcesTotal": 11,
+    "cooldown": [
+      "OpenAlex",
+      "PubMed",
+      "DBLP"
+    ],
+    "papers": [
+      {
+        "title": "Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2",
+        "authors": [
+          "Michael I Love",
+          "Wolfgang Huber",
+          "Simon Anders"
+        ],
+        "year": 2014,
+        "venue": "Genome Biology",
+        "abstract": "Abstract In comparative high-throughput sequencing assays, a fundamental task is the analysis of count data, such as read counts per gene in RNA-seq, for evidence of systematic changes across experimental conditions. Small replicate numbers, discreteness, large dynamic range and the presence of outliers require a suitable statistical approach. We present DESeq2 , a method for differential analysis…",
+        "url": "https://doi.org/10.1186/s13059-014-0550-8",
+        "pdfUrl": "https://link.springer.com/content/pdf/10.1186/s13059-014-0550-8.pdf",
+        "doi": "10.1186/s13059-014-0550-8",
+        "citations": 93561,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Hallmarks of Cancer: The Next Generation",
+        "authors": [
+          "Douglas Hanahan",
+          "Robert A. Weinberg"
+        ],
+        "year": 2011,
+        "venue": "Cell",
+        "url": "https://doi.org/10.1016/j.cell.2011.02.013",
+        "doi": "10.1016/j.cell.2011.02.013",
+        "citations": 59279,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "STAR: ultrafast universal RNA-seq aligner",
+        "authors": [
+          "Alexander Dobin",
+          "Carrie A. Davis",
+          "Felix Schlesinger",
+          "Jorg Drenkow",
+          "Chris Zaleski",
+          "Sonali Jha",
+          "Philippe Batut",
+          "Mark Chaisson",
+          "Thomas R. Gingeras"
+        ],
+        "year": 2012,
+        "venue": "Bioinformatics",
+        "abstract": "Abstract Motivation: Accurate alignment of high-throughput RNA-seq data is a challenging and yet unsolved problem because of the non-contiguous transcript structure, relatively short read lengths and constantly increasing throughput of the sequencing technologies. Currently available RNA-seq aligners suffer from high mapping error rates, low mapping speed, read length limitation and mapping biases…",
+        "url": "https://doi.org/10.1093/bioinformatics/bts635",
+        "pdfUrl": "https://academic.oup.com/bioinformatics/article-pdf/29/1/15/49060422/bioinformatics_29_1_15.pdf",
+        "doi": "10.1093/bioinformatics/bts635",
+        "citations": 53598,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Single-step method of RNA isolation by acid guanidinium thiocyanate-phenol-chloroform extraction",
+        "authors": [
+          "Piotr Chomczynski",
+          "Nicoletta Sacchi"
+        ],
+        "year": 1987,
+        "venue": "Analytical Biochemistry",
+        "url": "https://doi.org/10.1016/0003-2697(87)90021-2",
+        "doi": "10.1016/0003-2697(87)90021-2",
+        "citations": 43828,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "DNA sequencing with chain-terminating inhibitors",
+        "authors": [
+          "F. Sanger",
+          "S. Nicklen",
+          "A. R. Coulson"
+        ],
+        "year": 1977,
+        "venue": "Proceedings of the National Academy of Sciences",
+        "abstract": "A new method for determining nucleotide sequences in DNA is described. It is similar to the “plus and minus” method [Sanger, F. &amp; Coulson, A. R. (1975) J. Mol. Biol. 94, 441-448] but makes use of the 2′,3′-dideoxy and arabinonucleoside analogues of the normal deoxynucleoside triphosphates, which act as specific chain-terminating inhibitors of DNA polymerase. The technique has been applied to t…",
+        "url": "https://doi.org/10.1073/pnas.74.12.5463",
+        "doi": "10.1073/pnas.74.12.5463",
+        "citations": 42625,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "limma powers differential expression analyses for RNA-sequencing and microarray studies",
+        "authors": [
+          "Matthew E. Ritchie",
+          "Belinda Phipson",
+          "Di Wu",
+          "Yifang Hu",
+          "Charity W. Law",
+          "Wei Shi",
+          "Gordon K. Smyth"
+        ],
+        "year": 2015,
+        "venue": "Nucleic Acids Research",
+        "abstract": "limma is an R/Bioconductor software package that provides an integrated solution for analysing data from gene expression experiments. It contains rich features for handling complex experimental designs and for information borrowing to overcome the problem of small sample sizes. Over the past decade, limma has been a popular choice for gene discovery through differential expression analyses of micr…",
+        "url": "https://doi.org/10.1093/nar/gkv007",
+        "pdfUrl": "https://europepmc.org/articles/PMC4402510/pdf",
+        "doi": "10.1093/nar/gkv007",
+        "citations": 39005,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Cutadapt removes adapter sequences from high-throughput sequencing reads",
+        "authors": [
+          "Marcel Martin"
+        ],
+        "year": 2011,
+        "venue": "EMBnet.journal",
+        "url": "https://doi.org/10.14806/ej.17.1.200",
+        "doi": "10.14806/ej.17.1.200",
+        "citations": 32374,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "QIIME allows analysis of high-throughput community sequencing data",
+        "authors": [
+          "J Gregory Caporaso",
+          "Justin Kuczynski",
+          "Jesse Stombaugh",
+          "Kyle Bittinger",
+          "Frederic D Bushman",
+          "Elizabeth K Costello",
+          "Noah Fierer",
+          "Antonio Gonzalez Peña",
+          "Julia K Goodrich",
+          "Jeffrey I Gordon",
+          "Gavin A Huttley",
+          "Scott T Kelley"
+        ],
+        "year": 2010,
+        "venue": "Nature Methods",
+        "url": "https://doi.org/10.1038/nmeth.f.303",
+        "pdfUrl": "http://www.nature.com/articles/nmeth.f.303.pdf",
+        "doi": "10.1038/nmeth.f.303",
+        "citations": 31473,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "The SILVA ribosomal RNA gene database project: improved data processing and web-based tools",
+        "authors": [
+          "Christian Quast",
+          "Elmar Pruesse",
+          "Pelin Yilmaz",
+          "Jan Gerken",
+          "Timmy Schweer",
+          "Pablo Yarza",
+          "Jörg Peplies",
+          "Frank Oliver Glöckner"
+        ],
+        "year": 2012,
+        "venue": "Nucleic Acids Research",
+        "url": "https://doi.org/10.1093/nar/gks1219",
+        "doi": "10.1093/nar/gks1219",
+        "citations": 30619,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "MicroRNAs",
+        "authors": [
+          "David P Bartel"
+        ],
+        "year": 2004,
+        "venue": "Cell",
+        "url": "https://doi.org/10.1016/s0092-8674(04)00045-5",
+        "doi": "10.1016/s0092-8674(04)00045-5",
+        "citations": 30611,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "The Genome Analysis Toolkit: A MapReduce framework for analyzing next-generation DNA sequencing data",
+        "authors": [
+          "Aaron McKenna",
+          "Matthew Hanna",
+          "Eric Banks",
+          "Andrey Sivachenko",
+          "Kristian Cibulskis",
+          "Andrew Kernytsky",
+          "Kiran Garimella",
+          "David Altshuler",
+          "Stacey Gabriel",
+          "Mark Daly",
+          "Mark A. DePristo"
+        ],
+        "year": 2010,
+        "venue": "Genome Research",
+        "abstract": "Next-generation DNA sequencing (NGS) projects, such as the 1000 Genomes Project, are already revolutionizing our understanding of genetic variation among individuals. However, the massive data sets generated by NGS—the 1000 Genome pilot alone includes nearly five terabases—make writing feature-rich, efficient, and robust analysis tools difficult for even computationally sophisticated individuals. …",
+        "url": "https://doi.org/10.1101/gr.107524.110",
+        "doi": "10.1101/gr.107524.110",
+        "citations": 26996,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "A low-cost, high-efficiency solar cell based on dye-sensitized colloidal TiO2 films",
+        "authors": [
+          "Brian O'Regan",
+          "Michael Grätzel"
+        ],
+        "year": 1991,
+        "venue": "Nature",
+        "url": "https://doi.org/10.1038/353737a0",
+        "pdfUrl": "http://www.nature.com/articles/353737a0.pdf",
+        "doi": "10.1038/353737a0",
+        "citations": 26897,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Homeostasis model assessment: insulin resistance and ?-cell function from fasting plasma glucose and insulin concentrations in man",
+        "authors": [
+          "D. R. Matthews",
+          "J. P. Hosker",
+          "A. S. Rudenski",
+          "B. A. Naylor",
+          "D. F. Treacher",
+          "R. C. Turner"
+        ],
+        "year": 1985,
+        "venue": "Diabetologia",
+        "url": "https://doi.org/10.1007/bf00280883",
+        "pdfUrl": "http://link.springer.com/content/pdf/10.1007/BF00280883.pdf",
+        "doi": "10.1007/bf00280883",
+        "citations": 26888,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology.",
+        "authors": [
+          "Richards S",
+          "Aziz N",
+          "Bale S",
+          "Bick D",
+          "Das S",
+          "Gastier-Foster J",
+          "Grody WW",
+          "Hegde M",
+          "Lyon E",
+          "Spector E",
+          "Voelkerding K",
+          "Rehm HL"
+        ],
+        "year": 2015,
+        "abstract": "The American College of Medical Genetics and Genomics (ACMG) previously developed guidance for the interpretation of sequence variants.(1) In the past decade, sequencing technology has evolved rapidly with the advent of high-throughput next-generation sequencing. By adopting and leveraging next-generation sequencing, clinical laboratories are now performing an ever-increasing catalogue of genetic …",
+        "url": "https://doi.org/10.1038/gim.2015.30",
+        "pdfUrl": "https://europepmc.org/articles/PMC4544753/pdf",
+        "doi": "10.1038/gim.2015.30",
+        "citations": 26880,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing",
+        "authors": [
+          "Anton Bankevich",
+          "Sergey Nurk",
+          "Dmitry Antipov",
+          "Alexey A. Gurevich",
+          "Mikhail Dvorkin",
+          "Alexander S. Kulikov",
+          "Valery M. Lesin",
+          "Sergey I. Nikolenko",
+          "Son Pham",
+          "Andrey D. Prjibelski",
+          "Alexey V. Pyshkin",
+          "Alexander V. Sirotkin"
+        ],
+        "year": 2012,
+        "venue": "Journal of Computational Biology",
+        "abstract": "Abstract The lion's share of bacteria in various environments cannot be cloned in the laboratory and thus cannot be sequenced using existing technologies. A major goal of single-cell genomics is to complement gene-centric metagenomic data with whole-genome assemblies of uncultivated organisms. Assembly of single-cell data is challenging because of highly non-uniform read coverage as well as elevat…",
+        "url": "https://doi.org/10.1089/cmb.2012.0021",
+        "pdfUrl": "https://journals.sagepub.com/doi/pdf/10.1089/cmb.2012.0021",
+        "doi": "10.1089/cmb.2012.0021",
+        "citations": 25528,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "DADA2: High-resolution sample inference from Illumina amplicon data.",
+        "authors": [
+          "Callahan BJ",
+          "McMurdie PJ",
+          "Rosen MJ",
+          "Han AW",
+          "Johnson AJ",
+          "Holmes SP."
+        ],
+        "year": 2016,
+        "abstract": "We present the open-source software package DADA2 for modeling and correcting Illumina-sequenced amplicon errors (https://github.com/benjjneb/dada2). DADA2 infers sample sequences exactly and resolves differences of as little as 1 nucleotide. In several mock communities, DADA2 identified more real variants and output fewer spurious sequences than other methods. We applied DADA2 to vaginal samples …",
+        "url": "https://doi.org/10.1038/nmeth.3869",
+        "pdfUrl": "https://europepmc.org/articles/PMC4927377/pdf",
+        "doi": "10.1038/nmeth.3869",
+        "citations": 25114,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "The Hallmarks of Cancer",
+        "authors": [
+          "Douglas Hanahan",
+          "Robert A Weinberg"
+        ],
+        "year": 2000,
+        "venue": "Cell",
+        "url": "https://doi.org/10.1016/s0092-8674(00)81683-9",
+        "doi": "10.1016/s0092-8674(00)81683-9",
+        "citations": 24175,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "EEGLAB: an open source toolbox for analysis of single-trial EEG dynamics including independent component analysis",
+        "authors": [
+          "Arnaud Delorme",
+          "Scott Makeig"
+        ],
+        "year": 2004,
+        "venue": "Journal of Neuroscience Methods",
+        "url": "https://doi.org/10.1016/j.jneumeth.2003.10.009",
+        "doi": "10.1016/j.jneumeth.2003.10.009",
+        "citations": 23847,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Induction of Pluripotent Stem Cells from Mouse Embryonic and Adult Fibroblast Cultures by Defined Factors",
+        "authors": [
+          "Kazutoshi Takahashi",
+          "Shinya Yamanaka"
+        ],
+        "year": 2006,
+        "venue": "Cell",
+        "url": "https://doi.org/10.1016/j.cell.2006.07.024",
+        "doi": "10.1016/j.cell.2006.07.024",
+        "citations": 23580,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "SSD: Single Shot MultiBox Detector",
+        "authors": [
+          "Wei Liu",
+          "Dragomir Anguelov",
+          "Dumitru Erhan",
+          "Christian Szegedy",
+          "Scott Reed",
+          "Cheng-Yang Fu",
+          "Alexander C. Berg"
+        ],
+        "year": 2016,
+        "venue": "Lecture Notes in Computer Science",
+        "url": "https://doi.org/10.1007/978-3-319-46448-0_2",
+        "doi": "10.1007/978-3-319-46448-0_2",
+        "citations": 22679,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome",
+        "authors": [
+          "Bo Li",
+          "Colin N Dewey"
+        ],
+        "year": 2011,
+        "venue": "BMC Bioinformatics",
+        "abstract": "Abstract Background RNA-Seq is revolutionizing the way transcript abundances are measured. A key challenge in transcript quantification from RNA-Seq data is the handling of reads that map to multiple genes or isoforms. This issue is particularly important for quantification with de novo transcriptome assemblies in the absence of sequenced genomes, as it is difficult to determine which transcripts …",
+        "url": "https://doi.org/10.1186/1471-2105-12-323",
+        "pdfUrl": "https://link.springer.com/content/pdf/10.1186/1471-2105-12-323.pdf",
+        "doi": "10.1186/1471-2105-12-323",
+        "citations": 20648,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "HTSeq—a Python framework to work with high-throughput sequencing data",
+        "authors": [
+          "Simon Anders",
+          "Paul Theodor Pyl",
+          "Wolfgang Huber"
+        ],
+        "year": 2014,
+        "venue": "Bioinformatics",
+        "abstract": "Abstract Motivation: A large choice of tools exists for many standard tasks in the analysis of high-throughput sequencing (HTS) data. However, once a project deviates from standard workflows, custom scripts are needed. Results: We present HTSeq, a Python library to facilitate the rapid development of such scripts. HTSeq offers parsers for many common data formats in HTS projects, as well as classe…",
+        "url": "https://doi.org/10.1093/bioinformatics/btu638",
+        "pdfUrl": "https://academic.oup.com/bioinformatics/article-pdf/31/2/166/49011133/bioinformatics_31_2_166.pdf",
+        "doi": "10.1093/bioinformatics/btu638",
+        "citations": 20310,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Full-length transcriptome assembly from RNA-Seq data without a reference genome.",
+        "authors": [
+          "Grabherr MG",
+          "Haas BJ",
+          "Yassour M",
+          "Levin JZ",
+          "Thompson DA",
+          "Amit I",
+          "Adiconis X",
+          "Fan L",
+          "Raychowdhury R",
+          "Zeng Q",
+          "Chen Z",
+          "Mauceli E"
+        ],
+        "year": 2011,
+        "abstract": "Massively parallel sequencing of cDNA has enabled deep and efficient probing of transcriptomes. Current approaches for transcript reconstruction from such data often rely on aligning reads to a reference genome, and are thus unsuitable for samples with a partial or missing reference genome. Here we present the Trinity method for de novo assembly of full-length transcripts and evaluate it on sample…",
+        "url": "https://doi.org/10.1038/nbt.1883",
+        "pdfUrl": "https://europepmc.org/articles/PMC3571712/pdf",
+        "doi": "10.1038/nbt.1883",
+        "citations": 15952,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Integrated analysis of multimodal single-cell data.",
+        "authors": [
+          "Hao Y",
+          "Hao S",
+          "Andersen-Nissen E",
+          "Mauck WM",
+          "Zheng S",
+          "Butler A",
+          "Lee MJ",
+          "Wilk AJ",
+          "Darby C",
+          "Zager M",
+          "Hoffman P",
+          "Stoeckius M"
+        ],
+        "year": 2021,
+        "abstract": "The simultaneous measurement of multiple modalities represents an exciting frontier for single-cell genomics and necessitates computational methods that can define cellular states based on multimodal data. Here, we introduce \"weighted-nearest neighbor\" analysis, an unsupervised framework to learn the relative utility of each data type in each cell, enabling an integrative analysis of multiple moda…",
+        "url": "https://doi.org/10.1016/j.cell.2021.04.048",
+        "pdfUrl": "https://europepmc.org/articles/PMC8238499/pdf",
+        "doi": "10.1016/j.cell.2021.04.048",
+        "citations": 15281,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "An integrated encyclopedia of DNA elements in the human genome.",
+        "authors": [
+          "ENCODE Project Consortium."
+        ],
+        "year": 2012,
+        "abstract": "The human genome encodes the blueprint of life, but the function of the vast majority of its nearly three billion bases is unknown. The Encyclopedia of DNA Elements (ENCODE) project has systematically mapped regions of transcription, transcription factor association, chromatin structure and histone modification. These data enabled us to assign biochemical functions for 80% of the genome, in partic…",
+        "url": "https://doi.org/10.1038/nature11247",
+        "pdfUrl": "https://europepmc.org/articles/PMC3439153/pdf",
+        "doi": "10.1038/nature11247",
+        "citations": 15247,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Minimap2: pairwise alignment for nucleotide sequences.",
+        "authors": [
+          "Li H."
+        ],
+        "year": 2018,
+        "abstract": "MotivationRecent advances in sequencing technologies promise ultra-long reads of ∼100 kb in average, full-length mRNA or cDNA reads in high throughput and genomic contigs over 100 Mb in length. Existing alignment programs are unable or inefficient to process such data at scale, which presses for the development of new alignment algorithms.ResultsMinimap2 is a general-purpose alignment program to m…",
+        "url": "https://doi.org/10.1093/bioinformatics/bty191",
+        "pdfUrl": "https://europepmc.org/articles/PMC6137996/pdf",
+        "doi": "10.1093/bioinformatics/bty191",
+        "citations": 14827,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Clinical Characteristics of 138 Hospitalized Patients With 2019 Novel Coronavirus-Infected Pneumonia in Wuhan, China.",
+        "authors": [
+          "Wang D",
+          "Hu B",
+          "Hu C",
+          "Zhu F",
+          "Liu X",
+          "Zhang J",
+          "Wang B",
+          "Xiang H",
+          "Cheng Z",
+          "Xiong Y",
+          "Zhao Y",
+          "Li Y"
+        ],
+        "year": 2020,
+        "abstract": "ImportanceIn December 2019, novel coronavirus (2019-nCoV)-infected pneumonia (NCIP) occurred in Wuhan, China. The number of cases has increased rapidly but information on the clinical characteristics of affected patients is limited.ObjectiveTo describe the epidemiological and clinical characteristics of NCIP.Design, setting, and participantsRetrospective, single-center case series of the 138 conse…",
+        "url": "https://doi.org/10.1001/jama.2020.1585",
+        "pdfUrl": "https://europepmc.org/articles/PMC7042881/pdf",
+        "doi": "10.1001/jama.2020.1585",
+        "citations": 14752,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Comprehensive Integration of Single-Cell Data.",
+        "authors": [
+          "Stuart T",
+          "Butler A",
+          "Hoffman P",
+          "Hafemeister C",
+          "Papalexi E",
+          "Mauck WM",
+          "Hao Y",
+          "Stoeckius M",
+          "Smibert P",
+          "Satija R."
+        ],
+        "year": 2019,
+        "abstract": "Single-cell transcriptomics has transformed our ability to characterize cell states, but deep biological understanding requires more than a taxonomic listing of clusters. As new methods arise to measure distinct cellular modalities, a key analytical challenge is to integrate these datasets to better understand cellular identity and function. Here, we develop a strategy to \"anchor\" diverse datasets…",
+        "url": "https://doi.org/10.1016/j.cell.2019.05.031",
+        "pdfUrl": "https://europepmc.org/articles/PMC6687398/pdf",
+        "doi": "10.1016/j.cell.2019.05.031",
+        "citations": 14541,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "MicroRNAs: target recognition and regulatory functions.",
+        "authors": [
+          "Bartel DP."
+        ],
+        "year": 2009,
+        "abstract": "MicroRNAs (miRNAs) are endogenous approximately 23 nt RNAs that play important gene-regulatory roles in animals and plants by pairing to the mRNAs of protein-coding genes to direct their posttranscriptional repression. This review outlines the current understanding of miRNA target recognition in animals and discusses the widespread impact of miRNAs on both the expression and evolution of protein-c…",
+        "url": "https://doi.org/10.1016/j.cell.2009.01.002",
+        "pdfUrl": "https://europepmc.org/articles/PMC3794896/pdf",
+        "doi": "10.1016/j.cell.2009.01.002",
+        "citations": 14048,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "GSVA: gene set variation analysis for microarray and RNA-seq data.",
+        "authors": [
+          "Hänzelmann S",
+          "Castelo R",
+          "Guinney J."
+        ],
+        "year": 2013,
+        "abstract": "BackgroundGene set enrichment (GSE) analysis is a popular framework for condensing information from gene expression profiles into a pathway or signature summary. The strengths of this approach over single gene analysis include noise and dimension reduction, as well as greater biological interpretability. As molecular profiling experiments move beyond simple case-control studies, robust and flexibl…",
+        "url": "https://doi.org/10.1186/1471-2105-14-7",
+        "pdfUrl": "https://europepmc.org/articles/PMC3618321/pdf",
+        "doi": "10.1186/1471-2105-14-7",
+        "citations": 13075,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Differential expression analysis for sequence count data.",
+        "authors": [
+          "Anders S",
+          "Huber W."
+        ],
+        "year": 2010,
+        "abstract": "High-throughput sequencing assays such as RNA-Seq, ChIP-Seq or barcode counting provide quantitative readouts in the form of count data. To infer differential signal in such data correctly and with good statistical power, estimation of data variability throughout the dynamic range and a suitable error model are required. We propose a method based on the negative binomial distribution, with varianc…",
+        "url": "https://doi.org/10.1186/gb-2010-11-10-r106",
+        "pdfUrl": "https://europepmc.org/articles/PMC3218662/pdf",
+        "doi": "10.1186/gb-2010-11-10-r106",
+        "citations": 12704,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Simple combinations of lineage-determining transcription factors prime cis-regulatory elements required for macrophage and B cell identities.",
+        "authors": [
+          "Heinz S",
+          "Benner C",
+          "Spann N",
+          "Bertolino E",
+          "Lin YC",
+          "Laslo P",
+          "Cheng JX",
+          "Murre C",
+          "Singh H",
+          "Glass CK."
+        ],
+        "year": 2010,
+        "abstract": "Genome-scale studies have revealed extensive, cell type-specific colocalization of transcription factors, but the mechanisms underlying this phenomenon remain poorly understood. Here, we demonstrate in macrophages and B cells that collaborative interactions of the common factor PU.1 with small sets of macrophage- or B cell lineage-determining transcription factors establish cell-specific binding s…",
+        "url": "https://doi.org/10.1016/j.molcel.2010.05.004",
+        "pdfUrl": "https://europepmc.org/articles/PMC2898526/pdf",
+        "doi": "10.1016/j.molcel.2010.05.004",
+        "citations": 12588,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Integrative analysis of complex cancer genomics and clinical profiles using the cBioPortal.",
+        "authors": [
+          "Gao J",
+          "Aksoy BA",
+          "Dogrusoz U",
+          "Dresdner G",
+          "Gross B",
+          "Sumer SO",
+          "Sun Y",
+          "Jacobsen A",
+          "Sinha R",
+          "Larsson E",
+          "Cerami E",
+          "Sander C"
+        ],
+        "year": 2013,
+        "abstract": "The cBioPortal for Cancer Genomics (http://cbioportal.org) provides a Web resource for exploring, visualizing, and analyzing multidimensional cancer genomics data. The portal reduces molecular profiling data from cancer tissues and cell lines into readily understandable genetic, epigenetic, gene expression, and proteomic events. The query interface combined with customized data storage enables res…",
+        "url": "https://doi.org/10.1126/scisignal.2004088",
+        "pdfUrl": "https://europepmc.org/articles/PMC4160307/pdf",
+        "doi": "10.1126/scisignal.2004088",
+        "citations": 12451,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "The hallmarks of aging.",
+        "authors": [
+          "López-Otín C",
+          "Blasco MA",
+          "Partridge L",
+          "Serrano M",
+          "Kroemer G."
+        ],
+        "year": 2013,
+        "abstract": "Aging is characterized by a progressive loss of physiological integrity, leading to impaired function and increased vulnerability to death. This deterioration is the primary risk factor for major human pathologies, including cancer, diabetes, cardiovascular disorders, and neurodegenerative diseases. Aging research has experienced an unprecedented advance over recent years, particularly with the di…",
+        "url": "https://doi.org/10.1016/j.cell.2013.05.039",
+        "pdfUrl": "https://europepmc.org/articles/PMC3836174/pdf",
+        "doi": "10.1016/j.cell.2013.05.039",
+        "citations": 12416,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Transcript assembly and quantification by RNA-Seq reveals unannotated transcripts and isoform switching during cell differentiation.",
+        "authors": [
+          "Trapnell C",
+          "Williams BA",
+          "Pertea G",
+          "Mortazavi A",
+          "Kwan G",
+          "van Baren MJ",
+          "Salzberg SL",
+          "Wold BJ",
+          "Pachter L."
+        ],
+        "year": 2010,
+        "abstract": "High-throughput mRNA sequencing (RNA-Seq) promises simultaneous transcript discovery and abundance estimation. However, this would require algorithms that are not restricted by prior gene annotations and that account for alternative transcription and splicing. Here we introduce such algorithms in an open-source software program called Cufflinks. To test Cufflinks, we sequenced and analyzed >430 mi…",
+        "url": "https://doi.org/10.1038/nbt.1621",
+        "pdfUrl": "https://europepmc.org/articles/PMC3146043/pdf",
+        "doi": "10.1038/nbt.1621",
+        "citations": 12364,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Metagenomic biomarker discovery and explanation.",
+        "authors": [
+          "Segata N",
+          "Izard J",
+          "Waldron L",
+          "Gevers D",
+          "Miropolsky L",
+          "Garrett WS",
+          "Huttenhower C."
+        ],
+        "year": 2011,
+        "abstract": "This study describes and validates a new method for metagenomic biomarker discovery by way of class comparison, tests of biological consistency and effect size estimation. This addresses the challenge of finding organisms, genes, or pathways that consistently explain the differences between two or more microbial communities, which is a central problem to the study of metagenomics. We extensively v…",
+        "url": "https://doi.org/10.1186/gb-2011-12-6-r60",
+        "pdfUrl": "https://europepmc.org/articles/PMC3218848/pdf",
+        "doi": "10.1186/gb-2011-12-6-r60",
+        "citations": 12298,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Graph-based genome alignment and genotyping with HISAT2 and HISAT-genotype.",
+        "authors": [
+          "Kim D",
+          "Paggi JM",
+          "Park C",
+          "Bennett C",
+          "Salzberg SL."
+        ],
+        "year": 2019,
+        "abstract": "The human reference genome represents only a small number of individuals, which limits its usefulness for genotyping. We present a method named HISAT2 (hierarchical indexing for spliced alignment of transcripts 2) that can align both DNA and RNA sequences using a graph Ferragina Manzini index. We use HISAT2 to represent and search an expanded model of the human reference genome in which over 14.5 …",
+        "url": "https://doi.org/10.1038/s41587-019-0201-4",
+        "pdfUrl": "https://europepmc.org/articles/PMC7605509/pdf",
+        "doi": "10.1038/s41587-019-0201-4",
+        "citations": 12080,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Advances in Machine Learning, Statistical Methods, and AI for Single-Cell RNA Annotation Using Raw Count Matrices in scRNA-seq Data",
+        "authors": [
+          "Megha Patel",
+          "Nimish Magre",
+          "Himanshi Motwani",
+          "Nik Bear Brown"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) has revolutionized our ability to analyze gene expression at the resolution of individual cells, providing unprecedented insights into cellular heterogeneity and complex biological systems. This paper reviews various advanced computational and machine learning techniques tailored for the analysis of scRNA-seq data, emphasizing their roles in different stages of the data processing pipeline.",
+        "url": "http://arxiv.org/abs/2406.05258",
+        "pdfUrl": "http://arxiv.org/pdf/2406.05258",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "A Unified Statistical Framework for Single Cell and Bulk RNA Sequencing Data",
+        "authors": [
+          "Lingxue Zhu",
+          "Jing Lei",
+          "Bernie Devlin",
+          "Kathryn Roeder"
+        ],
+        "year": 2016,
+        "venue": "arXiv 预印本",
+        "abstract": "Recent advances in technology have enabled the measurement of RNA levels for individual cells. Compared to traditional tissue-level bulk RNA-seq data, single cell sequencing yields valuable insights about gene expression profiles for different cell types, which is potentially critical for understanding many complex human diseases. However, developing quantitative tools for such data remains challenging because of high levels of technical noise, especially the \"dropout\" events. A \"dropout\" happens when the RNA for a gene fails to be amplified prior to sequencing, producing a \"false\" zero in the observed data. In this paper, we propose a Unified RNA-Sequencing Model (URSM) for both single cell and bulk RNA-seq data, formulated as a hierarchical model. URSM borrows the strength from both data sources and carefully models the dropouts in single cell data, leading to a more accurate estimation of cell type specific gene expression profile. In addition, URSM naturally provides inference on the dropout entries in single cell data that need to be imputed for downstream analyses, as well as the mixing proportions of different cell types in bulk samples. We adopt an empirical Bayes approach, where parameters are estimated using the EM algorithm and approximate inference is obtained by Gibbs sampling. Simulation results illustrate that URSM outperforms existing approaches both in correcting for dropouts in single cell data, as well as in deconvolving bulk samples. We also demonstrate an application to gene expression data on fetal brains, where our model successfully imputes the dropout genes and reveals cell type specific expression patterns.",
+        "url": "http://arxiv.org/abs/1609.08028",
+        "pdfUrl": "http://arxiv.org/pdf/1609.08028",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Artificial Intelligence Models for Cell Type and Subtype Identification Based on Single-Cell RNA Sequencing Data in Vision Science",
+        "authors": [
+          "Yeganeh Madadi",
+          "Aboozar Monavarfeshani",
+          "Hao Chen",
+          "W. Daniel Stamer",
+          "Robert W. Williams",
+          "Siamak Yousefi"
+        ],
+        "year": 2022,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) provides a high throughput, quantitative and unbiased framework for scientists in many research fields to identify and characterize cell types within heterogeneous cell populations from various tissues. However, scRNA-seq based identification of discrete cell-types is still labor intensive and depends on prior molecular knowledge. Artificial intelligence has provided faster, more accurate, and user-friendly approaches for cell-type identification. In this review, we discuss recent advances in cell-type identification methods using artificial intelligence techniques based on single-cell and single-nucleus RNA sequencing data in vision science.",
+        "url": "http://arxiv.org/abs/2209.13022",
+        "pdfUrl": "http://arxiv.org/pdf/2209.13022",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Issues arising from benchmarking single-cell RNA sequencing imputation methods",
+        "authors": [
+          "Wei Vivian Li",
+          "Jingyi Jessica Li"
+        ],
+        "year": 2019,
+        "venue": "arXiv 预印本",
+        "abstract": "On June 25th, 2018, Huang et al. published a computational method SAVER on Nature Methods for imputing dropout gene expression levels in single cell RNA sequencing (scRNA-seq) data. Huang et al. performed a set of comprehensive benchmarking analyses, including comparison with the data from RNA fluorescence in situ hybridization, to demonstrate that SAVER outperformed two existing scRNA-seq imputation methods, scImpute and MAGIC. However, their computational analyses were based on semi-synthetic data that the authors had generated following the Poisson-Gamma model used in the SAVER method. We have therefore re-examined Huang et al.'s study. We find that the semi-synthetic data have very different properties from those of real scRNA-seq data and that the cell clusters used for benchmarking are inconsistent with the cell types labeled by biologists. We show that a reanalysis based on real scRNA-seq data and grounded on biological knowledge of cell types leads to different results and conclusions from those of Huang et al.",
+        "url": "http://arxiv.org/abs/1908.07084",
+        "pdfUrl": "http://arxiv.org/pdf/1908.07084",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Root Causal Inference from Single Cell RNA Sequencing with the Negative Binomial",
+        "authors": [
+          "Eric V. Strobl"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "Accurately inferring the root causes of disease from sequencing data can improve the discovery of novel therapeutic targets. However, existing root causal inference algorithms require perfectly measured continuous random variables. Single cell RNA sequencing (scRNA-seq) datasets contain large numbers of cells but non-negative counts measured by an error prone process. We therefore introduce an algorithm called Root Causal Inference with Negative Binomials (RCI-NB) that accounts for count-based measurement error by separating negative binomial distributions into their gamma and Poisson components; the gamma distributions form a fully identifiable but latent post non-linear causal model representing the true RNA expression levels, which we only observe with Poisson corruption. RCI-NB identifies patient-specific root causal contributions from scRNA-seq datasets by integrating novel sparse regression and goodness of fit testing procedures that bypass Poisson measurement error. Experiments demonstrate significant improvements over existing alternatives.",
+        "url": "http://arxiv.org/abs/2307.05338",
+        "pdfUrl": "http://arxiv.org/pdf/2307.05338",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "scUnified: An AI-Ready Standardized Resource for Single-Cell RNA Sequencing Analysis",
+        "authors": [
+          "Ping Xu",
+          "Zaitian Wang",
+          "Zhirui Wang",
+          "Pengjiang Li",
+          "Ran Zhang",
+          "Gaoyang Li",
+          "Hanyu Xie",
+          "Jiajia Wang",
+          "Yuanchun Zhou",
+          "Pengfei Wang"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) technology enables systematic delineation of cellular states and interactions, providing crucial insights into cellular heterogeneity. Building on this potential, numerous computational methods have been developed for tasks such as cell clustering, cell type annotation, and marker gene identification. To fully assess and compare these methods, standardized, analysis-ready datasets are essential. However, such datasets remain scarce, and variations in data formats, preprocessing workflows, and annotation strategies hinder reproducibility and complicate systematic evaluation of existing methods. To address these challenges, we present scUnified, an AI-ready standardized resource for single-cell RNA sequencing data that consolidates 13 high-quality datasets spanning two species (human and mouse) and nine tissue types. All datasets undergo standardized quality control and preprocessing and are stored in a uniform format to enable direct application in diverse computational analyses without additional data cleaning. We further demonstrate the utility of scUnified through experimental analyses of representative biological tasks, providing a reproducible foundation for the standardized evaluation of computational methods on a unified dataset.",
+        "url": "http://arxiv.org/abs/2509.25884",
+        "pdfUrl": "http://arxiv.org/pdf/2509.25884",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Reply to \"Issues arising from benchmarking single-cell RNA sequencing imputation methods\"",
+        "authors": [
+          "Mo Huang",
+          "Nancy R. Zhang"
+        ],
+        "year": 2019,
+        "venue": "arXiv 预印本",
+        "abstract": "In our Brief Communication (DOI: 10.1038/s41592-018-0033-z), we presented the method SAVER for recovering true gene expression levels in noisy single cell RNA sequencing data. We evaluated the performance of SAVER, along with comparable methods MAGIC and scImpute, in an RNA FISH validation experiment and a data downsampling experiment. In a Comment [arXiv:1908.07084v1], Li & Li were concerned with the use of the downsampled datasets, specifically focusing on clustering results obtained from the Zeisel et al. data. Here, we will address these comments and, furthermore, amend the data downsampling experiment to demonstrate that the findings from the data downsampling experiment in our Brief Communication are valid.",
+        "url": "http://arxiv.org/abs/1909.02492",
+        "pdfUrl": "http://arxiv.org/pdf/1909.02492",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Soft Graph Clustering for single-cell RNA Sequencing Data",
+        "authors": [
+          "Ping Xu",
+          "Pengfei Wang",
+          "Zhiyuan Ning",
+          "Meng Xiao",
+          "Min Wu",
+          "Yuanchun Zhou"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Clustering analysis is fundamental in single-cell RNA sequencing (scRNA-seq) data analysis for elucidating cellular heterogeneity and diversity. Recent graph-based scRNA-seq clustering methods, particularly graph neural networks (GNNs), have significantly improved in tackling the challenges of high-dimension, high-sparsity, and frequent dropout events that lead to ambiguous cell population boundaries. However, their reliance on hard graph constructions derived from thresholded similarity matrices presents challenges:(i) The simplification of intercellular relationships into binary edges (0 or 1) by applying thresholds, which restricts the capture of continuous similarity features among cells and leads to significant information loss.(ii) The presence of significant inter-cluster connections within hard graphs, which can confuse GNN methods that rely heavily on graph structures, potentially causing erroneous message propagation and biased clustering outcomes. To tackle these challenges, we introduce scSGC, a Soft Graph Clustering for single-cell RNA sequencing data, which aims to more accurately characterize continuous similarities among cells through non-binary edge weights, thereby mitigating the limitations of rigid data structures. The scSGC framework comprises three core components: (i) a zero-inflated negative binomial (ZINB)-based feature autoencoder; (ii) a dual-channel cut-informed soft graph embedding module; and (iii) an optimal transport-based clustering optimization module. Extensive experiments across ten datasets demonstrate that scSGC outperforms 13 state-of-the-art clustering models in clustering accuracy, cell type annotation, and computational efficiency. These results highlight its substantial potential to advance scRNA-seq data analysis and deepen our understanding of cellular heterogeneity.",
+        "url": "http://arxiv.org/abs/2507.09890",
+        "pdfUrl": "http://arxiv.org/pdf/2507.09890",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Optimal sequencing depth for single-cell RNA-sequencing in Wasserstein space",
+        "authors": [
+          "Jakwang Kim",
+          "Sharvaj Kubal",
+          "Geoffrey Schiebinger"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "How many samples should one collect for an empirical distribution to be as close as possible to the true population? This question is not trivial in the context of single-cell RNA-sequencing. With limited sequencing depth, profiling more cells comes at the cost of fewer reads per cell. Therefore, one must strike a balance between the number of cells sampled and the accuracy of each measured gene expression profile. In this paper, we analyze an empirical distribution of cells and obtain upper and lower bounds on the Wasserstein distance to the true population. Our analysis holds for general, non-parametric distributions of cells, and is validated by simulation experiments on a real single-cell dataset.",
+        "url": "http://arxiv.org/abs/2409.14326",
+        "pdfUrl": "http://arxiv.org/pdf/2409.14326",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "A systematic evaluation of methods for cell phenotype classification using single-cell RNA sequencing data",
+        "authors": [
+          "Xiaowen Cao",
+          "Li Xing",
+          "Elham Majd",
+          "Hua He",
+          "Junhua Gu",
+          "Xuekui Zhang"
+        ],
+        "year": 2021,
+        "venue": "arXiv 预印本",
+        "abstract": "Background: Single-cell RNA sequencing (scRNA-seq) yields valuable insights about gene expression and gives critical information about complex tissue cellular composition. In the analysis of single-cell RNA sequencing, the annotations of cell subtypes are often done manually, which is time-consuming and irreproducible. Garnett is a cell-type annotation software based the on elastic net method. Besides cell-type annotation, supervised machine learning methods can also be applied to predict other cell phenotypes from genomic data. Despite the popularity of such applications, there is no existing study to systematically investigate the performance of those supervised algorithms in various sizes of scRNA-seq data sets. Methods and Results: This study evaluates 13 popular supervised machine learning algorithms to classify cell phenotypes, using published real and simulated data sets with diverse cell sizes. The benchmark contained two parts. In the first part, we used real data sets to assess the popular supervised algorithms' computing speed and cell phenotype classification performance. The classification performances were evaluated using AUC statistics, F1-score, precision, recall, and false-positive rate. In the second part, we evaluated gene selection performance using published simulated data sets with a known list of real genes. Conclusion: The study outcomes showed that ElasticNet with interactions performed best in small and medium data sets. NB was another appropriate method for medium data sets. In large data sets, XGB works excellent. Ensemble algorithms were not significantly superior to individual machine learning methods. Adding interactions to ElasticNet can help, and the improvement was significant in small data sets.",
+        "url": "http://arxiv.org/abs/2110.00681",
+        "pdfUrl": "http://arxiv.org/pdf/2110.00681",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Negative binomial count splitting for single-cell RNA sequencing data",
+        "authors": [
+          "Anna Neufeld",
+          "Joshua Popp",
+          "Lucy L. Gao",
+          "Alexis Battle",
+          "Daniela Witten"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "The analysis of single-cell RNA sequencing (scRNA-seq) data often involves fitting a latent variable model to learn a low-dimensional representation for the cells. Validating such a model poses a major challenge. If we could sequence the same set of cells twice, we could use one dataset to fit a latent variable model and the other to validate it. In reality, we cannot sequence the same set of cells twice. Poisson count splitting was recently proposed as a way to work backwards from a single observed Poisson data matrix to obtain independent Poisson training and test matrices that could have arisen from two independent sequencing experiments conducted on the same set of cells. However, the Poisson count splitting approach requires that the original data are exactly Poisson distributed: in the presence of any overdispersion, the resulting training and test datasets are not independent. In this paper, we introduce negative binomial count splitting, which extends Poisson count splitting to the more flexible negative binomial setting. Given an $n \\times p$ dataset from a negative binomial distribution, we use Dirichlet-multinomial sampling to create two or more independent $n \\times p$ negative binomial datasets. We show that this procedure outperforms Poisson count splitting in simulation, and apply it to validate clusters of kidney cells from a human fetal cell atlas.",
+        "url": "http://arxiv.org/abs/2307.12985",
+        "pdfUrl": "http://arxiv.org/pdf/2307.12985",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "scSiameseClu: A Siamese Clustering Framework for Interpreting single-cell RNA Sequencing Data",
+        "authors": [
+          "Ping Xu",
+          "Zhiyuan Ning",
+          "Pengjiang Li",
+          "Wenhao Liu",
+          "Pengyang Wang",
+          "Jiaxu Cui",
+          "Yuanchun Zhou",
+          "Pengfei Wang"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) reveals cell heterogeneity, with cell clustering playing a key role in identifying cell types and marker genes. Recent advances, especially graph neural networks (GNNs)-based methods, have significantly improved clustering performance. However, the analysis of scRNA-seq data remains challenging due to noise, sparsity, and high dimensionality. Compounding these challenges, GNNs often suffer from over-smoothing, limiting their ability to capture complex biological information. In response, we propose scSiameseClu, a novel Siamese Clustering framework for interpreting single-cell RNA-seq data, comprising of 3 key steps: (1) Dual Augmentation Module, which applies biologically informed perturbations to the gene expression matrix and cell graph relationships to enhance representation robustness; (2) Siamese Fusion Module, which combines cross-correlation refinement and adaptive information fusion to capture complex cellular relationships while mitigating over-smoothing; and (3) Optimal Transport Clustering, which utilizes Sinkhorn distance to efficiently align cluster assignments with predefined proportions while maintaining balance. Comprehensive evaluations on seven real-world datasets demonstrate that scSiameseClu outperforms state-of-the-art methods in single-cell clustering, cell type annotation, and cell type classification, providing a powerful tool for scRNA-seq data interpretation.",
+        "url": "http://arxiv.org/abs/2505.12626",
+        "pdfUrl": "http://arxiv.org/pdf/2505.12626",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Lower-dimensional projections of cellular expression improves cell type classification from single-cell RNA sequencing",
+        "authors": [
+          "Muhammad Umar",
+          "Andras Lakatos",
+          "Muhammad Asif",
+          "Arif Mahmood"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) enables the study of cellular diversity at single cell level. It provides a global view of cell-type specification during the onset of biological mechanisms such as developmental processes and human organogenesis. Various statistical, machine and deep learning-based methods have been proposed for cell-type classification. Most of the methods utilizes unsupervised lower dimensional projections obtained from for a large reference data. In this work, we proposed a reference-based method for cell type classification, called EnProCell. The EnProCell, first, computes lower dimensional projections that capture both the high variance and class separability through an ensemble of principle component analysis and multiple discriminant analysis. In the second phase, EnProCell trains a deep neural network on the lower dimensional representation of data to classify cell types. The proposed method outperformed the existing state-of-the-art methods when tested on four different data sets produced from different single-cell sequencing technologies. The EnProCell showed higher accuracy (98.91) and F1 score (98.64) than other methods for predicting reference from reference datasets. Similarly, EnProCell also showed better performance than existing methods in predicting cell types for data with unknown cell types (query) from reference datasets (accuracy:99.52; F1 score: 99.07). In addition to improved performance, the proposed methodology is simple and does not require more computational resources and time. the EnProCell is available at https://github.com/umar1196/EnProCell.",
+        "url": "http://arxiv.org/abs/2410.09964",
+        "pdfUrl": "http://arxiv.org/pdf/2410.09964",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "scGTN: Deep Siamese Graph Transformer Network for Single-cell RNA Sequencing Clustering",
+        "authors": [
+          "Jinke Wu",
+          "Yifan Wang",
+          "Siyu Yi",
+          "Caiyang Yu",
+          "Ziyue Qiao",
+          "Nan Yin",
+          "Jiancheng Lv",
+          "Wei Ju"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) serves a pivotal role in characterizing gene expression at the cellular level, enabling the identification of cell types and advancing the understanding of cellular heterogeneity. Despite the significant progress in scRNA-seq data clustering, we argue that current methods always ignore the sparsity and noise, as well as the complex intercellular structural information inherent in scRNA-seq data. Toward this end, in this paper, we propose a novel single-cell RNA-seq clustering framework via deep Siamese Graph Transformer Network (termed scGTN), which explicitly integrates gene expression profile and intercellular structural dependencies for cell clustering. In particular, we formulate scRNA-seq data as a graph and construct two augmented graph views that serve as dual views to capture complementary intercellular information. Then, a Siamese graph transformer network is employed to explicitly incorporate shortest-path information and node-wise distances for capturing richer structural relationships between cells. Finally, we employ an optimal transport strategy to guide the cell clustering in a self-supervised manner. Extensive experiments on multiple benchmark scRNA-seq datasets demonstrate that our scGTN consistently outperforms existing methods. Our code is available at https://github.com/W-RMSL/scGTN.",
+        "url": "http://arxiv.org/abs/2606.18672",
+        "pdfUrl": "http://arxiv.org/pdf/2606.18672",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Analyzing Single Cell RNA Sequencing with Topological Nonnegative Matrix Factorization",
+        "authors": [
+          "Yuta Hozumi",
+          "Guo-Wei Wei"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) is a relatively new technology that has stimulated enormous interest in statistics, data science, and computational biology due to the high dimensionality, complexity, and large scale associated with scRNA-seq data. Nonnegative matrix factorization (NMF) offers a unique approach due to its meta-gene interpretation of resulting low-dimensional components. However, NMF approaches suffer from the lack of multiscale analysis. This work introduces two persistent Laplacian regularized NMF methods, namely, topological NMF (TNMF) and robust topological NMF (rTNMF). By employing a total of 12 datasets, we demonstrate that the proposed TNMF and rTNMF significantly outperform all other NMF-based methods. We have also utilized TNMF and rTNMF for the visualization of popular Uniform Manifold Approximation and Projection (UMAP) and t-distributed stochastic neighbor embedding (t-SNE).",
+        "url": "http://arxiv.org/abs/2310.15744",
+        "pdfUrl": "http://arxiv.org/pdf/2310.15744",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Predicting Molecular Phenotypes with Single Cell RNA Sequencing Data: an Assessment of Unsupervised Machine Learning Models",
+        "authors": [
+          "Anastasia Dunca",
+          "Frederick R. Adler"
+        ],
+        "year": 2021,
+        "venue": "arXiv 预印本",
+        "abstract": "According to the National Cancer Institute, there were 9.5 million cancer-related deaths in 2018. A challenge in improving treatment is resistance in genetically unstable cells. The purpose of this study is to evaluate unsupervised machine learning on classifying treatment-resistant phenotypes in heterogeneous tumors through analysis of single cell RNA sequencing(scRNAseq) data with a pipeline and evaluation metrics. scRNAseq quantifies mRNA in cells and characterizes cell phenotypes. One scRNAseq dataset was analyzed (tumor/non-tumor cells of different molecular subtypes and patient identifications). The pipeline consisted of data filtering, dimensionality reduction with Principal Component Analysis, projection with Uniform Manifold Approximation and Projection, clustering with nine approaches (Ward, BIRCH, Gaussian Mixture Model, DBSCAN, Spectral, Affinity Propagation, Agglomerative Clustering, Mean Shift, and K-Means), and evaluation. Seven models divided tumor versus non-tumor cells and molecular subtype while six models classified different patient identification (13 of which were presented in the dataset); K-Means, Ward, and BIRCH often ranked highest with ~80% accuracy on the tumor versus non-tumor task and ~60% for molecular subtype and patient ID. An optimized classification pipeline using K-Means, Ward, and BIRCH models was evaluated to be most effective for further analysis. In clinical research where there is currently no standard protocol for scRNAseq analysis, clusters generated from this pipeline can be used to understand cancer cell behavior and malignant growth, directly affecting the success of treatment.",
+        "url": "http://arxiv.org/abs/2108.05039",
+        "pdfUrl": "http://arxiv.org/pdf/2108.05039",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Shared Differential Clustering across Single-cell RNA Sequencing Datasets with the Hierarchical Dirichlet Process",
+        "authors": [
+          "Jinlu Liu",
+          "Sara Wade",
+          "Natalia Bochkina"
+        ],
+        "year": 2022,
+        "venue": "arXiv 预印本",
+        "abstract": "Single-cell RNA sequencing (scRNA-seq) is powerful technology that allows researchers to understand gene expression patterns at the single-cell level. However, analysing scRNA-seq data is challenging due to issues and biases in data collection. In this work, we construct an integrated Bayesian model that simultaneously addresses normalization, imputation and batch effects and also nonparametrically clusters cells into groups across multiple datasets. A Gibbs sampler based on a finite-dimensional approximation of the HDP is developed for posterior inference.",
+        "url": "http://arxiv.org/abs/2212.02505",
+        "pdfUrl": "http://arxiv.org/pdf/2212.02505",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Structure learning for zero-inflated counts, with an application to single-cell RNA sequencing data",
+        "authors": [
+          "Thi Kim Hue Nguyen",
+          "Koen Van den Berge",
+          "Monica Chiogna",
+          "Davide Risso"
+        ],
+        "year": 2020,
+        "venue": "arXiv 预印本",
+        "abstract": "The problem of estimating the structure of a graph from observed data is of growing interest in the context of high-throughput genomic data, and single-cell RNA sequencing in particular. These, however, are challenging applications, since the data consist of high-dimensional counts with high variance and over-abundance of zeros. Here, we present a general framework for learning the structure of a graph from single-cell RNA-seq data, based on the zero-inflated negative binomial distribution. We demonstrate with simulations that our approach is able to retrieve the structure of a graph in a variety of settings and we show the utility of the approach on real data.",
+        "url": "http://arxiv.org/abs/2011.12044",
+        "pdfUrl": "http://arxiv.org/pdf/2011.12044",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Bayesian Gamma-Negative Binomial Modeling of Single-Cell RNA Sequencing Data",
+        "authors": [
+          "Siamak Zamani Dadaneh",
+          "Paul de Figueiredo",
+          "Sing-Hoi Sze",
+          "Mingyuan Zhou",
+          "Xiaoning Qian"
+        ],
+        "year": 2019,
+        "venue": "arXiv 预印本",
+        "abstract": "Background: Single-cell RNA sequencing (scRNA-seq) is a powerful profiling technique at the single-cell resolution. Appropriate analysis of scRNA-seq data can characterize molecular heterogeneity and shed light into the underlying cellular process to better understand development and disease mechanisms. The unique analytic challenge is to appropriately model highly over-dispersed scRNA-seq count data with prevalent dropouts (zero counts), making zero-inflated dimensionality reduction techniques popular for scRNA-seq data analyses. Employing zero-inflated distributions, however, may place extra emphasis on zero counts, leading to potential bias when identifying the latent structure of the data. Results: In this paper, we propose a fully generative hierarchical gamma-negative binomial (hGNB) model of scRNA-seq data, obviating the need for explicitly modeling zero inflation. At the same time, hGNB can naturally account for covariate effects at both the gene and cell levels to identify complex latent representations of scRNA-seq data, without the need for commonly adopted pre-processing steps such as normalization. Efficient Bayesian model inference is derived by exploiting conditional conjugacy via novel data augmentation techniques. Conclusion: Experimental results on both simulated data and several real-world scRNA-seq datasets suggest that hGNB is a powerful tool for cell cluster discovery as well as cell lineage inference.",
+        "url": "http://arxiv.org/abs/1908.00650",
+        "pdfUrl": "http://arxiv.org/pdf/1908.00650",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Inference after latent variable estimation for single-cell RNA sequencing data",
+        "authors": [
+          "Anna Neufeld",
+          "Lucy L. Gao",
+          "Joshua Popp",
+          "Alexis Battle",
+          "Daniela Witten"
+        ],
+        "year": 2022,
+        "venue": "arXiv 预印本",
+        "abstract": "In the analysis of single-cell RNA sequencing data, researchers often characterize the variation between cells by estimating a latent variable, such as cell type or pseudotime, representing some aspect of the individual cell's state. They then test each gene for association with the estimated latent variable. If the same data are used for both of these steps, then standard methods for computing p-values and confidence intervals in the second step will fail to achieve statistical guarantees such as Type 1 error control. Furthermore, approaches such as sample splitting that can be applied to solve similar problems in other settings are not applicable in this context. In this paper, we introduce count splitting, a flexible framework that allows us to carry out valid inference in this setting, for virtually any latent variable estimation technique and inference approach, under a Poisson assumption. We demonstrate the Type 1 error control and power of count splitting in a simulation study, and apply count splitting to a dataset of pluripotent stem cells differentiating to cardiomyocytes.",
+        "url": "http://arxiv.org/abs/2207.00554",
+        "pdfUrl": "http://arxiv.org/pdf/2207.00554",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Human RP105 monoclonal antibody enhances antigen-specific antibody production in unique culture conditions",
+        "authors": [
+          "Tatsuya Yamazaki",
+          "Kenta Iwasaki",
+          "Susumu Tomono",
+          "Masaki Imai",
+          "Yuko Miwa",
+          "Masato Shizuku",
+          "Satoshi Ashimine",
+          "Kohei Ishiyama",
+          "Masanori Inui",
+          "Daisuke Okuzaki",
+          "Manabu Okada",
+          "Takaaki Kobayashi",
+          "Sachiko Akashi-Takamura"
+        ],
+        "year": 2024,
+        "venue": "iScience",
+        "abstract": "Summary: Detecting antibodies, particularly those targeting donor human leukocyte antigens in organ transplantation and self-antigens in autoimmune diseases, is crucial for diagnosis and therapy. Radioprotective 105 (RP105), a Toll-like receptor family protein, is expressed in immune-competent cells, such as B cells. Studies in mice have shown that the anti-mouse RP105 antibody strongly activates …",
+        "url": "http://www.sciencedirect.com/science/article/pii/S2589004224018741",
+        "doi": "10.1016/j.isci.2024.110649",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "The Advances of Single-Cell RNA-Seq in Kidney Immunology",
+        "authors": [
+          "Honghui Zeng",
+          "Honghui Zeng",
+          "Xiaoqiang Yang",
+          "Xiaoqiang Yang",
+          "Siweier Luo",
+          "Siweier Luo",
+          "Yiming Zhou",
+          "Yiming Zhou"
+        ],
+        "year": 2021,
+        "venue": "Frontiers in Physiology",
+        "abstract": "Kidney diseases are highly prevalent and treatment is costly. Immune cells play important roles in kidney diseases; however, it has been challenging to investigate the contribution of each cell type in kidney pathophysiology. Recently, the development of single-cell sequencing technology has allowed the extensive study of immune cells in blood, secondary lymphoid tissues, kidney biopsy and urine s…",
+        "url": "https://www.frontiersin.org/articles/10.3389/fphys.2021.752679/full",
+        "doi": "10.3389/fphys.2021.752679",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "The critical involvement of monocytes/macrophages in the pathogenesis of primary Sjögren's syndrome: New evidence from Mendelian randomization and single-cell sequencing",
+        "authors": [
+          "Yimei Ding",
+          "Xue Luan",
+          "Jiaqi Hou"
+        ],
+        "year": 2024,
+        "venue": "Heliyon",
+        "abstract": "Background: Primary Sjögren's syndrome (pSS) stands as a chronic autoimmune disease characterized by an elusive pathogenesis. The synergy of single-cell RNA sequencing and Mendelian randomization (MR) analysis provides an opportunity to comprehensively unravel the contributory role of monocytes/macrophages in the intricate pathogenesis of pSS. Methods: Differentially expressed genes (DEGs) of vari…",
+        "url": "http://www.sciencedirect.com/science/article/pii/S2405844024151614",
+        "doi": "10.1016/j.heliyon.2024.e39130",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "GFAP-Dependent Transcriptional Dynamics and Cellular Heterogeneity in Primary, Recurrent, and Grade III Gliomas",
+        "authors": [
+          "Morteza Hadizadeh",
+          "Seyedeh Zahra Mousavi",
+          "Sorayya Ghasemi"
+        ],
+        "year": 2026,
+        "venue": "Cancer Informatics",
+        "abstract": "Objectives Glioma tumors, especially glioblastoma (GBM), are among the most heterogeneous brain cancers, and this characteristic is considered the main cause of treatment resistance and disease recurrence. The aim of this study was to investigate the cellular dynamics and transcriptional pathways dependent on the GFAP gene in three clinical conditions, including grade III glioma, primary glioblast…",
+        "url": "https://doi.org/10.1177/11769351261460625",
+        "doi": "10.1177/11769351261460625",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Single-cell RNA-seq reveals the genesis and heterogeneity of tumor microenvironment in pancreatic undifferentiated carcinoma with osteoclast-like giant-cells",
+        "authors": [
+          "Xinbo Wang",
+          "Jiaying Miao",
+          "Sizhen Wang",
+          "Rongxi Shen",
+          "Shuo Zhang",
+          "Yurao Tian",
+          "Min Li",
+          "Daojun Zhu",
+          "Anlong Yao",
+          "Wei Bao",
+          "Qun Zhang",
+          "Xingming Tang",
+          "Xingyun Wang",
+          "Jieshou Li"
+        ],
+        "year": 2022,
+        "venue": "Molecular Cancer",
+        "abstract": "Abstract Background Undifferentiated carcinoma with osteoclast-like giant cells (OGCs) of pancreas (UCOGCP) is a rare subtype of pancreatic ductal adenocarcinoma (PDAC), which had poorly described histopathological and clinical features. Methods In this study, single-cell RNA sequencing (scRNA-seq) was used to profile the distinct tumor microenvironment of UCOGCP using samples obtained from one UC…",
+        "url": "https://doi.org/10.1186/s12943-022-01596-8",
+        "doi": "10.1186/s12943-022-01596-8",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "AMPA-Type Glutamate Receptors Associated With Vascular Smooth Muscle Cell Subpopulations in Atherosclerosis and Vascular Injury",
+        "authors": [
+          "Alessandro L. Gallina",
+          "Urszula Rykaczewska",
+          "Robert C. Wirka",
+          "Robert C. Wirka",
+          "Robert C. Wirka",
+          "April S. Caravaca",
+          "Vladimir S. Shavva",
+          "Mohamad Youness",
+          "Mohamad Youness",
+          "Glykeria Karadimou",
+          "Mariette Lengquist",
+          "Anton Razuvaev",
+          "Gabrielle Paulsson-Berne",
+          "Thomas Quertermous",
+          "Anton Gisterå",
+          "Stephen G. Malin",
+          "Laura Tarnawski",
+          "Ljubica Matic",
+          "Peder S. Olofsson",
+          "Peder S. Olofsson"
+        ],
+        "year": 2021,
+        "venue": "Frontiers in Cardiovascular Medicine",
+        "abstract": "Objectives and Aims: Vascular smooth muscle cells (VSMCs) are key constituents of both normal arteries and atherosclerotic plaques. They have an ability to adapt to changes in the local environment by undergoing phenotypic modulation. An improved understanding of the mechanisms that regulate VSMC phenotypic changes may provide insights that suggest new therapeutic targets in treatment of cardiovas…",
+        "url": "https://www.frontiersin.org/articles/10.3389/fcvm.2021.655869/full",
+        "doi": "10.3389/fcvm.2021.655869",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "A single cell survey of the microbial impacts on the mouse small intestinal epithelium",
+        "authors": [
+          "Derek K.L. Tsang",
+          "Ryan J. Wang",
+          "Oliver De Sa",
+          "Arshad Ayyaz",
+          "Elisabeth G. Foerster",
+          "Giuliano Bayer",
+          "Shawn Goyal",
+          "Daniel Trcka",
+          "Bibaswan Ghoshal",
+          "Jeffrey L. Wrana",
+          "Stephen E. Girardin",
+          "Dana J. Philpott"
+        ],
+        "year": 2022,
+        "venue": "Gut Microbes",
+        "abstract": "The small intestinal epithelial barrier inputs signals from the gut microbiota in order to balance physiological inflammation and tolerance, and to promote homeostasis. Understanding the dynamic relationship between microbes and intestinal epithelial cells has been a challenge given the cellular heterogeneity associated with the epithelium and the inherent difficulty of isolating and identifying i…",
+        "url": "https://www.tandfonline.com/doi/10.1080/19490976.2022.2108281",
+        "doi": "10.1080/19490976.2022.2108281",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Progressive suppression of regulated cell death defines terminal macrophage states in liver cirrhosis",
+        "authors": [
+          "Kepu Zheng",
+          "Leiyang Dai",
+          "Yanghui Wen",
+          "Haitao Jiang",
+          "Yang Gao",
+          "Feng Ren",
+          "Yu Tang",
+          "Xiang Huang",
+          "Jianghua Ran",
+          "Yunjie Chen"
+        ],
+        "year": 2026,
+        "venue": "Annals of Medicine",
+        "abstract": "Background Macrophages are central regulators of liver immunity and fibrosis; Recent single-cell studies have characterized macrophage heterogeneity in cirrhosis; however, how regulated cell death programs shape their functional transitions across disease progression in human liver remains poorly defined.Methods We integrated scRNA-seq data from 224,529 cells across 31 adult liver samples to defin…",
+        "url": "https://www.tandfonline.com/doi/10.1080/07853890.2026.2690717",
+        "doi": "10.1080/07853890.2026.2690717",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "A single-cell RNA sequencing dataset of cardiac aging in African Turquoise Killifish",
+        "authors": [
+          "Baul Yoon",
+          "Yifeng Xu",
+          "Ping Zhu",
+          "Yuji Zhang",
+          "Xiaolei Xu"
+        ],
+        "year": 2026,
+        "venue": "Scientific Data",
+        "abstract": "Abstract Aging is a major contributor to functional decline of the heart and various cardiovascular diseases. Alterations across different cardiac cell types must be tightly orchestrated during the normative aging process that has begun to be mapped at the transcriptional level through single-cell RNA-sequencing. However, current rodent models are limited in their capacity to experimentally test l…",
+        "url": "https://doi.org/10.1038/s41597-026-07449-z",
+        "doi": "10.1038/s41597-026-07449-z",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "New mouse genetic model of breast cancer from IKKα defects in dendritic cells revealed by single-cell RNA sequencing",
+        "authors": [
+          "Weiwei Lai",
+          "Wanshan Hu",
+          "Yinming Liang",
+          "Lifang Yang",
+          "Chao Mao",
+          "Tania Tao",
+          "Xiang Wang",
+          "Desheng Xiao",
+          "Shuang Liu",
+          "Yongguang Tao"
+        ],
+        "year": 2023,
+        "venue": "Cell Discovery",
+        "url": "https://doi.org/10.1038/s41421-023-00553-z",
+        "doi": "10.1038/s41421-023-00553-z",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "FOXO4-DRI induces keloid senescent fibroblast apoptosis by promoting nuclear exclusion of upregulated p53-serine 15 phosphorylation",
+        "authors": [
+          "Yu-Xiang Kong",
+          "Zhi-Shuai Li",
+          "Yuan-Bo Liu",
+          "Bo Pan",
+          "Xin Fu",
+          "Ran Xiao",
+          "Li Yan"
+        ],
+        "year": 2025,
+        "venue": "Communications Biology",
+        "abstract": "Abstract Keloids are pathological scars exhibiting tumour-like aggressiveness and high recurrence rate. Here we find increased proportion of pro-inflammatory and mesenchymal fibroblast subpopulations and senescent fibroblasts, and enhanced expression of senescence-associated secretory phenotype genes using single-cell RNA sequencing analysis, as well as elevated p16 protein and more β-galactosidas…",
+        "url": "https://doi.org/10.1038/s42003-025-07738-0",
+        "doi": "10.1038/s42003-025-07738-0",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Leptin Aggravates Thoracic Aortic Dissection Through Impairment of Energy Metabolism in Nrip2+ Smooth Muscle Cells",
+        "authors": [
+          "Ling Chen",
+          "Yujie Zhu",
+          "Xi Yang",
+          "JiangBin Wu",
+          "Keyuan Chen",
+          "Wuqing Huang",
+          "Lu Fang",
+          "Qi Zhang",
+          "Jie Chen",
+          "Jianing Gao",
+          "Huanhuan Cao",
+          "Meifang Wu",
+          "Zhihuang Qiu",
+          "Yuling Zhang",
+          "Yue Shen",
+          "Qiuyu Huang",
+          "Zhiyong Lin",
+          "Lemin Zheng",
+          "Liangwan Chen"
+        ],
+        "year": 2025,
+        "venue": "Advanced Science",
+        "abstract": "Abstract Obesity is a significant risk factor for thoracic aortic dissection (TAD), as supported by UK Biobank data showing obese individuals have a higher risk of TAD. The study investigates leptin, a hormone elevated in obesity, and finds that hyperleptinemia is common in TAD patients, suggesting its role in disease pathogenesis. Using leptin‐knockout mice, it is demonstrated that exogenous lept…",
+        "url": "https://doi.org/10.1002/advs.202502027",
+        "doi": "10.1002/advs.202502027",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Identification of the Mitochondrial Gene NME6 as an Immune Modulator in Heart Failure",
+        "authors": [
+          "Pan Liu",
+          "Fan Yang",
+          "Yang Zhang",
+          "Jingjing Kong",
+          "Xianwei Qi",
+          "Liang Yuan",
+          "Jing Wang",
+          "Xiaoyu Qiang",
+          "Shiguang Wang",
+          "Ran Xia"
+        ],
+        "year": 2026,
+        "venue": "Frontiers in Bioscience-Landmark",
+        "abstract": "Background:Heart failure (HF) is characterized by mitochondrial dysfunction and immune dysregulation. However, the underlying molecular mechanisms remain unclear. Functional enrichment analyses study aimed to identify key mitochondrial genes involved in HF pathogenesis and to explore their association with immune cell infiltration.Methods:Differentially expressed genes related to HF were identifie…",
+        "url": "https://www.imrpress.com/journal/FBL/31/6/10.31083/FBL48958",
+        "doi": "10.31083/FBL48958",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Macrophage diversity in human cancers: New insight provided by single-cell resolution and spatial context",
+        "authors": [
+          "Militsa Rakina",
+          "Irina Larionova",
+          "Julia Kzhyshkowska"
+        ],
+        "year": 2024,
+        "venue": "Heliyon",
+        "abstract": "M1/M2 paradigm of macrophage plasticity has existed for decades. Now it becomes clear that this dichotomy doesn't adequately reflect the diversity of macrophage phenotypes in tumor microenvironment (TME). Tumor-associated macrophages (TAMs) are a major population of innate immune cells in the TME that promotes tumor cell proliferation, angiogenesis and lymphangiogenesis, invasion and metastatic ni…",
+        "url": "http://www.sciencedirect.com/science/article/pii/S2405844024043639",
+        "doi": "10.1016/j.heliyon.2024.e28332",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Single-cell RNA sequencing reveals anterograde trans-synaptic degeneration and exacerbated synaptic remodeling in myopia",
+        "authors": [
+          "Ruixue Zhang",
+          "Yunxiao Xie",
+          "Miao Zhang",
+          "Zhiheng Li",
+          "Lijie Guo",
+          "Huixia Wei",
+          "Xiaomeng Li",
+          "Jizhao Xin",
+          "Zhaohui Yang",
+          "Ying Wen",
+          "Jiawen Hao",
+          "Xianglin Li",
+          "Xuewei Yin",
+          "Wenjun Jiang",
+          "Hongsheng Bi",
+          "Dadong Guo"
+        ],
+        "year": 2025,
+        "venue": "Experimental and Molecular Medicine",
+        "abstract": "Abstract Myopia is a serious public health issue worldwide. Damage to retinal ganglion cells (RGCs) in the retina induces degeneration of the visual cortex, which is known as anterograde trans-synaptic degeneration (TSD). However, the role of TSD in myopia is still unknown. Here single-cell RNA-sequencing revealed the activation of RGC apoptotic signals in the retinal ganglion and the remodeling o…",
+        "url": "https://doi.org/10.1038/s12276-025-01489-y",
+        "doi": "10.1038/s12276-025-01489-y",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Identification of Transcription Factors Regulating SARS-CoV-2 Tropism Factor Expression by Inferring Cell-Type-Specific Transcriptional Regulatory Networks in Human Lungs",
+        "authors": [
+          "Haonan Tong",
+          "Hao Chen",
+          "Cranos M. Williams"
+        ],
+        "year": 2022,
+        "venue": "Viruses",
+        "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) is the virus that caused the coronavirus disease 2019 (COVID-19) pandemic. Though previous studies have suggested that SARS-CoV-2 cellular tropism depends on the host-cell-expressed proteins, whether transcriptional regulation controls SARS-CoV-2 tropism factors in human lung cells remains unclear. In this study, we used computational ap…",
+        "url": "https://www.mdpi.com/1999-4915/14/4/837",
+        "doi": "10.3390/v14040837",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Loeys-Dietz syndrome subtypes exhibit distinct clinical behavior and aortic cellular transcriptomic profilesCentral MessagePerspective",
+        "authors": [
+          "Albert J. Pedroza, MD",
+          "Alex R. Dalal, MD",
+          "Jennifer Kim, MD",
+          "Matthew Duda, MD",
+          "Emily Tognozzi, PA-C",
+          "Casey Gilles, BS",
+          "D. Craig Miller, MD",
+          "Michael P. Fischbein, MD, PhD"
+        ],
+        "year": 2025,
+        "venue": "JTCVS Open",
+        "abstract": "Objectives: Loeys-Dietz syndrome comprises genetically discrete subtypes of varying clinical severity. This study integrates longitudinal Loeys-Dietz syndrome clinical outcomes after aortic root replacement with transcriptomic analysis of aortic smooth muscle cell dysregulation to investigate mechanisms governing this subtype-specific aortic vulnerability. Methods: Single institutional experience …",
+        "url": "http://www.sciencedirect.com/science/article/pii/S2666273625002190",
+        "doi": "10.1016/j.xjon.2025.06.013",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Single‐cell atlas reveals a distinct immune profile fostered by T cell‐B cell crosstalk in triple negative breast cancer",
+        "authors": [
+          "Shuning Ding",
+          "Niu Qiao",
+          "Qingchen Zhu",
+          "Yiwei Tong",
+          "Shengyue Wang",
+          "Xiaosong Chen",
+          "Qiang Tian",
+          "Yichuan Xiao",
+          "Kunwei Shen"
+        ],
+        "year": 2023,
+        "venue": "Cancer Communications",
+        "abstract": "Abstract Background Characterizing the unique immune microenvironment of each tumor is of great importance for better predicting prognosis and guiding cancer immunotherapy. However, the unique features of the immune microenvironment of triple negative breast cancer (TNBC) compared with other subtypes of breast cancer remain elusive. Therefore, we aimed to depict and compare the immune landscape am…",
+        "url": "https://doi.org/10.1002/cac2.12429",
+        "doi": "10.1002/cac2.12429",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Construction and characterization of the ORF131 gene deletion strain of lumpy skin disease virus",
+        "authors": [
+          "Jiaqi Li",
+          "Weitao Huang",
+          "Qunhua Ke",
+          "Miaomiao Li",
+          "Xiangwei Wang",
+          "Qi Wang",
+          "Xiangping Yin",
+          "Yuefeng Sun"
+        ],
+        "year": 2025,
+        "venue": "Virology Journal",
+        "abstract": "Abstract Lumpy Skin Disease (LSD), caused by the Lumpy Skin Disease Virus (LSDV), is a legally reportable disease recognized by the World Organization for Animal Health (WOAH) and has resulted in significant economic losses for the global cattle industry. Although several commercial LSDV vaccines are currently available, safer and more effective gene-deleted versions remain lacking. Therefore, scr…",
+        "url": "https://doi.org/10.1186/s12985-025-03056-3",
+        "doi": "10.1186/s12985-025-03056-3",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Malignant progression of MES-like cells mediated by COL22A1 in the spatial heterogeneity of glioblastoma",
+        "authors": [
+          "Guangyuan Chen",
+          "Zhonghua Fu",
+          "Xulin He",
+          "Zhaoli Shen"
+        ],
+        "year": 2025,
+        "venue": "Discover Oncology",
+        "abstract": "Abstract Glioblastoma (GBM), a highly aggressive malignant brain tumor, leads to poor clinical outcomes and low long-term survival rates. Using bioinformatics approaches, we analyzed single-cell RNA sequencing (scRNA-seq) data (GSE273274) from glioma patient samples in this study. It was found that mesenchymal-like (MES-like) cells in the GBM center (GC) significantly facilitated GBM’s aggressive …",
+        "url": "https://doi.org/10.1007/s12672-025-03559-z",
+        "doi": "10.1007/s12672-025-03559-z",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Biological significance of RNA-seq and single-cell genomic research in woody plants",
+        "authors": [
+          "Wei Tang",
+          "Anna Y. Tang"
+        ],
+        "year": 2019,
+        "venue": "Springer Science and Business Media LLC",
+        "url": "https://link.springer.com/content/pdf/10.1007/s11676-019-00933-w.pdf",
+        "pdfUrl": "https://link.springer.com/content/pdf/10.1007/s11676-019-00933-w.pdf",
+        "doi": "10.1007/s11676-019-00933-w",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Advances in application of single-cell RNA sequencing in cardiovascular research",
+        "authors": [
+          "Binglong Yan",
+          "Ying Zhang",
+          "Xiaoying Li",
+          "Sensen Song",
+          "Tiantian San",
+          "Yue Hu",
+          "Yan Gao",
+          "Zhuo Zhao",
+          "Yutong Liu",
+          "Binglong, Yan",
+          "Yue, Hu",
+          "Xiaoying, Li"
+        ],
+        "year": 2022,
+        "venue": "Frontiers Media SA",
+        "url": "https://doi.org/10.3389/fcvm.2022.905151",
+        "doi": "10.3389/fcvm.2022.905151",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "&lt;scp&gt;Single‐cell RNA&lt;/scp&gt; sequencing in oral science: Current awareness and perspectives",
+        "authors": [
+          "Qingming Tang",
+          "Jinyu Wang",
+          "Qian Wan",
+          "Jie Wu",
+          "Yumei Ding",
+          "Lili Chen",
+          "Xiaoli Lan",
+          "Jiangyuan Song",
+          "Zhi Xu",
+          "Fengyuan Lyu",
+          "Zhiqiang Luo",
+          "Qingming, Tang"
+        ],
+        "year": 2022,
+        "venue": "Wiley",
+        "url": "https://doi.org/10.1111/cpr.13287",
+        "doi": "10.1111/cpr.13287",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Research Techniques Made Simple: Single-Cell RNA Sequencing and its Applications in Dermatology",
+        "authors": [
+          "Qing-Sheng Mi",
+          "Imo Udo-Inyang",
+          "Xiaojun Wu",
+          "David Ozog",
+          "Bin Yang",
+          "Suyun Ji",
+          "Li Zhou",
+          "Li, Zhou",
+          "Xiaojun, Wu",
+          "Suyun, Ji",
+          "David, Ozog",
+          "Imo, Udo-Inyang"
+        ],
+        "year": 2018,
+        "venue": "Elsevier BV",
+        "url": "https://doi.org/10.1016/j.jid.2018.01.026",
+        "doi": "10.1016/j.jid.2018.01.026",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Single-cell Iso-Sequencing enables rapid genome annotation for scRNAseq analysis",
+        "authors": [
+          "Barres, Ben",
+          "Mahfouz, Ahmed",
+          "Ross, M Elizabeth",
+          "Joglekar, Anoushka",
+          "Haase, Bettina",
+          "Collier, Paul G",
+          "Gupta, Ishaan",
+          "Fedrigo, Olivier",
+          "Tilgner, Hagen U",
+          "Smit, August B",
+          "Koopmans, Frank",
+          "Floyd, Taylor"
+        ],
+        "year": 2021,
+        "venue": "Oxford University Press (OUP)",
+        "url": "https://doi.org/10.1101/364950",
+        "doi": "10.1093/genetics/iyac017",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Benchmarking Single-Cell RNA Sequencing Protocols for Cell Atlas Projects; Systematic comparative analysis of single cell RNA-sequencing methods",
+        "authors": [],
+        "year": 2019,
+        "venue": "The Company of Biologists",
+        "url": "https://doi.org/10.1242/prelights.10803",
+        "doi": "10.1242/prelights.10803",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Overview of single‐cell RNA sequencing analysis and its application to spermatogenesis research",
+        "authors": [
+          "Takahiro Suzuki",
+          "Takahiro, Suzuki",
+          "Suzuki, Takahiro",
+          "Takahiro Suzuki"
+        ],
+        "year": 2023,
+        "venue": "Wiley",
+        "url": "https://doaj.org/article/686949a0a4374872b4ec42234d6ed092",
+        "doi": "10.1002/rmb2.12502",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Studying RNA dynamics from single-cell RNA sequencing snapshots",
+        "authors": [],
+        "year": 2024,
+        "venue": "Springer Science and Business Media LLC",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39103448",
+        "doi": "10.1038/s41592-024-02366-8",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Complementary Roles for Single-Nucleus and Single-Cell RNA Sequencing in Kidney Disease Research",
+        "authors": [
+          "Katie J. Mylonas",
+          "Eoin D. O’Sullivan",
+          "Jeremy Hughes",
+          "David A. Ferenbach",
+          "O'Sullivan, Eoin D.",
+          "Mylonas, Katie J.",
+          "Ferenbach, David A.",
+          "Hughes, Jeremy",
+          "O'Sullivan, Eoin D.",
+          "Mylonas, Katie J.",
+          "Ferenbach, David A.",
+          "Hughes, Jeremy"
+        ],
+        "year": 2019,
+        "venue": "Ovid Technologies (Wolters Kluwer Health)",
+        "url": "https://jasn.asnjournals.org/content/jnephrol/30/4/712.full.pdf",
+        "pdfUrl": "https://jasn.asnjournals.org/content/jnephrol/30/4/712.full.pdf",
+        "doi": "10.1681/asn.2019020112",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Single-cell isolation by a modular single-cell pipette for RNA-sequencing",
+        "authors": [
+          "Xin Han",
+          "Rui Chen",
+          "Lidong Qin",
+          "Zechen Chong",
+          "Kai Zhang",
+          "Min Gao",
+          "Ying Li",
+          "Rui, Chen",
+          "Xin, Han",
+          "Ying, Li",
+          "Min, Gao",
+          "Kai, Zhang"
+        ],
+        "year": 2016,
+        "venue": "Royal Society of Chemistry (RSC)",
+        "url": "https://europepmc.org/articles/pmc5554467?pdf=render",
+        "doi": "10.1039/c6lc01241h",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Progress in Single-Cell RNA Sequencing Data Analysis and Its Applications in the Study of Tumor Heterogeneity",
+        "authors": [],
+        "year": 2026,
+        "venue": "Zeus Press",
+        "url": "https://doi.org/10.70267/lshe.20260109",
+        "doi": "10.70267/lshe.20260109",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "The Application of Single‐Cell RNA Sequencing in Vaccinology",
+        "authors": [
+          "Carolyn M. Nielsen",
+          "Tamsin N. Cargill",
+          "Eleanor Barnes",
+          "Andrew J. C. Russell",
+          "Andrés Noé",
+          "Tamsin N, Cargill",
+          "Andrés, Noé",
+          "Andrew J C, Russell",
+          "Eleanor, Barnes",
+          "Carolyn M, Nielsen",
+          "Carolyn M. Nielsen",
+          "Tamsin N. Cargill"
+        ],
+        "year": 2020,
+        "venue": "Wiley",
+        "url": "https://doi.org/10.1155/2020/8624963",
+        "doi": "10.1155/2020/8624963",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Single Cell RNA Sequencing in Colorectal Cancer Immunology: Recent Updates, Application, and Emerging Challenges",
+        "authors": [
+          "Nor Adzimah Johdi",
+          "Sabrina George",
+          "Nor Adzimah, Johdi",
+          "Sabrina, George"
+        ],
+        "year": 2026,
+        "venue": "Bentham Science Publishers Ltd.",
+        "url": "https://doi.org/10.2174/0115665240355043250130110501",
+        "doi": "10.2174/0115665240355043250130110501",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Single-cell RNA sequencing v1",
+        "authors": [
+          "Suzanne Shapira",
+          "Klaus H. Kaestner Lab"
+        ],
+        "year": 2021,
+        "venue": "Springer Science and Business Media LLC",
+        "url": "https://www.protocols.io/view/single-cell-rna-sequencing-bwdepa3e.pdf",
+        "pdfUrl": "https://www.protocols.io/view/single-cell-rna-sequencing-bwdepa3e.pdf",
+        "doi": "10.17504/protocols.io.bwdepa3e",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Preparing hPSC-derived neurons for single-cell RNA sequencing v1",
+        "authors": [
+          "Florian T Merkle",
+          "Cortina Chen"
+        ],
+        "year": 2020,
+        "venue": "Springer Science and Business Media LLC",
+        "url": "https://www.protocols.io/view/preparing-hpsc-derived-neurons-for-single-cell-rna-bpcbmisn.pdf",
+        "pdfUrl": "https://www.protocols.io/view/preparing-hpsc-derived-neurons-for-single-cell-rna-bpcbmisn.pdf",
+        "doi": "10.17504/protocols.io.bpcbmisn",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Advances in single-cell RNA sequencing and its applications in cancer research",
+        "authors": [
+          "Wang,Xue-Qiang",
+          "Wang,Yi-Zu",
+          "Wu,Cheng-Cheng",
+          "Hu,Hao-Yu",
+          "Xiang Fei",
+          "Xiao-Feng Zhang",
+          "Chun-Guang Li",
+          "Cong-Li Hu",
+          "Yan-Jun Zhang",
+          "Hai Zhang",
+          "Bin Sun",
+          "Jin,Guang-Zhi"
+        ],
+        "year": 2017,
+        "venue": "Impact Journals, LLC",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33542652",
+        "doi": "10.18632/oncotarget.17893",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Automated Cell Recognition using Single-cell RNA Sequencing with Machine Learning",
+        "authors": [
+          "Yuetian Chen",
+          "Yiyang Cao",
+          "Chengqi Xu",
+          "Yuetian Chen",
+          "Yiyang Cao",
+          "Chengqi Xu"
+        ],
+        "year": 2021,
+        "venue": "ACM",
+        "url": "https://doi.org/10.1145/3512452.3512455",
+        "doi": "10.1145/3512452.3512455",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Single‐Cell Glycan and RNA Sequencing (scGR‐seq)",
+        "authors": [
+          "Hiroaki, Tateno",
+          "Haruki, Odaka",
+          "Haruki Odaka",
+          "Hiroaki Tateno"
+        ],
+        "year": 2023,
+        "venue": "Wiley",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37166286",
+        "doi": "10.1002/cpz1.777",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "A Microfluidic Chip for Circulating Tumor Cells RNA Sequencing at Single Cell Level",
+        "authors": [
+          "Fanghao Shi",
+          "Zewen Wei",
+          "Weikai Zhang",
+          "Fei Jia"
+        ],
+        "year": 2020,
+        "venue": "IEEE",
+        "url": "https://doi.org/10.1109/mems46641.2020.9056350",
+        "doi": "10.1109/mems46641.2020.9056350",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "High-throughput single-cell RNA sequencing",
+        "authors": [
+          "Marja C.P. Timmermans",
+          "Tom Denyer",
+          "Tom, Denyer",
+          "Marja C P, Timmermans"
+        ],
+        "year": 2022,
+        "venue": "Elsevier BV",
+        "url": "https://doi.org/10.1016/j.tplants.2021.09.003",
+        "doi": "10.1016/j.tplants.2021.09.003",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "PREPARATION OF MOUSE AORTIC  TISSUE FOR SINGLE-CELL RNA SEQUENCING:  METHODOLOGICAL INSIGHTS FOR BENCHMARKING",
+        "authors": [
+          "Luna Buitrago, Diana",
+          "Usman, Maryamu Habila",
+          "Kardassis, Dimitris",
+          "Matic, Ljubica",
+          "Dunn-Davies, Hywel",
+          "Caporali, Andrea",
+          "Mitić, Tijana"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Diana Luna Buitrago&sup1;, Maryamu Habila &nbsp;Usman&sup1;, Dimitris Kardassis&sup2;, Ljubica Matic&sup3;,&nbsp; Hywel Dunn-Davies4, Andrea Caporali&sup1; and Tijana Mitić1. Technical Notes &ndash; AtheroNET &nbsp;",
+        "url": "https://zenodo.org/records/19019442",
+        "pdfUrl": "https://zenodo.org/api/records/19019442/files/final-30.5.25.-T.Mitic-_-Authored-Technical-Note.pdf/content",
+        "doi": "10.5281/zenodo.19019442",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "OrthologAL: A Shiny application for quality-aware humanization of non-human pre-clinical high-dimensional gene expression data",
+        "authors": [
+          "Chowdary, Rishika",
+          "Suter, Robert",
+          "D'Antuono, Matthew",
+          "Gomes, Cynthia",
+          "Stein, Joshua",
+          "LEE, Ki-Bum",
+          "Lee, Jae",
+          "Ayad, Nagi"
+        ],
+        "year": 2025,
+        "venue": "Bioinformatics (Oxford)",
+        "abstract": "OrthologAL is a new application introduced to aid researchers in converting gene expression data from non-human animals to their human equivalents, essential for drug discovery. This user-friendly tool is particularly valuable for studies using single-cell or spatial transcriptomics, which offer critical insights into diseases such as cancer and spinal cord injury. OrthologAL interfaces seamlessly…",
+        "url": "https://zenodo.org/records/15225041",
+        "doi": "10.5281/zenodo.15225041",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Human scattered tubular epithelial cells represent a heterogeneous population of glycolytic dedifferentiated proximal tubule cells -- RNA sequencing scripts",
+        "authors": [
+          "Eymael, Jenny",
+          "van den Broek, Martijn",
+          "Jansen, Jitske",
+          "Smeets, Bart"
+        ],
+        "year": 2022,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "The RStudio scripts used to analyze bulk and RNA sequencing data are deposited here belonging to the manuscript: Eymael and van den Broek et al. Human scattered tubular epithelial cells represent a heterogeneous population of glycolytic dedifferentiated proximal tubule cells. 2022",
+        "url": "https://zenodo.org/records/6168927",
+        "doi": "10.5281/zenodo.6168927",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "FedscGen: privacy-aware federated batch effect correction of single-cell RNA sequencing data -- Preprocessed datasets",
+        "authors": [
+          "Bakhtiari, Mohammad"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This dataset accompanies the publication \"FedscGen: Privacy-Aware Federated Batch Effect Correction of Single-Cell RNA Sequencing Data\" and includes eight single-cell RNA sequencing (scRNA-seq) datasets used to benchmark the FedscGen and scGen methods. The datasets are provided in .h5ad format and include comprehensive metadata necessary for replication and further analysis. Datasets We analyze va…",
+        "url": "https://zenodo.org/records/11489844",
+        "doi": "10.5281/zenodo.11489844",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "FedscGen: PyTorch randomly initialized models",
+        "authors": [
+          "Bakhtiari, Mohammad"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "The provided files correspond to models trained using PyTorch for batch effect correction and cell type annotation across various datasets. These models have been employed in the FedscGen framework, a federated learning approach designed for handling batch effect corrections in multi-dataset scenarios. Meanwhile, models in `classification` zip file have been utilized for training classifiers to an…",
+        "url": "https://zenodo.org/records/11505054",
+        "doi": "10.5281/zenodo.11505054",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Serotonin 2A Receptor Attenuates Psoriatic Inflammation by Suppressing IL-23 Secretion in Monocyte-derived Langerhans Cells",
+        "authors": [
+          "TAN, YEH FONG"
+        ],
+        "year": 2025,
+        "venue": "Nature Communications",
+        "abstract": "This is a code for the reanalysis of publicly available single cell RNA-sequencing data. It is used in our paper to determine HTR2A, cytokines, and transcription factors expression in cells originating from psoriatic skins or healthy controls.",
+        "url": "https://zenodo.org/records/16366824",
+        "doi": "10.5281/zenodo.16366824",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Development of human induced pluripotent stem cell-derived vascularized hepatic assembloids",
+        "authors": [
+          "Andrade, Melisa J",
+          "Sureshchandra, Suhas",
+          "Wang, Eric",
+          "Smith, Quinton"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Vascularization is a critical process for the proper function of tissues and organs, as it ensures the delivery of nutrients, oxygen, and the removal of waste products. The development of functional vascular networks requires precise differentiation of endothelial cells into tissue-specific lineages, regulated by vascular endothelial growth factor (VEGF), Notch, and Wnt signaling pathways. Reprodu…",
+        "url": "https://zenodo.org/records/20940233",
+        "doi": "10.5281/zenodo.20940233",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "Processed data and scripts supporting the manuscript \"Single-cell transcriptomics reveals immune suppression and cell states predictive of patient outcomes in rhabdomyosarcoma\"",
+        "authors": [
+          "DeMartino, Jeff",
+          "Visser, Lindy",
+          "Meister, Michael",
+          "Margaritis, Thanasis",
+          "Drost, Jarno"
+        ],
+        "year": 2023,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This submission contains the compiled count table,&nbsp;processed R objects and various scripts and output files&nbsp;accompanying our manuscript &quot;Single-cell transcriptomics reveals immune suppression and cell states predictive of patient outcomes in rhabdomyosarcoma&quot; (Nature Communications, 2023,&nbsp;https://doi.org/10.1038/s41467-023-38886-8)",
+        "url": "https://zenodo.org/records/7979274",
+        "doi": "10.5281/zenodo.7979274",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Enabling reproducible re-analysis of single-cell data",
+        "authors": [
+          "Squair, Jordan",
+          "Courtine, Gregoire",
+          "Skinnider, Michael"
+        ],
+        "year": 2020,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "A repository containing &#39;analysis-ready&#39; Seurat objects of publicly available single-cell RNA sequencing datasets.",
+        "url": "https://zenodo.org/records/4772064",
+        "doi": "10.5281/zenodo.4772064",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Cell-type-aware prioritization of vascular therapeutic targets by integrating single-cell and bulk RNA-seq with pathway",
+        "authors": [
+          "BULLA, Francesco"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Background. Bulk transcriptomics of atherosclerotic plaques identifies differentially ex pressed genes but cannot resolve which cell type should be the target of an intervention, nor whether a candidate is a driver or a bystander. We reasoned that a cell-type-aware frame work combining single-cell (scRNA-seq), bulk validation, pathway enrichment and cell&ndash;cell communication (CCC) is better su…",
+        "url": "https://zenodo.org/records/21322323",
+        "pdfUrl": "https://zenodo.org/api/records/21322323/files/Cell_type_aware_prioritization_of_vascular_therapeutic_targets_by_integrating_single_cell_and_bulk_RNA_seq_with_pathway_validation.pdf/content",
+        "doi": "10.5281/zenodo.21322323",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Single-cell RNA sequencing of the Tumor Microenvironment in Gynaecological Cancer: Cellular Heterogeneity, Computational Approaches and Clinical Applications",
+        "authors": [
+          "Neha Bonagiri",
+          "Dr. Elamathi Natarajan"
+        ],
+        "year": 2026,
+        "venue": "International Journal of Oncology Research",
+        "abstract": "Preservation copy of an article published in International Journal of Oncology Research . Read the full article: https://ioro.org/ijor/article/599669468700/599669468700 . Single-cell RNA sequencing (scRNA-seq) has emerged as a powerful technological advancement, overcoming the primary limitation of bulk-RNA sequencing–its inability to capture cellular heterogeneity. Consequently, scRNA-seq plays a…",
+        "url": "https://zenodo.org/records/23442729",
+        "pdfUrl": "https://zenodo.org/api/records/23442729/files/599669468700.pdf/content",
+        "doi": "10.64823/ijor.2601004",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning",
+        "authors": [
+          "Alsaggaf, Ibrahim",
+          "Buchan, Daniel",
+          "Wan, Cen"
+        ],
+        "year": 2023,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "The benchmark datasets used to evaluate&nbsp;Gaussian noise augmentation-based scRNA-seq contrastive learning (GsRCL) against&nbsp;scRNA-seq cell-type identification tasks.",
+        "url": "https://zenodo.org/records/8087611",
+        "doi": "10.5281/zenodo.8087611",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "nf-mucimmuno/scRNAseq",
+        "authors": [
+          "Macowan, Matthew",
+          "Pattaroni, Celine",
+          "Cardwell, Bailey Alec",
+          "Marsland, Benjamin"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "nf-mucimmuno/scRNAseq is a bioinformatics pipeline that can be used to run quality control steps and alignment to a host genome using STARsolo. It takes a samplesheet and FASTQ files as input, performs FastQC, trimming and alignment, and produces an output .tar.gz archive containing the collected outputs from STARsolo, ready for further processing downstream in R. MultiQC is run on the FastQC outp…",
+        "url": "https://zenodo.org/records/15743080",
+        "doi": "10.5281/zenodo.15743080",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Single-Cell and Spatial Transcriptomic Profiling Reveals Mechanisms of Angiogenesis and Fibrosis in Adenomyosis",
+        "authors": [
+          "Duan, Maoteng"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This dataset originates from a multi-omics study of adenomyosis , a common gynecologic disorder characterized by limited therapeutic options and poorly understood molecular mechanisms. Using single-cell RNA sequencing (scRNA-seq) and spatial transcriptomics (ST) , we generated a comprehensive cellular and spatial atlas of adenomyosis and further integrated publicly available bulk RNA-seq datasets …",
+        "url": "https://zenodo.org/records/17078290",
+        "doi": "10.5281/zenodo.17078290",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Dataset of single-cell transcriptomic matrix of 10 human glioblastoma tissue",
+        "authors": [
+          "Li, Yuzhe",
+          "Wu, Minghua",
+          "Long, Xinmiao"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Dataset of single-cell transcriptomic matrix of 10 human glioblastoma tissue. scRNA-seq was performed using the droplet-based 10x Genomics platform (10x Genomics, Pleasanton, CA, USA) . GBM tissues for single-cell RNA sequencing ( scRNA-seq) were collected from patients admitted to Xiangya Hospital, Central South University.",
+        "url": "https://zenodo.org/records/13309748",
+        "doi": "10.5281/zenodo.13309748",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Prioritization of cell types responsive to biological perturbations in single-cell data with Augur",
+        "authors": [
+          "Squair, Jordan W",
+          "Skinnider, Michael A",
+          "Gautier, Matthieu",
+          "Foster, Leonard J",
+          "Courtine, Gregoire"
+        ],
+        "year": 2021,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Processed and analysis-ready input data discussed in our Augur procedures.",
+        "url": "https://zenodo.org/records/4473025",
+        "doi": "10.5281/zenodo.4473025",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Community Package VanGalen-Oetjen Dataset",
+        "authors": [
+          "Solovey, Maria",
+          "Salcher, Felix",
+          "Celik, Muhammet"
+        ],
+        "year": 2023,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "The Community package ( https://github.com/SoloveyMaria/community )&nbsp;is an R package designed for the analysis of single-cell RNA sequencing data, specifically for inferring interactions between different cell types. The dataset provided here is compatible with the Community tool, allowing for direct utilization.&nbsp; Both datasets VanGalen ( https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc…",
+        "url": "https://zenodo.org/records/10013368",
+        "doi": "10.5281/zenodo.10013368",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "single cell RNA sequencing of hashimoto's thyroiditis",
+        "authors": [
+          "Huai-dong Song"
+        ],
+        "year": 2021,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Hashimoto&rsquo;s thyroiditis&nbsp;is the most common autoimmune disease characterized by lymphocytic infiltration and thyrocyte destruction. However, the pathogenesis of HT is not clear. Here, we analyzed 50,535 cells from thyroid tissues and 48,822 cells from peripheral blood mononuclear cells of 5 HT patients at single cell resolution.",
+        "url": "https://zenodo.org/records/4575509",
+        "doi": "10.5281/zenodo.4575509",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Human pluripotent stem cell-derived kidney organoids for personalized congenital and idiopathic nephrotic syndrome modeling -- RNA sequencing and Fiji macro scripts",
+        "authors": [
+          "Jitske Jansen",
+          "Bartholomeus Tideman van den Berge",
+          "Martijn van den Broek",
+          "Michiel Schreuder",
+          "Bart Smeets"
+        ],
+        "year": 2021,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This upload contains the R scripts that were used to perform single-cell RNA sequencing analysis and bulk RNA sequencing analysis and the Fiji script for automated image quantification used in the following article: Jansen J, van den Berge BT, van den Broek M, Maas RJ, Daviran D, Willemsen B, Roverts R, van der Kruit M, Kuppe C, Reimer KC, Di Giovanni G, Mooren F, Nlandu Q, Mudde H, Wetzels R, den…",
+        "url": "https://zenodo.org/records/5156000",
+        "doi": "10.5281/zenodo.5156000",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Data Visualization Code for \"Time-resolved transcriptomics reveal diverse B cell fate trajectories in the early response to Epstein-Barr virus infection\"",
+        "authors": [
+          "SoRelle, Elliott"
+        ],
+        "year": 2022,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "&nbsp; R script for Seurat-based processing and visualization of scRNA-seq data from time-resolved early EBV infection Code used for analysis in &quot;Time-resolved transcriptomics reveal diverse B cell fate trajectories in the early response to Epstein-Barr virus infection.&quot; A pre-print version of this work can be found on bioRxiv:&nbsp; https://www.biorxiv.org/content/10.1101/2022.02.23.481…",
+        "url": "https://zenodo.org/records/6821702",
+        "doi": "10.5281/zenodo.6821702",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      }
+    ],
+    "errors": [
+      "Semantic Scholar: Semantic Scholar 限流，请稍后重试"
+    ]
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97+%E7%BA%A0%E9%94%99&limit=20&language=zh",
+  "response": {
+    "cached": false,
+    "total": 56,
+    "page": 1,
+    "language": "zh",
+    "paperType": "all",
+    "sourcesOk": 6,
+    "sourcesTotal": 11,
+    "cooldown": [
+      "OpenAlex",
+      "PubMed",
+      "DBLP"
+    ],
+    "papers": [
+      {
+        "title": "生物大分子的量子计算模拟：并行量子计算的初步探索",
+        "authors": [
+          "Honghui Shang",
+          "Yi Fan",
+          "Jie Liu",
+          "Jinlong Yang"
+        ],
+        "year": 2024,
+        "venue": "Chinese Science Bulletin",
+        "url": "https://doi.org/10.1360/tb-2024-0376",
+        "pdfUrl": "https://engine.scichina.com/doi/pdf/3B7E3138AAEE45588065453A15BA4D9C",
+        "doi": "10.1360/tb-2024-0376",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合",
+        "openAccess": true
+      },
+      {
+        "title": "量子计算论文数据集",
+        "authors": [
+          "于杰平 于杰平",
+          "王丽 王丽"
+        ],
+        "venue": "Science Data Bank Datasets",
+        "url": "https://doi.org/10.11922/sciencedb.j00053.00010",
+        "doi": "10.11922/sciencedb.j00053.00010",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "基于逻辑函数的量子纠错码构造",
+        "authors": [
+          "亚杰 许",
+          "淑琴 钟",
+          "智 马"
+        ],
+        "year": 2010,
+        "venue": "SCIENTIA SINICA Informationis",
+        "url": "https://doi.org/10.1360/zf2010-40-2-249",
+        "doi": "10.1360/zf2010-40-2-249",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "医院计算机工作在医疗质量管理中的应用",
+        "authors": [
+          "刘　迪"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0608-65",
+        "doi": "10.37155/2717-5170-0608-65",
+        "citations": 1,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "基于国微DSP的大数量排序算法设计与实现",
+        "authors": [
+          "王文青",
+          "张　超",
+          "张　涛"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0608-76",
+        "doi": "10.37155/2717-5170-0608-76",
+        "citations": 1,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于云计算的计算机信息化架构设计与实现",
+        "authors": [
+          "李思琪"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0605-4",
+        "doi": "10.37155/2717-5170-0605-4",
+        "citations": 1,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "小样本神经网络在预测骨性Ⅱ类正颌患者术后面型中的应用 Application of sample-efficient neural network in predicting postoperative facial profiles in skeletal class Ⅱ orthognathic patients",
+        "authors": [
+          "."
+        ],
+        "year": 2026,
+        "url": "https://europepmc.org/article/PMC/PMC13672219",
+        "pdfUrl": "https://europepmc.org/articles/PMC13672219/pdf",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "共价有机框架在战略性关键金属回收中的应用进展：聚焦稀土与稀散金属 Recent advances in the applications of covalent organic frameworks for strategic critical metal recovery： focusing on rare earths and dispersed metals",
+        "authors": [],
+        "year": 2026,
+        "url": "https://europepmc.org/article/PMC/PMC13659876",
+        "pdfUrl": "https://europepmc.org/articles/PMC13659876/pdf",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "经济系统纠缠熵:量化原理、计算方法与案例实证(Entanglement Entropy in Economic Systems: Quantitative Principles, Calculation Methods, and Case Studies)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 :经典经济学原子化独立主体假设无法刻画现代经济系统的整体性关联特征,实践本体论量子经济学框架下,经济主体通过持续互动形成不可分割的经济纠缠关系。现有研究多停留在定性描述层面,或依赖传统线性关联方法,缺乏统一可操作的非线性整体量化体系。 本文构建经济系统纠缠熵的完整量化框架,明确联合经济密度矩阵、约化经济密度矩阵与冯 &middot;诺依曼熵的经济内涵,推导两体两两纠缠熵与N体系统总纠缠熵的通用公式,阐明纠缠熵的经典极限与理论退化机制 。以全球芯片产业链上下游企业为实证案例,完整展示从历史数据统计、概率分布构建到纠缠熵数值计算的全流程,对比分析完全独立、中等纠缠与完全纠缠三种典型场景的量化差异。研究表明,经济系统纠缠熵能够精准量化经济主体的非线性关联强度与系统整体性,为产业链协同度评估、政策传导效应测算与经济脆弱性预警提供标准化工具,同时验证了量子经济学与经典经济学的理…",
+        "url": "https://zenodo.org/records/20690474",
+        "pdfUrl": "https://zenodo.org/api/records/20690474/files/%E7%BB%8F%E6%B5%8E%E7%B3%BB%E7%BB%9F%E7%BA%A0%E7%BC%A0%E7%86%B5%EF%BC%9A%E9%87%8F%E5%8C%96%E5%8E%9F%E7%90%86%E3%80%81%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E4%B8%8E%E6%A1%88%E4%BE%8B%E5%AE%9E%E8%AF%81.pdf/content",
+        "doi": "10.5281/zenodo.20690474",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "经济变量纠缠熵:测算方法及政策应用(Entangled Entropy of Economic Variables: Measurement Methods and Policy Applications)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 宏观经济系统本质上是多变量深度耦合的复杂动态系统, 传统关联分析方法因预设变量独立性与线性关系假设,难以刻画变量间 &ldquo;不可分割&rdquo;的整体性关联。 本文借用量子信息论中纠缠熵的数学工具,系统构建了经济变量纠缠熵的测算框架,通过冯&middot;诺依曼熵量化系统联合概率分布的不可分割性。基于中国2000-2024年四大核心宏观经济变量的实证研究表明:中国经济呈现&ldquo;GDP-M2强纠缠、CPI-M2弱纠缠&rdquo;的非均衡关联结构;动态纠缠熵能够精准识别2008年金融危机、2015年供给侧改革、2020年新冠疫情等重大事件对系统关联结构的冲击效应;多变量纠缠熵验证了经济系统的协同涌现效应,整体关联强度较单变量关联之和高出13.0%。 结合量子态跃迁概率模型,测算通胀状态跃迁概率矩阵,据此构建 &ldquo;状态适配-精准施策&rdqu…",
+        "url": "https://zenodo.org/records/20511471",
+        "pdfUrl": "https://zenodo.org/api/records/20511471/files/%E7%BB%8F%E6%B5%8E%E5%8F%98%E9%87%8F%E7%BA%A0%E7%BC%A0%E7%86%B5%EF%BC%9A%E6%B5%8B%E7%AE%97%E6%96%B9%E6%B3%95%E5%8F%8A%E6%94%BF%E7%AD%96%E5%BA%94%E7%94%A8.pdf/content",
+        "doi": "10.5281/zenodo.20511471",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "因果:从\"线性因果\"到\"纠缠因果\"(Cause and Effect: From \"Linear Cause and Effect\" to \"Entangled Cause and Effect\")",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 要: 传统因果理论建立在机械论世界观之上,形成了单一、线性、确定性的认知框架,无论是主流计量因果识别方法,还是对复杂现实关联的解释,都暴露出明显局限,甚至无法破解部分核心因果悖论。本文跳出传统机械因果的思维束缚, 人类真实社会实践为出发点,借用量子概念 , 提出纠缠因果理论。 该理论将因果关系定义为多元、纠缠、概率性的关联形态,依次提出变量纠缠与非局域因果关联、因果关系的观测者依赖性、因果叠加与多重因果路径三大定律,对比线性因果框架完成论证,指出纠缠因果是对经济关联认知的重要革命。 最后本文以三级制造业供应链的风险传染场景开展应用演示,计算核心主体间的纠缠熵并完成结果解读,为复杂系统下的因果分析提供新的研究框架与实践思路。 关键词: 因果识别;线性因果;量子纠缠;量子因果q",
+        "url": "https://zenodo.org/records/20619155",
+        "pdfUrl": "https://zenodo.org/api/records/20619155/files/%E5%9B%A0%E6%9E%9C%EF%BC%9A%E4%BB%8E%E2%80%9C%E7%BA%BF%E6%80%A7%E5%9B%A0%E6%9E%9C%E2%80%9D%E5%88%B0%E2%80%9C%E7%BA%A0%E7%BC%A0%E5%9B%A0%E6%9E%9C%E2%80%9D.pdf/content",
+        "doi": "10.5281/zenodo.20619155",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "经济学只有一种计量:人的计量(Economics has only one measure: the measure of human beings)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 :现代主流经济学长期将计量等同于对价格、产量与货币流量等客观变量之数学测算,构建起一套以统计回归、参数估计与模型拟合为核心的量化范式。这套范式极大推动了经济学之科学化表达,却持续陷于理论危机:模型预测屡屡在重大危机面前失效,微观个体的行为持续背离理性人之假定,宏观总量数据无以解释经济系统之内生不确定性。本文提出一个核心命题:经济学本质上只有一种计量,即人的计量。 GDP、物价、资产价格与产业规模等一切经济指标,皆不过是人的选择、认知、预期与互动所外化之次级表征,并非经济世界的本体。传统计量经济学将表征误认作本体,以物化、机械化的测量工具去度量本属人的心智与社会纠缠之经济现实,此乃当代经济学范式困境之根源。量子人本经济学的框架重新将&ldquo;人&rdquo;置于计量的中心,使经济计量由对外部数字之统计,转向对人之叠加认知、信念纠缠与观测依赖行为之刻画,为重建经济学底…",
+        "url": "https://zenodo.org/records/23042354",
+        "pdfUrl": "https://zenodo.org/api/records/23042354/files/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8F%AA%E6%9C%89%E4%B8%80%E7%A7%8D%E8%AE%A1%E9%87%8F%EF%BC%9A%E4%BA%BA%E7%9A%84%E8%AE%A1%E9%87%8F.pdf/content",
+        "doi": "10.5281/zenodo.23042354",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "金融市场纠缠效应测算:来自人民币汇率与A股市场的经验证据(Measurement of Entanglement Effect in Financial Markets: Empirical Evidence from RMB Exchange Rate and A-share Market)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 传统计量经济学基于经典概率、线性关联与变量独立三大假设,在刻画数字经济背景下金融市场瞬时共振、情绪传染与非线性联动等典型特征时存在系统性局限,仅能事后测算静态相关关系,难以识别主体间内生状态绑定效应。本文剥离量子力学的物理内涵,仅借鉴其成熟的线性代数工具,构建适配经济系统运行逻辑的量子纠缠行为模型 ,定义经济叠加态、联合密度矩阵与标准化纠缠度等核心量化指标 ,形成完整的建模、测算与检验流程。选取人民币汇率与 A股市场纠缠关系开展实证检验,结果表明:相较于皮尔逊相关系数与线性回归等传统工具,量子纠缠模型可精准捕捉外部冲击下市场行为的突变节点、相干效应与退相干过程,有效区分&ldquo;外部因素驱动的简单相关&rdquo;与&ldquo;主体内生绑定的行为纠缠&rdquo;。本文厘清了经济动态主观概率与量子物理内禀概率的本质差异,规避了浅层概念类比的研究误区,拓展了实…",
+        "url": "https://zenodo.org/records/20396241",
+        "pdfUrl": "https://zenodo.org/api/records/20396241/files/%E9%87%91%E8%9E%8D%E5%B8%82%E5%9C%BA%E7%BA%A0%E7%BC%A0%E6%95%88%E5%BA%94%E6%B5%8B%E7%AE%97%EF%BC%9A%E6%9D%A5%E8%87%AA%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87%E4%B8%8EA%E8%82%A1%E5%B8%82%E5%9C%BA%E7%9A%84%E7%BB%8F%E9%AA%8C%E8%AF%81%E6%8D%AE.pdf/content",
+        "doi": "10.5281/zenodo.20396241",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "计量:从\"经典线性计量\"到\"量子概率计量\"(Measurement: From \"Classical Linear Measurement\" to \"Quantum Probability Measurement\")",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 要: 经典线性计量经济学建立在机械决定论的哲学基础之上,依托变量独立、关系线性、结果确定的核心假设开展实证研究,在复杂经济系统的分析中暴露出可复制性差、预测准确度低等诸多现实危机,其根源是经典计量无法适配经济系统的不确定性与关联性特征。本文突破传统机械论世界观的局限, 基于 人类真实社会实践为 基础 ,借用量子概念 , 以 概率、叠加、纠缠的核心逻辑,提出量子概率计量经济学的三大公理,构建了量子叠加回归核心模型 ,完成了对量子概率计量实证新范式的系统构建。本文对比了经典线性计量与量子概率计量的方法差异,论证了量子概率计量对经典计量的全面升级,并通过消费者购买意愿预测的量子叠加回归实证检验演示,检验了量子概率计量在复杂经济分析中的显著优势。量子概率计量为解决经典计量的现实危机提供了新的方案,也为经济学实证研究开辟了新的方向。 关键词: 经典线性计量;量子概率计量;量子叠加回归",
+        "url": "https://zenodo.org/records/20589232",
+        "pdfUrl": "https://zenodo.org/api/records/20589232/files/%E8%AE%A1%E9%87%8F%EF%BC%9A%E4%BB%8E%E2%80%9C%E7%BB%8F%E5%85%B8%E7%BA%BF%E6%80%A7%E8%AE%A1%E9%87%8F%E2%80%9D%E5%88%B0%E2%80%9C%E9%87%8F%E5%AD%90%E6%A6%82%E7%8E%87%E8%AE%A1%E9%87%8F%E2%80%9D.pdf/content",
+        "doi": "10.5281/zenodo.20589232",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "契约:从完全和不完全契约到量子契约(Contract: From Complete and Incomplete Contracts to Quantum  Contracts)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 要: 传统契约理论根植于牛顿机械论世界观,将契约视为外生给定的、静态的权利义务约定,无法解释现实中普遍存在的关系型契约、柔性契约、平台算法契约等复杂现象。 量子契约 理论 以人类真实社会实践为第一出发点,借用量子概念而非简单类比 , 构建了量子契约理论。 该理论 认为契约本质上是一个量子叠加态,契约主体之间存在量子纠缠关系,契约的履行是观测坍缩的结果,契约系统的效率取决于系统的相干性。 量子契约 理论建立了一个能够同时解释传统契约和现代契约的统一理论框架,实现了契约理论的范式升级。 在劳动合同、平台算法契约、国际经贸契约与中国农村土地承包契约四个典型案例中, 量子契约 理论展现了强大的解释力。 量子契约 理论不仅深化了我们对契约本质的认识,也为契约制度的设计和完善提供了全新的理论指导。在数字经济快速发展的今天, 量子契约 理论将成为理解和把握契约制度演化规律的重要理论工具。 关键词 :…",
+        "url": "https://zenodo.org/records/20587791",
+        "pdfUrl": "https://zenodo.org/api/records/20587791/files/%E5%A5%91%E7%BA%A6%EF%BC%9A%E4%BB%8E%E5%AE%8C%E5%85%A8%E5%92%8C%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%A5%91%E7%BA%A6%E5%88%B0%E9%87%8F%E5%AD%90%E5%A5%91%E7%BA%A6.pdf/content",
+        "doi": "10.5281/zenodo.20587791",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子环境经济学:基于量子经济学公理体系的理论重构(Quantum Environmental Economics:Theoretical Reconstruction Based on the Axiom System of Quantum Economics)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 本文基于量子经济学的 &ldquo; 量子人 &rdquo; 假设与三大公理(叠加态公理、纠缠公理、观测坍缩公理),构建量子环境经济学的完整理论框架。核心命题是:环境系统与经济系统本质上是量子纠缠的整体,环境政策具有观测者效应,生态不确定性是叠加态的本质属性而非信息不完备。本文 提出 &ldquo; 量子生态人 &rdquo; 假设,推导环境叠加态公理、生态纠缠公理、环境观测坍缩公理三大分支公理,重构环境资源定价理论、环境政策理论、可持续发展理论与气候治理理论,证明传统环境经济学是量子环境经济学在生态量子效应消失条件下的极限特例。 量子环境经济学不仅提供了理解生态危机的新范式,更设计了具有操作性的量子政策工具,为应对气候变化的非线性突变和生态系统的不可逆崩溃提供了理论基础。 关键词: 量子环境经济学;生态纠缠;环境叠加态;生态适应性最大化",
+        "url": "https://zenodo.org/records/20848192",
+        "pdfUrl": "https://zenodo.org/api/records/20848192/files/%E9%87%8F%E5%AD%90%E7%8E%AF%E5%A2%83%E7%BB%8F%E6%B5%8E%E5%AD%A6%EF%BC%9A%E5%9F%BA%E4%BA%8E%E9%87%8F%E5%AD%90%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%85%AC%E7%90%86%E4%BD%93%E7%B3%BB%E7%9A%84%E7%90%86%E8%AE%BA%E9%87%8D%E6%9E%84.pdf/content",
+        "doi": "10.5281/zenodo.20848192",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子拍卖:一种新型拍卖机制的探索(Quantum auction: Exploration of a new auction mechanism)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 为解决传统拍卖理论在多属性标的交易、隐性价值挖掘等复杂场景中的固有局限,本文基于量子叠加、纠缠与坍缩核心原理,开展新型拍卖机制探索与理论体系构建。方法上,首先梳理传统拍卖四大范式及核心理论成果,剖析其在多属性价值评估、策略互动刻画等方面的局限性;进而界定量子拍卖理论内涵,构建标的多属性叠加价值、竞拍者策略纠缠及动态坍缩均衡三大核心模型,严格验证经典拍卖模型为量子拍卖在退相干条件下的特殊退化形式;选取城市商业用地拍卖为案例,采用 案例模拟 对比实验,量化分析两种拍卖机制的成效差异。结果表明,量子拍卖在价值发现完整性、资源配置效率、市场竞争公平性及标的长期价值等维度 可能 均具有显著优势。本文构建的量子拍卖理论体系为拍卖理论范式升级提供全新视角,为复杂场景拍卖机制设计提供可落地的理论工具。 关键词: 量子拍卖;量子叠加;策略纠缠;机制设计;退相干验证",
+        "url": "https://zenodo.org/records/20109048",
+        "pdfUrl": "https://zenodo.org/api/records/20109048/files/%E9%87%8F%E5%AD%90%E6%8B%8D%E5%8D%96%EF%BC%9A%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8B%E6%8B%8D%E5%8D%96%E6%9C%BA%E5%88%B6%E7%9A%84%E6%8E%A2%E7%B4%A2.pdf/content",
+        "doi": "10.5281/zenodo.20109048",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子比较优势:国际贸易理论的范式重构(Quantum Comparative Advantage: Paradigm Reconstruction of International Trade Theory)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 经典比较优势理论历经三百年演进,始终未能突破原子论、静态论与线性论的本体论局限,无法解释产业内贸易、动态比较优势演化与政策协同效应等核心现象。 本文 经济系统本身就带有量子特性,将量子比较优势引入公理体系,搭建量子比较优势的完整形式化框架 :将国家产业结构定义为希尔伯特空间中的叠加态,将比较优势定义为厄米算符的谱,将跨国贸易关联定义为量子纠缠。通过严格数理推导证明,量子纠缠可产生超越经典极限的贸易收益,这一结论从根本上拓展了李嘉图比较优势原理的适用边界。通过三组控制变量严格的数值模拟验证了量子模型的核心优势:当两国产业存在互补关联且政策完全协调时,量子纠缠态的贸易收益比经典完全专业化高出 44%,且政策协调度直接决定收益水平。本文为国际贸易理论提供了全新的量子范式,为中国制定产业政策与贸易战略提供了坚实的理论支撑。 关键词 : 量子 比较优势 ;比较优势算符; 国…",
+        "url": "https://zenodo.org/records/20786038",
+        "pdfUrl": "https://zenodo.org/api/records/20786038/files/%E9%87%8F%E5%AD%90%E6%AF%94%E8%BE%83%E4%BC%98%E5%8A%BF%EF%BC%9A%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93%E7%90%86%E8%AE%BA%E7%9A%84%E8%8C%83%E5%BC%8F%E9%87%8D%E6%9E%84.pdf/content",
+        "doi": "10.5281/zenodo.20786038",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子经济学数学基础(Mathematical Foundations of Quantum Economics)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 要: 本文系统构建量子经济学的数学基础与理论框架,衔接量子力学与经济金融实践。 首先阐述希尔伯特空间、线性算子、复变函数、密度矩阵等核心数学工具的经济内涵,奠定理论基石 ;进而建立单主体叠加态与多主体张量积态、纠缠态的经济系统表示方法,揭示观测导致的量子坍缩对经济状态的影响;基于薛定谔方程与时间演化算子,刻画经济系统的动态演化规律,结合退相干理论解释确定性演化机制;通过叠加、测不准、纠缠等量子原理解析经济系统的非线性关联与瞬时联动等经典难题;最后构建量子资产定价和量子博弈论等高级模型并实证验证。研究突破经典经济学线性化、确定性范式局限,为经济复杂行为分析提供全新视角与可操作工具,适用于经济学、金融学等领域的理论研究与实践应用。 关键词: 量子经济学;希尔伯特空间;概率幅;密度矩阵;薛定谔方程",
+        "url": "https://zenodo.org/records/20367022",
+        "pdfUrl": "https://zenodo.org/api/records/20367022/files/%E9%87%8F%E5%AD%90%E7%BB%8F%E6%B5%8E%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.pdf/content",
+        "doi": "10.5281/zenodo.20367022",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "经济学人性假设的变革:从\"理性人\"到\"算法人\"(The Transformation of Human Assumptions in Economics: From \"Rational Man\" to \"Algorithmic Man\")",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要: 传统经济学 &ldquo;理性人&rdquo;假设基于个体有限理性与效用最大化逻辑,已难以适配数字时代算法深度介入下的人类决策新特征,范式革新成为必然。本文立足人机共生的数字经济现实,提出&ldquo;算法人&rdquo;假设,旨在推动经济学从传统个体理性范式向人机协同决策范式转型。研究通过构建&ldquo;量子决策模型&rdquo;与&ldquo;人机共生演化框架&rdquo;,系统解析算法技术对人类决策边界、决策逻辑与决策目标的重构机制。研究发现, 算法时代的决策主体已演化为人脑与硅基算法相互纠缠的复合系统 :算法通过云端智能突破人类有限计算能力,拓展理性边界,决策目标也从单一效用最大化转向复杂适应系统的动态均衡。研究表明,&ldquo;算法人&rdquo;假设不仅挑战了传统经济学的理论基石,更为解读数字时代人类经济行为提供了全新分析视角,为经济学分析框架的系统…",
+        "url": "https://zenodo.org/records/20111051",
+        "pdfUrl": "https://zenodo.org/api/records/20111051/files/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E4%BA%BA%E6%80%A7%E5%81%87%E8%AE%BE%E7%9A%84%E5%8F%98%E9%9D%A9%EF%BC%9A%E4%BB%8E%E2%80%9C%E7%90%86%E6%80%A7%E4%BA%BA%E2%80%9D%E5%88%B0%E2%80%9C%E7%AE%97%E6%B3%95%E4%BA%BA%E2%80%9D.pdf/content",
+        "doi": "10.5281/zenodo.20111051",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子预期理论:预期形成的新范式(Quantum Expectation Theory: A New Paradigm for Expectation Formation)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要: 为应对数字经济时代下传统预期理论因信息完备、认知完美以及预期独立假设失效而引发的解释力困境,本研究系统剖析了传统预期理论的机械论局限,融合量子力学、行为经济学与复杂系统理论,搭建了量子预期理论的完整分析框架。本研究明确了量子预期 &ldquo;多态共存、动态演化、纠缠关联、观测坍缩&rdquo;的核心内涵,推导出个体与群体预期的数理表达及坍缩概率公式,揭示了&ldquo;触发&mdash;调整&mdash;坍缩&mdash;反馈&rdquo;的闭环形成机制。研究结果显示, 量子预期理论能够有效阐释通胀预期分化、政策预期错位、市场情绪共振、消费行为突变、企业决策悖论、资产价格波动、经济周期波动等传统理论难以解释的经济现象,且可拓展应用于宏观政策预期管理、企业市场预期引导、金融市场风险防控、数字经济治理等四大场景 。本研究实现了预期分析从&ldquo;确定性范式&rdq…",
+        "url": "https://zenodo.org/records/23571215",
+        "pdfUrl": "https://zenodo.org/api/records/23571215/files/%E9%87%8F%E5%AD%90%E9%A2%84%E6%9C%9F%E7%90%86%E8%AE%BA%EF%BC%9A%E9%A2%84%E6%9C%9F%E5%BD%A2%E6%88%90%E7%9A%84%E6%96%B0%E8%8C%83%E5%BC%8F.pdf/content",
+        "doi": "10.5281/zenodo.23571215",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子激励理论:协同效应与机制重构(Quantum incentive theory: synergy and mechanism reconstruction)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 传统激励理论根植于机械论世界观,将个体视为独立决策单元,遵循 &ldquo;目标-奖励&rdquo;的线性因果逻辑,在应对数字化时代跨部门协作、开放式创新与产业链协同等复杂场景时,普遍陷入&ldquo;协同黑洞&rdquo;与&ldquo;创新抑制&rdquo;的双重困境。 本文引入量子力学叠加态、量子纠缠、测不准原理与观测内生性核心思想,完成从物理概念到经济管理逻辑的系统性转译,构建了&ldquo;主体层-关系层-环境层&rdquo;三维一体的量子激励理论框架。 研究表明,经济主体本质上是处于能力、意愿与知识三重叠加态的量子系统,个体间的协同效能并非线性加总,而是通过量子纠缠产生的整体涌现效应;考核观测并非中立的外生过程,而是内生地塑造个体行为与系统状态,这是传统量化考核陷入&ldquo;测不准困境&rdquo;的根源。基于此,本文设计了协同积分、叠加态奖励与纠…",
+        "url": "https://zenodo.org/records/20124242",
+        "pdfUrl": "https://zenodo.org/api/records/20124242/files/%E9%87%8F%E5%AD%90%E6%BF%80%E5%8A%B1%E7%90%86%E8%AE%BA%EF%BC%9A%E5%8D%8F%E5%90%8C%E6%95%88%E5%BA%94%E4%B8%8E%E6%9C%BA%E5%88%B6%E9%87%8D%E6%9E%84.pdf/content",
+        "doi": "10.5281/zenodo.20124242",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子国际贸易学:公理体系与核心范畴(Quantum International Trade: Axiom System and Core Categories)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要: 传统国际贸易学两百年演进始终未能突破牛顿机械论的本体论桎梏,其原子化、线性化与静态化假设在全球价值链深度融合的当代已全面失效。 本文基于马克思主义实践本体论,构建了量子国际贸易学的公理化体系,确立贸易叠加态、贸易纠缠、观测坍缩与贸易能级跃迁四大核心公理 ,定义信用密度矩阵、贸易纠缠熵与能级算符三大核心数学工具。通过严格数理推导证明 兼容包容性定理 :李嘉图模型、赫克歇尔 -俄林模型、克鲁格曼模型与梅利茨模型均为量子理论在低叠加熵、低纠缠熵经典极限下的特例。本文实现了国际贸易理论从机械论范式向量子范式的根本性跃迁,为理解数字时代全球贸易运行机制提供了统一分析框架。 关键词: 量子国际贸易学;马克思主义实践本体论;贸易纠缠;观测坍缩;兼容包容性定理",
+        "url": "https://zenodo.org/records/20786137",
+        "pdfUrl": "https://zenodo.org/api/records/20786137/files/%E9%87%8F%E5%AD%90%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93%E5%AD%A6%EF%BC%9A%E5%85%AC%E7%90%86%E4%BD%93%E7%B3%BB%E4%B8%8E%E6%A0%B8%E5%BF%83%E8%8C%83%E7%95%B4.pdf/content",
+        "doi": "10.5281/zenodo.20786137",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子几何涌现框架下的宇宙创生:非奇异性渗流场景",
+        "authors": [
+          "Zhou, Tao"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘要:本文在 &ldquo;量子几何涌现&rdquo; 框架内,为宇宙创生提供了完整严格的形式化描述。该背景独立的量子引力理论指出,时空、物质及其动力学从基本量子关系网络中涌现,&ldquo;大爆炸&rdquo; 并非预先时空中的奇异性事件,而是前几何量子网络从亚临界不连通相到超临界巨连通分量的纠缠渗流相变,这一相变使粗粒化程序能产生连续洛伦兹时空几何。基于前期工作参考文献[1 , 2 , 3] 的公理化基础,我们构建起源场景,回答了网络种子产生、生长趋近渗流阈值、渗流相变机制及相变后网络自我调节过渡到标准热大爆炸宇宙学这四个递进问题。我们利用尺度依赖的动态量子谱三元组族,该三元组包含代数空间、希尔伯特空间、微分算子空间三类组分、孔涅谱距离和重正化群方法严格刻画各阶段,渗流相变通过关联长度发散自然产生指数膨胀(暴胀),无需暴胀子场,且因代数结晶约束和谱作用的曲率反作用自限。该场景产生独特可…",
+        "url": "https://zenodo.org/records/20711278",
+        "pdfUrl": "https://zenodo.org/api/records/20711278/files/%E9%87%8F%E5%AD%90%E5%87%A0%E4%BD%95%E6%B6%8C%E7%8E%B0%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%AE%87%E5%AE%99%E5%88%9B%E7%94%9F%EF%BC%9A%E9%9D%9E%E5%A5%87%E5%BC%82%E6%80%A7%E6%B8%97%E6%B5%81%E5%9C%BA%E6%99%AF.pdf/content",
+        "doi": "10.5281/zenodo.20711278",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "量子财政学:不确定性时代的财政理论革命(Quantum Finance: financial theory revolution in the era of uncertainty)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "摘 &nbsp; 要 : 自凯恩斯革命以来,主流财政理论根植于牛顿经典力学的机械论范式,依托线性因果、确定性均衡与原子化个体假设构建分析框架,该理论体系适配工业文明阶段的经济运行特征。但伴随数字文明演进与全球经济不确定性持续攀升,传统财政理论的解释力与政策指导效能不断弱化。本文将量子物理学核心原理系统性引入财政学科研究,范式化构建量子财政学理论体系。 通过纳入叠加态、纠缠效应、不确定性原理、量子跃迁与观测内生性五大基础规律,本文重新界定财政政策的本质属性与传导逻辑,创设量子财政乘数、财政纠缠网络、量子预算周期等原创概念,搭建基于量子态演化的动态分析模型。 研究发现,财政政策实施前呈现多重潜在效应叠加态,政策依托全域纠缠网络实现非局域传导,效果具备概率化特征;政策制定者作为内生观测主体,其政策干预行为将直接改变经济系统运行状态。本文实现财政理论五大范式转换:由机械论转向有机论、线性因果转向量…",
+        "url": "https://zenodo.org/records/20098236",
+        "pdfUrl": "https://zenodo.org/api/records/20098236/files/%E9%87%8F%E5%AD%90%E8%B4%A2%E6%94%BF%E5%AD%A6%EF%BC%9A%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%97%B6%E4%BB%A3%E7%9A%84%E8%B4%A2%E6%94%BF%E7%90%86%E8%AE%BA%E9%9D%A9%E5%91%BD.pdf/content",
+        "doi": "10.5281/zenodo.20098236",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "基于MediaPipe手势控制计算机音量设计",
+        "authors": [
+          "张 晶",
+          "杨碎明",
+          "孙攀攀"
+        ],
+        "year": 2023,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0507-27",
+        "doi": "10.37155/2717-5170-0507-27",
+        "citations": 1,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "数字化技术赋能烧伤康复：新范式与未来展望 Digital technology empowers burn rehabilitation: new paradigms and future prospects",
+        "authors": [
+          "."
+        ],
+        "year": 2025,
+        "url": "https://europepmc.org/article/PMC/PMC12754768",
+        "pdfUrl": "https://europepmc.org/articles/PMC12754768/pdf",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Research on the cyclic codes decoding based on the generalized orthogonal matching pursuit gOMP algorithm(基于gOMP算法的循环码译码研究)",
+        "authors": [
+          "JIANGEnhua(姜恩华)"
+        ],
+        "year": 2017,
+        "venue": "Zhejiang Daxue xuebao. Lixue ban",
+        "abstract": "在压缩感知理论中，广义正交匹配追踪(gOMP)算法常用于解决l0范数的最小化问题.借助无噪声干扰的压缩感知观测模型，提出了循环码差错图案E重构的压缩感知模型，以校验矩阵H作为测量矩阵，伴随式S作为测量信号，采用gOMP算法重构了差错图案E，其与收码R进行模2加运算，求得发码C的估值.进一步提出了校验矩阵H作为测量矩阵的构成形式及其2个定理.详细论述了gOMP算法重构差错图案E的计算过程.以(7，1)、(7,3)、(7,4)、(15，7)和(31，21)循环码为例，分析了gOMP算法对循环码的纠错能力；以(7，1)循环码为例，分析了gOMP算法中原子选取个数s与纠错位数的关系.通过误码率和码字C重构的成功率，比较分析了gOMP算法和最大似然译码算法的译码效果.仿真实验表明，采用压缩感知理论和广义正交匹配追踪gOMP算法实现循环码译码是可行和有效的.",
+        "url": "https://doi.org/10.3785/j.issn.1008-9497.2017.05.010",
+        "doi": "10.3785/j.issn.1008-9497.2017.05.010",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "生物离子分子组学计划( Bio-imOmics Project:BiP)",
+        "authors": [
+          "许,越",
+          "张,增凯",
+          "杲,红建",
+          "刘,蕴琦",
+          "李,磊",
+          "叶,斌",
+          "巨,肖宇",
+          "马,跃",
+          "张,强",
+          "郭,巍玮"
+        ],
+        "year": 2023,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "&ldquo;imOmics 离子分子组学&rdquo;是对生命与非生命物质与外界环境进行离子和分子交换过程的整体研究。依据研究的对象不同可以分为: &bull; &ldquo;非生物离子分子组学计划(Abiotic imOmics Project:AiP)&rdquo; &bull; &ldquo;生物离子分子组学计划(Bio-imOmics Project:BiP)&rdquo; 生物离子分子组学计划(Bio-imOmics Project:BiP)是利用现代NMT非损伤微测技术等活体离子分子检测技术,结合现代计算机人工智能等科技及生物信息学方法,对生物个体及其各层级组成与外部环境之间,以离子和分子形式进行能量和信息交换的过程,进行系统的、可量化的研究,从整体活体生理机制水平上拓展人类对生命现象的认知和利用。",
+        "url": "https://zenodo.org/records/8357567",
+        "pdfUrl": "https://zenodo.org/api/records/8357567/files/156.pdf/content",
+        "doi": "10.5281/zenodo.8357567",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "计算机时代长度光学计量发展研究展望",
+        "authors": [
+          "艳 王"
+        ],
+        "year": 2026,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0803-66",
+        "doi": "10.37155/2717-5170-0803-66",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "电动执行机构故障容错控制与健康状态监测系统设计",
+        "authors": [
+          "薄之勇"
+        ],
+        "year": 2026,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0802-34",
+        "doi": "10.37155/2717-5170-0802-34",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "量子计量经济学(Quantum Econometrics)",
+        "authors": [
+          "Zhao, Huilin"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "计量经济学为社会科学贡献了从含噪数据中估计结构关系、区分信号与随机、在不可实验系统中进行因果推断的有力工具,然而其大厦建立在关系线性、观测独立、观察者外在于系统、不确定性服从经典概率演算这四个承重假设之上。在由互动参与人、高维数据与反身性市场构成的现实经济中,这些假设反复导致系统性失败。本书是首部系统重建计量经济学推断基础的量子计量经济学专著,主张经济现实的形式结构具有量子 - 关系性质,并将希尔伯特空间、状态矢量、叠加、纠缠、干涉与测量坍缩的量子演算正式引入估计与推断,而非停留于物理隐喻。 全书分为六大部分、共三十章。第一部分确立范式与工具,从经典计量危机出发,经由量子概率、希尔伯特空间、叠加纠缠与观察者效应测量理论奠定基础。第二部分构建量子估计与因果识别核心,涵盖量子线性回归、量子极大似然、量子贝叶斯推断、量子矩方法与广义矩估计以及量子工具变量。第三部分处理面板、时间序列、波动性、离散…",
+        "url": "https://zenodo.org/records/23524761",
+        "doi": "10.5281/zenodo.23524761",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "关于产品质量计量检验方法的探讨",
+        "authors": [
+          "肖胜官"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0711-8",
+        "doi": "10.37155/2717-5170-0711-8",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "计量力学在精密测量领域的应用与发展",
+        "authors": [
+          "凯 黄"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0709-61",
+        "doi": "10.37155/2717-5170-0709-61",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "提高计量检定工作质量的有效措施研究",
+        "authors": [
+          "付　亚"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0711-32",
+        "doi": "10.37155/2717-5170-0711-32",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "质量计量工程在汽车产业质量评估中的关键技术应用",
+        "authors": [
+          "丘海富"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0710-18",
+        "doi": "10.37155/2717-5170-0710-18",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "控制系统的检测与计量方法研究",
+        "authors": [
+          "白宗国"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0702-44",
+        "doi": "10.37155/2717-5170-0702-44",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "电子计算机的安全防护措施",
+        "authors": [
+          "王子奇"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0705-36",
+        "doi": "10.37155/2717-5170-0705-36",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "不确定度理论在电测计量工作中的应用",
+        "authors": [
+          "王皓旸"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0708-62",
+        "doi": "10.37155/2717-5170-0708-62",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于云计算的计算机软件测试",
+        "authors": [
+          "荆俊红"
+        ],
+        "year": 2025,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0701-20",
+        "doi": "10.37155/2717-5170-0701-20",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "电子仪器仪表计量检测探究",
+        "authors": [
+          "黄华桂"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0602-14",
+        "doi": "10.37155/2717-5170-0602-14",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "电气仪表计量检定及自动化分析研究",
+        "authors": [
+          "朱子扬"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0601-68",
+        "doi": "10.37155/2717-5170-0601-68",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "高压计量电气可靠性探究",
+        "authors": [
+          "陈正国"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0601-67",
+        "doi": "10.37155/2717-5170-0601-67",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "论电子计算机的信息数据安全",
+        "authors": [
+          "张子牧"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0604-62",
+        "doi": "10.37155/2717-5170-0604-62",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "量子城域网网络架构及应用研究",
+        "authors": [
+          "朱雁平"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0609-43",
+        "doi": "10.37155/2717-5170-0609-43",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "电力系统抄核收中的智能化计量与计费策略研究",
+        "authors": [
+          "马英龙"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0610-64",
+        "doi": "10.37155/2717-5170-0610-64",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "探究电子计算机的信息数据安全",
+        "authors": [
+          "赵　刚"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0606-3",
+        "doi": "10.37155/2717-5170-0606-3",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "计算机应用现状与计算机发展趋势",
+        "authors": [
+          "王利平"
+        ],
+        "year": 2024,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0612-27",
+        "doi": "10.37155/2717-5170-0612-27",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "探讨通信传输线路设计与施工质量",
+        "authors": [
+          "郜杰旭"
+        ],
+        "year": 2022,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0403-9",
+        "doi": "10.37155/2717-5170-0403-9",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "无线通信工程设计项目的质量控制与管理",
+        "authors": [
+          "邵敬菲"
+        ],
+        "year": 2022,
+        "venue": "电子通信与计算机科学",
+        "url": "https://doi.org/10.37155/2717-5170-0404-2",
+        "doi": "10.37155/2717-5170-0404-2",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "金属氢的六角密堆积结构与能量的全量子力学计算",
+        "authors": [
+          "仕清 杨"
+        ],
+        "year": 1995,
+        "venue": "Chinese Science Bulletin",
+        "url": "https://doi.org/10.1360/csb1995-40-19-1759",
+        "doi": "10.1360/csb1995-40-19-1759",
+        "citations": 1,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "基于无限纠缠投影对态(iPEPS)算法的二维XYX模型的量子相变",
+        "authors": [
+          "李生好 Sheng-hao LI"
+        ],
+        "year": 2016,
+        "venue": "Acta Sinica Quantum Optica",
+        "url": "https://doi.org/10.3788/jqo20162201.0004",
+        "doi": "10.3788/jqo20162201.0004",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "Cu~(2+)离子的量子化学计算",
+        "authors": [
+          "梅青 骆"
+        ],
+        "year": 1989,
+        "venue": "Chinese Science Bulletin",
+        "url": "https://doi.org/10.1360/csb1989-34-16-1276",
+        "doi": "10.1360/csb1989-34-16-1276",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "化学分子信息量的计算和可见宇宙信息量的估算",
+        "authors": [
+          "光宪 徐"
+        ],
+        "year": 2007,
+        "venue": "Science in China Series B-Chemistry (in Chinese)",
+        "url": "https://doi.org/10.1360/zb2007-37-4-313",
+        "doi": "10.1360/zb2007-37-4-313",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / 中文文献聚合"
+      },
+      {
+        "title": "用分子力学的方法计算高分子构型和能量",
+        "authors": [
+          "建定 陈"
+        ],
+        "year": 1990,
+        "venue": "Chinese Science Bulletin",
+        "url": "https://doi.org/10.1360/csb1990-35-12-903",
+        "doi": "10.1360/csb1990-35-12-903",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      },
+      {
+        "title": "量子Monte Carlo的一种新算法&amp;mdash;&amp;mdash;直接计算相关能",
+        "authors": [
+          "宏新 黄"
+        ],
+        "year": 1993,
+        "venue": "Chinese Science Bulletin",
+        "url": "https://doi.org/10.1360/csb1993-38-20-1863",
+        "doi": "10.1360/csb1993-38-20-1863",
+        "citations": 0,
+        "type": "journal",
+        "source": "baiduxueshu",
+        "sourceName": "中文文献聚合"
+      }
+    ],
+    "errors": [
+      "Semantic Scholar: Semantic Scholar 限流，请稍后重试",
+      "OpenAIRE: OpenAIRE HTTP 409"
+    ]
+  }
+}

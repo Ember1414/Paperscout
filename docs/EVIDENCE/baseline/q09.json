@@ -1,0 +1,282 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=author%3Ayoshuabengio&limit=20",
+  "response": {
+    "cached": false,
+    "total": 20,
+    "page": 1,
+    "language": "all",
+    "paperType": "all",
+    "sourcesOk": 7,
+    "sourcesTotal": 11,
+    "cooldown": [
+      "OpenAlex",
+      "Semantic Scholar",
+      "PubMed",
+      "DBLP"
+    ],
+    "papers": [
+      {
+        "title": "A Collision-Aware Optimization Framework for Wireless Federated Learning over Grant-Free NOMA",
+        "authors": [
+          "Emmanuel Atebawone Author",
+          "Kwame Oponi-Boachie Obour Agyekum Author",
+          "James Dzisi Gadze Author",
+          "Kwasi Adu-Boahen Opare Author",
+          "Owusu Agyeman Antwi Author",
+          "Anand Kumar Author",
+          "Robert Akromond Author"
+        ],
+        "year": 2025,
+        "abstract": "Abstract This paper proposes a novel Collision-Aware Successive Convex Optimization (CA-SCO) framework for wireless federated learning (WFL) over grant-free non-orthogonal multiple access (GF-NOMA). Existing WFL systems approaches predominantly adopt grant-based NOMA or orthogonal multiple access schemes, which inherently incur scheduling overhead and limit scalability. GF-NOMA enables scalable an…",
+        "url": "https://doi.org/10.21203/rs.3.rs-7237359/v1",
+        "doi": "10.21203/rs.3.rs-7237359/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "WITHDRAWN: ChatGptTweets Analyses Based On AI",
+        "authors": [
+          "Aya M. Al-Zoghby Author",
+          "Ahmed Ismail Ebada Author",
+          "Nora Yehia Author",
+          "Esraa Mohamed Al-Awadly Author",
+          "Ahmad Moawad Author"
+        ],
+        "year": 2024,
+        "abstract": "Abstract The full text of this preprint has been withdrawn by the authors since they no longer stand by the findings/conclusions of this work. Therefore, the authors do not wish this work to be cited as a reference. Questions should be directed to the corresponding author.",
+        "url": "https://doi.org/10.21203/rs.3.rs-3957144/v2",
+        "doi": "10.21203/rs.3.rs-3957144/v2",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "WITHDRAWN: ChatGptTweets Analyses Based On AI",
+        "authors": [
+          "Aya M. Al-Zoghby Author",
+          "Ahmed Ismail Ebada Author",
+          "Nora Yehia Author",
+          "Esraa Mohamed Al-Awadly Author",
+          "Ahmad Moawad Author"
+        ],
+        "year": 2024,
+        "abstract": "Abstract Sentiment analysis plays a crucial role in understanding public opinions and attitudes. In this study, we address the sentiment analysis of ChatGPT tweets, leveraging a diverse set of machine learning models. The dataset comprises user-generated tweets directed at ChatGPT, reflecting a spectrum of sentiments ranging from positive endorsements to negative critiques. Sentiment analysis is t…",
+        "url": "https://doi.org/10.21203/rs.3.rs-3957144/v1",
+        "doi": "10.21203/rs.3.rs-3957144/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Volume II Author Index",
+        "authors": [],
+        "year": 1987,
+        "venue": "Rodents",
+        "url": "https://doi.org/10.1016/b978-0-12-512512-3.50014-6",
+        "doi": "10.1016/b978-0-12-512512-3.50014-6",
+        "citations": 1,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Anti-eroi: Prospettive e retrospettive sui \"Piccoli maestri\" di Luigi Meneghello",
+        "authors": [
+          "C. Passerini Tossi (book author)",
+          "L. Meneghello (book author)",
+          "B. Visentini (book author)",
+          "F. Marenco (book author)",
+          "E. Franzina (book author)",
+          "M. Isnenghi (book author)",
+          "M. Corti (book author)",
+          "R. Zorzi (book author)",
+          "Antonio Franceschetti (review author)"
+        ],
+        "year": 1987,
+        "venue": "Quaderni d'italianistica",
+        "url": "https://doi.org/10.33137/q.i..v8i2.10877",
+        "pdfUrl": "https://jps.library.utoronto.ca/index.php/qua/article/download/10877/7777",
+        "doi": "10.33137/q.i..v8i2.10877",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Author! Author!, Author! Author! Image 1",
+        "authors": [],
+        "url": "https://doi.org/10.3998/mpub.11373292.cmp.305",
+        "doi": "10.3998/mpub.11373292.cmp.305",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.27518.033",
+        "doi": "10.7554/elife.27518.033",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.34695.021",
+        "doi": "10.7554/elife.34695.021",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.27601.033",
+        "doi": "10.7554/elife.27601.033",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.26423.024",
+        "doi": "10.7554/elife.26423.024",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.27155.019",
+        "doi": "10.7554/elife.27155.019",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.29938.027",
+        "doi": "10.7554/elife.29938.027",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.09684.056",
+        "doi": "10.7554/elife.09684.056",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.50697.023",
+        "doi": "10.7554/elife.50697.023",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.30120.024",
+        "doi": "10.7554/elife.30120.024",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.18295.027",
+        "doi": "10.7554/elife.18295.027",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.13909.027",
+        "doi": "10.7554/elife.13909.027",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.28619.030",
+        "doi": "10.7554/elife.28619.030",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.38904.041",
+        "doi": "10.7554/elife.38904.041",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Author response image 1. Author response",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.20487.024",
+        "doi": "10.7554/elife.20487.024",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      }
+    ],
+    "errors": []
+  }
+}

@@ -1,5 +1,6 @@
 import type { Paper, PaperType, SearchParams, SourceAdapter } from '../types';
 import { fetchWithRetry } from '../http';
+import { CONTACT_EMAIL, DEFAULT_SITE_ORIGIN, userAgent } from '../config';
 
 /** OpenAlex type → PaperScout type（注意：OpenAlex 新版词表用 article 表示期刊论文） */
 function mapType(t?: string): PaperType | undefined {
@@ -38,10 +39,11 @@ function rebuildAbstract(inverted?: Record<string, number[]>): string | undefine
 }
 
 /**
- * OpenAlex「礼貌池」联系邮箱：替换为真实邮箱可显著提升速率上限
+ * OpenAlex「礼貌池」联系邮箱：真实邮箱可显著提升速率上限（A-24 已修，M0-07）
  * 参考 https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication
+ * 值来自 lib/config.ts 唯一来源；User-Agent 按 5.1.3 规范构造。
  */
-const CONTACT_EMAIL = 'paperscout@example.com';
+const USER_AGENT = userAgent(DEFAULT_SITE_ORIGIN);
 
 export const openalex: SourceAdapter = {
   id: 'openalex',
@@ -70,7 +72,7 @@ export const openalex: SourceAdapter = {
     if (params.sort === 'citations') sp.set('sort', 'cited_by_count:desc');
 
     // fetchWithRetry 自动重试 429/5xx（4 次指数退避），缓解共享出口 IP 限流
-    const reqOpt = { headers: { 'User-Agent': `PaperScout/2.0 (https://paperscout.pages.dev; mailto:${CONTACT_EMAIL})` } };
+    const reqOpt = { headers: { 'User-Agent': USER_AGENT } };
     const res = await fetchWithRetry(`https://api.openalex.org/works?${sp}`, reqOpt, 4, 1200);
     if (!res.ok) throw new Error(`OpenAlex HTTP ${res.status}`);
 

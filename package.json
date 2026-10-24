@@ -8,11 +8,20 @@
     "dev": "wrangler pages dev",
     "deploy": "wrangler deploy",
     "types": "wrangler types",
-    "tail": "wrangler pages deployment tail --project-name paperscout"
+    "tail": "wrangler pages deployment tail --project-name paperscout",
+    "verify": "node scripts/verify.mjs",
+    "typecheck": "tsc --noEmit",
+    "typecheck:web": "tsc --noEmit -p jsconfig.front.json",
+    "test": "vitest run",
+    "lint:tokens": "node scripts/check-tokens.mjs",
+    "a11y": "node scripts/a11y-audit.mjs",
+    "budget": "node scripts/budget.mjs",
+    "smoke": "node scripts/smoke.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260903.1",
     "typescript": "^5.6.0",
+    "vitest": "^5.0.1",
     "wrangler": "^4.30.0"
   }
 }

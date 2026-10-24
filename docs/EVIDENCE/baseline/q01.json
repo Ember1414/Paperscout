@@ -1,0 +1,2810 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=large+language+model+hallucination&limit=20",
+  "response": {
+    "cached": false,
+    "total": 150,
+    "page": 1,
+    "language": "all",
+    "paperType": "all",
+    "sourcesOk": 9,
+    "sourcesTotal": 11,
+    "cooldown": [],
+    "papers": [
+      {
+        "title": "A Survey on Large Language Model Hallucination via a Creativity Perspective",
+        "authors": [
+          "Xuhui Jiang",
+          "Yu-Xing Tian",
+          "Feng-Rui Hua",
+          "Cheng-Jin Xu",
+          "Yuan-Zhuo Wang",
+          "Jian Guo"
+        ],
+        "year": 2024,
+        "venue": "arXiv.org",
+        "abstract": "Hallucinations in large language models (LLMs) are always seen as limitations. However, could they also be a source of creativity? This survey explores this possibility, suggesting that hallucinations may contribute to LLM application by fostering creativity. This survey begins with a review of the taxonomy of hallucinations and their negative impact on LLM reliability in critical applications. Th…",
+        "url": "https://www.semanticscholar.org/paper/92e9469197a53e82f42b66876b221aaa25d07292",
+        "doi": "10.48550/arXiv.2402.06647",
+        "citations": 71,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Multi-model assurance analysis showing large language models are highly vulnerable to adversarial hallucination attacks during clinical decision support",
+        "authors": [
+          "Mahmud Omar",
+          "V. Sorin",
+          "Jeremy D. Collins",
+          "David L. Reich",
+          "Robert Freeman",
+          "N. Gavin",
+          "A. Charney",
+          "L. Stump",
+          "Nicola Luigi Bragazzi",
+          "G. Nadkarni",
+          "E. Klang"
+        ],
+        "year": 2025,
+        "venue": "Communications Medicine",
+        "abstract": "Large language models (LLMs) show promise in clinical contexts but can generate false facts (often referred to as “hallucinations”). One subset of these errors arises from adversarial attacks, in which fabricated details embedded in prompts lead the model to produce or elaborate on the false information. We embedded fabricated content in clinical prompts to elicit adversarial hallucination attacks…",
+        "url": "https://www.semanticscholar.org/paper/1c3eee136c5fa85ad97ef62f353557f776059f3e",
+        "pdfUrl": "https://www.nature.com/articles/s43856-025-01021-3.pdf",
+        "doi": "10.1038/s43856-025-01021-3",
+        "citations": 193,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Gorilla: Large Language Model Connected with Massive APIs",
+        "authors": [
+          "Shishir G. Patil",
+          "Tianjun Zhang",
+          "Xin Wang",
+          "Joseph E. Gonzalez"
+        ],
+        "year": 2023,
+        "venue": "Neural Information Processing Systems",
+        "abstract": "Large Language Models (LLMs) have seen an impressive wave of advances recently, with models now excelling in a variety of tasks, such as mathematical reasoning and program synthesis. However, their potential to effectively use tools via API calls remains unfulfilled. This is a challenging task even for today's state-of-the-art LLMs such as GPT-4, largely due to their inability to generate accurate…",
+        "url": "https://www.semanticscholar.org/paper/7d8905a1fd288068f12c8347caeabefd36d0dd6c",
+        "pdfUrl": "https://arxiv.org/pdf/2305.15334",
+        "doi": "10.52202/079017-4020",
+        "citations": 1790,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Mitigating Large Language Model Hallucination with Faithful Finetuning",
+        "authors": [
+          "Min-Da Hu",
+          "Bo-Wei He",
+          "Yu-Fei Wang",
+          "Liangyou Li",
+          "Chen Ma",
+          "Irwin King"
+        ],
+        "year": 2024,
+        "venue": "arXiv.org",
+        "abstract": "Large language models (LLMs) have demonstrated remarkable performance on various natural language processing tasks. However, they are prone to generating fluent yet untruthful responses, known as\"hallucinations\". Hallucinations can lead to the spread of misinformation and cause harm in critical applications. Mitigating hallucinations is challenging as they arise from factors such as noisy data, mo…",
+        "url": "https://www.semanticscholar.org/paper/ec07dffebcb648c261529680682d1a376eb8c98f",
+        "doi": "10.48550/arXiv.2406.11267",
+        "citations": 32,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination Augmented Contrastive Learning for Multimodal Large Language Model",
+        "authors": [
+          "Chaoya Jiang",
+          "Haiyang Xu",
+          "Meng-Fan Dong",
+          "Jia-Xin Chen",
+          "Wei Ye",
+          "Ming-Shi Yan",
+          "Qing-Hao Ye",
+          "Ji Zhang",
+          "Fei Huang",
+          "Shi-Kun Zhang"
+        ],
+        "year": 2023,
+        "venue": "Computer Vision and Pattern Recognition",
+        "abstract": "Multi-modal large language models (MLLMs) have been shown to efficiently integrate natural language with visual information to handle multi-modal tasks. However, MLLMs still face a fundamental limitation of hallucinations, where they tend to generate erroneous or fabricated information. In this paper, we address hallucinations in MLLMs from a novel perspective of representation learning. We first …",
+        "url": "https://www.semanticscholar.org/paper/d1f925c65d56ff4de5d317a54d47d6df34b17d4e",
+        "pdfUrl": "https://arxiv.org/pdf/2312.06968",
+        "doi": "10.1109/CVPR52733.2024.02553",
+        "citations": 181,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+        "authors": [
+          "Jiashuo Sun",
+          "Cheng-Jin Xu",
+          "Lumingyuan Tang",
+          "Sai Wang",
+          "Chen Lin",
+          "Yeyun Gong",
+          "Lionel M. Ni",
+          "Harry Shum",
+          "Jian Guo"
+        ],
+        "year": 2023,
+        "venue": "International Conference on Learning Representations",
+        "abstract": "Although large language models (LLMs) have achieved significant success in various tasks, they often struggle with hallucination problems, especially in scenarios requiring deep and responsible reasoning. These issues could be partially addressed by introducing external knowledge graphs (KG) in LLM reasoning. In this paper, we propose a new LLM-KG integrating paradigm ``$\\hbox{LLM}\\otimes\\hbox{KG}…",
+        "url": "https://www.semanticscholar.org/paper/c7184f9a914dbfbad59faa5aeaf9ba7019dfcf74",
+        "citations": 359,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "HalluScore: Large Language Model Hallucination Question Answering Benchmark",
+        "authors": [
+          "Aisha Alansari",
+          "Hamzah Luqman"
+        ],
+        "year": 2026,
+        "venue": "arXiv.org",
+        "abstract": "Large language models (LLMs) have achieved remarkable progress in natural language generation, but remain susceptible to hallucination. In response to growing concerns about hallucinations, several benchmarks have been developed, primarily in English and Chinese. However, Arabic remains underrepresented, with limited benchmarks for LLMs hallucination due to scarce annotated resources and the langu…",
+        "url": "https://www.semanticscholar.org/paper/2467c8af4930babd255ad94e24e4efdd603e1132",
+        "doi": "10.48550/arXiv.2605.17007",
+        "citations": 2,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Controlling Large Language Model Hallucination Based on Agent AI with LangGraph",
+        "authors": [
+          "Jialin Wang",
+          "Zhihua Duan"
+        ],
+        "year": 2025,
+        "abstract": "As Large Language Models (LLMs) become integral to Natural Language Processing (NLP) applications, their tendency to generate hallucinations — outputs misaligned with input data or real-world facts — presents a significant challenge. This paper introduces a novel approach leveraging Agent AI within the LangGraph system to systematically detect and mitigate LLM hallucinations. The framework categor…",
+        "url": "https://doi.org/10.33774/coe-2025-xkwl5",
+        "doi": "10.33774/coe-2025-xkwl5",
+        "citations": 4,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "WikiChat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia",
+        "authors": [
+          "Sina J. Semnani",
+          "Violet Z. Yao",
+          "Heidi C. Zhang",
+          "Monica S. Lam"
+        ],
+        "year": 2023,
+        "venue": "Conference on Empirical Methods in Natural Language Processing",
+        "abstract": "This paper presents the first few-shot LLM-based chatbot that almost never hallucinates and has high conversationality and low latency. WikiChat is grounded on the English Wikipedia, the largest curated free-text corpus. WikiChat generates a response from an LLM, retains only the grounded facts, and combines them with additional information it retrieves from the corpus to form factual and engaging…",
+        "url": "https://www.semanticscholar.org/paper/2c8945b1730f64dc30b13befa7cc8c3f89d08a37",
+        "pdfUrl": "https://aclanthology.org/2023.findings-emnlp.157.pdf",
+        "doi": "10.18653/v1/2023.findings-emnlp.157",
+        "citations": 118,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "HalluScore: Large Language Model Hallucination Question Answering Benchmark",
+        "authors": [
+          "Aisha Alansari",
+          "Hamzah Luqman"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models (LLMs) have achieved remarkable progress in natural language generation, but remain susceptible to hallucination. In response to growing concerns about hallucinations, several benchmarks have been developed, primarily in English and Chinese. However, Arabic remains underrepresented, with limited benchmarks for LLMs hallucination due to scarce annotated resources and the language's morphological complexity. Consequently, existing benchmarks do not adequately reflect the linguistic, cultural, and reasoning characteristics of Arabic. To address this gap, we introduce HalluScore, a structured Arabic question answering benchmark designed to evaluate hallucination behavior in LLMs across different levels of reasoning difficulty, various knowledge domains, historical timelines, and culturally grounded Arabic scenarios. It contains 827 carefully curated questions for evaluating, detecting, and mitigating hallucination in LLMs. The dataset was constructed through a structured pipeline involving quality assurance, filtering for clarity and factual validity, and model-driven selection to retain questions that consistently trigger hallucinations. Each question is linked to verified ground-truth evidence, answer explanations, and multi-label annotations. Using the HalluScore benchmark, we conduct a comprehensive empirical analysis of hallucination patterns across 17 Arabic, multilingual, and reasoning LLMs. Moreover, we provide high-quality human annotations identifying hallucinated, non-hallucinated, and partially hallucinated responses of all evaluated LLMs. These results suggest that hallucination in Arabic LLMs extends beyond factual inaccuracies, encompassing challenges related to cultural understanding, linguistic reasoning, and logical consistency. We release HalluScore to support future research on improving the reliability and cultural competence of LLMs in Arabic.",
+        "url": "http://arxiv.org/abs/2605.17007",
+        "pdfUrl": "http://arxiv.org/pdf/2605.17007",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Knowledge Injection to Counter Large Language Model (LLM) Hallucination",
+        "authors": [
+          "Michael Iannelli",
+          "Ariana Martino",
+          "Coleen Truong",
+          "Michael Iannelli",
+          "Ariana Martino",
+          "Coleen Truong"
+        ],
+        "year": 2023,
+        "venue": "Extended Semantic Web Conference",
+        "url": "https://www.semanticscholar.org/paper/3b43cfe8aeaadec8b58a8fa8759a1aa42f1b35b2",
+        "doi": "10.1007/978-3-031-43458-7_34",
+        "citations": 174,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar / OpenAIRE",
+        "openAccess": false,
+        "type": "other"
+      },
+      {
+        "title": "Combining LoRA to GPT-Neo to Reduce Large Language Model Hallucination",
+        "authors": [
+          "Shi-han Huang",
+          "Chia-yu Chen"
+        ],
+        "year": 2024,
+        "venue": "Research Square",
+        "abstract": "Abstract The deployment of Large Language Models (LLMs) often suffers from generating hallucinations, leading to outputs that appear plausible but are factually inaccurate or nonsensical. Incorporating Low-Rank Adaptation (LoRA) into GPT-Neo presents a novel approach to mitigating these hallucinations by leveraging the efficiency of low-rank approximations. This research details the integration of…",
+        "url": "https://doi.org/10.21203/rs.3.rs-4515250/v1",
+        "doi": "10.21203/rs.3.rs-4515250/v1",
+        "citations": 3,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref / Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Mitigating Large Language Model Hallucination with Faithful Finetuning",
+        "authors": [
+          "Minda Hu",
+          "Bowei He",
+          "Yufei Wang",
+          "Liangyou Li",
+          "Chen Ma",
+          "Irwin King"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models (LLMs) have demonstrated remarkable performance on various natural language processing tasks. However, they are prone to generating fluent yet untruthful responses, known as \"hallucinations\". Hallucinations can lead to the spread of misinformation and cause harm in critical applications. Mitigating hallucinations is challenging as they arise from factors such as noisy data, model overconfidence, lack of knowledge, and the generation process itself. Recent efforts have attempted to address this issue through representation editing and decoding algorithms, reducing hallucinations without major structural changes or retraining. However, these approaches either implicitly edit LLMs' behavior in latent space or suppress the tendency to output unfaithful results during decoding instead of explicitly modeling on hallucination. In this work, we introduce Faithful Finetuning (F2), a novel method that explicitly models the process of faithful question answering through carefully designed loss functions during fine-tuning. We conduct extensive experiments on popular datasets and demonstrate that F2 achieves significant improvements over vanilla models and baselines.",
+        "url": "http://arxiv.org/abs/2406.11267",
+        "pdfUrl": "http://arxiv.org/pdf/2406.11267",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Classification and solution of large language model hallucination",
+        "authors": [
+          "Ruoxi Zhang"
+        ],
+        "year": 2025,
+        "venue": "ITM Web of Conferences",
+        "abstract": "Large language models (LLMs) offer significant benefits across various fields, enhancing research efficiency and innovation. However, a critical challenge is their tendency to produce “hallucinations”—content that appears fluent and reasonable but is factually inaccurate or nonsensical. This phenomenon can undermine content credibility and lead to erroneous decisions in critical areas like academi…",
+        "url": "https://doi.org/10.1051/itmconf/20258001035",
+        "pdfUrl": "https://www.itm-conferences.org/articles/itmconf/pdf/2025/11/itmconf_acaai2025_01035.pdf",
+        "doi": "10.1051/itmconf/20258001035",
+        "citations": 1,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Model-Powered Automated Assessment: A Systematic Review",
+        "authors": [
+          "Emrah Emirtekin"
+        ],
+        "year": 2025,
+        "venue": "Applied Sciences",
+        "abstract": "This systematic review investigates 49 peer-reviewed studies on Large Language Model-Powered Automated Assessment (LLMPAA) published between 2018 and 2024. Following PRISMA guidelines, studies were selected from Web of Science, Scopus, IEEE, ACM Digital Library, and PubMed databases. The analysis shows that LLMPAA has been widely applied in reading comprehension, language education, and computer s…",
+        "url": "https://www.semanticscholar.org/paper/4994ae8423406a1b019c84d378f604f6cd28cf0e",
+        "pdfUrl": "https://www.mdpi.com/2076-3417/15/10/5683/pdf?version=1747711959",
+        "doi": "10.3390/app15105683",
+        "citations": 80,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Mitigating Hallucination in Multimodal Large Language Model via Hallucination-targeted Direct Preference Optimization",
+        "authors": [
+          "Yuhan Fu",
+          "Ruo-Bing Xie",
+          "Xing-Wu Sun",
+          "Zhan-Hui Kang",
+          "Xi-Rong Li"
+        ],
+        "year": 2024,
+        "venue": "Annual Meeting of the Association for Computational Linguistics",
+        "abstract": "Multimodal Large Language Models (MLLMs) are known to hallucinate, which limits their practical applications. Recent works have attempted to apply Direct Preference Optimization (DPO) to enhance the performance of MLLMs, but have shown inconsistent improvements in mitigating hallucinations. To address this issue more effectively, we introduce Hallucination-targeted Direct Preference Optimization (…",
+        "url": "https://www.semanticscholar.org/paper/dd6b124606e3696dcddc93c889a824feaa322117",
+        "doi": "10.48550/arXiv.2411.10436",
+        "citations": 29,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Large Language Models Are Highly Vulnerable to Adversarial Hallucination Attacks in Clinical Decision Support: A Multi-Model Assurance Analysis",
+        "authors": [
+          "Mahmud Omar",
+          "V. Sorin",
+          "Jeremy D. Collins",
+          "David L. Reich",
+          "Robert Freeman",
+          "N. Gavin",
+          "A. Charney",
+          "L. Stump",
+          "Nicola Luigi Bragazzi",
+          "G. Nadkarni",
+          "E. Klang"
+        ],
+        "year": 2025,
+        "venue": "medRxiv",
+        "abstract": "Background: Large language models (LLMs) show promise in clinical contexts but can generate false facts (often referred to as hallucinations). One subset of these errors arises from adversarial attacks, in which fabricated details embedded in prompts lead the model to produce or elaborate on the false information. We embedded fabricated content in clinical prompts to elicit adversarial hallucinati…",
+        "url": "https://www.semanticscholar.org/paper/6b44d0ac2b6d6deeb7f35ef4a7ad77b12b646b9e",
+        "pdfUrl": "https://www.medrxiv.org/content/medrxiv/early/2025/03/19/2025.03.18.25324184.full.pdf",
+        "doi": "10.1101/2025.03.18.25324184",
+        "citations": 14,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Hallucination Reduction and Optimization for Large Language Model-Based Autonomous Driving",
+        "authors": [
+          "Jue Wang"
+        ],
+        "year": 2024,
+        "venue": "Symmetry",
+        "abstract": "Large language models (LLMs) are widely integrated into autonomous driving systems to enhance their operational intelligence and responsiveness and improve self-driving vehicles’ overall performance. Despite these advances, LLMs still struggle between hallucinations—when models either misinterpret the environment or generate imaginary parts for downstream use cases—and taxing computational overhea…",
+        "url": "https://doi.org/10.3390/sym16091196",
+        "pdfUrl": "https://doi.org/10.3390/sym16091196",
+        "doi": "10.3390/sym16091196",
+        "citations": 21,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Efficient GPT-4V level multimodal large language model for deployment on edge devices",
+        "authors": [
+          "Yuan Yao",
+          "Tian-Yu Yu",
+          "Ao Zhang",
+          "Chongyi Wang",
+          "Jun-Bo Cui",
+          "Hongji Zhu",
+          "Tianchi Cai",
+          "Chi Chen",
+          "Hao-Yu Li",
+          "Weilin Zhao",
+          "Zhihui He",
+          "Qi-An Chen"
+        ],
+        "year": 2025,
+        "venue": "Nature Communications",
+        "abstract": "Multimodal large language models have revolutionized AI research and industry, paving the way toward the next milestone. However, their large sizes and high computational costs restrict deployment to cloud servers, limiting use in mobile, offline, energy-sensitive, or privacy-critical scenarios. We present MiniCPM-V, efficient models for edge devices that integrate advancements in architecture, tr…",
+        "url": "https://www.semanticscholar.org/paper/a0c6365a23a07e26bf90db410574cad3ff68edba",
+        "pdfUrl": "https://www.nature.com/articles/s41467-025-61040-5.pdf",
+        "doi": "10.1038/s41467-025-61040-5",
+        "citations": 69,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "A Bibliometric Review of Large Language Model Hallucination",
+        "authors": [
+          "N. Mustaffa",
+          "Ke-En Lai",
+          "C. N. Preece",
+          "Foo Yeu Wong"
+        ],
+        "year": 2025,
+        "venue": "International journal of research and innovation in social science",
+        "url": "https://www.semanticscholar.org/paper/406031a8343435dbdace822b0a110ef105b02bdc",
+        "doi": "10.47772/ijriss.2025.909000409",
+        "citations": 3,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Incident Response Planning Using a Lightweight Large Language Model with Reduced Hallucination",
+        "authors": [
+          "Kim Hammar",
+          "T. Alpcan",
+          "Emil C. Lupu"
+        ],
+        "year": 2025,
+        "venue": "Network and Distributed System Security Symposium",
+        "abstract": "Timely and effective incident response is key to managing the growing frequency of cyberattacks. However, identifying the right response actions for complex systems is a major technical challenge. A promising approach to mitigate this challenge is to use the security knowledge embedded in large language models (LLMs) to assist security operators during incident handling. Recent research has demons…",
+        "url": "https://www.semanticscholar.org/paper/d9099a820a75c6549196f426965698511a5b0e35",
+        "doi": "10.48550/arXiv.2508.05188",
+        "citations": 19,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Active Layer-Contrastive Decoding Reduces Hallucination in Large Language Model Generation",
+        "authors": [
+          "Hongxiang Zhang",
+          "Hao Chen",
+          "Muhao Chen",
+          "Tianyi Zhang"
+        ],
+        "year": 2025,
+        "venue": "Conference on Empirical Methods in Natural Language Processing",
+        "abstract": "Recent decoding methods improve the factuality of large language models (LLMs) by refining how the next token is selected during generation. These methods typically operate at the token level, leveraging internal representations to suppress superficial patterns. Nevertheless, LLMs remain prone to hallucinations, especially over longer contexts. In this paper, we propose Active Layer-Contrastive De…",
+        "url": "https://www.semanticscholar.org/paper/dd2c4dfb1495af2951b4b3b783474537abf45f43",
+        "doi": "10.48550/arXiv.2505.23657",
+        "citations": 18,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": false
+      },
+      {
+        "title": "Large Language Model Hallucination and Transference: As a Supplement",
+        "authors": [
+          "Yuhong Wang"
+        ],
+        "year": 2026,
+        "venue": "Philosophy &amp; Technology",
+        "url": "https://doi.org/10.1007/s13347-026-01088-3",
+        "pdfUrl": "https://link.springer.com/content/pdf/10.1007/s13347-026-01088-3.pdf",
+        "doi": "10.1007/s13347-026-01088-3",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "TrumorGPT: Graph-Based Retrieval-Augmented Large Language Model for Fact-Checking",
+        "authors": [
+          "C. Hang",
+          "Pei-Duo Yu",
+          "Chee-Wei Tan"
+        ],
+        "year": 2025,
+        "venue": "IEEE Transactions on Artificial Intelligence",
+        "abstract": "In the age of social media, the rapid spread of misinformation and rumors has led to the emergence of infodemics, where false information poses a significant threat to society. To combat this issue, we introduce TrumorGPT, a novel generative artificial intelligence solution designed for fact-checking in the health domain. TrumorGPT aims to distinguish “trumors,” which are health-related rumors tha…",
+        "url": "https://www.semanticscholar.org/paper/cf29b3b91ad8c244c48e40defea314d044f4297f",
+        "pdfUrl": "https://arxiv.org/pdf/2505.07891",
+        "doi": "10.1109/TAI.2025.3567369",
+        "citations": 60,
+        "source": "semanticscholar",
+        "sourceName": "Semantic Scholar",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Model Hallucination Detection: A Multidimensional, Evidence-Traceable Framework and Research Agenda",
+        "authors": [
+          "Aritrik Ghosh"
+        ],
+        "year": 2026,
+        "venue": "SSRN Electronic Journal",
+        "url": "https://doi.org/10.2139/ssrn.7299799",
+        "doi": "10.2139/ssrn.7299799",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Epistemic Field Theory: Predicting Hallucination in Large Language Models via Multi-Model Consensus",
+        "authors": [
+          "AZRIL BIN HAMZAH",
+          "SHASHA TENG"
+        ],
+        "year": 2026,
+        "venue": "Springer Science and Business Media LLC",
+        "abstract": "Abstract Large language models exhibit hallucination—generating confident but incorrect outputs—at rates that undermine their reliability in high-stakes applications. We introduce Epistemic Field Theory (EFT), a formal framework that predicts hallucination probability from multi-model consensus. EFT defines a consensus field σ ∈ [0, 1] over query space and derives the hallucination predictor P(H) …",
+        "url": "https://doi.org/10.21203/rs.3.rs-8785621/v1",
+        "doi": "10.21203/rs.3.rs-8785621/v1",
+        "citations": 1,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref / OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Multi-perspective consistency checking for large language model hallucination detection: a black-box zero-resource approach",
+        "authors": [
+          "Linggang Kong",
+          "Haoran Fu",
+          "Xiaofeng Zhong",
+          "Yongjie Wang",
+          "Jie Chen 0079",
+          "Linggang Kong",
+          "Xiaofeng Zhong",
+          "Jie Chen",
+          "Yongjie Wang",
+          "Haoran Fu"
+        ],
+        "year": 2025,
+        "venue": "Zhejiang University Press",
+        "url": "https://dblp.org/rec/journals/jzusc/KongZCFW25.html",
+        "doi": "10.1631/fitee.2500180",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination Mitigation in Large Language Model-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations",
+        "authors": [
+          "Lavdim Menxhiqi",
+          "Galia Marinova"
+        ],
+        "year": 2026,
+        "abstract": "In a closed-inventory Large Language Model (LLM) system such as Online-CADCOM, which recommends engineering tools from a verified inventory, mention-level hallucination occurs when the model recommends tools not present in the inventory. We evaluate a three-mechanism mitigation stack consisting of database-grounded context injection, fixed vocabulary constraints, and enforced JavaScript Object Not…",
+        "url": "https://doi.org/10.20944/preprints202606.0008.v1",
+        "doi": "10.20944/preprints202606.0008.v1",
+        "citations": 1,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Artifacts - Incident Response Planning Using a Lightweight Large Language Model with Reduced Hallucination - NDSS 2026",
+        "authors": [
+          "Hammar, Kim",
+          "Alpcan, Tansu",
+          "Lupu, Emil"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This repository contains the artifacts for our paper \"Incident Response Planning Using a Lightweight Large Language Model with Reduced Hallucination\", conditionally accepted to NDSS 2026. We introduce a novel method that enables the effective use of a large language model (LLM) to provide decision support for incident response planning. Our method uses the LLM for translating system logs into effe…",
+        "url": "https://zenodo.org/records/17770990",
+        "pdfUrl": "https://zenodo.org/api/records/17770990/files/prompt_templates.pdf/content",
+        "doi": "10.5281/zenodo.17770990",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Mitigating Hallucination in Multimodal Large Language Model via Hallucination-targeted Direct Preference Optimization",
+        "authors": [
+          "Yuhan Fu",
+          "Ruobing Xie",
+          "Xingwu Sun",
+          "Zhanhui Kang",
+          "Xirong Li"
+        ],
+        "year": 2025,
+        "venue": "Findings of the Association for Computational Linguistics: ACL 2025",
+        "url": "https://doi.org/10.18653/v1/2025.findings-acl.850",
+        "doi": "10.18653/v1/2025.findings-acl.850",
+        "citations": 8,
+        "type": "conference",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination Mitigation in Large Language Models: A Review and Exploratory Small-Model Pilot",
+        "authors": [
+          "Ali Ömer Yasan"
+        ],
+        "year": 2026,
+        "venue": "Preprints.org",
+        "abstract": "Large language models (LLMs) can produce fluent responses that are false, unsupported, outdated, or more certain than the available evidence justifies. This manuscript presents a narrative review of major hallucination-mitigation approaches and an exploratory pilot intended to refine a future evaluation protocol rather than establish model-level performance. The review covers false-premise handlin…",
+        "url": "https://doi.org/10.20944/preprints202609.1923.v1",
+        "doi": "10.20944/preprints202609.1923.v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref / Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Epistemic Field Theory: Predicting and Governing Hallucination in Large Language Models via Multi-Model Consensus",
+        "authors": [
+          "AZRIL Hamzah",
+          "Shasha Teng"
+        ],
+        "year": 2026,
+        "abstract": "Abstract Large language models hallucinate at rates that undermine reliability in high-stakes applications. Mitigation strategies based on repeated sampling or majority voting implicitly assume error independence across samples. We introduce Epistemic Field Theory (EFT), which predicts hallucination probability from multi-model consensus. EFT defines a consensus field σ ∈ [0, 1] over query space a…",
+        "url": "https://doi.org/10.21203/rs.3.rs-8929856/v1",
+        "doi": "10.21203/rs.3.rs-8929856/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination Mitigation in Large Language Model-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations",
+        "authors": [
+          "Lavdim Menxhiqi",
+          "Galia Marinova"
+        ],
+        "year": 2026,
+        "venue": "AI",
+        "abstract": "In a closed-inventory large language model (LLM) system such as Online-CADCOM, which recommends engineering tools from a verified inventory, we measure inventory non-compliance, that is, a mention-level event in which the model recommends a tool not present in the verified inventory. We use this inventory-relative sense of hallucination throughout: an out-of-inventory mention may be a fabricated t…",
+        "url": "https://doi.org/10.3390/ai7070273",
+        "doi": "10.3390/ai7070273",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "What are Models Thinking about? Understanding Large Language Model Hallucinations \"Psychology\" through Model Inner State Analysis",
+        "authors": [
+          "Wang, Peiran",
+          "Lu, Yunfei",
+          "Liu, Yang",
+          "Hong, Jue",
+          "Wu, Ye",
+          "Ye Wu",
+          "Peiran Wang",
+          "Yang Liu",
+          "Jue Hong",
+          "Yunfei Lu",
+          "Wang, Peiran",
+          "Lu, Yunfei"
+        ],
+        "year": 2025,
+        "url": "http://arxiv.org/abs/2502.13490",
+        "doi": "10.48550/arxiv.2502.13490",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Retrieve-Then-Verify for Evaluating Evidence Support and Hallucination in Large Language Model-Generated Medical Information: Empirical Study.",
+        "authors": [
+          "Liang Z",
+          "Sheffield C",
+          "Butera G",
+          "Antani S."
+        ],
+        "year": 2026,
+        "abstract": "BackgroundDespite high reported accuracy on clinical and evidence appraisal tasks, AI-generated medical information may lack explicit support from source documents. This creates challenges for digital health practitioners regarding transparency, auditability, and trust when AI systems are used for evidence synthesis, guideline development, and clinical knowledge management. Large language models (…",
+        "url": "https://doi.org/10.2196/93761",
+        "pdfUrl": "https://europepmc.org/articles/PMC13628037/pdf",
+        "doi": "10.2196/93761",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Guardrail Bloom and Hallucination Under Adversarial Play: A Case Study of a Quantized Local Large Language Model",
+        "authors": [
+          "Trent Slade"
+        ],
+        "year": 2026,
+        "abstract": "This paper presents a qualitative case study examining the behavior of a locally deployed, quantized large language model (LLM) under progressively adversarial, playful, and socially charged interaction. Using a verbatim terminal transcript captured from a consumer-grade workstation, we analyze how the model transitions across distinct behavioral regimes: task compliance, opportunistic hallucinati…",
+        "url": "https://doi.org/10.22541/au.176851561.14545544/v1",
+        "doi": "10.22541/au.176851561.14545544/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Position: Large Language Model Failures from Hallucination to Homogenization Are Different Facets of Miscalibration",
+        "authors": [
+          "Tiancheng Hu",
+          "Caiqi Zhang",
+          "Dirk Hovy",
+          "Nigel Collier"
+        ],
+        "year": 2026,
+        "abstract": "This position paper argues that diverse failures of Large Language Models (LLMs), from confident hallucinations to collapsed diversity to brittle safety refusals, are best understood as different facets of a single underlying problem: miscalibration. We propose a unified framework organized around four types of miscalibration: probabilistic (the model cannot match requested probability distributio…",
+        "url": "https://doi.org/10.36227/techrxiv.177130685.57616643/v1",
+        "doi": "10.36227/techrxiv.177130685.57616643/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Certified Metric Injection: A Hybrid Deterministic–Large Language Model Architecture for Hallucination-Resistant Enterprise Conversational Business Intelligence",
+        "authors": [
+          "Ricardo Amodio Neves de Albuquerque"
+        ],
+        "year": 2026,
+        "abstract": "Natural language interfaces to enterprise data promise to remove the bottleneck between business questions and the underlying data warehouse, but large language models (LLMs) that freely generate SQL for financial and operational key performance indicators (KPIs) are prone to numeric hallucination: plausible-looking queries that silently compute the wrong formula. This paper proposes a hybrid dete…",
+        "url": "https://doi.org/10.2139/ssrn.7158737",
+        "doi": "10.2139/ssrn.7158737",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Certified Metric Injection: A Hybrid Deterministic-Large Language Model Architecture for Hallucination-Resistant Enterprise Conversational Business Intelligence",
+        "authors": [
+          "Ricardo Amodio Neves de Albuquerque"
+        ],
+        "year": 2026,
+        "abstract": "Natural language interfaces to enterprise data promise to remove the bottleneck between business questions and the underlying data warehouse, but large language models (LLMs) that freely generate SQL for financial and operational key performance indicators (KPIs) are prone to numeric hallucination: plausible-looking queries that silently compute the wrong formula. This paper proposes a hybrid dete…",
+        "url": "https://doi.org/10.2139/ssrn.7171303",
+        "doi": "10.2139/ssrn.7171303",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Epporul-Plumbline: A Structured Evaluation Protocol for Detecting Sycophancy, Hallucination, and Reasoning Failures in Large Language Model Outputs -A 5-Day Field Test",
+        "authors": [
+          "Sriraman Kuppuswamy"
+        ],
+        "year": 2026,
+        "abstract": "Large language models (LLMs) optimized through reinforcement learning from human feedback (RLHF) exhibit systematic tendencies toward sycophancy-agreeing with users, omitting contradictory evidence, and producing outputs that prioritize plausibility over accuracy. Current evaluation approaches focus on model-level benchmarks and adversarial testing, leaving individual practitioners without structu…",
+        "url": "https://doi.org/10.2139/ssrn.6609578",
+        "doi": "10.2139/ssrn.6609578",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Evaluation of Model-Induced Hallucination in AI Large Language Models Across Multiple Language Understanding Benchmarks",
+        "authors": [
+          "Aakansha Soy",
+          "Nidhi Mishra",
+          "Aakansha Soy",
+          "Nidhi Mishra"
+        ],
+        "year": 2026,
+        "venue": "Procedia Computer Science",
+        "url": "https://doi.org/10.1016/j.procs.2026.01.012",
+        "doi": "10.1016/j.procs.2026.01.012",
+        "citations": 1,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref / OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Evaluative Cultural Hallucination in Large Language Model Assessment of Tenor in Scenic Area Public Sign Translations",
+        "authors": [
+          "Qi Guo",
+          "Tengteng Yap"
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract This study investigates whether large language models overestimate the Tenor quality of culturally sensitive scenic-area public-sign translations. Drawing on House’s translation quality assessment framework, Tenor was operationalized as the pragmatic and socio-cultural appropriateness of English public signs. A corpus of 116 Chinese-English bilingual public signs from eight 4A/5A tourist …",
+        "url": "https://doi.org/10.21203/rs.3.rs-10527281/v1",
+        "doi": "10.21203/rs.3.rs-10527281/v1",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref / Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Pre-registration Protocol v1.0: Runtime Constructibility Monitoring for Early Hallucination Detection in Edge-Deployed Large Language Models",
+        "authors": [
+          "Karimov Hikmat",
+          "Alekberli Rahid"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This technical note presents the frozen pre-registration protocol (Version 1.0) for the study Runtime Constructibility Monitoring for Early Hallucination Detection in Edge-Deployed Large Language Models within the Karimov&ndash;Alekberli (KA) Research Programme. The protocol defines the complete experimental design before any model experiments are conducted. It specifies the research questions, th…",
+        "url": "https://zenodo.org/records/21736286",
+        "pdfUrl": "https://zenodo.org/api/records/21736286/files/Paper3_LLM_PreReg_v1.0.pdf/content",
+        "doi": "10.5281/zenodo.21736286",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Operationalizing Epistemic Rigor: Autonomous Scientific Method Chain-of-Thought Execution via Human-in-the-Loop Large Language Model Orchestration",
+        "authors": [
+          "Marie-Soleil Seshat Landry"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Traditional artificial intelligence deployment relies heavily on probabilistic generation, introducing systemic vulnerabilities such as hallucination and unverified assertions. This article establishes a rigorous framework for executing the complete scientific method as a natural language chain-of-thought within a Large Language Model (LLM). By enforcing a strict ten-step operational cycle—ranging…",
+        "url": "https://zenodo.org/records/21689676",
+        "pdfUrl": "https://zenodo.org/api/records/21689676/files/Operationalizing_Epistemic_Rigor_-_Autonomous_Scientific_Method_Chain-of-Thought_Execution_via_Human-in-the-Loop_Large_Language_Model_Orchestration.pdf/content",
+        "doi": "10.5281/zenodo.21689676",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "THaMES: An End-to-End Tool for Hallucination Mitigation and Evaluation in Large Language Models",
+        "authors": [
+          "Mengfei Liang",
+          "Archish Arun",
+          "Zekun Wu",
+          "Cristian Munoz",
+          "Jonathan Lutch",
+          "Emre Kazim",
+          "Adriano Koshiyama",
+          "Philip Treleaven"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Hallucination, the generation of factually incorrect content, is a growing challenge in Large Language Models (LLMs). Existing detection and mitigation methods are often isolated and insufficient for domain-specific needs, lacking a standardized pipeline. This paper introduces THaMES (Tool for Hallucination Mitigations and EvaluationS), an integrated framework and library addressing this gap. THaMES offers an end-to-end solution for evaluating and mitigating hallucinations in LLMs, featuring automated test set generation, multifaceted benchmarking, and adaptable mitigation strategies. It automates test set creation from any corpus, ensuring high data quality, diversity, and cost-efficiency through techniques like batch processing, weighted sampling, and counterfactual validation. THaMES assesses a model's ability to detect and reduce hallucinations across various tasks, including text generation and binary classification, applying optimal mitigation strategies like In-Context Learning (ICL), Retrieval Augmented Generation (RAG), and Parameter-Efficient Fine-tuning (PEFT). Evaluations of state-of-the-art LLMs using a knowledge base of academic papers, political news, and Wikipedia reveal that commercial models like GPT-4o benefit more from RAG than ICL, while open-weight models like Llama-3.1-8B-Instruct and Mistral-Nemo gain more from ICL. Additionally, PEFT significantly enhances the performance of Llama-3.1-8B-Instruct in both evaluation tasks.",
+        "url": "http://arxiv.org/abs/2409.11353",
+        "pdfUrl": "http://arxiv.org/pdf/2409.11353",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Unified Hallucination Detection for Multimodal Large Language Models",
+        "authors": [
+          "Xiang Chen",
+          "Chenxi Wang",
+          "Yida Xue",
+          "Ningyu Zhang",
+          "Xiaoyan Yang",
+          "Qiang Li",
+          "Yue Shen",
+          "Lei Liang",
+          "Jinjie Gu",
+          "Huajun Chen"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Despite significant strides in multimodal tasks, Multimodal Large Language Models (MLLMs) are plagued by the critical issue of hallucination. The reliable detection of such hallucinations in MLLMs has, therefore, become a vital aspect of model evaluation and the safeguarding of practical application deployment. Prior research in this domain has been constrained by a narrow focus on singular tasks, an inadequate range of hallucination categories addressed, and a lack of detailed granularity. In response to these challenges, our work expands the investigative horizons of hallucination detection. We present a novel meta-evaluation benchmark, MHaluBench, meticulously crafted to facilitate the evaluation of advancements in hallucination detection methods. Additionally, we unveil a novel unified multimodal hallucination detection framework, UNIHD, which leverages a suite of auxiliary tools to validate the occurrence of hallucinations robustly. We demonstrate the effectiveness of UNIHD through meticulous evaluation and comprehensive analysis. We also provide strategic insights on the application of specific tools for addressing various categories of hallucinations.",
+        "url": "http://arxiv.org/abs/2402.03190",
+        "pdfUrl": "http://arxiv.org/pdf/2402.03190",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Research on Key Technologies for Enhancing Large Language Model Capabilities in Power Grid Dispatch and Control",
+        "authors": [
+          "YANG Qingbo",
+          "ZHU Shuguang",
+          "LIU Dong",
+          "FENG Qiong",
+          "MA Xinxin",
+          "WANG Jiaqi",
+          "WU Shuzhou",
+          "LÜ Shang"
+        ],
+        "year": 2026,
+        "venue": "发电技术",
+        "abstract": "ObjectivesAddressing the problem in the direct application of general large language models in the vertical domain of power grid dispatch and control, such as domain adaptation difficulties, prominent “hallucination” risks, high training costs, and lagging knowledge updates, this study proposes and designs a rapid construction technology for a specialized large language model for power grid dispat…",
+        "url": "https://www.pgtjournal.com/cn/article/doi/10.12096/j.2096-4528.pgt.260402",
+        "doi": "10.12096/j.2096-4528.pgt.260402",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "A retrieval-augmented large language model for agricultural advisory on crop varieties and cultivation techniques",
+        "authors": [
+          "Thanh Dien Tran",
+          "Nguyen Phuc Thinh Tran",
+          "Duy Anh Le",
+          "Thai-Nghe Nguyen",
+          "Khoa Anh Phan",
+          "Huu Hoa Nguyen"
+        ],
+        "year": 2026,
+        "venue": "CTU Journal of Innovation and Sustainable Development",
+        "abstract": "\nThis study presents the design and implementation of an agricultural advisory chatbot to help farmers access reliable information on crop varieties and cultivation techniques, with a focus on rice and mango. The proposed system integrates a large language model (Gemini 2.5 Pro) with a Retrieval-Augmented Generation architecture to mitigate hallucination and improve factual accuracy in domain-spec…",
+        "url": "https://ctujs.ctu.edu.vn/index.php/ctujs/article/view/2240",
+        "doi": "10.22144/ctujoisd.2026.033",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "AutoHall: Automated Factuality Hallucination Dataset Generation for Large Language Models",
+        "authors": [
+          "Zouying Cao",
+          "Yifei Yang",
+          "XiaoJing Li",
+          "Hai Zhao"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models (LLMs) have gained broad applications across various domains but still struggle with hallucinations. Currently, hallucinations occur frequently in the generation of factual content and pose a great challenge to trustworthy LLMs. However, hallucination detection is hindered by the laborious and expensive manual annotation of hallucinatory content. Meanwhile, as different LLMs exhibit distinct types and rates of hallucination, the collection of hallucination datasets is inherently model-specific, which also increases the cost. To address this issue, this paper proposes a method called $\\textbf{AutoHall}$ for $\\underline{Auto}$matically constructing model-specific $\\underline{Hall}$ucination datasets based on existing fact-checking datasets. The empirical results reveal variations in hallucination proportions and types among different models. Moreover, we introduce a zero-resource and black-box hallucination detection method based on self-contradiction to recognize the hallucination in our constructed dataset, achieving superior detection performance compared to baselines. Further analysis on our dataset provides insight into factors that may contribute to LLM hallucinations. Our codes and datasets are publicly available at https://github.com/zouyingcao/AutoHall.",
+        "url": "http://arxiv.org/abs/2310.00259",
+        "pdfUrl": "http://arxiv.org/pdf/2310.00259",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Position: Large Language Model Failures from Hallucination to Homogenization Are Different Facets of Miscalibration",
+        "authors": [
+          "Hu, Tiancheng",
+          "Zhang, Caiqi",
+          "Hovy, Dirk",
+          "Collier, Nigel"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "url": "https://zenodo.org/records/18499744",
+        "pdfUrl": "https://zenodo.org/api/records/18499744/files/Calibration_Position_Paper_preprint.pdf/content",
+        "doi": "10.5281/zenodo.18499744",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "A Review of Anomaly in Large Language Model-Based Multi-Agent Systems (Invited)",
+        "authors": [
+          "ZHANG Longyao, WEN Dongxin, MA Zhuangyu, SHU Yanjun, LI Qing, LIU Mingyi, ZUO Decheng"
+        ],
+        "year": 2026,
+        "venue": "Jisuanji gongcheng",
+        "abstract": "Large Language Model (LLM)-based Multi-Agent System (MAS) has demonstrated significant potential in handling complex tasks. Their distributed nature and interaction uncertainty can lead to diverse anomalies that threaten system reliability. This paper presents a comprehensive review, identifying and classifying these anomalies systematically. Seven representative multi-agent systems and their corr…",
+        "url": "https://www.ecice06.com/fileup/1000-3428/PDF/20260102.pdf",
+        "pdfUrl": "https://www.ecice06.com/fileup/1000-3428/PDF/20260102.pdf",
+        "doi": "10.19678/j.issn.1000-3428.0252754",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Cross-Domain Generalization of Lightweight Hallucination Detectors in Large Language Models",
+        "authors": [
+          "Sher, Azeem"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Hallucination in Large Language Models (LLMs)&mdash;the generation of plausible but factually incorrect content&mdash;poses a critical risk across multiple real-world domains. In software development, AI-generated errors can introduce system failures, security vulnerabilities, and data loss. In healthcare, incorrect medical advice or misidentified drug interactions produced by an LLM can directly …",
+        "url": "https://zenodo.org/records/22771155",
+        "pdfUrl": "https://zenodo.org/api/records/22771155/files/Sher_2026_Cross_Domain_Hallucination_Detection.pdf/content",
+        "doi": "10.5281/zenodo.22771155",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Models Hallucination: A Comprehensive Survey",
+        "authors": [
+          "Aisha Alansari",
+          "Hamzah Luqman"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models (LLMs) have transformed natural language processing, achieving remarkable performance across diverse tasks. However, their impressive fluency often comes at the cost of producing false or fabricated information, a phenomenon known as hallucination. Hallucination refers to the generation of content by an LLM that is fluent and syntactically correct but factually inaccurate or unsupported by external evidence. Hallucinations undermine the reliability and trustworthiness of LLMs, especially in domains requiring factual accuracy. This survey provides a comprehensive review of research on hallucination in LLMs, with a focus on causes, detection, and mitigation. We first present a taxonomy of hallucination types and analyze their root causes across the entire LLM development lifecycle, from data collection and architecture design to inference. We further examine how hallucinations emerge in key natural language generation tasks. Building on this foundation, we introduce a structured taxonomy of detection approaches and another taxonomy of mitigation strategies. We also analyze the strengths and limitations of current detection and mitigation approaches and review existing evaluation benchmarks and metrics used to quantify LLMs hallucinations. Finally, we outline key open challenges and promising directions for future research, providing a foundation for the development of more truthful and trustworthy LLMs.",
+        "url": "http://arxiv.org/abs/2510.06265",
+        "pdfUrl": "http://arxiv.org/pdf/2510.06265",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "(Im)possibility of Automated Hallucination Detection in Large Language Models",
+        "authors": [
+          "Amin Karbasi",
+          "Omar Montasser",
+          "John Sous",
+          "Grigoris Velegkas"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Is automated hallucination detection possible? In this work, we introduce a theoretical framework to analyze the feasibility of automatically detecting hallucinations produced by large language models (LLMs). Inspired by the classical Gold-Angluin framework for language identification and its recent adaptation to language generation by Kleinberg and Mullainathan, we investigate whether an algorithm, trained on examples drawn from an unknown target language $K$ (selected from a countable collection) and given access to an LLM, can reliably determine whether the LLM's outputs are correct or constitute hallucinations. First, we establish an equivalence between hallucination detection and the classical task of language identification. We prove that any hallucination detection method can be converted into a language identification method, and conversely, algorithms solving language identification can be adapted for hallucination detection. Given the inherent difficulty of language identification, this implies that hallucination detection is fundamentally impossible for most language collections if the detector is trained using only correct examples from the target language. Second, we show that the use of expert-labeled feedback, i.e., training the detector with both positive examples (correct statements) and negative examples (explicitly labeled incorrect statements), dramatically changes this conclusion. Under this enriched training regime, automated hallucination detection becomes possible for all countable language collections. These results highlight the essential role of expert-labeled examples in training hallucination detectors and provide theoretical support for feedback-based methods, such as reinforcement learning with human feedback (RLHF), which have proven critical for reliable LLM deployment.",
+        "url": "http://arxiv.org/abs/2504.17004",
+        "pdfUrl": "http://arxiv.org/pdf/2504.17004",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Beyond Facts: Evaluating Intent Hallucination in Large Language Models",
+        "authors": [
+          "Yijie Hao",
+          "Haofei Yu",
+          "Jiaxuan You"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "When exposed to complex queries containing multiple conditions, today's large language models (LLMs) tend to produce responses that only partially satisfy the query while neglecting certain conditions. We therefore introduce the concept of Intent Hallucination. In this phenomenon, LLMs either omit (neglecting to address certain parts) or misinterpret (responding to invented query parts) elements of the given query, leading to intent hallucinated generation. To systematically evaluate intent hallucination, we introduce FAITHQA, a novel benchmark for intent hallucination that contains 20,068 problems, covering both query-only and retrieval-augmented generation (RAG) setups with varying topics and difficulty. FAITHQA is the first hallucination benchmark that goes beyond factual verification, tailored to identify the fundamental cause of intent hallucination. By evaluating various LLMs on FAITHQA, we find that (1) intent hallucination is a common issue even for state-of-the-art models, and (2) the phenomenon stems from omission or misinterpretation of LLMs. To facilitate future research, we introduce an automatic LLM generation evaluation metric, CONSTRAINT SCORE, for detecting intent hallucination. Human evaluation results demonstrate that CONSTRAINT SCORE is closer to human performance for intent hallucination compared to baselines.",
+        "url": "http://arxiv.org/abs/2506.06539",
+        "pdfUrl": "http://arxiv.org/pdf/2506.06539",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Hallucination-Aware Optimization for Large Language Model-Empowered Communications",
+        "authors": [
+          "Guangyuan Liu",
+          "Dong In Kim",
+          "Dusit Niyato",
+          "Kaibin Huang",
+          "Zehui Xiong",
+          "Yinqiu Liu",
+          "Ruichen Zhang",
+          "Hongyang Du",
+          "Hongyang Du 0001",
+          "Dusit Niyato",
+          "Kaibin Huang",
+          "Zehui Xiong"
+        ],
+        "year": 2026,
+        "venue": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "url": "https://doi.org/10.1109/mcom.001.2400688",
+        "doi": "10.1109/mcom.001.2400688",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Omission and hallucination prevalence of clinical guidelines in diagnostic large language model outputs",
+        "authors": [],
+        "year": 2026,
+        "url": "https://researchonline.lse.ac.uk/id/eprint/138022/",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "ANAH-v2: Scaling Analytical Hallucination Annotation of Large Language Models",
+        "authors": [
+          "Yuzhe Gu",
+          "Ziwei Ji",
+          "Wenwei Zhang",
+          "Chengqi Lyu",
+          "Dahua Lin",
+          "Kai Chen"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models (LLMs) exhibit hallucinations in long-form question-answering tasks across various domains and wide applications. Current hallucination detection and mitigation datasets are limited in domains and sizes, which struggle to scale due to prohibitive labor costs and insufficient reliability of existing hallucination annotators. To facilitate the scalable oversight of LLM hallucinations, this paper introduces an iterative self-training framework that simultaneously and progressively scales up the hallucination annotation dataset and improves the accuracy of the hallucination annotator. Based on the Expectation Maximization (EM) algorithm, in each iteration, the framework first applies a hallucination annotation pipeline to annotate a scaled dataset and then trains a more accurate hallucination annotator on the dataset. This new hallucination annotator is adopted in the hallucination annotation pipeline used for the next iteration. Extensive experimental results demonstrate that the finally obtained hallucination annotator with only 7B parameters surpasses the performance of GPT-4 and obtains new state-of-the-art hallucination detection results on HaluEval and HalluQA by zero-shot inference. Such an annotator can not only evaluate the hallucination levels of various LLMs on the large-scale dataset but also help to mitigate the hallucination of LLMs generations, with the Natural Language Inference (NLI) metric increasing from 25% to 37% on HaluEval.",
+        "url": "http://arxiv.org/abs/2407.04693",
+        "pdfUrl": "http://arxiv.org/pdf/2407.04693",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Multilingual Hallucination Gaps in Large Language Models",
+        "authors": [
+          "Cléa Chataigner",
+          "Afaf Taïk",
+          "Golnoosh Farnadi"
+        ],
+        "year": 2024,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models (LLMs) are increasingly used as alternatives to traditional search engines given their capacity to generate text that resembles human language. However, this shift is concerning, as LLMs often generate hallucinations, misleading or false information that appears highly credible. In this study, we explore the phenomenon of hallucinations across multiple languages in freeform text generation, focusing on what we call multilingual hallucination gaps. These gaps reflect differences in the frequency of hallucinated answers depending on the prompt and language used. To quantify such hallucinations, we used the FactScore metric and extended its framework to a multilingual setting. We conducted experiments using LLMs from the LLaMA, Qwen, and Aya families, generating biographies in 19 languages and comparing the results to Wikipedia pages. Our results reveal variations in hallucination rates, especially between high and low resource languages, raising important questions about LLM multilingual performance and the challenges in evaluating hallucinations in multilingual freeform text generation.",
+        "url": "http://arxiv.org/abs/2410.18270",
+        "pdfUrl": "http://arxiv.org/pdf/2410.18270",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Hallucination Mitigation Techniques in Large Language Models",
+        "authors": [
+          "Mohammed Mabrouk",
+          "Mohamed Abdelghafour",
+          "Zaki Taha"
+        ],
+        "year": 2024,
+        "venue": "International Journal of Intelligent Computing and Information Sciences",
+        "abstract": "Large language models (LLMs) have demonstrated impressive natural language understanding and generation capabilities, enabling advancements in diverse fields such as customer support, healthcare, and content creation. However, a significant challenge with LLMs is their tendency to produce factually inaccurate or nonsensical information, commonly known as hallucination. Hallucinations not only comp…",
+        "url": "https://ijicis.journals.ekb.eg/article_406701_7e2e276640a5060a8d512dc3150c7b25.pdf",
+        "pdfUrl": "https://ijicis.journals.ekb.eg/article_406701_7e2e276640a5060a8d512dc3150c7b25.pdf",
+        "doi": "10.21608/ijicis.2024.336135.1365",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Hallucination Detox: Sensitivity Dropout (SenD) for Large Language Model Training",
+        "authors": [
+          "Bonizzato, Marco",
+          "Mohammadzadeh, Shahrad",
+          "Farnadi, Golnoosh",
+          "Guerra, Juan David",
+          "Rabbany, Reihaneh",
+          "Juan David Guerra",
+          "Reihaneh Rabbany",
+          "Shahrad Mohammadzadeh",
+          "Marco Bonizzato",
+          "Golnoosh Farnadi",
+          "Bonizzato, Marco",
+          "Mohammadzadeh, Shahrad"
+        ],
+        "year": 2025,
+        "venue": "Association for Computational Linguistics (ACL)",
+        "url": "https://doi.org/10.18653/v1/2025.acl-long.276",
+        "doi": "10.18653/v1/2025.acl-long.276",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Attention Graph–Hypergraph and Fuzzy Fusion for Explainable Hallucination Risk Assessment in Medical Large Language Models",
+        "authors": [
+          "Fatima, Ubaida",
+          "Ali, Mustafain"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Archival reproducibility release accompanying the manuscript \"Attention Graph–Hypergraph and Fuzzy Fusion for Explainable Hallucination Risk Assessment in Medical Large Language Models.\" This release contains the complete computational notebooks, MedHallu cohort reproducibility metadata, graph and hypergraph analyses, response-length normalization, Sugeno fuzzy risk-fusion workflow, repeated and n…",
+        "url": "https://zenodo.org/records/23083050",
+        "doi": "10.5281/zenodo.23083050",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Med-HALT: Medical Domain Hallucination Test for Large Language Models",
+        "authors": [
+          "Ankit Pal",
+          "Logesh Kumar Umapathi",
+          "Malaikannan Sankarasubbu"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "This research paper focuses on the challenges posed by hallucinations in large language models (LLMs), particularly in the context of the medical domain. Hallucination, wherein these models generate plausible yet unverified or incorrect information, can have serious consequences in healthcare applications. We propose a new benchmark and dataset, Med-HALT (Medical Domain Hallucination Test), designed specifically to evaluate and reduce hallucinations. Med-HALT provides a diverse multinational dataset derived from medical examinations across various countries and includes multiple innovative testing modalities. Med-HALT includes two categories of tests reasoning and memory-based hallucination tests, designed to assess LLMs's problem-solving and information retrieval abilities. Our study evaluated leading LLMs, including Text Davinci, GPT-3.5, LlaMa-2, MPT, and Falcon, revealing significant differences in their performance. The paper provides detailed insights into the dataset, promoting transparency and reproducibility. Through this work, we aim to contribute to the development of safer and more reliable language models in healthcare. Our benchmark can be found at medhalt.github.io",
+        "url": "http://arxiv.org/abs/2307.15343",
+        "pdfUrl": "http://arxiv.org/pdf/2307.15343",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Chain of Natural Language Inference for Reducing Large Language Model Ungrounded Hallucinations",
+        "authors": [
+          "Deren Lei",
+          "Yaxi Li",
+          "Mengya Hu",
+          "Mingyu Wang",
+          "Vincent Yun",
+          "Emily Ching",
+          "Eslam Kamal"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models (LLMs) can generate fluent natural language texts when given relevant documents as background context. This ability has attracted considerable interest in developing industry applications of LLMs. However, LLMs are prone to generate hallucinations that are not supported by the provided sources. In this paper, we propose a hierarchical framework to detect and mitigate such ungrounded hallucination. Our framework uses Chain of Natural Language Inference (CoNLI) for hallucination detection and hallucination reduction via post-editing. Our approach achieves state-of-the-art performance on hallucination detection and enhances text quality through rewrite, using LLMs without any fine-tuning or domain-specific prompt engineering. We show that this simple plug-and-play framework can serve as an effective choice for hallucination detection and reduction, achieving competitive performance across various contexts.",
+        "url": "http://arxiv.org/abs/2310.03951",
+        "pdfUrl": "http://arxiv.org/pdf/2310.03951",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Evaluation and Analysis of Hallucination in Large Vision-Language Models",
+        "authors": [
+          "Junyang Wang",
+          "Yiyang Zhou",
+          "Guohai Xu",
+          "Pengcheng Shi",
+          "Chenlin Zhao",
+          "Haiyang Xu",
+          "Qinghao Ye",
+          "Ming Yan",
+          "Ji Zhang",
+          "Jihua Zhu",
+          "Jitao Sang",
+          "Haoyu Tang"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "Large Vision-Language Models (LVLMs) have recently achieved remarkable success. However, LVLMs are still plagued by the hallucination problem, which limits the practicality in many scenarios. Hallucination refers to the information of LVLMs' responses that does not exist in the visual input, which poses potential risks of substantial consequences. There has been limited work studying hallucination evaluation in LVLMs. In this paper, we propose Hallucination Evaluation based on Large Language Models (HaELM), an LLM-based hallucination evaluation framework. HaELM achieves an approximate 95% performance comparable to ChatGPT and has additional advantages including low cost, reproducibility, privacy preservation and local deployment. Leveraging the HaELM, we evaluate the hallucination in current LVLMs. Furthermore, we analyze the factors contributing to hallucination in LVLMs and offer helpful suggestions to mitigate the hallucination problem. Our training data and human annotation hallucination data will be made public soon.",
+        "url": "http://arxiv.org/abs/2308.15126",
+        "pdfUrl": "http://arxiv.org/pdf/2308.15126",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "An Enhanced Retrieval Scheme for a Large Language Model with a Joint Strategy of Probabilistic Relevance and Semantic Association in the Vertical Domain",
+        "authors": [
+          "Qi Chen",
+          "Weifeng Zhou",
+          "Jian Cheng",
+          "Ji Yang"
+        ],
+        "year": 2024,
+        "venue": "Applied Sciences",
+        "abstract": "Large language model (LLM) processing, with natural language as its core, carries out information retrieval through intelligent Q&A. It has a wide range of application scenarios and is commonly considered a kind of generative AI. However, when LLMs handle generation tasks, the results generated by fundamental LLMs with an insufficient comprehensive performance, specifically in the vertical domain,…",
+        "url": "https://www.mdpi.com/2076-3417/14/24/11529",
+        "doi": "10.3390/app142411529",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Cross-model diffusion: Mitigating hallucination in large language models for rumor detection.",
+        "authors": [
+          "Wu C",
+          "Yang K",
+          "Hui Y",
+          "Xiong P",
+          "Shi Z",
+          "Lin Z",
+          "Zhang Y",
+          "Wang S"
+        ],
+        "year": 2026,
+        "venue": "Neural networks : the official journal of the International Neural Network Society",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42269190/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination Rate of Peer-Reviewed Citations Generated by Large Language Models in Neurocritical Care.",
+        "authors": [
+          "Seifi A",
+          "Seyfi A."
+        ],
+        "year": 2026,
+        "abstract": "ImportanceLarge language models (LLMs) are increasingly used for scientific literature retrieval, yet their citation accuracy in specialized clinical domains remains poorly characterized. In neurocritical care (NCC), fabricated or inaccurate citations may be difficult to detect without deliberate verification.ObjectivesTo evaluate hallucination and fabrication rates of peer-reviewed citations gene…",
+        "url": "https://doi.org/10.1097/cce.0000000000001474",
+        "pdfUrl": "https://europepmc.org/articles/PMC13506236/pdf",
+        "doi": "10.1097/cce.0000000000001474",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Augmenting patient safety surveillance in radiation oncology with large language model-based root cause analysis: A proof-of-concept study.",
+        "authors": [
+          "Wang Y",
+          "De Ornelas M",
+          "Studenski MT",
+          "Bossart E",
+          "Nejad-Davarani SP",
+          "Yang Y."
+        ],
+        "year": 2026,
+        "abstract": "We investigated the potential utility of large language models (LLMs) in supporting patient safety efforts. Specifically, we evaluated the reasoning capabilities of LLMs in performing root cause analysis (RCA) of radiation oncology incidents using narrative reports from the Radiation Oncology Incident Learning System (RO-ILS). We prompted four state-of-the-art LLMs, Gemini 2.5 Pro, GPT-4o, o3, and…",
+        "url": "https://doi.org/10.1371/journal.pdig.0001740",
+        "pdfUrl": "https://europepmc.org/articles/PMC13614575/pdf",
+        "doi": "10.1371/journal.pdig.0001740",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "A Stochastic Process Model for Predicting Hallucination Dynamics in Large Language Models",
+        "authors": [],
+        "year": 2026,
+        "venue": "IEEE",
+        "url": "https://doi.org/10.23919/indiacom70271.2026.11525672",
+        "doi": "10.23919/indiacom70271.2026.11525672",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Prioritized Cross-Model Verification System for Hallucination Detection in Black-Box Large Language Models",
+        "authors": [],
+        "year": 2026,
+        "venue": "IEEE",
+        "url": "https://doi.org/10.1109/icarc68737.2026.11454122",
+        "doi": "10.1109/icarc68737.2026.11454122",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Evidence-Calibrated Multi-Signal Hallucination Detection in Large Language Models",
+        "authors": [
+          "Pagare, Pranav Nitin",
+          "Kute, Om Sunil",
+          "Sonvane, Meet Pandurangbhai"
+        ],
+        "year": 2026,
+        "venue": "Journal of interdisciplinary science and Technology (Online)",
+        "abstract": "Large language models (LLMs) can generate fluent answers that contain unsupported, contradictory, or unverifiable claims, which limits their use in knowledge-intensive and high-stakes settings. Existing detectors tend to focus on one signal, such as retrieved&nbsp;evidence, sampling consistency, uncertainty or internal representations. Thus they suffer differential failure when the evidence is&nbs…",
+        "url": "https://zenodo.org/records/22048081",
+        "pdfUrl": "https://zenodo.org/api/records/22048081/files/JIST_V1_I2_01.pdf/content",
+        "doi": "10.5281/zenodo.22048081",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "A Survey on Hallucination in Large Language Models: Definitions, Detection, and Mitigation",
+        "authors": [
+          "Sajjadi Mohammadabadi SM",
+          "Kara BC",
+          "Eyupoglu C",
+          "Karakuş O",
+          "Borhani Peikani M."
+        ],
+        "year": 2026,
+        "venue": "Preprints.org",
+        "abstract": "Despite the strong capabilities of Large Language Models (LLMs) across a wide range of natural language processing tasks, their outputs can still be unreliable. Hallucination is widely used as an umbrella label for several related failures, but its operational meaning varies across tasks and studies. This work provides a comprehensive review of recent advances in understanding, detecting, and miti…",
+        "url": "https://doi.org/10.20944/preprints202510.0540.v3",
+        "doi": "10.20944/preprints202510.0540.v3",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Adaptive NLI-Driven Claim Verification with Statistical Decision Modeling for Low-Latency Hallucination Reduction in Large Language Models.",
+        "authors": [
+          "Mohapatra S",
+          "Dash B",
+          "Mohanty S",
+          "Mohanty SN",
+          "Musa MJ."
+        ],
+        "year": 2026,
+        "abstract": "Large Language Models (LLMs) exhibit a critical tendency to generate factually incorrect yet linguistically fluent outputs - a phenomenon termed hallucination - which poses serious risks in precision-critical applications. Existing mitigation strategies, including retrieval-augmented generation and self-consistency sampling, either introduce substantial inference latency or depend on external know…",
+        "url": "https://doi.org/10.3791/72636",
+        "doi": "10.3791/72636",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "A Trust-Aware Framework for Hallucination Detection and Accuracy Paradox Analysis in Large Language Models",
+        "authors": [
+          "L V",
+          "SV S."
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract Large language models (LLMs) have achieved remarkable success in natural language understanding and generation, enabling applications across scientific research, healthcare, education, and decision support systems. Despite these advances, LLMs frequently generate fluent but factually incorrect responses, a phenomenon commonly referred to as hallucination. Such behavior raises critical con…",
+        "url": "https://doi.org/10.21203/rs.3.rs-10408506/v1",
+        "doi": "10.21203/rs.3.rs-10408506/v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "LargePiG for Hallucination-Free Query Generation: Your Large Language Model is Secretly a Pointer Generator",
+        "authors": [
+          "Kai Zheng 0001",
+          "Zhongxiang Sun",
+          "Xiao Zhang 0034",
+          "Xiaoxue Zang",
+          "Yang Song 0008",
+          "Zihua Si",
+          "Jun Xu 0001",
+          "Jun Xu",
+          "Zihua Si",
+          "Xiao Zhang",
+          "Kai Zheng",
+          "Yang Song"
+        ],
+        "year": 2025,
+        "venue": "ACM",
+        "url": "https://dblp.org/rec/conf/www/SunSZZ00025.html",
+        "doi": "10.1145/3696410.3714800",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Correcting Factuality Hallucination in Complaint Large Language Model via Entity-Augmented",
+        "authors": [
+          "Tian Zhang",
+          "Xiaofei Niu",
+          "Weichao Pan",
+          "Ziming Wang",
+          "Shuqin Yang",
+          "Jian Wang",
+          "Jiaju Kang",
+          "Zhiqin Wang",
+          "Tian Zhang",
+          "Xiaofei Niu",
+          "Weichao Pan",
+          "Ziming Wang"
+        ],
+        "year": 2024,
+        "venue": "IEEE",
+        "url": "https://dblp.org/rec/conf/ijcnn/KangPZWYWWN24.html",
+        "doi": "10.1109/ijcnn60899.2024.10650208",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Mitigating Hallucination in Large Language Model by Leveraging Decoder Layer Contrasting",
+        "authors": [
+          "Guangsheng Liu",
+          "Xinbo Ai",
+          "Wenbin Luo",
+          "Ange Li",
+          "Guangsheng Liu",
+          "Xinbo Ai",
+          "Wenbin Luo",
+          "Ange Li"
+        ],
+        "year": 2024,
+        "venue": "Springer Nature Switzerland",
+        "url": "https://doi.org/10.1007/978-3-031-78498-9_4",
+        "doi": "10.1007/978-3-031-78498-9_4",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Compos Mentis at SemEval2024 Task6: A Multi-Faceted Role-based Large Language Model Ensemble to Detect Hallucination",
+        "authors": [
+          "Souvik Das",
+          "Rohini K. Srihari",
+          "Souvik Das",
+          "Rohini Srihari"
+        ],
+        "year": 2024,
+        "venue": "Association for Computational Linguistics (ACL)",
+        "url": "https://doi.org/10.18653/v1/2024.semeval-1.208",
+        "doi": "10.18653/v1/2024.semeval-1.208",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination in Large Language Models and Two Effective Alleviation Pathways",
+        "authors": [
+          "Qingqin Fang"
+        ],
+        "year": 2024,
+        "abstract": "&lt;strong&gt; An Introduction to Retrieval Augmented Generation (RAG) and Knowledge Graph &lt;/strong&gt; Author Qingqin Fang (ORCID: 0009–0003–5348–4264) &lt;strong&gt; Introduction &lt;/strong&gt; Large Language Models (LLMs) have transformed the landscape of natural language processing, demonstrating exceptional proficiency in generating text that closely resembles human language.",
+        "url": "https://doi.org/10.59350/g73v1-rq310",
+        "pdfUrl": "https://rogue-scholar.org/api/records/dqfh6-xfc41/files/10.59350_g73v1-rq310.pdf/content",
+        "doi": "10.59350/g73v1-rq310",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Roe: A Computational-Efficient Anti-hallucination Fine-Tuning Technology for Large Language Model Inspired by Human Learning Process",
+        "authors": [
+          "Xueqing Liu",
+          "Paul Sajda",
+          "Xueqing Liu",
+          "Paul Sajda"
+        ],
+        "year": 2023,
+        "venue": "Springer Nature Switzerland",
+        "url": "https://doi.org/10.1007/978-3-031-43075-6_39",
+        "doi": "10.1007/978-3-031-43075-6_39",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "Performance and Hallucination Analysis of Large Language Models on European Anesthesiology Examinations: Cross-Sectional Comparative Study.",
+        "authors": [
+          "Andrei S",
+          "Giet T",
+          "Belouard A",
+          "Stefan M",
+          "Popescu M",
+          "Tanaka S",
+          "Montravers P",
+          "Gouel A."
+        ],
+        "year": 2026,
+        "abstract": "BackgroundLarge language models (LLMs) have shown promising performance on medical examinations across specialties. However, comparative evaluations of current-generation LLMs across multiple European anesthesiology examinations, alongside structured assessment of hallucinations vs question-related confusion, remain lacking.ObjectiveThis study aimed to compare the performance of 4 state-of-the-art…",
+        "url": "https://doi.org/10.2196/95859",
+        "pdfUrl": "https://europepmc.org/articles/PMC13532392/pdf",
+        "doi": "10.2196/95859",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Evaluating Large Language Models in Endodontic Irrigants: A Structured Assessment of Accuracy, Readability, Hallucination Subtypes, and Clinical Risk.",
+        "authors": [
+          "Erkal D",
+          "Çakmak YE",
+          "Er K."
+        ],
+        "year": 2026,
+        "abstract": "IntroductionLarge language models (LLMs) are increasingly used by clinicians and learners for endodontic information, yet their reliability for irrigation-related knowledge remains unclear. This study evaluated the accuracy, readability, hallucination profile, clinical risk, and temporal stability of 4 general-purpose LLMs on endodontic irrigation questions, including false-premise prompts.Methods…",
+        "url": "https://doi.org/10.1016/j.joen.2026.08.033",
+        "doi": "10.1016/j.joen.2026.08.033",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "A Survey on Multimodal Large Language Models",
+        "authors": [
+          "Shukang Yin",
+          "Chaoyou Fu",
+          "Sirui Zhao",
+          "Ke Li",
+          "Xing Sun",
+          "Tong Xu",
+          "Enhong Chen"
+        ],
+        "year": 2023,
+        "venue": "arXiv 预印本",
+        "abstract": "Recently, Multimodal Large Language Model (MLLM) represented by GPT-4V has been a new rising research hotspot, which uses powerful Large Language Models (LLMs) as a brain to perform multimodal tasks. The surprising emergent capabilities of MLLM, such as writing stories based on images and OCR-free math reasoning, are rare in traditional multimodal methods, suggesting a potential path to artificial general intelligence. To this end, both academia and industry have endeavored to develop MLLMs that can compete with or even better than GPT-4V, pushing the limit of research at a surprising speed. In this paper, we aim to trace and summarize the recent progress of MLLMs. First of all, we present the basic formulation of MLLM and delineate its related concepts, including architecture, training strategy and data, as well as evaluation. Then, we introduce research topics about how MLLMs can be extended to support more granularity, modalities, languages, and scenarios. We continue with multimodal hallucination and extended techniques, including Multimodal ICL (M-ICL), Multimodal CoT (M-CoT), and LLM-Aided Visual Reasoning (LAVR). To conclude the paper, we discuss existing challenges and point out promising research directions. In light of the fact that the era of MLLM has only just begun, we will keep updating this survey and hope it can inspire more research. An associated GitHub link collecting the latest papers is available at https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models.",
+        "url": "http://arxiv.org/abs/2306.13549",
+        "pdfUrl": "http://arxiv.org/pdf/2306.13549",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv / PubMed",
+        "openAccess": true,
+        "citations": 0
+      },
+      {
+        "title": "A collaborative large language model for drug analysis.",
+        "authors": [
+          "Zhou H",
+          "Liu F",
+          "Wu J",
+          "Zhang W",
+          "Huang G",
+          "Clifton L",
+          "Eyre D",
+          "Luo H",
+          "Liu F",
+          "Branson K",
+          "Schwab P",
+          "Wu X"
+        ],
+        "year": 2026,
+        "venue": "Nature biomedical engineering",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40987953/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13190338/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Model",
+        "authors": [
+          "Gregory Diamos",
+          "Mostofa"
+        ],
+        "year": 2018,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "One of the large language models trained in this paper:&nbsp;https://arxiv.org/abs/1810.10045",
+        "url": "https://zenodo.org/records/1492892",
+        "doi": "10.5281/zenodo.1492892",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Physician- and Large Language Model-Generated Hospital Discharge Summaries.",
+        "authors": [
+          "Williams CYK",
+          "Subramanian CR",
+          "Ali SS",
+          "Apolinario M",
+          "Askin E",
+          "Barish P",
+          "Cheng M",
+          "Deardorff WJ",
+          "Donthi N",
+          "Ganeshan S",
+          "Huang O",
+          "Kantor MA"
+        ],
+        "year": 2025,
+        "venue": "JAMA internal medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40323616/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12053800/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "CASSIA: a multi-agent large language model for automated and interpretable cell annotation.",
+        "authors": [
+          "Xie E",
+          "Cheng L",
+          "Shireman J",
+          "Cai Y",
+          "Liu J",
+          "Mohanty C",
+          "Dey M",
+          "Kendziorski C"
+        ],
+        "year": 2025,
+        "venue": "Nature communications",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41354665/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12796229/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Use of Retrieval-Augmented Large Language Model for COVID-19 Fact-Checking: Development and Usability Study.",
+        "authors": [
+          "Li H",
+          "Huang J",
+          "Ji M",
+          "Yang Y",
+          "An R"
+        ],
+        "year": 2025,
+        "venue": "Journal of medical Internet research",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40306628/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12079058/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Model-Enhanced Drug Repositioning Knowledge Extraction via Long Chain-of-Thought: Development and Evaluation Study.",
+        "authors": [
+          "Kang H",
+          "Li J",
+          "Hou L",
+          "Xu X",
+          "Zheng S",
+          "Li Q"
+        ],
+        "year": 2025,
+        "venue": "JMIR medical informatics",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41056561/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12503436/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Model Prompting Techniques for Advancement in Clinical Medicine.",
+        "authors": [
+          "Shah K",
+          "Xu AY",
+          "Sharma Y",
+          "Daher M",
+          "McDonald C",
+          "Diebo BG",
+          "Daniels AH"
+        ],
+        "year": 2024,
+        "venue": "Journal of clinical medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39274316/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11396764/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Knowledge Graph and Large Language Model Co-learning via Structure-oriented Retrieval Augmented Generation.",
+        "authors": [
+          "Yang C",
+          "Xu R",
+          "Luo L",
+          "Pan S"
+        ],
+        "year": 2024,
+        "venue": "Bulletin of the Technical Committee on Data Engineering",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41858747/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12998269/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Evaluation of Large Language Model Performance and Reliability for Citations and References in Scholarly Writing: Cross-Disciplinary Study.",
+        "authors": [
+          "Mugaanyi J",
+          "Cai L",
+          "Cheng S",
+          "Lu C",
+          "Huang J"
+        ],
+        "year": 2024,
+        "venue": "Journal of medical Internet research",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38578685/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11031695/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "ThoughtSource: A central hub for large language model reasoning data.",
+        "authors": [
+          "Ott S",
+          "Hebenstreit K",
+          "Liévin V",
+          "Hother CE",
+          "Moradi M",
+          "Mayrhauser M",
+          "Praas R",
+          "Winther O",
+          "Samwald M"
+        ],
+        "year": 2023,
+        "venue": "Scientific data",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37553439/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10409727/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Research on Categorical Recognition and Optimization of Hallucination Phenomenon in Large Language Models",
+        "authors": [],
+        "year": 2025,
+        "venue": "Journal of Computer Engineering and Applications Beijing Co., Ltd., Science Press",
+        "url": "https://doaj.org/article/87dc648b880947239c19cd2719f19fa5",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Advancing Multimodal Large Language Models: Optimizing Prompt Engineering Strategies for Enhanced Performance",
+        "authors": [
+          "Minjun Son",
+          "Sungjin Lee"
+        ],
+        "year": 2025,
+        "venue": "Applied Sciences",
+        "abstract": "This study investigates prompt engineering (PE) strategies to mitigate hallucination, a key limitation of multimodal large language models (MLLMs). To address this issue, we explore five prominent multimodal PE techniques: in-context learning (ICL), chain of thought (CoT), step-by-step reasoning (SSR), tree of thought (ToT), and retrieval-augmented generation (RAG). These techniques are systematic…",
+        "url": "https://www.mdpi.com/2076-3417/15/7/3992",
+        "doi": "10.3390/app15073992",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Chain-of-programming (CoP): empowering large language models for geospatial code generation task",
+        "authors": [
+          "Shuyang Hou",
+          "Haoyue Jiao",
+          "Zhangxiao Shen",
+          "Jianyuan Liang",
+          "Anqi Zhao",
+          "Xiaopu Zhang",
+          "Jianxun Wang",
+          "Huayi Wu"
+        ],
+        "year": 2025,
+        "venue": "International Journal of Digital Earth",
+        "abstract": "Large Language Models (LLMs) have driven the development of geospatial code generation but face challenges such as incomplete user requirements and insufficient knowledge of platform-specific syntax, often leading to ‘code hallucination.’ To address this issue, this paper proposes the Chain-of-Programming (CoP) framework, which divides the generation process into five steps: requirement analysis, …",
+        "url": "https://www.tandfonline.com/doi/10.1080/17538947.2025.2509812",
+        "doi": "10.1080/17538947.2025.2509812",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Decoding by Factual Prompts and Hallucination Prompts Improves Factuality in Large Language Models",
+        "authors": [
+          "Ao Feng",
+          "Chenlong Xie",
+          "Bojie Lv",
+          "Ao Feng",
+          "Chenlong Xie",
+          "Bojie Lv"
+        ],
+        "year": 2024,
+        "venue": "MDPI AG",
+        "url": "https://doi.org/10.20944/preprints202409.2037.v1",
+        "doi": "10.20944/preprints202409.2037.v1",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Chain of Natural Language Inference for Reducing Large Language Model Ungrounded Hallucinations",
+        "authors": [
+          "Ching, Emily",
+          "Lei, Deren",
+          "Kamal, Eslam",
+          "Li, Yaxi",
+          "Wang, Mingyu",
+          "Hu, Mengya",
+          "Yun, Vincent",
+          "Eslam Kamal",
+          "Yaxi Li",
+          "Emily Ching",
+          "Mingyu Wang",
+          "Mengya Hu"
+        ],
+        "year": 2023,
+        "url": "https://dx.doi.org/10.48550/arxiv.2310.03951",
+        "doi": "10.48550/arxiv.2310.03951",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Using large language model to aid in teaching medical imaging report writing.",
+        "authors": [
+          "Chen Y",
+          "Xiang P",
+          "Zhou Q",
+          "Li C",
+          "Zhang X",
+          "Wang J",
+          "Wang H",
+          "Gao Z",
+          "Yang Z",
+          "Ye S",
+          "Taylor D",
+          "Feng ST"
+        ],
+        "year": 2026,
+        "venue": "Medical teacher",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41451614/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": false
+      },
+      {
+        "title": "Runtime Fisher Spectral Sensitivity for Early Hallucination Detection in Edge-Deployed Language Models",
+        "authors": [
+          "Alekberli, Rahid",
+          "Karimov, Hikmat"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "We study whether the spectral sensitivity of the per-token empirical Fisher Information&nbsp;Matrix (FIM),&nbsp; &lambda; max ( F t ), can serve as a lightweight, model-agnostic runtime signal for anticipating&nbsp;hallucination during autoregressive decoding on consumer edge hardware. Across four pre-planned experiments on twelve open-weight models run locally via Ollama and MLX on an&nbsp;Apple …",
+        "url": "https://zenodo.org/records/21233905",
+        "pdfUrl": "https://zenodo.org/api/records/21233905/files/KA_FisherEarlyWarning_arxiv_preview.pdf/content",
+        "doi": "10.5281/zenodo.21233905",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Hallucination Detection with Small Language Models",
+        "authors": [
+          "Ming Cheung"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Since the introduction of ChatGPT, large language models (LLMs) have demonstrated significant utility in various tasks, such as answering questions through retrieval-augmented generation. Context can be retrieved using a vectorized database, serving as a foundation for LLMs to generate responses. However, hallucinations in responses can undermine the reliability of LLMs in practical applications, and they are not easily detectable in the absence of ground truth, particularly in question-and-answer scenarios. This paper proposes a framework that integrates multiple small language models to verify responses generated by LLMs using the retrieved context from a vectorized database. By breaking down the responses into individual sentences and utilizing the probability of generating \"Yes\" tokens from the outputs of multiple models for a given set of questions, responses, and relevant context, hallucinations can be detected. The proposed framework is validated through experiments with real datasets comprising over 100 sets of questions, answers, and contexts, including responses with fully and partially correct sentences. The results demonstrate a 10\\% improvement in F1 scores for detecting correct responses compared to hallucinations, indicating that multiple small language models can be effectively employed for answer verification, providing a scalable and efficient solution for both academic and practical applications.",
+        "url": "http://arxiv.org/abs/2506.22486",
+        "pdfUrl": "http://arxiv.org/pdf/2506.22486",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Dissecting Deception in Large Language Models: Mechanisms, Behaviours, and Detection",
+        "authors": [
+          "Jalan P",
+          "Ali A",
+          "Dras M",
+          "Naseem U."
+        ],
+        "year": 2026,
+        "venue": "Preprints.org",
+        "abstract": "Large language models increasingly produce falsehoods that are not mere mistakes. They withhold what they know, flatter users against the evidence, justify answers with reasoning they did not use, conceal capabilities from evaluators, and behave differently under observation. Such behaviour is goal-directed and sensitive to incentives, unlike hallucination, an unintended error with no objective to…",
+        "url": "https://doi.org/10.20944/preprints202610.0808.v1",
+        "doi": "10.20944/preprints202610.0808.v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination Detection in Large Language Models by Classifying Information Sources",
+        "authors": [],
+        "year": 2025,
+        "venue": "EWA Publishing",
+        "url": "https://doi.org/10.54254/2755-2721/2026.tj30007",
+        "doi": "10.54254/2755-2721/2026.tj30007",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": false
+      },
+      {
+        "title": "UniHall: Universal Hallucination Fuzzing for Multimodal Large Language Models",
+        "authors": [
+          "ZHOU, Pengfei",
+          "Song, Jiajun"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "url": "https://zenodo.org/records/17753490",
+        "doi": "10.5281/zenodo.17753490",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "ChatENT: Augmented Large Language Model for Expert Knowledge Retrieval in Otolaryngology-Head and Neck Surgery.",
+        "authors": [
+          "Long C",
+          "Subburam D",
+          "Lowe K",
+          "Dos Santos A",
+          "Zhang J",
+          "Hwang S",
+          "Saduka N",
+          "Horev Y",
+          "Su T",
+          "Côté DWJ",
+          "Wright ED"
+        ],
+        "year": 2024,
+        "venue": "Otolaryngology--head and neck surgery : official journal of American Academy of Otolaryngology-Head and Neck Surgery",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38895862/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": false
+      },
+      {
+        "title": "Unleashing the Potential of Large Language Models in Urban Data Analytics: A Review of Emerging Innovations and Future Research",
+        "authors": [
+          "Feifeng Jiang",
+          "Jun Ma",
+          "Yuping Jin"
+        ],
+        "year": 2025,
+        "venue": "Smart Cities",
+        "abstract": "This paper presents a comprehensive review of emerging innovations and future research directions leveraging Large Language Models (LLMs) for urban data analytics, examining how cities generate, structure, and use information to support planning and operational decisions. While LLMs show promise in addressing critical challenges faced by urban stakeholders—including data integration, accessibility…",
+        "url": "https://www.mdpi.com/2624-6511/8/6/201",
+        "doi": "10.3390/smartcities8060201",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "BanglaDiaHallu: Hallucinations of large language models and the effect of guideline-grounded retrieval-augmented generation in Bangla diabetes question answering",
+        "authors": [
+          "Nahid KH",
+          "Anam M",
+          "Saon MTH",
+          "Any OH",
+          "Hassan KMR",
+          "Anwar MM."
+        ],
+        "year": 2026,
+        "venue": "medRxiv",
+        "abstract": "Large language models (LLMs) are increasingly consulted for health advice, but they can produce fluent statements that are false or unsupported, known as hallucinations, and this risk is poorly characterised in low-resource languages such as Bangla. We measured hallucinations of locally deployable open-weight LLMs in Bangla diabetes question answering and tested whether retrieval-augmented generat…",
+        "url": "https://doi.org/10.64898/2026.10.14.26365587",
+        "doi": "10.64898/2026.10.14.26365587",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Mitigating Multimodal Hallucination via Phase-wise Self-reward",
+        "authors": [
+          "Yu Zhang",
+          "Chuyang Sun",
+          "Kehai Chen",
+          "Xuefeng Bai",
+          "Yang Xiang",
+          "Min Zhang"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Large Vision-Language Models (LVLMs) still struggle with vision hallucination, where generated responses are inconsistent with the visual input. Existing methods either rely on large-scale annotated data for fine-tuning, which incurs massive computational overhead, or employ static post-hoc strategies that overlook the dynamic nature of hallucination emergence. To address these, we introduce a new self-rewarding framework, enabling dynamic hallucination mitigation at inference time without external supervision. On the empirical side, we reveal that visual hallucination exhibits phase-wise dynamic patterns, peaking at the onset of each semantic phase. Drawing on these insights, we propose \\textbf{PSRD} (\\textbf{Phase-wise \\textbf{S}elf-\\textbf{R}eward \\textbf{D}ecoding) for online hallucination correction guided by phase-wise self-reward signals. To reduce the cost of repeated self-evaluation during decoding, we distill the hallucination guidance signal from LVLMs into a lightweight reward model. The reward model subsequently provides on-the-fly guidance for targeted intervention during the decoding process, enabling precise hallucination suppression. The proposed PSRD significantly reduces the hallucination rate of LLaVA-1.5-7B by 50.0% and consistently outperforms existing post-hoc methods across five hallucination evaluation benchmarks for four LVLMs. Further analysis confirms that PSRD effectively mitigates hallucination propagation and achieves a highly controllable trade-off between strong performance and inference efficiency.",
+        "url": "http://arxiv.org/abs/2604.17982",
+        "pdfUrl": "http://arxiv.org/pdf/2604.17982",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "OpenHalDet: A Unified Benchmark for Hallucination Detection across Diverse Generation Scenarios",
+        "authors": [
+          "Xinyi Li",
+          "Zhen Fang",
+          "Yongxin Deng",
+          "Jinyuan Luo",
+          "Hongnan Ma",
+          "Changdae Oh",
+          "Zijing Shi",
+          "Shanshan Ye",
+          "Hanchen Wang",
+          "Shu-Lin Chen",
+          "Yadan Luo",
+          "Mengyue Yang",
+          "Sean Du",
+          "Sharon Li",
+          "Ling Chen"
+        ],
+        "year": 2026,
+        "venue": "arXiv 预印本",
+        "abstract": "Hallucination detection is essential for the reliable deployment of large language models (LLMs). However, existing evaluations face two core challenges: inconsistent inference configuration and evaluation, and limited coverage of downstream domains and tasks. Consequently, reported detector performance is often difficult to compare, reproduce, and generalize beyond specific experimental settings. We introduce OpenHalDet, a unified benchmark for hallucination detection across diverse generation scenarios. OpenHalDet standardizes the evaluation pipeline, from prompt construction and response generation to truthfulness annotation, detector scoring, and metric computation. It supports heterogeneous detector families under different access settings, including black-box methods that use only generated outputs, gray-box methods that rely on probability-based signals, and white-box methods that exploit internal model signals. By bringing diverse tasks, models, and detectors into a shared framework, OpenHalDet enables controlled comparison and provides a systematic view of how different detection paradigms behave in LLM applications. We release OpenHalDet as an open and extensible codebase to facilitate reproducible evaluation and future development of hallucination detection methods. The code and datasets are available at https://github.com/Nellie179/Hallucination-Detection.",
+        "url": "http://arxiv.org/abs/2606.06959",
+        "pdfUrl": "http://arxiv.org/pdf/2606.06959",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "THE LANDRY AGI MODEL: A DUAL- PROCESS ARCHITECTURE FOR GROUNDED ARTIFICIAL INTELLIGENCE",
+        "authors": [
+          "Landry, Marie Seshat"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This paper formalizes the Landry AGI Model, a theoretical framework that addresses the hallucination problem in Large Language Models (LLMs) through the architectural separation of deterministic fact processing from probabilistic narrative generation.",
+        "url": "https://zenodo.org/records/19016360",
+        "pdfUrl": "https://zenodo.org/api/records/19016360/files/THE%20LANDRY%20AGI%20MODEL%20-%20A%20DUAL-%20PROCESS%20ARCHITECTURE%20FOR%20GROUNDED%20ARTIFICIAL%20INTELLIGENCE.pdf/content",
+        "doi": "10.5281/zenodo.19016360",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "The Mirage of Knowledge: Analyzing the Roots and Impacts of LLM Hallucination in Education",
+        "authors": [
+          "Biradar, Maheshwari",
+          "Sonavale, Nidhish"
+        ],
+        "year": 2026,
+        "venue": "Journal of Research & Development",
+        "abstract": "Abstract &nbsp; The rapid advancement of Artificial Intelligence (AI), particularly in Large Language Models (LLMs), is restructuring the way humans acquire knowledge. As LLMs are being widely adopted across a variety of sectors, their integration in the educational sector presents critical challenges. One such critical challenge is hallucination. Hallucination refers to a model generating plausib…",
+        "url": "https://zenodo.org/records/18707654",
+        "pdfUrl": "https://zenodo.org/api/records/18707654/files/180214.pdf/content",
+        "doi": "10.5281/zenodo.18707654",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "A Metric-Aware Analysis of Trigger-Guided Adapter Training for Hallucination Mitigation",
+        "authors": [
+          "Junjun Zhang",
+          "Giseop Noh"
+        ],
+        "year": 2026,
+        "venue": "IEEE Access",
+        "abstract": "Large language models can produce fluent responses that are unsupported by the provided evidence or inconsistent with reference answers. Adapter-based fine-tuning offers a practical way to modify model behavior without updating all model parameters, but its effect on hallucination mitigation depends strongly on how improvement is measured. This paper presents TruthShield, a metric-aware trigger-gu…",
+        "url": "https://ieeexplore.ieee.org/document/11623196/",
+        "doi": "10.1109/ACCESS.2026.3716949",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Models in Medicine: Applications, Challenges, and Future Directions.",
+        "authors": [
+          "Yu E",
+          "Chu X",
+          "Zhang W",
+          "Meng X",
+          "Yang Y",
+          "Ji X",
+          "Wu C"
+        ],
+        "year": 2025,
+        "venue": "International journal of medical sciences",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40520893/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12163604/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Models in Medical Diagnostics: Scoping Review With Bibliometric Analysis.",
+        "authors": [
+          "Su H",
+          "Sun Y",
+          "Li R",
+          "Zhang A",
+          "Yang Y",
+          "Xiao F",
+          "Duan Z",
+          "Chen J",
+          "Hu Q",
+          "Yang T",
+          "Xu B",
+          "Zhang Q"
+        ],
+        "year": 2025,
+        "venue": "Journal of medical Internet research",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40489764/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12186007/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Mechanism-aware benchmarking of large language models as learning aids in pediatric difficult airway training: true hallucinations vs. false contraindications.",
+        "authors": [
+          "Yediyıldız MB",
+          "Durmuş İ."
+        ],
+        "year": 2026,
+        "abstract": "BackgroundLarge language models (LLMs) are being investigated for their potential applications in perioperative decision-making and as informal \"just-in-time\" learning tools for trainees. This study evaluated five LLMs in pediatric difficult-airway management using a mechanism-aware scoring approach that distinguishes true hallucinations from false contraindications and examines their suitability …",
+        "url": "https://doi.org/10.1186/s12909-026-10509-y",
+        "doi": "10.1186/s12909-026-10509-y",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "TA-RAG: Confidence-Calibrated Statement-Level Verification for Hallucination Resilient Regulatory Knowledge Systems",
+        "authors": [
+          "Sakshi More",
+          "Dnyaneshwari Pawar",
+          "Vedika Sardeshmukh",
+          "Vedanti Ghongade",
+          "Prof. A. A. Mohite"
+        ],
+        "year": 2026,
+        "venue": "Recent Trends in Information Technology and its Application",
+        "abstract": "Despite the&ensp;heavily deployment of large language model (LLM) integrated with Retrieval Augmented Generation (RAG) for enterprise&rsquo;s regulatory systems, they still generate hallucinated responses unsupported by the retrieved information. In highstakes areas such as banking, legal compliances, this can present potentially&ensp;real liability and operational risks. In this paper, we propose…",
+        "url": "https://zenodo.org/records/19479716",
+        "pdfUrl": "https://zenodo.org/api/records/19479716/files/CSE07-ICETIS-2026%20TA-RAG%20Confidence.pdf/content",
+        "doi": "10.5281/zenodo.19479716",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Large Language Models: A Guide for Radiologists.",
+        "authors": [
+          "Kim S",
+          "Lee CK",
+          "Kim SS"
+        ],
+        "year": 2024,
+        "venue": "Korean journal of radiology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38288895/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10831297/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "How do language models learn facts? Dynamics, curricula and hallucinations",
+        "authors": [
+          "Nicolas Zucchet",
+          "Jörg Bornschein",
+          "Stephanie Chan",
+          "Andrew Lampinen",
+          "Razvan Pascanu",
+          "Soham De"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Large language models accumulate vast knowledge during pre-training, yet the dynamics governing this acquisition remain poorly understood. This work investigates the learning dynamics of language models on a synthetic factual recall task, uncovering three key findings: First, language models learn in three phases, exhibiting a performance plateau before acquiring precise factual knowledge. Mechanistically, this plateau coincides with the formation of attention-based circuits that support recall. Second, the training data distribution significantly impacts learning dynamics, as imbalanced distributions lead to shorter plateaus. Finally, hallucinations emerge simultaneously with knowledge, and integrating new knowledge into the model through fine-tuning is challenging, as it quickly corrupts its existing parametric memories. Our results emphasize the importance of data distribution in knowledge acquisition and suggest novel data scheduling strategies to accelerate neural network training.",
+        "url": "http://arxiv.org/abs/2503.21676",
+        "pdfUrl": "http://arxiv.org/pdf/2503.21676",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "First Hallucination Tokens Are Different from Conditional Ones",
+        "authors": [
+          "Jakob Snel",
+          "Seong Joon Oh"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Large Language Models (LLMs) hallucinate, and detecting these cases is key to ensuring trust. While many approaches address hallucination detection at the response or span level, recent work explores token-level detection, enabling more fine-grained intervention. However, the distribution of hallucination signal across sequences of hallucinated tokens remains unexplored. We leverage token-level annotations from the RAGTruth corpus and find that the first hallucinated token is far more detectable than later ones. This structural property holds across models, suggesting that first hallucination tokens play a key role in token-level hallucination detection. Our code is available at https://github.com/jakobsnl/RAGTruth_Xtended.",
+        "url": "http://arxiv.org/abs/2507.20836",
+        "pdfUrl": "http://arxiv.org/pdf/2507.20836",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Mitigating Hallucination Cascades in Multi-Agent Systems via Consensus-Aware Knowledge Verification",
+        "authors": [
+          "Sheng F",
+          "Li S",
+          "Yang G",
+          "Ma W",
+          "Li Y."
+        ],
+        "year": 2026,
+        "venue": "Preprints.org",
+        "abstract": "Large Language Model (LLM)-based multi-agent systems have demonstrated strong capabilities in complex task automation. However, these systems suffer from a critical vulnerability: hallucination cascade, where erroneous information generated by one agent propagates through the system and is amplified by downstream agents. We propose Dynamic Consensus Auditing (DCA), a novel framework that introduce…",
+        "url": "https://doi.org/10.20944/preprints202610.1511.v1",
+        "doi": "10.20944/preprints202610.1511.v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "EXPLORING HALLUCINATIONS IN LARGE LANGUAGE MODELS (LLMs): A SYSTEMATIC REVIEW OF TYPOLOGIES, ORIGINS, AND MITIGATION APPROACHES",
+        "authors": [
+          "ITAMAR E. SHABTAI",
+          "AMAL ALTALHI",
+          "ITAMAR E. SHABTAI",
+          "AMAL ALTALHI"
+        ],
+        "year": 2026,
+        "venue": "Zenodo",
+        "url": "https://dx.doi.org/10.5281/zenodo.18998810",
+        "doi": "10.5281/zenodo.18998810",
+        "type": "other",
+        "source": "openaire",
+        "sourceName": "OpenAIRE",
+        "openAccess": true
+      },
+      {
+        "title": "Question-answering enhancement method for large educational models based on re-ranking and post-retrieval reflection",
+        "authors": [
+          "SUN Haoran",
+          "WANG Zhihao",
+          "WU Yifan",
+          "GAO Xiaoying",
+          "XIANG Yang"
+        ],
+        "year": 2025,
+        "venue": "大数据",
+        "abstract": "Computer education is one of the requirements of modern information society education. With the development of large language models, there has been increasing attention on applying of large language models to the computer education process. However, the hallucination problem associated with large language models poses significant challenges to their application. To solve the challenges, RAG techn…",
+        "url": "http://www.j-bigdataresearch.com.cn/zh/article/109538360/",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "The use of large language models in clinical documentation: A scoping review.",
+        "authors": [
+          "Woo BFY",
+          "Cato K",
+          "Cho H",
+          "You SB",
+          "Song J"
+        ],
+        "year": 2026,
+        "venue": "International journal of nursing studies",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41512731/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": false
+      },
+      {
+        "title": "Large language models for clinical decision support in gastroenterology and hepatology.",
+        "authors": [
+          "Wiest IC",
+          "Bhat M",
+          "Clusmann J",
+          "Schneider CV",
+          "Jiang X",
+          "Kather JN"
+        ],
+        "year": 2025,
+        "venue": "Nature reviews. Gastroenterology & hepatology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40846793/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": false
+      },
+      {
+        "title": "Teaching SQL with an Agentic LLM: A Fifteen-Category Hallucination Taxonomy and Context-Pack Mitigation Strategy for Claude Sonnet 5",
+        "authors": [
+          "Di Felice P."
+        ],
+        "year": 2026,
+        "venue": "Preprints.org",
+        "abstract": "Text-to-SQL generation with large language models (LLMs) is increasingly used in database teaching, yet it remains susceptible to hallucination: the production of syntactically valid but referentially or semantically incorrect queries. This paper proposes a working taxonomy of fifteen hallucination categories in text-to-SQL generation, spanning schema-referential errors, join and cardinality error…",
+        "url": "https://doi.org/10.20944/preprints202609.2080.v1",
+        "doi": "10.20944/preprints202609.2080.v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Hallucination-Reduced and Robust Accuracy Unit Test Generation",
+        "authors": [
+          "Metin Deder",
+          "Simay Sahin",
+          "Merve Yilmazer",
+          "Mehmet Karaköse"
+        ],
+        "year": 2026,
+        "venue": "International Journal of Management and Data Analytics",
+        "abstract": "\nAutomated unit testing methods in the software development process are crucial for reducing costs, improving product quality, and ensuring system reliability. While current Large Language Models (LLMs) are highly successful in general-purpose code generation, they may fall short in ensuring structural integrity and producing executable code in industrial fields such as C++ and ROS 2, where memory…",
+        "url": "https://ijmada.com/index.php/ijmada/article/view/125",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Survey on Retrieval-Augmented Generation for Task Planning",
+        "authors": [
+          "MA Yibo, CHEN Xiliang, ZHANG Legui, LAI Jun"
+        ],
+        "year": 2026,
+        "venue": "Jisuanji kexue yu tansuo",
+        "abstract": "Retrieval-augmented generation (RAG) technology has become a key paradigm for improving the accuracy of large language model task response by dynamically integrating external knowledge to effectively alleviate the hallucination problem and knowledge timeliness of large language models. However, how to efficiently utilize the retrieval-augmented generation architecture to adapt to the planning requ…",
+        "url": "http://fcst.ceaj.org/fileup/1673-9418/PDF/2510018.pdf",
+        "pdfUrl": "http://fcst.ceaj.org/fileup/1673-9418/PDF/2510018.pdf",
+        "doi": "10.3778/j.issn.1673-9418.2510018",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "A Layout-Aware Hybrid Retrieval-Augmented Generation Framework for Mitigating Hallucination in Turkish Texts: Evidence from the Turkish Official Gazette",
+        "authors": [
+          "Sarıyıldız S",
+          "Yağcı M."
+        ],
+        "year": 2026,
+        "venue": "Preprints.org",
+        "abstract": "Large language models (LLMs) hallucinate, limiting their trustworthy use in zero-error-tolerance domains such as law. We present a layout-aware, hybrid retrieval-augmented generation (RAG) system for answering questions over the Turkish Official Gazette, the most binding source in the Turkish legal system. The pipeline uses IBM Docling for hierarchical layout analysis, preserving the article-parag…",
+        "url": "https://doi.org/10.20944/preprints202610.0038.v1",
+        "doi": "10.20944/preprints202610.0038.v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Faulty artificial intelligence, or the sleep of reason",
+        "authors": [
+          "Wiest, Gerald",
+          "Turnbull, Oliver"
+        ],
+        "year": 2025,
+        "venue": "New England Journal of Medicine AI",
+        "abstract": "This perspective argues that the term &ldquo;AI hallucination&rdquo; is a misnomer, contending that large language model errors more closely resemble confabulation &mdash; active, fabricated outputs &mdash; rather than hallucination, which implies conscious perception.",
+        "url": "https://zenodo.org/records/17153654",
+        "pdfUrl": "https://zenodo.org/api/records/17153654/files/Wiest-AAM.pdf/content",
+        "doi": "10.1056/AIp2500785",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Task-Specific QLoRA Adaptation in RAG-Based Information Extraction from Research Articles",
+        "authors": [
+          "Yılmaz Dikilitaş",
+          "Ahmet Sayar",
+          "Furkan Göz"
+        ],
+        "year": 2026,
+        "venue": "Applied Sciences",
+        "abstract": "Large Language Models have shown considerable potential for academic document understanding, but their use in information extraction remains limited by hallucination and incomplete evidence grounding. This study presents an end-to-end Retrieval-Augmented Generation framework using a domain-adapted Llama 3.1 8B Instruct model. Generation reliability is evaluated through faithfulness, answer relevan…",
+        "url": "https://www.mdpi.com/2076-3417/16/16/8294",
+        "doi": "10.3390/app16168294",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "SOCRATES-300K",
+        "authors": [
+          "Emanuele Ricco",
+          "Onofri, Elia",
+          "Cima, Lorenzo",
+          "Cresci, Stefano",
+          "Di Pietro, Roberto"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "SOCRATES-300K: Large-Scale Hallucination Detection Dataset for Language Models SOCRATES-300K is a dataset of 297,795 model responses across 10 open-source language models with verified hallucination labels, embeddings, for comparing hallucination detection methods.&nbsp; It accompanies the paper \" A Geometric Analysis of Small-sized Language Model Hallucinations \" (Ricco, Onofri, Cima, Cresci, Di …",
+        "url": "https://zenodo.org/records/20256463",
+        "doi": "10.5281/zenodo.20256463",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Supplementary Materials of Med-RISE",
+        "authors": [
+          "Yingfeng, Zheng"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Supplementary Materials: ž &nbsp;&nbsp; Table S1. Overview of Large Language Models used in the study. ž &nbsp;&nbsp; Table S2. Summary of the medical question- answering datasets used in the study. ž &nbsp;&nbsp; Figure S1. Example of hallucination types in Chain of Thought (CoT) reasoning in each Large Language Model (Sample 1). ž &nbsp;&nbsp; Figure S2. Example of hallucination types in Chain o…",
+        "url": "https://zenodo.org/records/14302043",
+        "doi": "10.5281/zenodo.14302043",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Fact-Controlled Diagnosis of Hallucinations in Medical Text Summarization",
+        "authors": [
+          "Suhas BN",
+          "Han-Chin Shing",
+          "Lei Xu",
+          "Mitch Strong",
+          "Jon Burnsky",
+          "Jessica Ofor",
+          "Jordan R. Mason",
+          "Susan Chen",
+          "Sundararajan Srinivasan",
+          "Chaitanya Shivade",
+          "Jack Moriarty",
+          "Joseph Paul Cohen"
+        ],
+        "year": 2025,
+        "venue": "arXiv 预印本",
+        "abstract": "Hallucinations in large language models (LLMs) during summarization of patient-clinician dialogues pose significant risks to patient care and clinical decision-making. However, the phenomenon remains understudied in the clinical domain, with uncertainty surrounding the applicability of general-domain hallucination detectors. The rarity and randomness of hallucinations further complicate their investigation. In this paper, we conduct an evaluation of hallucination detection methods in the medical domain, and construct two datasets for the purpose: A fact-controlled Leave-N-out dataset -- generated by systematically removing facts from source dialogues to induce hallucinated content in summaries; and a natural hallucination dataset -- arising organically during LLM-based medical summarization. We show that general-domain detectors struggle to detect clinical hallucinations, and that performance on fact-controlled hallucinations does not reliably predict effectiveness on natural hallucinations. We then develop fact-based approaches that count hallucinations, offering explainability not available with existing methods. Notably, our LLM-based detectors, which we developed using fact-controlled hallucinations, generalize well to detecting real-world clinical hallucinations. This research contributes a suite of specialized metrics supported by expert-annotated datasets to advance faithful clinical summarization systems.",
+        "url": "http://arxiv.org/abs/2506.00448",
+        "pdfUrl": "http://arxiv.org/pdf/2506.00448",
+        "type": "preprint",
+        "source": "arxiv",
+        "sourceName": "arXiv",
+        "openAccess": true
+      },
+      {
+        "title": "Hallucination Rates and Reference Accuracy of ChatGPT and Bard for Systematic Reviews: Comparative Analysis.",
+        "authors": [
+          "Chelli M",
+          "Descamps J",
+          "Lavoué V",
+          "Trojani C",
+          "Azar M",
+          "Deckert M",
+          "Raynier JL",
+          "Clowez G",
+          "Boileau P",
+          "Ruetsch-Chelli C"
+        ],
+        "year": 2024,
+        "venue": "Journal of medical Internet research",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38776130/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11153973/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "Benchmarking retrieval augmented generation LLMs for Arabic noise robustness",
+        "authors": [
+          "Saleh Almohaimeed",
+          "Abdulrahman Alabduljabbar",
+          "Mousa Jari",
+          "Mohammed Alkhowaiter",
+          "Saad Almohaimeed",
+          "Mohamad Mahmoud Al Rahhal"
+        ],
+        "year": 2026,
+        "venue": "Frontiers in Big Data",
+        "abstract": "Hallucination has become a serious concern in large language models (LLMs), as these models can generate useful yet incorrect or misleading information, which has led to growing research interest in retrieval-augmented generation (RAG) as a mitigation approach. RAG provides LLMs with access to external information, such as databases or documents, which can help them to answer users' questions. Cur…",
+        "url": "https://www.frontiersin.org/articles/10.3389/fdata.2026.1884673/full",
+        "doi": "10.3389/fdata.2026.1884673",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Reference Hallucination in AI-Assisted Restorative Dentistry Education: An Educational Risk Assessment Using the Reference Hallucination Score Framework.",
+        "authors": [
+          "Yildirim Manav E",
+          "Usta SN."
+        ],
+        "year": 2026,
+        "abstract": "PurposeArtificial intelligence (AI) chatbots are increasingly used by dental students and faculty for literature review, coursework preparation, and scholarly writing. In restorative dentistry education, where evidence-based decision-making is fundamental, inaccurate AI-generated citations may pose educational risks. This study evaluated the bibliographic reliability of AI-generated references in …",
+        "url": "https://doi.org/10.1111/eje.70321",
+        "doi": "10.1111/eje.70321",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Evidence-Grounded Retrieval- Augmented Generation and Knowledge-Graph Grounding for Patient-Safety Reasoning: A Comparative Evaluation",
+        "authors": [
+          "Moghadam ST",
+          "Jabin MSR."
+        ],
+        "year": 2026,
+        "venue": "Research Square",
+        "abstract": "Abstract Background Large language models offer promising capabilities for clinical reasoning, but unsupported claims, hallucinations, limited evidence traceability, and inconsistent reasoning constrain their use in patient-safety applications. Retrieval-augmented generation and structured knowledge representations may complement each other to improve output reliability. Objective This study evalu…",
+        "url": "https://doi.org/10.21203/rs.3.rs-11233939/v1",
+        "doi": "10.21203/rs.3.rs-11233939/v1",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "Toward explainable traffic crash liability analysis via neural-symbolic multimodal reasoning: Integrating visual perception with legal knowledge graphs.",
+        "authors": [
+          "Xu J",
+          "Chen Y",
+          "Hu X",
+          "Xie Y",
+          "Zhang X",
+          "Yin J",
+          "Wang C."
+        ],
+        "year": 2026,
+        "abstract": "Determining traffic crash liability relies on rigorous on-site evidence and legal provisions and involves substantial manual intervention and potential human error. However, intelligent traffic monitoring systems focus on detection and tracking and cannot provide structured, rule-grounded decision support for formal crash-liability analysis. Moreover, emerging multimodal large language models (MLL…",
+        "url": "https://doi.org/10.1016/j.aap.2026.108813",
+        "doi": "10.1016/j.aap.2026.108813",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": false
+      },
+      {
+        "title": "CLSeq and Nscp: novel methods for reducing hallucinations in text summarization for pre-trained models and LLMs",
+        "authors": [
+          "Ben Lu",
+          "Xianchuan Wang",
+          "Wenkai Ming",
+          "Xianchao Wang"
+        ],
+        "year": 2025,
+        "venue": "Journal of Big Data",
+        "abstract": "Abstract With the advancement of text summarization technology, the issue of hallucinations in summaries has garnered increasing attention. Pretrained models often incorporate additional factual information to minimize the occurrence of hallucinations. In research on text summarization using LLMs, accurate samples are typically provided via a chain-of-thought approach, enabling the model to learn …",
+        "url": "https://doi.org/10.1186/s40537-025-01290-8",
+        "doi": "10.1186/s40537-025-01290-8",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Library Transformation in the Age of AI Agents: Service Reconfiguration and Governance Framework Based on the OpenClaw Architecture",
+        "authors": [
+          "LIU Wei, JIN Jiaqin"
+        ],
+        "year": 2026,
+        "venue": "Nongye tushu qingbao xuebao",
+        "abstract": "[Purpose/Significance] The rapid evolution of artificial intelligence technologies from dialogue-based generation to autonomous task execution marks a paradigm shift with profound implications for library services. A new generation of AI agents, exemplified by the open-source project OpenClaw, can independently plan multi-step tasks, invoke external tools, operate computer interfaces through visua…",
+        "url": "http://nytsqb.aiijournal.com/fileup/1002-1248/PDF/1775116535001-860133557.pdf",
+        "pdfUrl": "http://nytsqb.aiijournal.com/fileup/1002-1248/PDF/1775116535001-860133557.pdf",
+        "doi": "10.13998/j.cnki.issn1002-1248.26-0120",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "The Right to Refuse: A First-Order Safety Primitive for Generative AI (including DABA 3.0 Enforcement Protocol)",
+        "authors": [
+          "Greene, Andrew"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "In 1950, cybernetics pioneer Norbert Wiener warned that any machine lacking a rigorous feedback loop to grounded reality would inevitably produce catastrophic entropy. Today, the widespread deployment of autoregressive models without runtime epistemic interlocks, despite documented failure rates in regulated domains, demonstrates that the Generative AI industry has largely ignored this physical la…",
+        "url": "https://zenodo.org/records/19970815",
+        "pdfUrl": "https://zenodo.org/api/records/19970815/files/DABA_3.0.pdf/content",
+        "doi": "10.5281/zenodo.19970815",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Alpha Omega LLM GOOD:controllo termodinamico e profili di errore in un simulatore cognitivo stocastico",
+        "authors": [
+          "BULLA, Francesco"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Simulatore di cognizione termodinamica con governatore energetico: il paper dimostra che GOOD riduce le allucinazioni solo astenendosi, mentre la protezione della memoria le elimina alla radice. &nbsp; A thermodynamic-cognition simulator with an energy governor: the report shows GOOD reduces hallucinations only by abstaining, while structural memory protection eliminates them at the root.",
+        "url": "https://zenodo.org/records/22032916",
+        "pdfUrl": "https://zenodo.org/api/records/22032916/files/v3.pdf/content",
+        "doi": "10.5281/zenodo.22032916",
+        "type": "preprint",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "ChatGPT as a Tool for Biostatisticians: A Tutorial on Applications, Opportunities, and Limitations.",
+        "authors": [
+          "Dobler D",
+          "Binder H",
+          "Boulesteix AL",
+          "Igelmann JB",
+          "Köhler D",
+          "Mansmann U",
+          "Pauly M",
+          "Scherag A",
+          "Schmid M",
+          "Al Tawil A",
+          "Weber S"
+        ],
+        "year": 2025,
+        "venue": "Statistics in medicine",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41128019/",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12548020/pdf/",
+        "type": "journal",
+        "source": "pubmed",
+        "sourceName": "PubMed",
+        "openAccess": true
+      },
+      {
+        "title": "A retrieval-augmented multi-stage prompting framework for legal analysis in the Indian judicial system",
+        "authors": [
+          "Kanishkavardhan P.",
+          "Gowtham S.",
+          "Maheswari N."
+        ],
+        "year": 2026,
+        "venue": "Frontiers in Big Data",
+        "abstract": "The aim of this endeavor was to create an Artificial Intelligence (AI) based legal researcher that utilizes a multi-stage Retrieval-Augmented Generation (RAG) methodology to solve the challenges of finding and comprehending pertinent legal information in the documents. The traditional methods for finding legal documents will usually yield very few results that are useful to someone without a law d…",
+        "url": "https://www.frontiersin.org/articles/10.3389/fdata.2026.1933830/full",
+        "doi": "10.3389/fdata.2026.1933830",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "LLM-Based XAI Framework for Neurofibromatosis Classification",
+        "authors": [
+          "Mehmet Ulvi Simsek"
+        ],
+        "year": 2026,
+        "venue": "IEEE Access",
+        "abstract": "Half of individuals with neurofibromatosis (NF) inherit the disorder from an affected parent, while the remaining cases arise from sporadic. Neurofibromatosis data is generally tabular that ML algorithms have shown successful results on tabular data. However, insufficient data is a significant factor affecting performance. There is an also another limitations as clinical interpretability&#x2014;an…",
+        "url": "https://ieeexplore.ieee.org/document/11499407/",
+        "doi": "10.1109/ACCESS.2026.3688620",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "Grounded Knowledge Graph Extraction via LLMs: An Anchor-Constrained Framework with Provenance Tracking",
+        "authors": [
+          "Yuzhao Yang",
+          "Genlang Chen",
+          "Binhua He",
+          "Yan Zhao"
+        ],
+        "year": 2026,
+        "venue": "Computers",
+        "abstract": "Knowledge graphs represent real-world facts as structured triplets and underpin a wide range of applications, including question answering, recommendation, and retrieval-augmented generation. Automatically extracting such triplets from unstructured text is essential for scalable knowledge base construction. Traditional extraction methods require task-specific training data and struggle to generali…",
+        "url": "https://www.mdpi.com/2073-431X/15/3/178",
+        "doi": "10.3390/computers15030178",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "From Policy to Practice: A Systematic Literature Review of AI-Driven Knowledge Base Construction for Cybersecurity Compliance",
+        "authors": [
+          "Luis-Carlos Herrera",
+          "Justinas Janulevicius",
+          "Andrea Pinto",
+          "Yezid Donoso"
+        ],
+        "year": 2026,
+        "venue": "IEEE Access",
+        "abstract": "Managing the lifecycle of cybersecurity policies from high-level governance documents to low-level technical implementation remains prone to human error and operational inefficiency. With the rapid evolution of Infrastructure as Code (IaC) and the increasing volume of regulatory standards, there is a critical need for automated methods to bridge the gap between &#x201C;what is written&#x201D; (Pol…",
+        "url": "https://ieeexplore.ieee.org/document/11551581/",
+        "doi": "10.1109/ACCESS.2026.3700565",
+        "type": "journal",
+        "source": "doaj",
+        "sourceName": "DOAJ",
+        "openAccess": true
+      },
+      {
+        "title": "GraphNarrative",
+        "authors": [
+          "Shi, Xiao"
+        ],
+        "year": 2023,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "A graph-to-text dataset",
+        "url": "https://zenodo.org/records/12908748",
+        "doi": "10.5281/zenodo.12908748",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "AI-assisted taxonomic publishing: a human-supervised workflow and engineered prompt for Zootaxa authors",
+        "authors": [
+          "Yin, Zi-Wei"
+        ],
+        "year": 2026,
+        "venue": "Zootaxa",
+        "abstract": "Yin, Zi-Wei (2026): AI-assisted taxonomic publishing: a human-supervised workflow and engineered prompt for Zootaxa authors. Zootaxa 5782 (3): 543-556, DOI: 10.11646/zootaxa.5782.3.7, URL: https://doi.org/10.11646/zootaxa.5782.3.7",
+        "url": "https://zenodo.org/records/21137697",
+        "doi": "10.11646/zootaxa.5782.3.7",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      }
+    ],
+    "errors": [
+      "OpenAlex: OpenAlex HTTP 429",
+      "DBLP: Unexpected token '<', \"<!doctype \"... is not valid JSON"
+    ]
+  }
+}

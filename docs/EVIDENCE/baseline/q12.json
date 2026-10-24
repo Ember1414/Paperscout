@@ -1,0 +1,1025 @@
+{
+  "requestUrl": "https://paperscout.pages.dev/api/search?q=%27%3B+DROP+TABLE+favorites%3B--&limit=20",
+  "response": {
+    "cached": false,
+    "total": 60,
+    "page": 1,
+    "language": "all",
+    "paperType": "all",
+    "sourcesOk": 6,
+    "sourcesTotal": 11,
+    "cooldown": [
+      "OpenAlex",
+      "Semantic Scholar",
+      "PubMed",
+      "DBLP"
+    ],
+    "papers": [
+      {
+        "title": "Artifacts Package - \"Why don't Developers Detect Improper Input Validation? '; DROP TABLE Papers; --\"",
+        "authors": [
+          "Larissa",
+          "Enrico",
+          "Gül",
+          "Alberto"
+        ],
+        "year": 2020,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Artifacts Package of the accepted ICSE 21 paper: &quot;Why don&rsquo;t Developers Detect Improper Input Validation? &#39;; DROP TABLE Papers; --&quot;. See README.md for more information.&nbsp;",
+        "url": "https://zenodo.org/records/3996696",
+        "doi": "10.5281/zenodo.3996696",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "drop table, n.",
+        "authors": [],
+        "year": 2026,
+        "venue": "Oxford English Dictionary",
+        "url": "https://doi.org/10.1093/oed/3699663529",
+        "doi": "10.1093/oed/3699663529",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Physics informed machine learning for predictive toxicology and optimization of curcumin nanocarriers.",
+        "authors": [
+          "Rahdar A",
+          "Fathi-Karkan S."
+        ],
+        "year": 2026,
+        "abstract": "Curcumin's clinical utility is limited by poor bioavailability and dose-dependent toxicity. Although nano-encapsulation can address these shortcomings, rationally optimizing nanocarrier biosafety remains challenging due to the highly multidimensional design space. Here, we develop an interpretable Physics-Informed Machine Learning (PIML) framework that integrates experimental data from 75 curcumin…",
+        "url": "https://doi.org/10.1038/s41598-025-34282-y",
+        "pdfUrl": "https://europepmc.org/articles/PMC12858851/pdf",
+        "doi": "10.1038/s41598-025-34282-y",
+        "citations": 6,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "A comparative analysis of intravenous infusion methods for low-resource environments.",
+        "authors": [
+          "Tomobi O",
+          "Avoian S",
+          "Ekwere I",
+          "Waghmare S",
+          "Diaban F",
+          "Davis G",
+          "Sy Y",
+          "Ogbonna O",
+          "Streete K",
+          "Aryee E",
+          "Kulasingham V",
+          "Sampson JB."
+        ],
+        "year": 2024,
+        "abstract": "IntroductionIntravenous (IV) therapy is a crucial aspect of care for the critically ill patient. Barriers to IV infusion pumps in low-resource settings include high costs, lack of access to electricity, and insufficient technical support. Inaccuracy of traditional drop-counting practices places patients at risk. By conducting a comparative assessment of IV infusion methods, we analyzed the efficac…",
+        "url": "https://doi.org/10.3389/fmed.2024.1326144",
+        "pdfUrl": "https://europepmc.org/articles/PMC10912611/pdf",
+        "doi": "10.3389/fmed.2024.1326144",
+        "citations": 3,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "NAH-GNN: A graph-based framework for multi-behavior and high-hop interaction recommendation.",
+        "authors": [
+          "Tan G."
+        ],
+        "year": 2025,
+        "abstract": "With the growing demand for personalized marketing, recommender systems have become essential tools to help users quickly discover products or content that match their interests. However, traditional recommendation methods face significant limitations in handling complex user behaviors and sparse data, particularly in accurately capturing relationships among diverse interaction types and higher-or…",
+        "url": "https://doi.org/10.1371/journal.pone.0321419",
+        "pdfUrl": "https://europepmc.org/articles/PMC12040261/pdf",
+        "doi": "10.1371/journal.pone.0321419",
+        "citations": 4,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Suindara App - Call Drop Log Parser & Predictor (Desktop Demo) v1.3.0",
+        "authors": [
+          "Dos Santos Matias, Pedro Victor"
+        ],
+        "year": 2025,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Suindara App v1.3.0 Suindara App is a desktop application developed in Python using PySide6, designed for parsing and analyzing Android bug reports and integrating predictive models for call drop analysis. It includes a complete pipeline for parsing logs and predicting call drop occurrences, featuring SHAP explanations for model interpretability. This release enhances usability by introducing an&n…",
+        "url": "https://zenodo.org/records/15102353",
+        "doi": "10.5281/zenodo.15102353",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Global Drop Packer Market 2024 To 2033",
+        "authors": [
+          "Sirsat, Nitin"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Drop Packer Market Size, Trends and Insights By Industry Type (Food and Beverage Industry, Pharmaceutical Industry, Apparel Industry, Others), By End-Use (Bottling, Canning, Carton), By Production Capacity (High-Speed Drop Packers, Medium to Low-Speed Drop Packers), By Automation Level (Manual Drop Packers, Semi-Automatic Drop Packers, Fully-Automatic Drop Packers), and By Region - Global Industry…",
+        "url": "https://zenodo.org/records/15033813",
+        "doi": "10.5281/zenodo.15033813",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Drop characteristics from the SMD calibration device for non-catching precipitation instruments",
+        "authors": [
+          "Baire, Quentin",
+          "Dobre, Miruna"
+        ],
+        "year": 2022,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "These data are from the paper &quot;Calibration uncertainty of non-catching precipitation gauges&quot;, by Baire, Q. et al., accepted for publication on the journal Sensors. A rain drop generator, developed at the National Standards in Belgium, is presented in that paper using three peristaltic pumps and different nozzle geometries to generate drops of different sizes. The nozzle is mounted on a m…",
+        "url": "https://zenodo.org/records/6962652",
+        "doi": "10.5281/zenodo.6962652",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Construction of medical scientific data repositories in China: analysis of survey and recommendations.",
+        "authors": [
+          "Song J",
+          "Li C",
+          "Chansanam W."
+        ],
+        "year": 2025,
+        "abstract": "BackgroundIn the context of global open science trends, medical open-access repositories (OARs) promote transparency in research and facilitate the sharing of scientific data. The increase in scientific output necessitates a robust infrastructure to enhance OARs in China.ObjectivesThis study aimed to evaluate medical open-access repositories (OARs) in China that are indexed in re3data.org and Open…",
+        "url": "https://doi.org/10.3389/frai.2025.1544200",
+        "pdfUrl": "https://europepmc.org/articles/PMC12240949/pdf",
+        "doi": "10.3389/frai.2025.1544200",
+        "citations": 2,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Table 1: Test metrics under different drop heights and landing strategies.",
+        "authors": [],
+        "url": "https://doi.org/10.7717/peerj.19490/table-1",
+        "doi": "10.7717/peerj.19490/table-1",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Table 1. Summary of ssDNA drop-in mediated homologous recombination in S2R+ cells",
+        "authors": [],
+        "url": "https://doi.org/10.7554/elife.51539.007",
+        "doi": "10.7554/elife.51539.007",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Table 1: Intraclass Correlation (ICC) and Coefficient of Variation (CV) for baseline drop jumps.",
+        "authors": [],
+        "url": "https://doi.org/10.7717/peerj.10031/table-1",
+        "doi": "10.7717/peerj.10031/table-1",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Table 2: Comparisons of mean absolute standard residual errors among commodities and drop-plate groupings.",
+        "authors": [],
+        "url": "https://doi.org/10.7717/peerj.15740/table-2",
+        "doi": "10.7717/peerj.15740/table-2",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Dataset Statis drop by drop",
+        "authors": [
+          "Obando Bastidas, Jorge Alejandro",
+          "Mendoza Lameda, Yaneska",
+          "Rincón Ramirez, Aura Viviana",
+          "Cespedes Baquero, Leidy Tatiana"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Replication data and code for the article \"Emotional architecture, graduated by socioeconomic stratum: a dual STATIS analysis of gota a gota lending among informal vendors in Meta Department (Colombia)\". The deposit includes an anonymized dataset (n = 485; thirteen Likert items from the behavioral dimension of the instrument plus the socioeconomic stratum group, with no personal identifiers) and t…",
+        "url": "https://zenodo.org/records/21360041",
+        "doi": "10.5281/zenodo.21360041",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": false
+      },
+      {
+        "title": "A Drop Slopes off – Tilting Table for the Drop Shape Analysis System",
+        "authors": [],
+        "year": 2002,
+        "venue": "Tenside Surfactants Detergents",
+        "url": "https://doi.org/10.1515/tsd-2002-390118",
+        "doi": "10.1515/tsd-2002-390118",
+        "citations": 0,
+        "type": "journal",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "drop-the-word / Wort-drop",
+        "authors": [
+          "Benito, Alejandro",
+          "Theron, Roberto",
+          "Losada, Antonio",
+          "Rodriguez Diaz, Alejandro",
+          "Wandl-Vogt, Eveline"
+        ],
+        "year": 2019,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "exploreAT! project software documentation",
+        "url": "https://zenodo.org/records/3924394",
+        "pdfUrl": "https://zenodo.org/api/records/3924394/files/droptheword_exploreAT_finalresults.pdf/content",
+        "doi": "10.5281/zenodo.3924394",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "chelseaherdman/MIC-drop: MIC-drop code release",
+        "authors": [
+          "Chelsea Herdman"
+        ],
+        "year": 2021,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This release is to create the initial Zenodo DOI prior to editorial acceptance.",
+        "url": "https://zenodo.org/records/5154537",
+        "doi": "10.5281/zenodo.5154537",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "V Drop Automatic Book Drop",
+        "authors": [
+          "Swapnil Gamre",
+          "Namrata Hande",
+          "Ragini Mistri",
+          "Prof. Abhishek Pandey"
+        ],
+        "year": 2018,
+        "venue": "International Journal of Trend in Scientific Research and Development",
+        "abstract": "In the existing system, Vidyalankar Institute of Technology henceforth addressed as VIT Library is situated on 3rd floor. Its a bit tiresome for students and professors to go upstairs for just returning books or just to extend the book return date. Efforts needed to go upstairs till 3rd floor are deduced as the proposed system gives facility to deposit those books and also reissue them on ground f…",
+        "url": "https://zenodo.org/records/3581969",
+        "pdfUrl": "https://zenodo.org/api/records/3581969/files/93%20V-%20Drop%20An%20Automatic%20Book%20Drop.pdf/content",
+        "doi": "10.31142/ijtsrd13039",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "vyepez88/drop: DROP 0.9.2",
+        "authors": [
+          "mumichae",
+          "Vicente Yepez",
+          "Luise Schuller",
+          "Christian Mertes",
+          "Ines Scheller",
+          "andradesalazar",
+          "octopusCat88"
+        ],
+        "year": 2020,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Release accompanying the manuscript.",
+        "url": "https://zenodo.org/records/4106723",
+        "doi": "10.5281/zenodo.4106723",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19.",
+        "authors": [
+          "Kumar S",
+          "Meher S",
+          "Zhang P."
+        ],
+        "year": 2025,
+        "abstract": "COVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups-Physicians for a National Health Program (PNHP) and Partnership for America's Healthcare Future (P4AHCF). Our empiri…",
+        "url": "https://doi.org/10.3390/bs15020223",
+        "pdfUrl": "https://europepmc.org/articles/PMC11851835/pdf",
+        "doi": "10.3390/bs15020223",
+        "citations": 1,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Market prediction using machine learning based on social media specific features.",
+        "authors": [
+          "Sekioka S",
+          "Hatano R",
+          "Nishiyama H."
+        ],
+        "year": 2023,
+        "abstract": "In recent years, unspecified messages posted on social media have significantly affected the price fluctuations of online-traded products, such as stocks and virtual currencies. In this study, we investigate whether information on Twitter and natural language expressions in tweets can be used as features for predicting market information, such as price changes in virtual currencies and sudden pric…",
+        "url": "https://doi.org/10.1007/s10015-023-00857-z",
+        "pdfUrl": "https://europepmc.org/articles/PMC9946282/pdf",
+        "doi": "10.1007/s10015-023-00857-z",
+        "citations": 1,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Supplementary Material",
+        "authors": [
+          "Cronin, Michael"
+        ],
+        "year": 2022,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Unadjusted Patient Characteristics Table on pages 1-2 ROC Graph related to Treatment on page 3 ROC Graph related to Death on page 4 ROC Graph related to LVEF drop &lt;50% on page 5",
+        "url": "https://zenodo.org/records/7454230",
+        "doi": "10.5281/zenodo.7454230",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "KidderLab/PixelDeck: v0.5.0",
+        "authors": [
+          "KidderLab"
+        ],
+        "year": 2026,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "PixelDeck v0.5.0 Initial public release of PixelDeck, a local-first media library manager for biomedical imaging. Highlights Recursive import of image and video folders SHA-256-based duplicate detection Metadata extraction for imported assets Thumbnail, preview, and video poster generation Full-text search across asset metadata Virtualized grid and table browsing Collections, favorites, archive ac…",
+        "url": "https://zenodo.org/records/19612239",
+        "doi": "10.5281/zenodo.19612239",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "CHAIRLIFT MULTIBURNER_RIG EXP DATA",
+        "authors": [
+          "Harth, Stefan Raphael",
+          "Trimis, Demosthenis",
+          "Shamma, Mohamed"
+        ],
+        "year": 2023,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Experimental results obtained by KIT on a multi-burner rig implementing low-swirl lifted flames. Results can be summarized as follows: LBO limits in dependence on pressure drop for inline and inclined configuration Lift off height in dependence on equivalence ratio for inline and inclined configuration Axial temperature profiles for inclined case at 3% pressure drop and 0.47 equivalence ratio OH* …",
+        "url": "https://zenodo.org/records/7599641",
+        "pdfUrl": "https://zenodo.org/api/records/7599641/files/CHAIRLIFT_2023_CHAIRLIFT_MULTIBURNER_RIG_EXP_DATA_R01.pdf/content",
+        "doi": "10.5281/zenodo.7599641",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "A good creator should be a wise listener: how user feedback impacts the performance of user-generated videos.",
+        "authors": [
+          "Mu C",
+          "Li C",
+          "Du Q",
+          "Wang X",
+          "Fan W."
+        ],
+        "year": 2026,
+        "abstract": "IntroductionUser-generated video performance underpins the sustainable development of the user-generated video economy, yet its influencing factors remain underexplored. Drawing on the componential theory of creativity and information overload theory, this study examines how user feedback correlates with video performance and whether creator experience moderates such relationships.MethodsEmpirical…",
+        "url": "https://doi.org/10.3389/fpsyg.2026.1810744",
+        "pdfUrl": "https://europepmc.org/articles/PMC13429681/pdf",
+        "doi": "10.3389/fpsyg.2026.1810744",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Quality and reliability of information about blood glucose monitoring on TikTok and Bilibili: A cross-sectional analysis.",
+        "authors": [
+          "Zhang N",
+          "Cui J",
+          "Liu P",
+          "Sun M",
+          "Wang W",
+          "Xu B",
+          "Kong W."
+        ],
+        "year": 2026,
+        "abstract": "Monitoring blood glucose is essential for diabetes management, and many patients use short-video platforms to learn capillary blood glucose testing. We evaluated whether previously reported concerns about online health information also apply to this narrower procedural task and compared high-ranking videos on TikTok/Douyin and Bilibili. We included 192 videos (TikTok, n = 100; Bilibili, n = 92) an…",
+        "url": "https://doi.org/10.1371/journal.pdig.0001639",
+        "pdfUrl": "https://europepmc.org/articles/PMC13502678/pdf",
+        "doi": "10.1371/journal.pdig.0001639",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Enhancing colonoscopy reporting quality: impact of structured templates and educational tutorials on automated adenoma detection rate reporting tool performance.",
+        "authors": [
+          "Rayapati D",
+          "Singh A",
+          "Singh N",
+          "Tackett S",
+          "Faggen A",
+          "Akshintala VS."
+        ],
+        "year": 2026,
+        "abstract": "Background and aimsAdenoma detection rate (ADR) is a key colonoscopy quality metric. We previously created an automated ADR reporting tool, but inconsistent documentation hinders its quality. This study aims to evaluate the impact of structured colonoscopy report templates and educational tutorials on ADR metrics recorded by the reporting tool.MethodsWe introduced structured colonoscopy report tem…",
+        "url": "https://doi.org/10.1016/j.igie.2025.11.003",
+        "pdfUrl": "https://europepmc.org/articles/PMC13064473/pdf",
+        "doi": "10.1016/j.igie.2025.11.003",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Exposure-aware multimodal engagement prediction for short-video platforms: an explainable human-media interaction framework.",
+        "authors": [
+          "Zhang J",
+          "Liu H."
+        ],
+        "year": 2026,
+        "abstract": "Short-video recommendation feeds are increasingly important human-media interaction systems. However, the observable pathways through which algorithmic exposure is associated with multimodal content and measurable user engagement remain insufficiently explained. Existing recommender-system studies usually optimize ranking accuracy or watch-time objectives. Communication-oriented studies often exam…",
+        "url": "https://doi.org/10.3389/frai.2026.1896199",
+        "pdfUrl": "https://europepmc.org/articles/PMC13550198/pdf",
+        "doi": "10.3389/frai.2026.1896199",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "DB-MLP: A Lightweight Dual-Branch MLP for Road Roughness Classification Using Vehicle Sprung Mass Acceleration.",
+        "authors": [
+          "Chen D",
+          "Li M",
+          "Chen G",
+          "He J",
+          "Lu X."
+        ],
+        "year": 2026,
+        "abstract": "Accurate identification of road roughness is pivotal for optimizing vehicle suspension control and enhancing passenger comfort. However, existing data-driven methods often struggle to balance classification accuracy with the strict computational constraints of real-time onboard monitoring. To address this challenge, this paper proposes a lightweight and robust road roughness classification framewo…",
+        "url": "https://doi.org/10.3390/s26030990",
+        "pdfUrl": "https://europepmc.org/articles/PMC12899377/pdf",
+        "doi": "10.3390/s26030990",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "A multi-platform comparison and machine learning associative analysis study on the information dissemination effect of short videos for cerebral hemorrhage: A cross-sectional study based on TikTok and Bilibili.",
+        "authors": [
+          "Luo C",
+          "Deng X",
+          "Xia J",
+          "Tian S."
+        ],
+        "year": 2026,
+        "abstract": "Cerebral hemorrhage is a critical public health issue marked by high incidence, disability, and mortality. In China, short-video platforms have become the major channel for the public to acquire relevant health knowledge. However, the online cerebral hemorrhage-related health information varies greatly in quality, with complex dissemination mechanisms and a lack of systematic academic evaluation, …",
+        "url": "https://doi.org/10.1097/md.0000000000050408",
+        "pdfUrl": "https://europepmc.org/articles/PMC13502860/pdf",
+        "doi": "10.1097/md.0000000000050408",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "A study on the dissemination effectiveness and influencing factors of short videos in scientific journals: An empirical analysis based on the ELM model.",
+        "authors": [
+          "Li S",
+          "Zhao S",
+          "Wang X",
+          "Huang Z",
+          "Liu X."
+        ],
+        "year": 2026,
+        "abstract": "Based on data analysis of 4,422 short videos from scientific journals, this study constructs a Dissemination Effectiveness Index comprising Likes, comments, Favorites, and shares. Using an Enhanced Logistic Model (ELM), it examines how different cues influence dissemination performance. Results indicate that video duration and visual quality show significant positive correlations with disseminatio…",
+        "url": "https://doi.org/10.1371/journal.pone.0341716",
+        "pdfUrl": "https://europepmc.org/articles/PMC12854476/pdf",
+        "doi": "10.1371/journal.pone.0341716",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Heather Nadean Holmes, AHIP, Medical Library Association President, 2025-2026.",
+        "authors": [
+          "Jones SD."
+        ],
+        "year": 2026,
+        "abstract": "This profile offers a portrait of Heather Nadean Holmes, MLIS, AHIP, 2025-2026 Medical Library Association (MLA) President, as a leader defined by authenticity, courage, and deep commitment to the profession. Holmes, known for her candor and dedication to the profession, brings a career rooted in service, gained from her work in hospital, academic, and association environments, to the presidency. …",
+        "url": "https://doi.org/10.5195/jmla.2026.2417",
+        "pdfUrl": "https://europepmc.org/articles/PMC13367305/pdf",
+        "doi": "10.5195/jmla.2026.2417",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Characterizing Behavioral Engagement in Smartphone Cognitive Behavioral Therapy for Obsessive Compulsive Disorder: Secondary Analysis of a Randomized Controlled Trial.",
+        "authors": [
+          "Weingarden H",
+          "Jonathan GK",
+          "Hoeppner SS",
+          "Velazquez S",
+          "Jacoby RJ",
+          "Greenberg JL",
+          "Harrison O",
+          "Wilhelm S."
+        ],
+        "year": 2026,
+        "abstract": "BackgroundDigital mental health interventions (DMHIs) are increasingly popular for their ability to disseminate evidence-based treatments in a scalable, accessible way. Engagement with digital treatments is critical for effectiveness but remains poorly defined and measured. Most studies rely on subjective self-reports or 1 or 2 objective metrics, overlooking the multidimensional nature of how user…",
+        "url": "https://doi.org/10.2196/98129",
+        "pdfUrl": "https://europepmc.org/articles/PMC13679862/pdf",
+        "doi": "10.2196/98129",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "A unified GRU model for cryptocurrency price prediction and harsh price movement detection using enhanced sentiment analysis.",
+        "authors": [
+          "Nezhad MM",
+          "Rouhani S",
+          "Mohammadi N",
+          "Shahedi A."
+        ],
+        "year": 2026,
+        "abstract": "Predicting cryptocurrency price movements using social media sentiment remains challenging due to the noisy, heterogeneous, and rapidly evolving nature of online signals. While prior studies commonly combine sentiment analysis with deep learning models, less attention has been given to how sentiment signals are constructed, aggregated, and aligned with price dynamics. This study investigates the i…",
+        "url": "https://doi.org/10.1038/s41598-026-46271-w",
+        "pdfUrl": "https://europepmc.org/articles/PMC13199500/pdf",
+        "doi": "10.1038/s41598-026-46271-w",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Feasibility, Acceptability, and Preliminary Impact of an Online Latina Mother-Daughter Physical Activity Intervention.",
+        "authors": [
+          "Arredondo EM",
+          "Schneider JL",
+          "Torres-Ruiz MS",
+          "Telles VM",
+          "Butte K",
+          "Lafuente O",
+          "Formagini T",
+          "Cisneroz A",
+          "Roesch SC",
+          "Baranowski T",
+          "Ayala GX."
+        ],
+        "year": 2026,
+        "abstract": "BackgroundLatina girls have low rates of moderate to vigorous physical activity (PA) compared with their male counterparts and non-Hispanic White girls. The current study examines the feasibility, acceptability, and preliminary impact of Conmigo, a mother-daughter PA intervention for preadolescent Latinas (ages 8-11) delivered online.MethodsSeventy-nine mother-daughter dyads were recruited. Dyads …",
+        "url": "https://doi.org/10.1123/jpah.2025-0646",
+        "pdfUrl": "https://europepmc.org/articles/PMC13421821/pdf",
+        "doi": "10.1123/jpah.2025-0646",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Development and Validation of a Mobile Application for Real-Time Chinese Dish Classification and Nutrient Estimation.",
+        "authors": [
+          "Feng Y",
+          "Wang Y",
+          "Wang X",
+          "Zhao B",
+          "Bi J",
+          "Han S",
+          "Luo Y."
+        ],
+        "year": 2026,
+        "abstract": "Deploying sophisticated deep learning models on mobile devices for dietary assessment remains challenging due to computational and model-size constraints. We address these challenges by developing and validating a mobile application for real-time Chinese dish classification and nutrient estimation, leveraging model compression. Building upon a previously developed ensemble achieving 86.28% top-1 a…",
+        "url": "https://doi.org/10.1111/1750-3841.71297",
+        "pdfUrl": "https://europepmc.org/articles/PMC13381818/pdf",
+        "doi": "10.1111/1750-3841.71297",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "LSM_DropShapeAnalysis",
+        "authors": [
+          "Braschke, Kamil",
+          "Barwari, Beawer"
+        ],
+        "year": 2023,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Python script for drop shape analysis. Determines contact angle, drop diameter, and drop velocity (for a series of pictures).",
+        "url": "https://zenodo.org/records/7817867",
+        "doi": "10.5281/zenodo.7817867",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "A study of the effects of different group involvement on children's sport behavioral choices: a group preference-based perspective.",
+        "authors": [
+          "Fan X",
+          "Xiao H",
+          "Yang T",
+          "Liu Q."
+        ],
+        "year": 2025,
+        "abstract": "IntroductionIn order to investigate the characteristics of children's sport behavioral choices in different group-involvement contexts and the role of group favoritism in this relationship.Methods280 children aged 3-8 years were recruited for a psycho-experimental study in two different experimental contexts.Results and discussionThe results found that (1) in the in-group and out-group involvement…",
+        "url": "https://doi.org/10.3389/fpsyg.2025.1632707",
+        "pdfUrl": "https://europepmc.org/articles/PMC12554678/pdf",
+        "doi": "10.3389/fpsyg.2025.1632707",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "PROMOTING AND FACILITATING A HUMAN RIGHTS-BASED APPROACH TO AI DEVELOPMENT: A WORKSHOP FOR AN ENGINEERING AUDIENCE",
+        "authors": [
+          "Kallina, Emma",
+          "Kypraiou, Sofia",
+          "Kraft-Buchmann, C."
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "url": "https://zenodo.org/records/14260943",
+        "pdfUrl": "https://zenodo.org/api/records/14260943/files/253_Kallina-Promoting%20and%20Facilitating%20a%20Human%20Rights-based%20Approach-308.pdf/content",
+        "doi": "10.5281/zenodo.14260943",
+        "type": "conference",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "АНАЛІЗ ЦІЛЬОВОЇ АУДИТОРІЇ АДВЕНТ-КАЛЕНДАРІВ",
+        "authors": [
+          "Borysova, Svitlana",
+          "Копотілов, Максим"
+        ],
+        "year": 2024,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Проаналізовано зв&rsquo;язок між ціновою категорією адвент-календарів та їх цільовою аудиторією, фокусуючи увагу на залежності вартості продукту, запропонованого дизайну та характеристики представників цільової аудиторії. Розглянуто п&rsquo;ять типових адвент-календарів з різних цінових категорій, від бюджетних до преміальних, з виявленням застосованих для виробництва матеріалів. З&rsquo;ясовано, …",
+        "url": "https://zenodo.org/records/14576888",
+        "pdfUrl": "https://zenodo.org/api/records/14576888/files/DVAC'2024%20-%20Proceeding%20Vol.%201-32-36.pdf/content",
+        "doi": "10.5281/zenodo.14576888",
+        "type": "conference",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Remote usability testing carried out during the COVID-19 pandemic on the example of Primo VE implementation in an Academic Library.",
+        "authors": [
+          "Marzec P",
+          "Piotrowski DM."
+        ],
+        "year": 2023,
+        "abstract": "The article presents usability tests of Primo VE carried out as part of the implementation of the Alma library services platform at the Nicolaus Copernicus University Library. Remote usability tests were carried out during the COVID-19 pandemic. The aim of the tests was to assess the ease of use of selected system functionalities and the ease of learning how to use them by users. The method of rem…",
+        "url": "https://doi.org/10.1016/j.acalib.2023.102700",
+        "pdfUrl": "https://europepmc.org/articles/PMC10020041/pdf",
+        "doi": "10.1016/j.acalib.2023.102700",
+        "citations": 0,
+        "type": "journal",
+        "source": "europepmc",
+        "sourceName": "Europe PMC",
+        "openAccess": true
+      },
+      {
+        "title": "Heat Transfer in Solar Water Heaters Pipes",
+        "authors": [
+          "Nowarski, Joseph"
+        ],
+        "year": 2022,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "This work introduces the development of formulas for heat transfer in solar water heater pipes to allow calculations of energy losses in pipes. Solar legislation in Israel requires the installation of solar water heaters in new buildings up to 9 floors from the roof. The legislation from the year 1980 is based on the technology of the late 70s. This publication compares the old types of installati…",
+        "url": "https://zenodo.org/records/17007309",
+        "pdfUrl": "https://zenodo.org/api/records/17007309/files/Heat%20Transfer%20in%20Solar%20Water%20Heaters%20Pipes.pdf/content",
+        "doi": "10.5281/zenodo.17007309",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Table of Contents",
+        "authors": [],
+        "venue": "Drop Dead",
+        "url": "https://doi.org/10.2307/j.ctv47w921.2",
+        "doi": "10.2307/j.ctv47w921.2",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Nikolai Onufrievich Lossky's intuitivism: philosophy of music",
+        "authors": [
+          "Klujev, Alexander S."
+        ],
+        "year": 2021,
+        "venue": "European Scientific e-Journal",
+        "abstract": "The article reveals the features of philosophical ideas about the music of N.O. Lossky. It is established that Lossky&rsquo;s philosophical judgments about music are organically connected with his philosophical doctrine &ndash; intuitivism. The study purpose is to learn the philosophy of music through the Nikolai Onufrievich Lossky&rsquo;s intuitivism. The most important, from the point of view of…",
+        "url": "https://zenodo.org/records/7250738",
+        "pdfUrl": "https://zenodo.org/api/records/7250738/files/phi2021-10-001.pdf/content",
+        "doi": "10.47451/phi2021-10-001",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Access Now The Favorites by Layne Fargo",
+        "authors": [
+          "vera ditya"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.55277/researchhub.dvkgp6qs.1",
+        "doi": "10.55277/researchhub.dvkgp6qs.1",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Felicia's Favorites by Danielle Steel (ePUB)",
+        "authors": [
+          "wildfowl sanajs"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.55277/researchhub.uyskc9pc.1",
+        "doi": "10.55277/researchhub.uyskc9pc.1",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "SIMNORAT - Stakeholder Perception on Maritime Spatial Planning (D15)",
+        "authors": [
+          "Alloncle, Neil",
+          "Henry, Sybill",
+          "Matyas, David",
+          "Nys, Cécile",
+          "Bailly, Denis",
+          "Six, Anita",
+          "Violo, Stéphanie"
+        ],
+        "year": 2019,
+        "venue": "Zenodo 开放科学仓库",
+        "abstract": "Component: 1.3 Support for Member States&#39; implementation of Maritime Spatial Planning Sub-component: 1.3.5 Improving Stakeholder engagement The document is available in English, Spanish, French and Portuguese. EN: Stakeholder Perception on Maritime Spatial Planning This document sums up the main finding of the SIMNORAT &ldquo;stakeholder engagement in MSP&rdquo; component, which aimed to asses…",
+        "url": "https://zenodo.org/records/2669062",
+        "pdfUrl": "https://zenodo.org/api/records/2669062/files/SIMNORAT-PT-190501-WEB.pdf/content",
+        "doi": "10.5281/zenodo.2669062",
+        "type": "other",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "FAVORITES",
+        "authors": [],
+        "year": 2024,
+        "venue": "Purchase",
+        "url": "https://doi.org/10.2307/jj.17102078.29",
+        "doi": "10.2307/jj.17102078.29",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "CONTENTS",
+        "authors": [],
+        "year": 2021,
+        "venue": "B-Side Books",
+        "url": "https://doi.org/10.7312/plot20056-toc",
+        "doi": "10.7312/plot20056-toc",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Grandma Plays Favorites",
+        "authors": [],
+        "year": 2021,
+        "venue": "AAAS Articles DO Group",
+        "url": "https://doi.org/10.1126/article.31532",
+        "doi": "10.1126/article.31532",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Favorites in English drama",
+        "authors": [
+          "Francisco Gómez Martos"
+        ],
+        "year": 2020,
+        "venue": "Staging Favorites",
+        "url": "https://doi.org/10.4324/9781003083481-5",
+        "doi": "10.4324/9781003083481-5",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Dramas on favorites",
+        "authors": [
+          "Francisco Gómez Martos"
+        ],
+        "year": 2020,
+        "venue": "Staging Favorites",
+        "url": "https://doi.org/10.4324/9781003083481-2",
+        "doi": "10.4324/9781003083481-2",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Favorites in French drama",
+        "authors": [
+          "Francisco Gómez Martos"
+        ],
+        "year": 2020,
+        "venue": "Staging Favorites",
+        "url": "https://doi.org/10.4324/9781003083481-4",
+        "doi": "10.4324/9781003083481-4",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Favorites in Spanish drama",
+        "authors": [
+          "Francisco Gómez Martos"
+        ],
+        "year": 2020,
+        "venue": "Staging Favorites",
+        "url": "https://doi.org/10.4324/9781003083481-3",
+        "doi": "10.4324/9781003083481-3",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "“Negroes Are the Favorites of the Government”",
+        "authors": [
+          "Brent M. S. Campney"
+        ],
+        "year": 2017,
+        "venue": "University of Illinois Press",
+        "abstract": "This chapter considers attitudes toward Kansas's black refugees post-Reconstruction. After the passage of the Fifteenth Amendment, whites increasingly believed that their debt to blacks had been repaid and that continuing overtures to them were merely partisan politics directed toward a special interest at the majority's expense. The chapter explores media attitudes toward blacks and racial uplift…",
+        "url": "https://doi.org/10.5406/illinois/9780252039508.003.0003",
+        "doi": "10.5406/illinois/9780252039508.003.0003",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Coniferous Forest Annual Growth Under Impact Of Beaver-Made Inundations In Dobele Forestry, Latvia",
+        "authors": [
+          "Gackis, Māris"
+        ],
+        "year": 2011,
+        "venue": "Acta Biologica Universitatis Daugavpiliensis",
+        "abstract": "Gackis, Māris (2011): Coniferous Forest Annual Growth Under Impact Of Beaver-Made Inundations In Dobele Forestry, Latvia. Acta Biologica Universitatis Daugavpiliensis 11 (1): 96-100, DOI: 10.5281/zenodo.12647435",
+        "url": "https://zenodo.org/records/12647435",
+        "pdfUrl": "https://zenodo.org/api/records/12647435/files/source.pdf/content",
+        "doi": "10.5281/zenodo.12647435",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Five OA favorites",
+        "authors": [
+          "Peter Suber"
+        ],
+        "year": 2004,
+        "abstract": "Stephen Wildstrom, Quick Fixes for Web Info-Junkies, &lt;em&gt; Business Week &lt;/em&gt; , May 31, 2004. Some of Wildstrom's favorite OA sites, including five in math and science: Mathworld (Wolfram), Scienceworld (Wolfram), MathSciNet (American Mathematical Society), arXiv (Cornell and NSF), and the Online Encyclopedia of Integer Sequences (Neil Sloane, AT&amp;amp;T).",
+        "url": "https://doi.org/10.63485/b0cyt-6a920",
+        "pdfUrl": "https://rogue-scholar.org/api/records/218rs-jam05/files/10.63485_b0cyt-6a920.pdf/content",
+        "doi": "10.63485/b0cyt-6a920",
+        "citations": 0,
+        "type": "preprint",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": true
+      },
+      {
+        "title": "Present Favorites and Future Prospects",
+        "authors": [
+          "Mitchell, Sydney B. (Sydney Bancroft)"
+        ],
+        "year": 1921,
+        "venue": "Bulletin of the American Iris Society",
+        "abstract": "(Uploaded by Plazi from the Biodiversity Heritage Library) No abstract provided.",
+        "url": "https://zenodo.org/records/16198375",
+        "pdfUrl": "https://zenodo.org/api/records/16198375/files/bhlpart408612.pdf/content",
+        "doi": "10.5281/zenodo.16198375",
+        "type": "journal",
+        "source": "zenodo",
+        "sourceName": "Zenodo",
+        "openAccess": true
+      },
+      {
+        "title": "Theory Favorites",
+        "authors": [],
+        "year": 2014,
+        "venue": "Theory Matters",
+        "url": "https://doi.org/10.4324/9780203700556-2",
+        "doi": "10.4324/9780203700556-2",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      },
+      {
+        "title": "Favorites",
+        "authors": [],
+        "venue": "No Second Eden",
+        "url": "https://doi.org/10.2307/j.ctt1j7x806.31",
+        "doi": "10.2307/j.ctt1j7x806.31",
+        "citations": 0,
+        "type": "other",
+        "source": "crossref",
+        "sourceName": "Crossref",
+        "openAccess": false
+      }
+    ],
+    "errors": [
+      "DOAJ: DOAJ HTTP 403"
+    ]
+  }
+}
