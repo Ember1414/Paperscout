@@ -28,5 +28,14 @@
 
   "observability": {
     "enabled": true
+  },
+
+  // v3 迁移 feature flag（8.5）：仅 preview 部署启用 v3 编排器，生产保持 v2 直至 M7/M8 切换
+  "env": {
+    "preview": {
+      "vars": {
+        "SEARCH_V3": "1"
+      }
+    }
   }
 }
