@@ -79,6 +79,8 @@ export interface Env {
   CACHE: KVNamespace;
   /** v3 检索 feature flag（8.5 迁移开关；'1' = v3 编排器） */
   SEARCH_V3?: string;
+  /** Warmer 鉴权 secret */
+  WARMER_SECRET?: string;
   /** Workers AI（翻译兜底 / AI 总结 / AI 问答） */
   AI?: Ai;
   /** D1 数据库（检索历史 + 收藏夹） */

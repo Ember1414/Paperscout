@@ -435,7 +435,37 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
         return new Response(JSON.stringify(okEnvelope(venue, { requestId: newRequestId(), ms: Date.now() - vt0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
       }
 
+      case 'health-report': {
+        // Warmer 调用（X-Warmer header 校验）
+        const secret = env.WARMER_SECRET ?? 'warmer-secret';
+        if (request.headers.get('X-Warmer') !== secret) return jsonResponse({ error: 'unauthorized' }, 403);
+        const body0: any = await request.json().catch(() => ({}));
+        const today = new Date().toISOString().slice(0, 10);
+        if (env.DB && Array.isArray(body0.health)) {
+          for (const h of body0.health) {
+            await env.DB.prepare('INSERT INTO source_health (day, source, ok, fail, avg_ms) VALUES (?1, ?2, ?3, ?4, ?5) ON CONFLICT (day, source) DO UPDATE SET ok = ok + ?3, fail = fail + ?4').bind(today, h.source, h.ok, h.fail, h.ms).run();
+          }
+        }
+        return jsonResponse({ ok: true });
+      }
+
+      case 'trending': {
+        // 简单 trending：从 search_log 取热词 + 前沿从 arXiv API 代理
+        const field = url.searchParams.get('field') ?? 'cs';
+        const t0 = Date.now();
+        // 取最近 7 天热词
+        const hot = env.DB ? await env.DB.prepare(
+          'SELECT query_sample AS s, COUNT(*) AS n FROM search_log WHERE day >= ?1 AND query_sample IS NOT NULL GROUP BY query_sample ORDER BY n DESC LIMIT 12'
+        ).bind(new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10)).all() : { results: [] };
+        return jsonResponse({
+          crawledAt: new Date().toISOString(),
+          hotKeywords: (hot.results ?? []).map((h) => h.s),
+          field,
+        });
+      }
+
       case 'health':
+        return jsonResponse({ status: 'ok', time: new Date().toISOString() });
         return jsonResponse({ status: 'ok', time: new Date().toISOString() });
 
       case 'diag':
