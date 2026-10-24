@@ -1,5 +1,5 @@
 // @ts-check
-import { subscribe, runSearch, cancelSearch, state } from '../store.js';
+import { subscribe, runSearch, cancelSearch, state, loadSnapshot, setState } from '../store.js';
 import { paramsFromUrl, searchUrl } from '../url.js';
 import { filtersHtml, bindFilters } from '../ui/filters.js';
 import { resultsHtml, bindResults, registerWorks } from '../ui/results.js';
@@ -136,6 +136,9 @@ export function mount(root, ctx) {
     const r = state.results;
     logHistory(r);
     applyRefine();
+    const retriedBar = state.results.retriedFrom
+      ? `<div class="notice-bar notice-info" style="background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)">没有找到「${escapeHtml(state.results.retriedFrom)}」，已自动改为检索「${escapeHtml(current.q)}」</div>`
+      : '';
     const refineBar = refineQuery
       ? `<div class="notice-bar notice-info" style="background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)">结果内再搜「${escapeHtml(refineQuery)}」：${refinedView.items.length}/${r.items.length} 条 <button type="button" class="btn btn-sm js-refine-exit2" style="margin-left:8px">退出</button></div>`
       : '';
@@ -421,6 +424,18 @@ export function mount(root, ctx) {
   };
   rerenderFilters();
 
+  // M2-16 快照秒开：sessionStorage 命中（≤10min）→ 先渲染快照，再由 runSearch 后台刷新（SWR）
+  const snap = loadSnapshot(new URL(location.href));
+  if (snap?.items?.length && !state.results.items.length) {
+    setState({
+      results: {
+        ...state.results,
+        items: snap.items, poolSize: snap.poolSize, hasMore: snap.hasMore, exhausted: snap.exhausted,
+        sources: snap.sources ?? [], partial: Boolean(snap.partial),
+        requestId: snap.requestId ?? '', ms: snap.ms ?? 0, cache: 'snapshot',
+      },
+    });
+  }
   // 首次（或导航进入）执行检索；sel 深链自动开抽屉（F-21）
   if (current.sel) {
     const w = state.results.items.find((x) => x.id === current.sel);

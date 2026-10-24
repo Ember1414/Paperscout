@@ -39,7 +39,8 @@ export function highlightTerms(q) {
  * @param {{ q: string, citationsTopDecile: number, currentId: string }} ctx
  */
 export function resultsHtml(st, ctx) {
-  if (st.loading) return skeletonHtml();
+  if (st.loading && !st.items.length) return skeletonHtml();
+  // SWR：已有结果时加载中不闪骨架，仅顶部进度提示（M2-16）
   if (st.error) {
     return `
       <div class="empty-state" role="alert">

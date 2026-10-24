@@ -67,6 +67,8 @@ export interface V3SearchResult {
   cacheLayer?: 'l0' | 'l1' | 'l2';
   /** 全部源失败时返回的 L1 旧池（7.7 降级，前端显示提示条） */
   stale?: boolean;
+  /** 空结果自动拼写纠正（M2-16）：原查询词（纠正后重查一次） */
+  retriedFrom?: string;
 }
 
 export interface OrchestratorDeps {
@@ -74,8 +76,8 @@ export interface OrchestratorDeps {
   sourcesOverride?: (SourceDef & { fetchRaw: FetchRawFn })[];
   /** 测试注入：全局硬截止（毫秒） */
   totalBudgetMs?: number;
-  /** Workers 运行时注入：KV 绑定（L2 只读）与 waitUntil（L1 写挂靠，A-07） */
-  env?: { CACHE?: KVNamespace };
+  /** Workers 运行时注入：KV 绑定（L2 只读）、D1（suggest 热词池）、waitUntil（L1 写挂靠，A-07） */
+  env?: { CACHE?: KVNamespace; DB?: D1Database };
   ctx?: { waitUntil: (p: Promise<unknown>) => void };
 }
 
@@ -206,6 +208,15 @@ function mapStatus(kind: string | undefined): SourceStatus['status'] {
 }
 
 export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps = {}): Promise<V3SearchResult> {
+  return runSearchInternal(params, deps, false);
+}
+
+/**
+ * @param {V3SearchParams} params
+ * @param {OrchestratorDeps} deps
+ * @param {boolean} retried 是否已是纠正后的重试（最多一次）
+ */
+async function runSearchInternal(params: V3SearchParams, deps: OrchestratorDeps, retried: boolean): Promise<V3SearchResult> {
   const parsed = parseQuery(params.q);
   // M2-14 查询扩展：中英互译（打分词并入 + zh 召回后缀仅给声明支持的源）
   const expansion = expandQuery(params.q, parsed.terms, parsed.cjkWhole);
@@ -376,6 +387,17 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       const fusedBatch = rankWorks(applyFilters(fuseRecords(fresh)), scoredParsed, sort);
       pool = markOffsets(appendToPool(pool, fusedBatch), offsets);
       pool.items = sort === 'smart' ? diversifyByVenue(rankWorks(pool.items, scoredParsed, sort), { maxInARow: 2 }) : rankWorks(pool.items, scoredParsed, sort);
+    }
+  }
+
+  // M2-16 弱查询容错：彻底空结果且从未重试 → 用 suggest 拼写纠正词自动重查一次（仅 topic 意图）
+  if (!retried && parsed.intent === 'topic' && pool.items.length === 0 && collected.length === 0 && params.q.trim().length >= 3) {
+    const { getSuggestions } = await import('./suggest');
+    const sug = await getSuggestions(deps.env?.DB, params.q);
+    const spell = sug.suggestions.find((s0) => s0.kind === 'spell');
+    if (spell && spell.text.toLowerCase() !== params.q.trim().toLowerCase()) {
+      const retriedResult = await runSearchInternal({ ...params, q: spell.text }, deps, true);
+      return { ...retriedResult, retriedFrom: params.q };
     }
   }
 

@@ -1,6 +1,6 @@
 // @ts-check
 import { apiGet, searchApi, ApiError } from './api.js';
-import { paramsFromUrl, toApiQuery } from './url.js';
+import { paramsFromUrl, toApiQuery, queryFromParams } from './url.js';
 
 /**
  * 单一 store（REBUILD_PLAN 6.4）：单向数据流 + 订阅 + requestId 竞态保护（修复 v2 A-20）。
@@ -10,7 +10,7 @@ import { paramsFromUrl, toApiQuery } from './url.js';
 /**
  * @typedef {object} AppState
  * @property {{ raw: string, params: import('./url.js').SearchUiParams }} query
- * @property {{ items: any[], poolSize: number, page: number, limit: number, hasMore: boolean, exhausted: boolean, loading: boolean, error: {code: string, message: string, retryable: boolean} | null, partial: boolean, stale: boolean, sources: any[], parsed: any, requestId: string, cache: string, ms: number }} results
+ * @property {{ items: any[], poolSize: number, page: number, limit: number, hasMore: boolean, exhausted: boolean, loading: boolean, error: {code: string, message: string, retryable: boolean} | null, partial: boolean, stale: boolean, sources: any[], parsed: any, requestId: string, cache: string, ms: number, retriedFrom?: string }} results
  * @property {{ theme: string, view: string, drawerId: string, paletteOpen: boolean, filtersOpen: boolean, density: string }} ui
  * @property {{ clientId: string }} user
  */
@@ -92,6 +92,7 @@ export async function runSearch(url = new URL(location.href)) {
   try {
     const r = await searchApi(toApiQuery(params), { signal: abort.signal });
     if (seq !== searchSeq) return; // 过期响应丢弃（只渲染最后一次，M2-03 DoD）
+    saveSnapshot(url, r);
     setState({
       results: {
         ...state.results,
@@ -116,3 +117,52 @@ export function cancelSearch() {
 }
 
 export { apiGet };
+
+
+/* ---------- M2-16 结果池快照（sessionStorage，10 分钟有效；刷新秒开/离线可看） ---------- */
+
+const SNAP_TTL_MS = 10 * 60 * 1000;
+
+/** @param {any[]} items 精简字段，控体积 */
+function trimItems(items) {
+  return (items ?? []).slice(0, 50).map((w) => ({
+    id: w.id, title: w.title,
+    authors: (w.authors ?? []).slice(0, 4).map((/** @type {any} */ a) => (typeof a === 'string' ? a : a?.name)),
+    year: w.year, venue: w.venue, doi: w.doi, url: w.url, pdfUrl: w.pdfUrl,
+    citations: w.citations, type: w.type, openAccess: w.openAccess, lang: w.lang,
+    confidence: w.confidence, venueType: w.venueType,
+    abstract: w.abstract ? String(w.abstract).slice(0, 300) : undefined,
+    sources: (w.sources ?? []).map((/** @type {any} */ x) => ({ source: x.source, sourceName: x.sourceName })),
+  }));
+}
+
+/** @param {URL} url @param {any} r */
+function saveSnapshot(url, r) {
+  try {
+    const key = snapKey(url);
+    sessionStorage.setItem('ps-snap:' + key, JSON.stringify({
+      ts: Date.now(),
+      items: trimItems(r.items),
+      poolSize: r.poolSize, hasMore: r.hasMore, exhausted: r.exhausted,
+      sources: r.sources, partial: r.partial, requestId: r.requestId, ms: r.ms,
+    }));
+  } catch { /* 配额满/隐私模式：快照是增强层，静默放弃 */ }
+}
+
+/** @param {URL} url */
+export function loadSnapshot(url) {
+  try {
+    const raw = sessionStorage.getItem('ps-snap:' + snapKey(url));
+    if (!raw) return null;
+    const snap = /** @type {any} */ (JSON.parse(raw));
+    if (!snap?.ts || Date.now() - snap.ts > SNAP_TTL_MS || !Array.isArray(snap.items)) return null;
+    return snap;
+  } catch {
+    return null;
+  }
+}
+
+/** @param {URL} url */
+function snapKey(url) {
+  return queryFromParams(paramsFromUrl(url));
+}

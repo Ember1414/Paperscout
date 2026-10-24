@@ -4,7 +4,8 @@
  */
 
 /** 常用学术缩写与中英对照（内置小词典；仅高置信映射） */
-const SYNONYMS: Record<string, string> = {
+/** 同义词/缩写映射（M2-16 起同时供查询扩展召回使用） */
+export const SYNONYMS: Record<string, string> = {
   llm: 'large language model',
   llms: 'large language model',
   gpt: 'large language model',
@@ -29,7 +30,8 @@ const SYNONYMS: Record<string, string> = {
 };
 
 /** 相关术语扩展（主题 → 邻近词） */
-const RELATED: Record<string, string[]> = {
+/** 相关术语扩展（M2-16 起同时供查询扩展召回使用） */
+export const RELATED: Record<string, string[]> = {
   transformer: ['attention', 'bert', 'gpt'],
   'neural network': ['deep learning', 'backpropagation'],
   'graph neural network': ['graph convolutional network', 'node embedding'],

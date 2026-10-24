@@ -1,8 +1,8 @@
 /**
- * 查询扩展词典（M2-14 / 功能全景"中英关键词互译扩展"P0）。
- * 唯一来源：suggest.ts 的同义词与本文件的互译词典共用；
+ * 查询扩展词典（M2-14 / 功能全景"中英关键词互译扩展"P0；M2-16 并入同义词/相关词召回）。
  * 原则：只收录高置信、无歧义的学术词对——宁缺毋滥（错误扩展比不扩展更伤准确性）。
  */
+import { RELATED, SYNONYMS } from '../core/suggest';
 
 /** 中英互译（双向）：key 为归一化小写词 */
 const BILINGUAL: Record<string, string> = {
@@ -124,17 +124,22 @@ export function expandQuery(rawQuery: string, terms: string[], cjkWhole?: string
     }
   }
 
-  // 3. 英文查询的中文召回词（crossref CJK 过滤用）
-  if (!/[\u3400-\u4dbf\u4e00-\u9fff]/.test(q)) {
-    for (const r of recall) {
-      if (/[\u3400-\u4dbf\u4e00-\u9fff]/.test(r)) {
-        // 已含中文映射（如 deep learning → 深度学习）
-        break;
+  // 3. 同义词/缩写与相关术语（M2-16：复用 suggest 词典，扩展召回广度；上限 2 条防查询膨胀）
+  const syn = SYNONYMS[q];
+  if (syn && !recall.includes(syn)) {
+    recall.push(syn);
+    for (const w of syn.split(/[\s-]+/)) if (w.length >= 2) score.add(w);
+  }
+  for (const [key, rels] of Object.entries(RELATED)) {
+    if (q.includes(key)) {
+      for (const r of rels.slice(0, 2)) {
+        if (!q.includes(r) && !recall.includes(r)) recall.push(r);
       }
+      break;
     }
   }
 
-  return { recallSuffix: recall.join(' '), scoreTerms: ([...score] as string[]).filter((t) => !terms.includes(t)) };
+  return { recallSuffix: recall.slice(0, 3).join(' '), scoreTerms: ([...score] as string[]).filter((t) => !terms.includes(t)) };
 }
 
 /** 词典只读视图（测试用） */
