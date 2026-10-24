@@ -53,6 +53,7 @@ export function mount(root, ctx) {
       void loadAvailability(body, d);
       void loadContexts(body, d);
       renderTrend(body, d);
+      mountNet(body, d);
     })
     .catch((e) => {
       if (/** @type {any} */ (e)?.name === 'AbortError') return;
@@ -132,6 +133,18 @@ function detailHtml(d) {
     <section style="margin-top:var(--s-5)" aria-labelledby="ctx-h">
       <h2 id="ctx-h" style="font-size:var(--t-md)">引用上下文（谁在哪句话引用）</h2>
       <div class="js-contexts"><p style="color:var(--fg-3);font-size:var(--t-sm)">加载中…</p></div>
+    </section>
+
+    <section style="margin-top:var(--s-5)" aria-labelledby="net-h">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <h2 id="net-h" style="font-size:var(--t-md);margin:0">引文网络</h2>
+        <button type="button" class="btn btn-sm js-net-toggle">切列表视图</button>
+      </div>
+      <div class="js-net" style="margin-top:8px"></div>
+      <div class="js-net-list" hidden>
+        <p style="font-size:var(--t-xs);color:var(--fg-3)">列表视图（无障碍替代）：</p>
+        <ul class="ref-list" style="columns:2;gap:24px;font-size:var(--t-xs)"></ul>
+      </div>
     </section>
 
     <section style="margin-top:var(--s-5)" aria-labelledby="refs-h">
@@ -297,3 +310,34 @@ function renderTrend(body, d) {
 
 /** @type {import('../router.js').View} */
 export default { render, mount };
+
+/**
+ * M3-04 引文网络：canvas 图 ↔ 列表替身切换；节点点击跳详情（S-26）
+ * @param {HTMLElement} body
+ * @param {any} d
+ */
+function mountNet(body, d) {
+  const wrap = /** @type {HTMLElement | null} */ (body.querySelector('.js-net'));
+  const listEl = /** @type {HTMLElement | null} */ (body.querySelector('.js-net-list'));
+  const toggle = /** @type {HTMLButtonElement | null} */ (body.querySelector('.js-net-toggle'));
+  if (!wrap || !listEl) return;
+  void import('../ui/net.js').then(({ buildGraphData, mountGraph }) => {
+    const graph = buildGraphData({ center: d.work, references: d.references, citedBy: d.citedBy, similar: d.similar });
+    const ul = /** @type {HTMLElement | null} */ (listEl.querySelector('ul'));
+    if (ul) {
+      ul.innerHTML = graph.nodes.map((n) => `<li>${esc(n.kind === 'center' ? '★ ' : '')}${esc(n.title)} ${n.year ? '(' + n.year + ')' : ''}${n.citations !== undefined ? ' · 被引 ' + n.citations : ''}</li>`).join('');
+    }
+    let showingGraph = true;
+    /** @type {{ destroy: () => void } | null} */
+    let handle = mountGraph(wrap, graph, { width: Math.min(wrap.clientWidth || 700, 760), height: 380 }, { onOpen: (id) => void import('../router.js').then(({ navigate }) => navigate('/p/' + encodeURIComponent(id))) });
+    toggle?.addEventListener('click', () => {
+      showingGraph = !showingGraph;
+      wrap.hidden = !showingGraph;
+      listEl.hidden = showingGraph;
+      if (toggle) toggle.textContent = showingGraph ? '切列表视图' : '切网络图';
+      if (showingGraph && !handle) {
+        handle = mountGraph(wrap, graph, { width: Math.min(wrap.clientWidth || 700, 760), height: 380 }, { onOpen: (id) => void import('../router.js').then(({ navigate }) => navigate('/p/' + encodeURIComponent(id))) });
+      }
+    });
+  });
+}
