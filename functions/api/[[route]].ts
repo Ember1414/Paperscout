@@ -321,7 +321,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
 
     switch (route) {
       case 'search':
-        if (env.SEARCH_V3 === '1') return await handleSearchV3(request, env, ctx);
+        if (env.SEARCH_V3 !== '0') return await handleSearchV3(request, env, ctx); // v3 默认（生产 M3 切换）；设 SEARCH_V3=0 紧急回退 v2
         return await handleSearch(request, env, ctx);
 
       case 'sources':
