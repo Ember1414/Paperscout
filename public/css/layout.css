@@ -148,3 +148,19 @@
 .ps-quick-list li {
   padding: var(--s-1) 0;
 }
+
+/* ---------- 结果页 ---------- */
+@media (max-width: 1023px) {
+  .ps-col-filters {
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    padding: var(--s-3);
+    margin-bottom: var(--s-4);
+  }
+}
+.result-card.is-compact {
+  padding: var(--s-2) var(--s-3);
+}
+.result-card.is-compact + .result-card.is-compact {
+  margin-top: var(--s-2);
+}
