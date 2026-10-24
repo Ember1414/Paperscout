@@ -31,15 +31,20 @@ const report = (msg) => {
 };
 
 for (const file of walk(ROOT, ['.html'])) {
-  const src = readFileSync(file, 'utf8');
   const rel = relative('.', file);
+  if (rel.replaceAll('\\', '/').endsWith('legacy.html')) {
+    continue; // v2 冻结回退版（8.5.3），M8-04 删除
+  }
+  const src = readFileSync(file, 'utf8');
   const lineOf = (idx) => src.slice(0, idx).split('\n').length;
 
   for (const m of src.matchAll(/<img\b[^>]*>/g)) {
     if (!/\balt=/.test(m[0])) report(`${rel}:${lineOf(m.index)}: <img> 缺 alt`);
   }
   for (const m of src.matchAll(/<(button|a)\b([^>]*)>([\s\S]*?)<\/\1>/g)) {
-    const [, tag, attrs, inner] = m;
+    const tag = m[1];
+    const attrs = m[2];
+    const inner = m[3];
     const text = inner.replace(/<[^>]*>/g, '').trim();
     const svgOnly = /<svg[\s\S]*<\/svg>/.test(inner) && !text;
     if (!text && !/aria-label=/.test(attrs) && (svgOnly || inner.trim() === '')) {

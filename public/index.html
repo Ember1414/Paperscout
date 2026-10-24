@@ -3,193 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PaperScout · 全球论文检索</title>
-  <meta name="description" content="一站式检索国内外学术论文：聚合 arXiv、OpenAlex、Crossref、Semantic Scholar、PubMed、DBLP、DOAJ、Europe PMC 八大数据源，点击直达原文。" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔭</text></svg>" />
+  <title>PaperScout · 证据可溯源的学术研究工作台</title>
+  <meta name="description" content="多源学术论文聚合检索：智能去重、排序可解释、证据可溯源。支持中文与英文文献，免费无登录。" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23B8791A'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23FBFAF8'/%3E%3C/svg%3E" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="stylesheet" href="/style.css" />
+  <!-- 主题防 FOUC：先于样式表执行 -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ps-theme');
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { /* 读取失败按亮色 */ }
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
 </head>
 <body>
-  <!-- 顶部导航 -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="logo" href="/">🔭 Paper<span>Scout</span></a>
-      <div class="nav-actions">
-        <span class="nav-stat" id="source-count">11 大数据源</span>
-        <button id="fav-open" class="icon-btn" title="我的收藏" aria-label="我的收藏">⭐</button>
-        <button id="theme-toggle" class="icon-btn" title="切换明暗主题" aria-label="切换明暗主题">🌙</button>
+  <div id="app">
+    <!-- 首屏骨架：JS 就绪前占位，防 CLS -->
+    <div class="ps-shell" aria-hidden="true">
+      <div class="ps-header"><div class="ps-header-inner"><div class="skeleton" style="width:120px;height:20px"></div></div></div>
+      <div class="ps-main">
+        <div class="skeleton skeleton-card"><div class="sk-line skeleton w60"></div></div>
       </div>
     </div>
-  </nav>
-
-  <!-- Hero 区 -->
-  <header class="hero">
-    <div class="hero-blob blob-1"></div>
-    <div class="hero-blob blob-2"></div>
-    <div class="container hero-inner">
-      <h1>一站检索<em>全球论文</em></h1>
-      <p class="tagline">聚合 11 大权威学术数据源 · 智能去重 · 点击直达原文</p>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- 检索面板 -->
-    <section class="search-panel">
-      <form id="search-form" autocomplete="off">
-        <div class="search-row">
-          <span class="search-icon">🔍</span>
-          <input
-            id="q"
-            type="text"
-            placeholder="输入主题关键词，如：大语言模型 / graph neural network / CRISPR"
-            aria-label="主题关键词"
-          />
-          <button type="submit" id="search-btn">检 索</button>
-        </div>
-
-        <div class="filters">
-          <div class="f-group">
-            <span class="f-label">作者</span>
-            <input id="author" type="text" placeholder="✍️ 可选" aria-label="作者" />
-          </div>
-          <div class="f-group">
-            <span class="f-label">年份</span>
-            <div class="year-range">
-              <input id="yearFrom" type="number" min="1900" max="2100" placeholder="起始年" aria-label="起始年份" />
-              <span>—</span>
-              <input id="yearTo" type="number" min="1900" max="2100" placeholder="结束年" aria-label="结束年份" />
-            </div>
-            <div class="quick-years">
-              <button type="button" class="qy" data-years="1">近 1 年</button>
-              <button type="button" class="qy" data-years="3">近 3 年</button>
-              <button type="button" class="qy" data-years="5">近 5 年</button>
-              <button type="button" class="qy qy-clear" data-years="0">✕</button>
-            </div>
-          </div>
-          <div class="f-group">
-            <span class="f-label">排序</span>
-            <select id="sort" aria-label="排序方式">
-              <option value="smart">⭐ 智能排序（相关性优先 + 质量）</option>
-              <option value="relevance">纯相关性</option>
-              <option value="newest">按最新发表</option>
-              <option value="citations">按被引次数</option>
-            </select>
-          </div>
-          <div class="f-group">
-            <span class="f-label">语言</span>
-            <select id="language" aria-label="语言筛选">
-              <option value="all">全部</option>
-              <option value="zh">仅中文</option>
-              <option value="en">仅英文</option>
-            </select>
-          </div>
-          <div class="f-group">
-            <span class="f-label">类型</span>
-            <select id="paperType" aria-label="文献类型">
-              <option value="all">全部</option>
-              <option value="journal">期刊论文</option>
-              <option value="conference">会议论文</option>
-              <option value="preprint">预印本</option>
-            </select>
-          </div>
-          <div class="f-group">
-            <span class="f-label">学科</span>
-            <select id="field" aria-label="学科领域">
-              <option value="">全部学科</option>
-              <option value="cs">💻 计算机</option>
-              <option value="physics">🔭 物理</option>
-              <option value="math">📐 数学</option>
-              <option value="bio">🧬 生物</option>
-              <option value="ee">⚡ 电子工程</option>
-            </select>
-          </div>
-          <div class="f-group">
-            <span class="f-label">每页</span>
-            <select id="limit" aria-label="每页显示条数">
-              <option value="20">20 条</option>
-              <option value="40">40 条</option>
-              <option value="60">60 条</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="sources" id="source-chips">
-          <label class="chip"><input type="checkbox" class="src" value="arxiv" checked /><span class="dot dot-arxiv"></span>arXiv 预印本</label>
-          <label class="chip"><input type="checkbox" class="src" value="openalex" checked /><span class="dot dot-openalex"></span>OpenAlex</label>
-          <label class="chip"><input type="checkbox" class="src" value="crossref" checked /><span class="dot dot-crossref"></span>Crossref</label>
-          <label class="chip"><input type="checkbox" class="src" value="semanticscholar" checked /><span class="dot dot-semanticscholar"></span>Semantic Scholar</label>
-          <label class="chip"><input type="checkbox" class="src" value="pubmed" checked /><span class="dot dot-pubmed"></span>PubMed</label>
-          <label class="chip"><input type="checkbox" class="src" value="dblp" checked /><span class="dot dot-dblp"></span>DBLP</label>
-          <label class="chip"><input type="checkbox" class="src" value="doaj" checked /><span class="dot dot-doaj"></span>DOAJ 开放获取</label>
-          <label class="chip"><input type="checkbox" class="src" value="europepmc" checked /><span class="dot dot-europepmc"></span>Europe PMC</label>
-          <label class="chip"><input type="checkbox" class="src" value="openaire" checked /><span class="dot dot-openaire"></span>OpenAIRE</label>
-          <label class="chip"><input type="checkbox" class="src" value="zenodo" checked /><span class="dot dot-zenodo"></span>Zenodo</label>
-          <label class="chip"><input type="checkbox" class="src" value="baiduxueshu" checked /><span class="dot dot-baiduxueshu"></span>中文文献聚合</label>
-        </div>
-      </form>
-    </section>
-
-    <!-- 最近检索 -->
-    <section class="history" id="history-section" hidden>
-      <span class="f-label">最近检索</span>
-      <div class="history-chips" id="history-chips"></div>
-      <button id="history-clear" class="link-btn">清空</button>
-    </section>
-
-    <section id="status" class="status" hidden></section>
-
-    <!-- AI 工具栏 -->
-    <div class="ai-toolbar" id="ai-toolbar" hidden>
-      <button id="ai-summary-btn" class="ai-btn">🤖 AI 总结研究现状</button>
-      <button id="ai-ask-btn" class="ai-btn">🤖 AI 问答本文献</button>
-    </div>
-    <section id="ai-panel" class="ai-panel" hidden></section>
-
-    <section id="results" class="results" aria-live="polite"></section>
-
-    <!-- 分页 -->
-    <nav class="pagination" id="pagination" hidden>
-      <button id="prev-page" class="page-btn">← 上一页</button>
-      <span class="page-info" id="page-info">第 1 页</span>
-      <button id="next-page" class="page-btn">下一页 →</button>
-    </nav>
-
-    <!-- 爬虫抓取的 arXiv 最新论文 -->
-    <section class="trending" id="trending-section" hidden>
-      <div class="trending-head">
-        <h2>🕷️ 最新论文雷达</h2>
-        <span class="trending-meta" id="trending-meta"></span>
-        <button id="trending-refresh" class="refresh-btn" title="绕过缓存，实时重新抓取">🔄 实时刷新</button>
-      </div>
-      <p class="trending-note">由内置爬虫实时抓取 arXiv 计算机科学类目最新提交，自动缓存 2 分钟</p>
-      <div class="trending-list" id="trending-list"></div>
-    </section>
-
-    <footer class="footer">
-      <p>
-        数据来自 11 大学术数据源：arXiv · OpenAlex · Crossref · Semantic Scholar · PubMed · DBLP · DOAJ · Europe PMC · OpenAIRE · Zenodo · 中文文献聚合
-        <br />检索结果缓存 10 分钟 · 论文雷达缓存 2 分钟 · Powered by Cloudflare Pages
-      </p>
-    </footer>
-  </main>
-
-  <div id="toast" class="toast" hidden></div>
-
-  <!-- 对比栏 -->
-  <div id="compare-bar" class="compare-bar" hidden>
-    <span id="compare-count">已选 0 篇</span>
-    <button id="compare-run" class="page-btn">⚖️ 对比</button>
-    <button id="compare-clear" class="page-btn">清空</button>
   </div>
-
-  <!-- 通用弹窗 -->
-  <div id="modal-overlay" class="modal-overlay" hidden>
-    <div class="modal-card">
-      <button id="modal-close" class="modal-close">✕</button>
-      <div id="modal-content"></div>
-    </div>
-  </div>
-
-  <script src="/app.js"></script>
+  <noscript><p style="padding:16px">PaperScout 需要 JavaScript 才能检索文献。请启用后刷新。</p></noscript>
+  <script type="module" src="/js/app.js"></script>
 </body>
 </html>

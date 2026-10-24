@@ -1,0 +1,79 @@
+/* PaperScout v3 设计 Token（REBUILD_PLAN 6.2）——唯一色值来源；组件 CSS 只允许引用变量 */
+
+:root {
+  /* 色彩（亮色） */
+  --bg: #FBFAF8;
+  --surface: #FFFFFF;
+  --surface-2: #F4F2EE;
+  --line: #E3DFD7;
+  --line-strong: #C9C4B9;
+  --fg: #111418;
+  --fg-2: #454B54;
+  --fg-3: #6E747D;
+  --accent: #B8791A;
+  --accent-fg: #FFFFFF;
+  --accent-soft: #FBF1DE;
+  --ok: #2E7D4F;
+  --warn: #A86A00;
+  --danger: #B3261E;
+  --info: #2A5DB0;
+
+  /* 字号（1.25 Modular scale） */
+  --t-xs: 12px;
+  --t-sm: 13px;
+  --t-base: 15px;
+  --t-md: 17px;
+  --t-lg: 20px;
+  --t-xl: 26px;
+  --t-2xl: 34px;
+
+  /* 间距（4 的倍数） */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+
+  /* 形状 */
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-pill: 999px;
+  --shadow-pop: 0 8px 28px rgba(17, 20, 24, 0.14), 0 2px 6px rgba(17, 20, 24, 0.08);
+
+  /* 动效 */
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+
+  /* 层级 */
+  --z-sticky: 100;
+  --z-drawer: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  /* 字体栈（6.1：禁止 Web Font 网络加载） */
+  --font-ui: ui-sans-serif, -apple-system, "Segoe UI", "Noto Sans SC", system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Consolas, monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #0E1116;
+  --surface: #161A21;
+  --surface-2: #1C222B;
+  --line: #2A303A;
+  --line-strong: #3A414D;
+  --fg: #E8EAED;
+  --fg-2: #B4B9C2;
+  --fg-3: #7E848F;
+  --accent: #E0A030;
+  --accent-fg: #0E1116;
+  --accent-soft: #2A2318;
+  --ok: #5BA97E;
+  --warn: #D19A3D;
+  --danger: #E06A62;
+  --info: #7BA3D8;
+  --shadow-pop: 0 8px 28px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4);
+}
