@@ -19,6 +19,8 @@ export interface SearchPool {
   upstreamTotals: Record<string, number | undefined>;
   createdAt: number;
   updatedAt: number;
+  /** 上游是否已无更多（存缓存供翻页判定，避免命中后重复召回） */
+  exhausted?: boolean;
 }
 
 export function createPool(key: string, items: Work[]): SearchPool {

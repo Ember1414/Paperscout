@@ -1,7 +1,7 @@
 import { SEARCH } from '../config';
 import { AppError } from '../errors';
 import { fetchUpstream } from '../infra/http';
-import { canonicalHash, l0Get, l0Put } from '../infra/cache';
+import { canonicalHash, l0Get, l0Put, l1Get, l1Put, l2Get } from '../infra/cache';
 import { Semaphore } from '../infra/semaphore';
 import { parseQuery, extractDoi } from '../query/parse';
 import { activeSources, DEFAULT_CORE_SOURCES, SOURCES, truncateByTier } from '../sources/registry';
@@ -59,6 +59,8 @@ export interface V3SearchResult {
   sources: SourceStatus[];
   parsed: { intent: string; lang: string; terms: string[] };
   queryHash: string;
+  /** 命中的缓存层（X-Cache 头用）；undefined = miss */
+  cacheLayer?: 'l0' | 'l1' | 'l2';
 }
 
 export interface OrchestratorDeps {
@@ -66,6 +68,9 @@ export interface OrchestratorDeps {
   sourcesOverride?: (SourceDef & { fetchRaw: FetchRawFn })[];
   /** 测试注入：全局硬截止（毫秒） */
   totalBudgetMs?: number;
+  /** Workers 运行时注入：KV 绑定（L2 只读）与 waitUntil（L1 写挂靠，A-07） */
+  env?: { CACHE?: KVNamespace };
+  ctx?: { waitUntil: (p: Promise<unknown>) => void };
 }
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
@@ -211,11 +216,28 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
 
   const hashInput = { q: params.q, src: params.src, from: params.from, to: params.to, type: params.type, lang: params.lang, field: params.field, sort: params.sort };
   const queryHash = canonicalHash(hashInput);
+  const cacheKey = `pool:${queryHash}`;
   const meta = (partial: boolean): Pick<V3SearchResult, 'parsed' | 'queryHash' | 'partial'> => ({
     parsed: { intent: parsed.intent, lang: parsed.lang, terms: parsed.terms },
     queryHash,
     partial,
   });
+
+  // 缓存读取：L0(60s) → L1 Cache API(600s) → L2 KV（在线只读，仅 Warmer 预热写入）（7.6）
+  let cached = l0Get<SearchPool>(cacheKey);
+  if (!cached.value) cached = await l1Get<SearchPool>(queryHash);
+  if (!cached.value) cached = await l2Get<SearchPool>(deps.env?.CACHE, cacheKey);
+  if (cached.value && !isPool(cached.value)) cached = { value: undefined, layer: undefined };
+  if (cached.value) {
+    // 命中：跳过 fan-out，直接切片（page/limit 不进 hash，A-08）
+    const pool = cached.value;
+    const slice = slicePage(pool, params.page, params.limit, pool.exhausted ?? true);
+    return {
+      items: slice.items, total: slice.items.length, poolSize: pool.items.length,
+      page: params.page, limit: params.limit, hasMore: slice.hasMore, exhausted: slice.exhausted,
+      cacheLayer: cached.layer, sources: [], ...meta(false),
+    };
+  }
 
   // DOI 意图：跳过 fan-out（5.1.2）
   if (parsed.intent === 'doi') {
@@ -322,7 +344,11 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   // exhausted：上游无更多（无源满页）或追加轮次用尽或池已满
   const exhausted = !anyFullPage() || rounds >= MAX_APPEND_ROUNDS || pool.items.length >= SEARCH.POOL_TARGET;
 
+  pool.exhausted = exhausted;
   l0Put(`pool:${queryHash}`, pool, SEARCH.CACHE_TTL_S);
+  if (deps.ctx) {
+    deps.ctx.waitUntil(l1Put(queryHash, pool)); // A-07：写入挂 waitUntil，防 isolate 回收丢缓存
+  }
 
   const slice = slicePage(pool, params.page, params.limit, exhausted);
   const statusList = usable.map((d) => statuses[d.id] ?? { id: d.id, name: d.name, status: 'skipped' as const, ms: 0, count: 0 });
@@ -337,4 +363,10 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
     sources: statusList,
     ...meta(timedOut || statusList.some((s) => s.status === 'timeout' || s.status === 'rate_limited' || s.status === 'error')),
   };
+}
+
+/** 池结构校验（防缓存坏数据） */
+function isPool(p: unknown): p is SearchPool {
+  const v = p as SearchPool;
+  return Boolean(v && Array.isArray(v.items) && typeof v.key === 'string');
 }
