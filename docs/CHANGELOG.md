@@ -2,6 +2,33 @@
 
 > 模板见 REBUILD_PLAN 附录 E。每个里程碑合并 main 前更新。
 
+## [M3] 2026-10-24 · 论文详情与引文（分支 `v3/m3`）
+
+### 新增
+- `/api/work`：单篇详情（OpenAlex 单篇 + referenced_works 水合 20 + cites: 反查 20 + related 10 去重；Crossref 兜底）+ L1 24h 缓存防坏守卫
+- `/p/:id` 详情页：面包屑/衬线标题/作者/venue·DOI·类型徽章/指标条（被引·置信度·OA·来源与日期标注 D-12）/原文 PDF/摘要折叠零请求/机构行/三列表可跳转（参考文献 20/被引 20/相似 ≥3 去重）
+- `/api/availability`：正版全文探测链 OpenAlex→Unpaywall→Europe PMC，kind/version 徽章 + 无 OA 三路建议；KV avail:doi 24h
+- `/api/citations?dir=contexts`：S2 引用上下文（"谁在哪句话引用"），限流降级不影响主流程
+- 引文网络 canvas 图（力导向 30 节点/hover/拖拽/点击跳转 + 列表替身 a11y）
+- 被引趋势（counts_by_year 柱图 + 5.11.3 三档标签 + 口径标注）
+- `public/js/cite-format.js`：BibTeX/RIS/CSL-JSON 纯前端格式化 + 详情页三键复制（2s 已复制反馈）
+- 顶刊白名单扩至 130 条（CS 顶会/顶刊/自然科学/数理经社/中文核心），抽样准确率 ≥90%
+- `/api/status` + `/status` 视图：版本/源健康 24h（D1 聚合）/今日检索·缓存命中·KV 写·AI 配额（预算对照）
+- `/about`：方法/来源许可表/中文局限常驻声明/AI 局限/隐私/免责/联系 + 清除数据（历史/全部，confirm+toast）
+- 单测 209 → 212 例
+
+### 修复
+- DOI 含 `/` 破坏 /p/:id 路径分段 → 详情链接整体 encodeURIComponent
+- `MAILTO` 常量拼接错误 → /api/work 引文列表全 0
+- 坏结果被 L1 缓存 24h → substantial 守卫（部分失败不缓存）
+- status/work/availability 共 6 处静默 catch 补日志（G-10）
+
+### 决策
+- cite-format 纯前端定位（5.7 本意）；S2 recommendations 未接入（R-01 限流，OpenAlex 单源满足 ≥3）
+
+### 预算
+- 首屏 gzip 不变（详情页/状态页/关于页均为懒加载视图）
+
 ## [M2] 2026-10-24 · 检索与结果体验（分支 `v3/m2`）
 
 ### 新增
