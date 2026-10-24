@@ -88,7 +88,7 @@ export function cardHtml(w, opts, highlightTerms = []) {
                   ${opts.density !== 'compact' ? `<h3 class="r-title">${highlightHtml(w.title, highlightTerms)}</h3>` : `<h3 class="r-title" style="font-size:var(--t-sm);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;-webkit-line-clamp:unset">${escapeHtml(w.title)}</h3>`}
       <div class="r-meta">
         <span>${escapeHtml(authorText)}</span>
-        <span>${escapeHtml(String(w.venue ?? '出版方未知'))}</span>
+        ${w.venue ? `<a href="/search?q=${encodeURIComponent('venue:' + w.venue)}" data-link class="ps-venue-link" title="查看该期刊/会议更多论文" style="color:var(--fg-2)">${escapeHtml(String(w.venue))}</a>` : `<span>出版方未知</span>`}
         <span class="num">${escapeHtml(String(year))}</span>
         ${citations !== null ? `<span class="num">被引 ${citations.toLocaleString('zh-CN')}</span>` : ''}
         ${badges.map((b) => `<span class="badge">${escapeHtml(b)}</span>`).join('')}

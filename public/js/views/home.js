@@ -1,6 +1,7 @@
 // @ts-check
 import { searchBarHtml, bindSearchBar } from '../ui/searchbar.js';
 import { searchUrl } from '../url.js';
+import { apiGet } from '../api.js';
 
 /**
  * 首页（4.3 线框 / 5.13.1 信息流）。
@@ -105,3 +106,6 @@ function escapeHtml(s) {
 
 /** @type {import('../router.js').View} */
 export default { render, mount };
+
+/** @param {string} s */
+function esc(s) { return String(s ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;"); }

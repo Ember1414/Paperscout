@@ -341,3 +341,26 @@ function mountNet(body, d) {
     });
   });
 }
+
+/** M6-07 AI 精读（懒加载）
+ * @param {HTMLElement} body
+ * @param {string} doi
+ */
+async function loadAiExtract(body, doi) {
+  const el = /** @type {HTMLElement | null} */ (body.querySelector('.js-ai-extract-body'));
+  if (!el) return;
+  el.innerHTML = '<div class="skeleton" style="height:60px"></div>';
+  try {
+    const res = await fetch('/api/ai/extract', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Client-Id': localStorage.getItem('ps-client-id') ?? 'anon' },
+      body: JSON.stringify({ doi }),
+    });
+    const j = await res.json();
+    if (j.error) { el.innerHTML = '<p style="color:var(--fg-3);font-size:var(--t-sm)">' + esc(j.error.message) + '</p>'; return; }
+    el.innerHTML = '<div style="font-size:var(--t-sm);line-height:1.8;white-space:pre-wrap">' + esc(j.data.analysis) + '</div>' +
+      (j.data.verified ? '<span class="badge badge-ok">AI 分析（需核实）</span>' : '<span class="badge badge-warn">AI 分析（引用未校验）</span>');
+  } catch (e) {
+    el.innerHTML = '<p style="color:var(--fg-3);font-size:var(--t-sm)">AI 精读暂不可用。</p>';
+  }
+}
