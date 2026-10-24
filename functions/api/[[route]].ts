@@ -2,6 +2,7 @@ import type { Env, LegacySourceId, Paper } from '../lib/types';
 import { runSearch, parseV3Params } from '../lib/services/search';
 import { AppError, errorEnvelope, internalEnvelope, okEnvelope } from '../lib/errors';
 import { logError, logInfo, newRequestId } from '../lib/infra/log';
+import { writeSearchLog } from '../lib/infra/metrics';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -31,7 +32,21 @@ async function handleSearchV3(request: Request, env: Env, ctx: EventContext<Env,
     const result = await runSearch(params, { env, ctx });
     const ms = Date.now() - t0;
     logInfo(rid, 'search.v3', { q: params.q.slice(0, 60), ms, poolSize: result.poolSize, partial: result.partial, cache: result.cacheLayer ?? 'miss' });
-    // M1-10 接入 search_log 写入（缓存命中不重复统计）
+    // search_log：仅未命中缓存的检索计 1 行（waitUntil 异步写，D1 失败降级放行）
+    if (!result.cacheLayer) {
+      ctx.waitUntil(
+        writeSearchLog(env.DB, {
+          queryHash: result.queryHash,
+          querySample: params.q,
+          lang: params.lang ?? 'all',
+          sourcesOk: result.sources.filter((s0) => s0.status === 'ok').length,
+          sourcesTotal: result.sources.length,
+          elapsedMs: ms,
+          resultCount: result.total,
+          cached: false,
+        }),
+      );
+    }
     const body = okEnvelope(
       {
         ...result,

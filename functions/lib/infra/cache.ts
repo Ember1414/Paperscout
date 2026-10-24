@@ -64,7 +64,8 @@ export async function l1Get<T>(queryHash: string): Promise<CacheGetResult<T>> {
     if (!res) return { value: undefined, layer: undefined };
     const value = (await res.json()) as T;
     return { value, layer: 'l1' };
-  } catch {
+  } catch (e) {
+    console.warn('cache:l1-get-failed', e instanceof Error ? e.message : String(e));
     return { value: undefined, layer: undefined };
   }
 }
@@ -77,8 +78,9 @@ export async function l1Put(queryHash: string, value: unknown, ttlS: number = CA
       headers: { 'Content-Type': 'application/json', 'Cache-Control': `public, max-age=${ttlS}` },
     });
     await caches.default.put(new Request(l1Key(queryHash)), res);
-  } catch {
-    // Cache API 不可用（本地/受限环境）时降级到 L0；此 catch 带注释（G-10 合规）
+  } catch (e) {
+    // Cache API 不可用（本地/受限环境）时降级到 L0，留痕不静默（G-10）
+    console.warn('cache:l1-put-failed', e instanceof Error ? e.message : String(e));
   }
 }
 
@@ -90,7 +92,8 @@ export async function l2Get<T>(kv: KVNamespace | undefined, key: string): Promis
     const raw = await kv.get(key, 'json');
     if (raw === null) return { value: undefined, layer: undefined };
     return { value: raw as T, layer: 'l2' };
-  } catch {
+  } catch (e) {
+    console.warn('cache:l2-get-failed', e instanceof Error ? e.message : String(e));
     return { value: undefined, layer: undefined };
   }
 }
