@@ -310,7 +310,9 @@ export async function exportAll() {
   return out;
 }
 
-/** @param {object} data */
+/**
+ * @param {{ [key: string]: any[] }} data
+ */
 export async function importAll(data) {
   const db = await openDb();
   for (const store of ['works', 'collections', 'notes', 'settings']) {
