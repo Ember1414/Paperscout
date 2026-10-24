@@ -400,6 +400,11 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
         return jsonResponse({ ok: true, data: result, meta: { requestId: newRequestId() } });
       }
 
+      case 'status': {
+        const statusResult = await getStatus(env.DB);
+        return new Response(JSON.stringify(okEnvelope(statusResult, { requestId: newRequestId() })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60' } });
+      }
+
       case 'health':
         return jsonResponse({ status: 'ok', time: new Date().toISOString() });
 
