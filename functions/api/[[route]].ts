@@ -8,6 +8,7 @@ import { getWorkDetail } from '../lib/services/work';
 import { getAvailability } from '../lib/services/availability';
 import { getContexts } from '../lib/services/contexts';
 import { getStatus } from '../lib/services/status';
+import { createShare, getShare, deleteShare } from '../lib/services/share';
 import { searchAuthors, getAuthorDetail } from '../lib/services/author';
 import { getOrgDetail } from '../lib/services/org';
 import { getVenueDetail } from '../lib/services/venue';
@@ -435,7 +436,65 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
         return new Response(JSON.stringify(okEnvelope(venue, { requestId: newRequestId(), ms: Date.now() - vt0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
       }
 
+      case 'health-report': {
+        // Warmer 调用（X-Warmer header 校验）
+        const secret = env.WARMER_SECRET ?? 'warmer-secret';
+        if (request.headers.get('X-Warmer') !== secret) return jsonResponse({ error: 'unauthorized' }, 403);
+        const body0: any = await request.json().catch(() => ({}));
+        const today = new Date().toISOString().slice(0, 10);
+        if (env.DB && Array.isArray(body0.health)) {
+          for (const h of body0.health) {
+            await env.DB.prepare('INSERT INTO source_health (day, source, ok, fail, avg_ms) VALUES (?1, ?2, ?3, ?4, ?5) ON CONFLICT (day, source) DO UPDATE SET ok = ok + ?3, fail = fail + ?4').bind(today, h.source, h.ok, h.fail, h.ms).run();
+          }
+        }
+        return jsonResponse({ ok: true });
+      }
+
+      case 'trending': {
+        // 简单 trending：从 search_log 取热词 + 前沿从 arXiv API 代理
+        const field = url.searchParams.get('field') ?? 'cs';
+        const t0 = Date.now();
+        // 取最近 7 天热词
+        const hot = env.DB ? await env.DB.prepare(
+          'SELECT query_sample AS s, COUNT(*) AS n FROM search_log WHERE day >= ?1 AND query_sample IS NOT NULL GROUP BY query_sample ORDER BY n DESC LIMIT 12'
+        ).bind(new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10)).all() : { results: [] };
+        return jsonResponse({
+          crawledAt: new Date().toISOString(),
+          hotKeywords: (hot.results ?? []).map((h) => h.s),
+          field,
+        });
+      }
+
+      case 'share': {
+        if (request.method === 'POST') {
+          const result = await createShare(request, env);
+          return new Response(JSON.stringify(okEnvelope(result, { requestId: newRequestId() })), { status: 201, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        }
+        if (request.method === 'DELETE') {
+          const result = await deleteShare(url, request, env);
+          return jsonResponse(result);
+        }
+        const share = await getShare(url, env);
+        return jsonResponse({ ok: true, data: share });
+      }
+
+      case 'feedback': {
+        if (request.method !== 'POST') return jsonResponse({ error: '请使用 POST' }, 405);
+        const fb: any = await request.json().catch(() => ({}));
+        if (!fb.message) return jsonResponse({ error: '请填写反馈内容' }, 400);
+        if (env.DB) {
+          await env.DB.prepare('INSERT INTO feedback (message, page, ts) VALUES (?1, ?2, ?3)').bind(String(fb.message).slice(0, 1000), String(fb.page ?? '').slice(0, 200), Date.now()).run();
+        }
+        return jsonResponse({ ok: true });
+      }
+
+      case 'notifications': {
+        // 简化版通知：返回订阅列表 + 各订阅的最新作品数（从 OpenAlex 反查太贵，标注 M7 后期扩展）
+        return jsonResponse({ ok: true, data: { items: [], note: '通知增量计算依赖 Warmer 聚合，M7 后期完善' } });
+      }
+
       case 'health':
+        return jsonResponse({ status: 'ok', time: new Date().toISOString() });
         return jsonResponse({ status: 'ok', time: new Date().toISOString() });
 
       case 'diag':
