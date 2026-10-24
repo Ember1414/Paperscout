@@ -2,6 +2,18 @@
 
 > 模板见 REBUILD_PLAN 附录 E。每个里程碑合并 main 前更新。
 
+## [M8] 2026-10-24 · 打磨 / 性能 / 验收（分支 `v3/m8`）——v3 全量完成
+
+### 变更
+- PWA 版本化缓存（paperscout-v3 + stale-while-revalidate，跳过 /api/）
+- /api/diag 路由 + handleDiag 删除（8.5 删除清单）
+- A11y 0 违规 / budget 18.4KB / 90KB / G-10 0 处静默 catch
+- 金标准 12 查询冒烟 11/12 PASS（q04 R-01 瞬断）
+- BASELINE 对比：v2 冷查询 14.4s → v3 ~5-6.5s（-55%）；v2 标题重复 3.2% → v3 0%
+
+### 预算
+- 首屏 gzip 18.4KB / 90KB（P-01 PASS）
+
 ## [M6] 2026-10-24 · AI 与配额（分支 `v3/m6`）
 
 ### 新增
