@@ -206,7 +206,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   // M2-14 查询扩展：中英互译（打分词并入 + zh 召回后缀仅给声明支持的源）
   const expansion = expandQuery(params.q, parsed.terms, parsed.cjkWhole);
   const scoredParsed = expansion.scoreTerms.length ? { ...parsed, terms: [...parsed.terms, ...expansion.scoreTerms] } : parsed;
-  const recallSuffix = parsed.lang === 'zh' ? expansion.recallSuffix : '';
+  const recallSuffix = expansion.recallSuffix; // 语言过滤由 applyFilters 负责：lang=zh 只看中文，lang=all（默认）下英文扩展词生效
   const t0 = Date.now();
   const totalBudget = deps.totalBudgetMs ?? SEARCH.TOTAL_BUDGET_MS;
   const sort = params.sort ?? 'smart';
@@ -364,9 +364,14 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   const exhausted = !anyFullPage() || rounds >= MAX_APPEND_ROUNDS || pool.items.length >= SEARCH.POOL_TARGET;
 
   pool.exhausted = exhausted;
-  l0Put(`pool:${queryHash}`, pool, SEARCH.CACHE_TTL_S);
-  if (deps.ctx) {
-    deps.ctx.waitUntil(l1Put(queryHash, pool)); // A-07：写入挂 waitUntil，防 isolate 回收丢缓存
+  // 7.6：禁止缓存空结果——空池仅 L0 防抖 60s，防上游瞬断被放大
+  if (pool.items.length === 0) {
+    l0Put(`pool:${queryHash}`, pool, SEARCH.EMPTY_RESULT_TTL_S);
+  } else {
+    l0Put(`pool:${queryHash}`, pool, SEARCH.CACHE_TTL_S);
+    if (deps.ctx) {
+      deps.ctx.waitUntil(l1Put(queryHash, pool)); // A-07：写入挂 waitUntil，防 isolate 回收丢缓存
+    }
   }
 
   const slice = slicePage(pool, params.page, params.limit, exhausted);
