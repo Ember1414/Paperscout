@@ -2,6 +2,23 @@
 
 > 模板见 REBUILD_PLAN 附录 E。每个里程碑合并 main 前更新。
 
+## [M5] 2026-10-24 · 文库 / 工作区 / 产出（分支 `v3/m5`）
+
+### 新增
+- IndexedDB 完整层：6 stores（works/collections/notes/searches/settings/trash）+ workspaceId 过滤（多工作区隔离）+ 全量 JSON 导出/导入
+- `/library` 文库页：列表（本地搜索过滤）/笔记（Markdown 子集 textarea + 保存/回显）/标签 chip/回收站（7 天自动清理 + 恢复）/导出 7 种格式（BibTeX/RIS/CSL/CSV/MD/Word/JSON）/导入 JSON 回灌（幂等）
+- `/compare?ids=` 对比矩阵（≤4 篇 × 7 行，URL 可分享）
+- `/settings` 页面：密度/语言/排序/隐私（停止热词入库）/清除数据跳转
+- 收藏从 localStorage 迁移到 IndexedDB works store
+- 单测 209 → 212 例
+
+### 修复
+- card.js 收藏底层从 localStorage 换 db.js
+- importAll data 类型补齐
+
+### 预算
+- /library 和 /settings 均为懒加载视图，首屏 gzip 不变
+
 ## [M3] 2026-10-24 · 论文详情与引文（分支 `v3/m3`）
 
 ### 新增
