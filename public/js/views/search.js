@@ -6,6 +6,7 @@ import { resultsHtml, bindResults, registerWorks } from '../ui/results.js';
 import { searchBarHtml, bindSearchBar } from '../ui/searchbar.js';
 import { navigate, replaceUrlSilent } from '../router.js';
 import { openDrawer, drawerContentHtml } from '../ui/drawer.js';
+import { cardHtml } from '../ui/card.js';
 
 /**
  * 检索结果页（REBUILD_PLAN 4.3 三栏 / M2-05 DoD：I-01~I-12）。
@@ -35,6 +36,14 @@ export function render(ctx) {
             <button type="button" class="btn btn-sm js-view" data-view="compact" aria-pressed="${p.view === 'compact'}">紧凑</button>
             <button type="button" class="btn btn-sm js-view" data-view="table" aria-pressed="${p.view === 'table'}">表格</button>
             <button type="button" class="btn btn-sm js-stop" hidden>停止</button>
+            <label style="font-size:var(--t-xs);color:var(--fg-3);display:inline-flex;gap:4px;align-items:center">分组
+              <select class="js-group" style="min-height:32px;padding:2px 4px">
+                <option value="">不分组</option>
+                <option value="year">按年份</option>
+                <option value="venue">按期刊/会议</option>
+                <option value="source">按收录源</option>
+              </select>
+            </label>
           </span>
         </div>
         <div class="js-topbar" aria-hidden="true"></div>
@@ -85,6 +94,9 @@ export function mount(root, ctx) {
     const r = state.results;
     if (current.view === 'table') {
       renderTable(r);
+    } else if (current.group) {
+      resultsEl.innerHTML = groupedHtml(r, current.group, current.view, current.sel);
+      registerWorks(resultsEl, r.items);
     } else {
       resultsEl.innerHTML = resultsHtml(
         { ...r, view: current.view },
@@ -109,28 +121,89 @@ export function mount(root, ctx) {
     }
   };
 
+  /* ---------- M2-08：表格视图（自定义列 + 列排序；列设置本地保存 S-27） ---------- */
+  const TABLE_COLS = [
+    { key: 'title', label: '标题', numeric: false, sortable: false },
+    { key: 'authors', label: '作者', numeric: false, sortable: false },
+    { key: 'year', label: '年份', numeric: true, sortable: true },
+    { key: 'sources', label: '来源', numeric: false, sortable: false },
+    { key: 'citations', label: '被引', numeric: true, sortable: true },
+    { key: 'oa', label: 'OA', numeric: false, sortable: false },
+  ];
+  /** @returns {string[]} */
+  const tableCols = () => {
+    try {
+      const raw = /** @type {string | null} */ (localStorage.getItem('ps-table-cols'));
+      const arr = raw ? /** @type {unknown} */ (JSON.parse(raw)) : null;
+      if (Array.isArray(arr) && arr.length) return arr.filter((k) => TABLE_COLS.some((c) => c.key === k));
+    } catch { /* 存储不可用回退全列 */ }
+    return TABLE_COLS.map((c) => c.key);
+  };
+  /** @type {string} */ let tableSortKey = '';
+  /** @type {1 | -1} */ let tableSortDir = -1;
+
   /** @param {typeof state.results} r */
   const renderTable = (r) => {
+    const enabled = tableCols();
+    let items = [...r.items];
+    if (tableSortKey) {
+      const key = tableSortKey;
+      items.sort((a, b) => ((key === 'year' ? a.year ?? 0 : a.citations ?? 0) - (key === 'year' ? b.year ?? 0 : b.citations ?? 0)) * tableSortDir);
+    }
+    /** @param {any} w @param {string} key */
+    const cell = (w, key) => {
+      switch (key) {
+        case 'title': return `<td style="max-width:420px">${escapeHtml(w.title)}</td>`;
+        case 'authors': return `<td style="max-width:180px">${escapeHtml((w.authors ?? []).slice(0, 2).map((/** @type {any} */ a) => (typeof a === 'string' ? a : a?.name)).join(', '))}</td>`;
+        case 'year': return `<td class="num">${w.year ?? '—'}</td>`;
+        case 'sources': return `<td>${escapeHtml((w.sources ?? []).map((/** @type {any} */ s) => s.sourceName).join('/'))}</td>`;
+        case 'citations': return `<td class="num">${typeof w.citations === 'number' ? w.citations.toLocaleString('zh-CN') : '—'}</td>`;
+        case 'oa': return `<td>${w.openAccess ? '是' : '—'}</td>`;
+        default: return '<td></td>';
+      }
+    };
     resultsEl.innerHTML = `
+      <details style="margin-bottom:8px">
+        <summary style="cursor:pointer;font-size:var(--t-sm);color:var(--fg-2)">列显示</summary>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0">
+          ${TABLE_COLS.map((c) => `<label style="font-size:var(--t-sm)"><input type="checkbox" class="js-col-toggle" value="${c.key}" ${enabled.includes(c.key) ? 'checked' : ''} /> ${c.label}</label>`).join('')}
+        </div>
+      </details>
       <table class="data-table">
         <caption class="sr-only">检索结果表格视图</caption>
         <thead><tr>
-          <th scope="col">标题</th><th scope="col">作者</th><th scope="col">年份</th>
-          <th scope="col">来源</th><th scope="col" class="num">被引</th><th scope="col">OA</th>
+          ${TABLE_COLS.filter((c) => enabled.includes(c.key)).map((c) => c.sortable
+            ? `<th scope="col" class="${c.numeric ? 'num' : ''}"><button type="button" class="js-col-sort" data-key="${c.key}" style="background:none;border:none;cursor:pointer;color:inherit;font:inherit;padding:0">${c.label}${tableSortKey === c.key ? (tableSortDir === -1 ? ' ↓' : ' ↑') : ''}</button></th>`
+            : `<th scope="col" class="${c.numeric ? 'num' : ''}">${c.label}</th>`).join('')}
         </tr></thead>
         <tbody>
-          ${r.items.map((w) => `<tr>
-            <td style="max-width:420px">${escapeHtml(w.title)}</td>
-            <td style="max-width:180px">${escapeHtml((w.authors ?? []).slice(0, 2).join(', '))}</td>
-            <td class="num">${w.year ?? '—'}</td>
-            <td>${escapeHtml((w.sources ?? []).map((/** @type {any} */ s) => s.sourceName).join('/'))}</td>
-            <td class="num">${typeof w.citations === 'number' ? w.citations.toLocaleString('zh-CN') : '—'}</td>
-            <td>${w.openAccess ? '是' : '—'}</td>
-          </tr>`).join('')}
+          ${items.map((w) => `<tr>${enabled.map((k) => cell(w, k)).join('')}</tr>`).join('')}
         </tbody>
-      </table>
-      <p style="font-size:var(--t-xs);color:var(--fg-3)">表格列自定义在 M2-08 交付。</p>`;
+      </table>`;
   };
+
+  /** @type {(e: Event) => void} */
+  const onTable = (e) => {
+    const t = /** @type {HTMLElement} */ (e.target);
+    const sortBtn = /** @type {HTMLElement | null} */ (t.closest?.('.js-col-sort'));
+    if (sortBtn) {
+      const key = sortBtn.dataset.key ?? '';
+      if (tableSortKey === key) tableSortDir = tableSortDir === -1 ? 1 : -1;
+      else { tableSortKey = key; tableSortDir = -1; }
+      renderTable(state.results);
+      return;
+    }
+    const toggle = /** @type {HTMLInputElement | null} */ (t.closest?.('input.js-col-toggle'));
+    if (toggle) {
+      const boxes = [...root.querySelectorAll('.js-col-toggle')];
+      const enabled = boxes.filter((b) => /** @type {HTMLInputElement} */ (b).checked).map((b) => /** @type {HTMLInputElement} */ (b).value);
+      if (enabled.length) {
+        try { localStorage.setItem('ps-table-cols', JSON.stringify(enabled)); } catch { /* 忽略 */ }
+        renderTable(state.results);
+      }
+    }
+  };
+  root.addEventListener('click', onTable);
 
   /** 订阅 store → 局部重渲染结果区 */
   const unsubscribe = subscribe((s) => {
@@ -221,6 +294,15 @@ export function mount(root, ctx) {
   /** 停止（I-12/S-20） */
   stopBtn?.addEventListener('click', () => cancelSearch());
 
+  /** M2-09 分组切换（池内重渲染，不发请求 S-29） */
+  /** @type {(e: Event) => void} */
+  const onGroup = (e) => {
+    const sel = /** @type {HTMLSelectElement} */ (e.target);
+    if (!sel.classList.contains('js-group')) return;
+    applyPatch({ group: /** @type {any} */ (sel.value) });
+  };
+  root.addEventListener('change', onGroup);
+
   /** 筛选面板（300ms 防抖合并，I-04/S-07） */
   const rerenderFilters = () => {
     const aside = /** @type {HTMLElement | null} */ (root.querySelector('.ps-col-filters'));
@@ -249,6 +331,8 @@ export function mount(root, ctx) {
       detailCol?.removeEventListener('click', onDetailClick);
       document.removeEventListener('keydown', onEsc);
       root.removeEventListener('click', onView);
+      root.removeEventListener('click', onTable);
+      root.removeEventListener('change', onGroup);
       cancelSearch();
     },
   };
@@ -266,4 +350,36 @@ export default { render, mount };
  * @param {any} w */
 function drawerInlineHtml(w) {
   return `<div class="result-card js-detail-inline" tabindex="-1">${drawerContentHtml(w)}</div>`;
+}
+
+/* ---------- M2-09：结果分组（details 原生折叠：切换瞬时、零网络请求 S-29） ---------- */
+/**
+ * @param {typeof state.results} r
+ * @param {'year'|'venue'|'source'} mode
+ */
+/** @param {typeof state.results} r @param {'year'|'venue'|'source'} mode @param {string} viewMode @param {string} selId */
+function groupedHtml(r, mode, viewMode, selId) {
+  /** @type {Map<string, any[]>} */
+  const map = new Map();
+  for (const w of r.items) {
+    const key = mode === 'year' ? String(w.year ?? '年份未知')
+      : mode === 'venue' ? String(w.venue ?? '出版方未知')
+      : (w.sources ?? []).map((/** @type {any} */ s) => s.sourceName).join('/') || '单源';
+    const arr = map.get(key) ?? [];
+    arr.push(w);
+    map.set(key, arr);
+  }
+  const keys = [...map.keys()].sort((a, b) => (mode === 'year' ? Number(b) - Number(a) : (map.get(b)?.length ?? 0) - (map.get(a)?.length ?? 0)));
+  return keys
+    .map((k) => {
+      const items = map.get(k) ?? [];
+      return `
+      <details class="ps-group" open>
+        <summary style="cursor:pointer;font-size:var(--t-sm);font-weight:600;padding:8px 0">
+          ${escapeHtml(k)} <span class="chip">${items.length} 条</span>
+        </summary>
+        ${items.map((w) => cardHtml(w, { citationsTopDecile: 0, density: viewMode === 'compact' ? 'compact' : 'list', current: w.id === selId })).join('')}
+      </details>`;
+    })
+    .join('');
 }

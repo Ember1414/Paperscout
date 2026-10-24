@@ -18,6 +18,7 @@
  * @property {number} page
  * @property {20|50} limit
  * @property {ResultView} view
+ * @property {''|'year'|'venue'|'source'} group  结果分组（4.2 新增参数，M2-09）
  * @property {string} sel  当前打开的详情（Work id），抽屉深链
  */
 
@@ -56,6 +57,7 @@ export function paramsFromUrl(url) {
     page: num(sp.get('page'), 1, 10, 1) ?? 1,
     limit: (num(sp.get('limit'), 1, 100, 20) ?? 20) === 50 ? /** @type {50} */ (50) : /** @type {20} */ (20),
     view: pick(sp.get('view'), ['list', 'compact', 'table'], SEARCH_DEFAULTS.view),
+    group: pick(sp.get('group'), ['', 'year', 'venue', 'source'], ''),
     sel: (sp.get('sel') ?? '').slice(0, 120),
   };
 }
@@ -78,6 +80,7 @@ export function queryFromParams(p) {
   if (p.page !== SEARCH_DEFAULTS.page) sp.set('page', String(p.page));
   if (p.limit !== SEARCH_DEFAULTS.limit) sp.set('limit', String(p.limit));
   if (p.view !== SEARCH_DEFAULTS.view) sp.set('view', p.view);
+  if (p.group) sp.set('group', p.group);
   if (p.sel) sp.set('sel', p.sel);
   const s = sp.toString();
   return s ? `?${s}` : '';
@@ -94,7 +97,7 @@ export function searchUrl(patch) {
     q: '', src: [], from: undefined, to: undefined,
     type: SEARCH_DEFAULTS.type, lang: SEARCH_DEFAULTS.lang, field: '',
     sort: SEARCH_DEFAULTS.sort, page: SEARCH_DEFAULTS.page, limit: SEARCH_DEFAULTS.limit,
-    view: SEARCH_DEFAULTS.view, sel: '',
+    view: SEARCH_DEFAULTS.view, group: '', sel: '',
   };
   return `/search${queryFromParams({ ...base, ...patch })}`;
 }
@@ -114,5 +117,6 @@ export function toApiQuery(p) {
   if (p.lang !== 'all') out.lang = p.lang;
   if (p.field) out.field = p.field;
   if (p.sort !== 'smart') out.sort = p.sort;
+  // group 是纯前端展示状态，不发给 API
   return out;
 }
