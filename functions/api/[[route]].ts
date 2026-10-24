@@ -8,6 +8,7 @@ import { getWorkDetail } from '../lib/services/work';
 import { getAvailability } from '../lib/services/availability';
 import { getContexts } from '../lib/services/contexts';
 import { getStatus } from '../lib/services/status';
+import { createShare, getShare, deleteShare } from '../lib/services/share';
 import { searchAuthors, getAuthorDetail } from '../lib/services/author';
 import { getOrgDetail } from '../lib/services/org';
 import { getVenueDetail } from '../lib/services/venue';
@@ -462,6 +463,34 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
           hotKeywords: (hot.results ?? []).map((h) => h.s),
           field,
         });
+      }
+
+      case 'share': {
+        if (request.method === 'POST') {
+          const result = await createShare(request, env);
+          return new Response(JSON.stringify(okEnvelope(result, { requestId: newRequestId() })), { status: 201, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        }
+        if (request.method === 'DELETE') {
+          const result = await deleteShare(url, request, env);
+          return jsonResponse(result);
+        }
+        const share = await getShare(url, env);
+        return jsonResponse({ ok: true, data: share });
+      }
+
+      case 'feedback': {
+        if (request.method !== 'POST') return jsonResponse({ error: '请使用 POST' }, 405);
+        const fb: any = await request.json().catch(() => ({}));
+        if (!fb.message) return jsonResponse({ error: '请填写反馈内容' }, 400);
+        if (env.DB) {
+          await env.DB.prepare('INSERT INTO feedback (message, page, ts) VALUES (?1, ?2, ?3)').bind(String(fb.message).slice(0, 1000), String(fb.page ?? '').slice(0, 200), Date.now()).run();
+        }
+        return jsonResponse({ ok: true });
+      }
+
+      case 'notifications': {
+        // 简化版通知：返回订阅列表 + 各订阅的最新作品数（从 OpenAlex 反查太贵，标注 M7 后期扩展）
+        return jsonResponse({ ok: true, data: { items: [], note: '通知增量计算依赖 Warmer 聚合，M7 后期完善' } });
       }
 
       case 'health':
