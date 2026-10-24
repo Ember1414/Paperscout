@@ -3,6 +3,7 @@ import { runSearch, parseV3Params } from '../lib/services/search';
 import { AppError, errorEnvelope, internalEnvelope, okEnvelope } from '../lib/errors';
 import { logError, logInfo, newRequestId } from '../lib/infra/log';
 import { writeSearchLog } from '../lib/infra/metrics';
+import { getSuggestions, validateSuggestParams } from '../lib/services/suggest';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -357,6 +358,12 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
 
       case 'stats':
         return await keywordStats(env);
+
+      case 'suggest': {
+        const q = validateSuggestParams(url);
+        const result = await getSuggestions(env.DB, q);
+        return jsonResponse({ ok: true, data: result, meta: { requestId: newRequestId() } });
+      }
 
       case 'health':
         return jsonResponse({ status: 'ok', time: new Date().toISOString() });
