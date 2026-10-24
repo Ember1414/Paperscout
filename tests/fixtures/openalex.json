@@ -1,0 +1,40 @@
+{
+  "meta": { "count": 2 },
+  "results": [
+    {
+      "id": "https://openalex.org/W2100837269",
+      "doi": "https://doi.org/10.1038/S41586-023-06221-2",
+      "display_name": "Deep learning",
+      "publication_year": 2023,
+      "cited_by_count": 1203,
+      "type": "article",
+      "open_access": { "is_oa": true, "oa_status": "gold" },
+      "primary_location": {
+        "landing_page_url": "https://www.nature.com/articles/s41586-023-06221-2",
+        "pdf_url": null,
+        "source": { "display_name": "Nature", "type": "journal" }
+      },
+      "best_oa_location": { "pdf_url": "https://www.nature.com/articles/s41586-023-06221-2.pdf" },
+      "authorships": [
+        { "author": { "display_name": "Yoshua Bengio" } },
+        { "author": { "display_name": "Geoffrey Hinton" } }
+      ],
+      "abstract_inverted_index": { "Deep": [0], "learning": [1], "works": [2] }
+    },
+    {
+      "id": "https://openalex.org/W999",
+      "doi": null,
+      "display_name": "预印本论文示例",
+      "publication_year": 2025,
+      "cited_by_count": 3,
+      "type": "preprint",
+      "open_access": { "is_oa": false },
+      "primary_location": {
+        "landing_page_url": "https://openalex.org/W999",
+        "source": { "display_name": "arXiv (Cornell University)", "type": "repository" }
+      },
+      "authorships": [],
+      "abstract_inverted_index": null
+    }
+  ]
+}

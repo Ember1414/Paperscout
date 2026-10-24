@@ -1,4 +1,8 @@
-import type { Env, Paper } from '../lib/types';
+import type { Env, LegacySourceId, Paper } from '../lib/types';
+import { runSearch, parseV3Params } from '../lib/services/search';
+import { AppError, errorEnvelope, internalEnvelope, okEnvelope } from '../lib/errors';
+import { logError, logInfo, newRequestId } from '../lib/infra/log';
+import { writeSearchLog } from '../lib/infra/metrics';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -12,11 +16,69 @@ import {
 
 /**
  * PaperScout API 路由（Cloudflare Pages Functions）
- * /api/search   —— 多源聚合检索
+ * /api/search   —— 多源聚合检索（env.SEARCH_V3 === '1' 时走 v3 编排器，8.5 迁移 feature flag）
  * /api/sources  —— 数据源列表
  * /api/trending —— 爬虫抓取的 arXiv 最新论文
  * /api/health   —— 健康检查
  */
+
+/** v3 /api/search：新响应信封 { ok, data, meta }；data.items 与 data.papers 双字段保证 R-08 兼容 */
+async function handleSearchV3(request: Request, env: Env, ctx: EventContext<Env, any, any>): Promise<Response> {
+  const rid = newRequestId();
+  const t0 = Date.now();
+  const url = new URL(request.url);
+  try {
+    const params = parseV3Params(url);
+    const result = await runSearch(params, { env, ctx });
+    const ms = Date.now() - t0;
+    logInfo(rid, 'search.v3', { q: params.q.slice(0, 60), ms, poolSize: result.poolSize, partial: result.partial, cache: result.cacheLayer ?? 'miss' });
+    // search_log：仅未命中缓存的检索计 1 行（waitUntil 异步写，D1 失败降级放行）
+    if (!result.cacheLayer) {
+      ctx.waitUntil(
+        writeSearchLog(env.DB, {
+          queryHash: result.queryHash,
+          querySample: params.q,
+          lang: params.lang ?? 'all',
+          sourcesOk: result.sources.filter((s0) => s0.status === 'ok').length,
+          sourcesTotal: result.sources.length,
+          elapsedMs: ms,
+          resultCount: result.total,
+          cached: false,
+        }),
+      );
+    }
+    const body = okEnvelope(
+      {
+        ...result,
+        // 兼容字段（R-08）：legacy 前端读取 items / papers 任一
+        papers: result.items,
+      },
+      { requestId: rid, ms, cache: result.cacheLayer ?? 'miss' },
+    );
+    return new Response(JSON.stringify(body), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'X-Request-Id': rid,
+        'X-Cache': result.cacheLayer ?? 'miss',
+      },
+    });
+  } catch (error) {
+    const ms = Date.now() - t0;
+    if (error instanceof AppError) {
+      logInfo(rid, 'search.v3', { code: error.code, ms });
+      return new Response(JSON.stringify(errorEnvelope(error, rid)), {
+        status: error.status,
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      });
+    }
+    logError(rid, 'search.v3', { ms, err: error instanceof Error ? error.message.slice(0, 120) : String(error) });
+    return new Response(JSON.stringify(internalEnvelope(rid)), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    });
+  }
+}
 
 async function handleSearch(request: Request, env: Env, ctx: EventContext<Env, any, any>): Promise<Response> {
   const url = new URL(request.url);
@@ -36,7 +98,7 @@ async function handleSearch(request: Request, env: Env, ctx: EventContext<Env, a
       if (isCoolingDown(health, s)) {
         return Promise.resolve({ __cooldown: true });
       }
-      return ADAPTERS[s].search(params).then(
+      return ADAPTERS[s as LegacySourceId].search(params).then(
         (v) => {
           ctx.waitUntil(recordSuccess(env, s));
           return v;
@@ -53,7 +115,7 @@ async function handleSearch(request: Request, env: Env, ctx: EventContext<Env, a
   const cooldown: string[] = [];
   const lists: Paper[][] = [];
   settled.forEach((r, i) => {
-    const name = ADAPTERS[params.sources[i]].name;
+    const name = ADAPTERS[params.sources[i] as LegacySourceId].name;
     if (r.status === 'fulfilled') {
       if (Array.isArray(r.value)) lists.push(r.value);
       else cooldown.push(name); // 熔断冷却中，自动跳过
@@ -124,8 +186,9 @@ async function handleTranslate(url: URL, env: Env, ctx: EventContext<Env, any, a
       translated = (data?.[0] ?? []).map((seg: any) => seg?.[0] ?? '').join('').trim();
       if (translated) provider = 'google';
     }
-  } catch {
-    /* 走备用通道 */
+  } catch (e) {
+    // 走备用通道，但必须留痕（G-10）
+    console.warn('translate:channel-failed', e instanceof Error ? e.message : String(e));
   }
 
   // 通道 2：MyMemory（备用）
@@ -154,8 +217,9 @@ async function handleTranslate(url: URL, env: Env, ctx: EventContext<Env, any, a
       });
       translated = String(r?.translated_text ?? '').trim();
       if (translated) provider = 'workers-ai';
-    } catch {
-      /* 走最后兜底 */
+    } catch (e) {
+      // 走最后兜底，但必须留痕（G-10）
+      console.warn('translate:channel-failed', e instanceof Error ? e.message : String(e));
     }
   }
 
@@ -177,8 +241,9 @@ async function handleTranslate(url: URL, env: Env, ctx: EventContext<Env, any, a
       });
       translated = String(r?.response ?? '').trim();
       if (translated) provider = 'workers-ai-llm';
-    } catch {
-      /* 全部通道失败 */
+    } catch (e) {
+      // 全部通道失败，留痕（G-10）后由 502 兜底
+      console.warn('translate:all-channels-failed', e instanceof Error ? e.message : String(e));
     }
   }
 
@@ -205,7 +270,6 @@ async function handleDiag(): Promise<Response> {
     ['EuropePMC', 'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=test&format=json&pageSize=1', 200],
     ['OpenAIRE', 'https://api.openaire.eu/search/publications?keywords=test&size=1', 200],
     ['Zenodo', 'https://zenodo.org/api/records?q=test&size=1', 200],
-    ['百度学术', 'https://xueshu.baidu.com/s?wd=test', 200],
     ['翻译(Google)', 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CN&dt=t&q=hi', 200],
     ['翻译(MyMemory)', 'https://api.mymemory.translated.net/get?q=hi&langpair=en|zh-CN', 200],
   ];
@@ -252,6 +316,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
 
     switch (route) {
       case 'search':
+        if (env.SEARCH_V3 === '1') return await handleSearchV3(request, env, ctx);
         return await handleSearch(request, env, ctx);
 
       case 'sources':

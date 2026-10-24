@@ -1,4 +1,5 @@
-import type { Paper, SearchParams, SourceAdapter } from '../types';
+import type { FetchRawFn, Paper, RawFetchResult, RawRecord, SearchParams, SourceAdapter } from '../types';
+import { fetchUpstream } from '../infra/http';
 
 /**
  * arXiv 数据源 —— 计算机、物理、数学等领域预印本
@@ -97,4 +98,67 @@ export const arxiv: SourceAdapter = {
       };
     });
   },
+};
+
+/* ==================== v3 fetchRaw 层（M1-01）==================== */
+
+export const fetchRaw: FetchRawFn = async (params, opts): Promise<RawFetchResult> => {
+  if (!params.query) return { records: [], elapsedMs: 0 };
+  const limit = Math.min(opts?.limit ?? params.limit, 30);
+  const offset = opts?.offset ?? (params.page - 1) * limit;
+
+  const words = params.query.trim().split(/\s+/).filter(Boolean);
+  const terms: string[] = [];
+  if (words.length > 1) terms.push(words.map((w) => `all:"${w}"`).join(' AND '));
+  else terms.push(`all:"${params.query}"`);
+  if (params.author) terms.push(`au:"${params.author}"`);
+  // 年份过滤：arXiv 原生 submittedDate 区间（capability: yearFilter=native）
+  if (params.yearFrom || params.yearTo) {
+    const from = params.yearFrom ? `${params.yearFrom}01010000` : '100001010000';
+    const to = params.yearTo ? `${params.yearTo}12312359` : '999912312359';
+    terms.push(`submittedDate:[${from} TO ${to}]`);
+  }
+
+  // search_query 含 arXiv 区间语法（[] 与空格），整体 encodeURIComponent（空格→%20，arXiv 接受）
+  const searchQuery = encodeURIComponent(terms.join(' AND '));
+  const rest = new URLSearchParams({
+    start: String(offset),
+    max_results: String(limit),
+    sortBy: params.sort === 'newest' ? 'submittedDate' : 'relevance',
+    sortOrder: 'descending',
+  });
+
+  const res = await fetchUpstream<string>(`https://export.arxiv.org/api/query?search_query=${searchQuery}&${rest}`, { source: 'arXiv', expect: 'text' });
+  if (!res.ok) return { records: [], error: res.error, elapsedMs: res.elapsedMs, httpStatus: res.status };
+
+  const xml = res.text ?? '';
+  const entries = xml.split('<entry>').slice(1).map((e) => e.split('</entry>')[0]);
+  const fetchedAt = Date.now();
+  const records: RawRecord[] = entries.map((entry) => {
+    const idUrl = extract(entry, 'id');
+    const absUrl = idUrl.replace(/v\d+$/, '');
+    const authors: string[] = [];
+    const authorRe = /<author>[\s\S]*?<name>([\s\S]*?)<\/name>[\s\S]*?<\/author>/g;
+    let am: RegExpExecArray | null;
+    while ((am = authorRe.exec(entry)) !== null) authors.push(stripTags(am[1]));
+    const published = extract(entry, 'published');
+    const arxivId = absUrl.split('/abs/')[1] || undefined;
+    return {
+      source: 'arxiv' as const,
+      sourceName: 'arXiv',
+      fetchedAt,
+      title: extract(entry, 'title'),
+      authors: authors.slice(0, 25),
+      year: published ? Number(published.slice(0, 4)) || undefined : undefined,
+      venue: 'arXiv',
+      venueType: 'preprint' as const,
+      abstract: extract(entry, 'summary') || undefined,
+      url: absUrl || undefined,
+      pdfUrl: absUrl ? absUrl.replace('/abs/', '/pdf/') : undefined,
+      type: 'preprint' as const,
+      openAccess: true,
+      nativeId: arxivId,
+    };
+  });
+  return { records, elapsedMs: res.elapsedMs, httpStatus: res.status };
 };

@@ -1,5 +1,6 @@
-import type { Paper, SearchParams, SourceAdapter } from '../types';
+import type { FetchRawFn, Paper, RawFetchResult, RawRecord, SearchParams, SourceAdapter } from '../types';
 import { fetchWithRetry } from '../http';
+import { fetchUpstream } from '../infra/http';
 
 /**
  * Semantic Scholar 数据源 —— 2 亿+ 论文，含引用分析
@@ -58,4 +59,53 @@ export const semanticscholar: SourceAdapter = {
       })
       .filter((p) => p.url);
   },
+};
+
+/* ==================== v3 fetchRaw 层（M1-01）==================== */
+
+function s2Type(pubTypes?: string[]): RawRecord['type'] {
+  if (!pubTypes?.length) return undefined;
+  if (pubTypes.includes('JournalArticle')) return 'journal';
+  if (pubTypes.includes('Conference')) return 'conference';
+  return undefined;
+}
+
+export const fetchRaw: FetchRawFn = async (params, opts): Promise<RawFetchResult> => {
+  if (!params.query) return { records: [], elapsedMs: 0 };
+  const limit = Math.min(opts?.limit ?? params.limit, 30);
+  const offset = opts?.offset ?? (params.page - 1) * limit;
+
+  const sp = new URLSearchParams({
+    query: params.author ? `${params.query} ${params.author}` : params.query,
+    limit: String(limit),
+    offset: String(offset),
+    fields: 'title,authors,year,venue,abstract,url,citationCount,externalIds,openAccessPdf,publicationTypes',
+  });
+  if (params.yearFrom || params.yearTo) sp.set('year', `${params.yearFrom ?? ''}-${params.yearTo ?? ''}`);
+
+  const res = await fetchUpstream<any>(`https://api.semanticscholar.org/graph/v1/paper/search?${sp}`, { source: 'Semantic Scholar' });
+  if (!res.ok) return { records: [], error: res.error, elapsedMs: res.elapsedMs, httpStatus: res.status };
+
+  const fetchedAt = Date.now();
+  const records: RawRecord[] = ((res.data?.data ?? []) as any[]).map((p) => {
+    const doi = p.externalIds?.DOI || undefined;
+    return {
+      source: 'semanticscholar' as const,
+      sourceName: 'Semantic Scholar',
+      fetchedAt,
+      title: String(p.title ?? ''),
+      authors: (p.authors ?? []).map((a: any) => a?.name).filter(Boolean).slice(0, 25),
+      year: p.year ?? undefined,
+      venue: p.venue || undefined,
+      abstract: p.abstract || undefined,
+      doi,
+      url: p.url || (doi ? `https://doi.org/${doi}` : undefined),
+      pdfUrl: p.openAccessPdf?.url || undefined,
+      citations: typeof p.citationCount === 'number' ? p.citationCount : undefined,
+      type: s2Type(p.publicationTypes),
+      openAccess: p.openAccessPdf?.url ? true : undefined,
+      nativeId: p.paperId || doi,
+    };
+  });
+  return { records, elapsedMs: res.elapsedMs, httpStatus: res.status };
 };

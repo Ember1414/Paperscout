@@ -1,5 +1,6 @@
-import type { Paper, SearchParams, SourceAdapter } from '../types';
+import type { FetchRawFn, Paper, RawFetchResult, RawRecord, SearchParams, SourceAdapter } from '../types';
 import { fetchWithRetry } from '../http';
+import { fetchUpstream } from '../infra/http';
 
 /**
  * DBLP 数据源 —— 计算机科学权威文献库（1000 万+ 记录）
@@ -68,4 +69,52 @@ export const dblp: SourceAdapter = {
 
     return papers;
   },
+};
+
+/* ==================== v3 fetchRaw 层（M1-01）==================== */
+
+export const fetchRaw: FetchRawFn = async (params, opts): Promise<RawFetchResult> => {
+  if (!params.query) return { records: [], elapsedMs: 0 };
+  const limit = Math.min(opts?.limit ?? params.limit, 30);
+  const offset = opts?.offset ?? (params.page - 1) * limit;
+
+  const sp = new URLSearchParams({
+    q: params.author ? `${params.query} ${params.author}` : params.query,
+    h: String(limit),
+    f: String(offset),
+    format: 'json',
+  });
+
+  const res = await fetchUpstream<any>(`https://dblp.org/search/publ/api?${sp}`, { source: 'DBLP' });
+  if (!res.ok) return { records: [], error: res.error, elapsedMs: res.elapsedMs, httpStatus: res.status };
+
+  const hits = (res.data?.result?.hits?.hit ?? []) as any[];
+  const fetchedAt = Date.now();
+  let records: RawRecord[] = hits.map((h) => {
+    const info = h.info ?? {};
+    const doi = typeof info.doi === 'string' ? info.doi : undefined;
+    const url = info.ee || (doi ? `https://doi.org/${doi}` : info.url || undefined);
+    const venue = Array.isArray(info.venue) ? info.venue[0] : info.venue;
+    const confLike = /conference|workshop|symposium/i.test(String(info.type ?? ''));
+    return {
+      source: 'dblp' as const,
+      sourceName: 'DBLP',
+      fetchedAt,
+      title: typeof info.title === 'string' ? info.title.replace(/\.$/, '') : '',
+      authors: normalizeAuthors(info.authors).slice(0, 25),
+      year: info.year ? Number(info.year) || undefined : undefined,
+      venue: venue || undefined,
+      venueType: confLike ? 'conference' : venue ? 'journal' : 'unknown',
+      doi,
+      url: url || undefined,
+      pdfUrl: typeof info.ee === 'string' && info.ee.endsWith('.pdf') ? info.ee : undefined,
+      type: confLike ? 'conference' : 'journal',
+      openAccess: /\/ee\/|openaccess/i.test(String(info.ee ?? '')) ? true : undefined,
+      nativeId: typeof info.key === 'string' ? info.key : doi,
+    };
+  });
+  // DBLP 无原生年份过滤（capability: client）——客户端过滤
+  if (params.yearFrom) records = records.filter((r) => !r.year || r.year >= params.yearFrom!);
+  if (params.yearTo) records = records.filter((r) => !r.year || r.year <= params.yearTo!);
+  return { records, elapsedMs: res.elapsedMs, httpStatus: res.status };
 };

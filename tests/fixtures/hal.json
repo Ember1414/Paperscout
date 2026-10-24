@@ -1,0 +1,26 @@
+{
+  "response": {
+    "numFound": 2,
+    "docs": [
+      {
+        "halId_s": "hal-01234567",
+        "label_s": "Graph networks in physics",
+        "authFullName_s": ["Marie Curie", "Paul Langevin"],
+        "producedDateY_i": 2024,
+        "venue_s": "Proceedings of Physics Conf",
+        "doiId_s": "10.5555/hal.1",
+        "files_mainFile_s": "https://hal.science/hal-01234567/document",
+        "abstract_s": "HAL abstract text.",
+        "docType_s": "COMM",
+        "domain_s": "phys.phys-ph"
+      },
+      {
+        "halId_s": "hal-09876543",
+        "label_s": "A HAL preprint",
+        "authFullName_s": ["Solo Author"],
+        "producedDateY_i": 2026,
+        "docType_s": "UNPUBLISHED"
+      }
+    ]
+  }
+}

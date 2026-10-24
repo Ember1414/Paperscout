@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+  <oaf:result>
+    <title>OpenAIRE aggregated publication</title>
+    <creator>Jane Collaborator</creator>
+    <creator>John Lead</creator>
+    <dateofacceptance>2022-11-01</dateofacceptance>
+    <journal>EU Journal</journal>
+    <pid classid="doi">10.5555/openaire.1</pid>
+    <instancetype>Article</instancetype>
+    <bestaccessright classid="OPEN">Open Access</bestaccessright>
+    <objidentifier>doi_________::5555openaire1</objidentifier>
+    <description>Aggregated European publication.</description>
+    <webresource><url>https://example.org/record/1</url></webresource>
+  </oaf:result>
+</results>

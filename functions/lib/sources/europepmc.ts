@@ -1,4 +1,5 @@
-import type { Paper, SearchParams, SourceAdapter } from '../types';
+import type { FetchRawFn, Paper, RawFetchResult, RawRecord, SearchParams, SourceAdapter } from '../types';
+import { fetchUpstream } from '../infra/http';
 
 /**
  * Europe PMC 数据源 —— 欧洲生物医学文献库（含 PubMed + 预印本 + 专利，60 亿+ 记录引用网络）
@@ -73,4 +74,59 @@ export const europepmc: SourceAdapter = {
       })
       .filter((p) => p.url);
   },
+};
+
+/* ==================== v3 fetchRaw 层（M1-03）==================== */
+
+export const fetchRaw: FetchRawFn = async (params, opts): Promise<RawFetchResult> => {
+  if (!params.query) return { records: [], elapsedMs: 0 };
+  const limit = Math.min(opts?.limit ?? params.limit, 30);
+  const page = Math.floor((opts?.offset ?? (params.page - 1) * limit) / limit) + 1;
+
+  const parts: string[] = [`(${params.query})`];
+  if (params.author) parts.push(`AUTH:"${params.author}"`);
+  if (params.yearFrom && params.yearTo) parts.push(`(PUB_YEAR:[${params.yearFrom} TO ${params.yearTo}])`);
+  else if (params.yearFrom) parts.push(`(PUB_YEAR:[${params.yearFrom} TO 2100])`);
+  else if (params.yearTo) parts.push(`(PUB_YEAR:[1000 TO ${params.yearTo}])`);
+
+  const sp = new URLSearchParams({
+    query: parts.join(' AND '),
+    format: 'json',
+    pageSize: String(limit),
+    page: String(page),
+    resultType: 'core',
+  });
+  if (params.sort === 'newest') sp.set('sort', 'P_PDATE_D desc');
+  if (params.sort === 'citations') sp.set('sort', 'CITED desc');
+
+  const res = await fetchUpstream<any>(`https://www.ebi.ac.uk/europepmc/webservices/rest/search?${sp}`, { source: 'Europe PMC' });
+  if (!res.ok) return { records: [], error: res.error, elapsedMs: res.elapsedMs, httpStatus: res.status };
+
+  const results = (res.data?.resultList?.result ?? []) as any[];
+  const fetchedAt = Date.now();
+  const records: RawRecord[] = results
+    .filter((r) => r.title)
+    .map((r) => {
+      const url = r.doi ? `https://doi.org/${r.doi}` : r.pmcid ? `https://europepmc.org/article/PMC/${r.pmcid}` : r.pmid ? `https://europepmc.org/article/MED/${r.pmid}` : undefined;
+      const isPreprint = String(r.source ?? '').toUpperCase() === 'PPR';
+      return {
+        source: 'europepmc' as const,
+        sourceName: 'Europe PMC',
+        fetchedAt,
+        title: String(r.title),
+        authors: String(r.authorString ?? '').split(/,\s*/).map((a: string) => a.trim()).filter(Boolean).slice(0, 25),
+        year: r.pubYear ? Number(r.pubYear) || undefined : undefined,
+        venue: r.journalTitle ?? r.bookOrReportDetails?.publisher ?? undefined,
+        venueType: isPreprint ? 'preprint' : 'journal',
+        abstract: stripTags(r.abstractText),
+        doi: r.doi || undefined,
+        url,
+        pdfUrl: r.pmcid ? `https://europepmc.org/articles/${r.pmcid}/pdf` : undefined,
+        citations: typeof r.citedByCount === 'number' ? r.citedByCount : undefined,
+        type: isPreprint ? 'preprint' : 'journal',
+        openAccess: r.isOpenAccess === 'Y' || r.inEPMC === 'Y' ? true : undefined,
+        nativeId: r.pmid || r.pmcid || undefined,
+      };
+    });
+  return { records, elapsedMs: res.elapsedMs, httpStatus: res.status };
 };

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <entry>
+    <id>http://arxiv.org/abs/2401.12345v2</id>
+    <title>Graph Neural Networks 101</title>
+    <summary>We study GNNs with &amp; special chars.</summary>
+    <author><name>Alice Chen</name></author>
+    <author><name>Bob Li</name></author>
+    <published>2024-01-15T17:59:59Z</published>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.00999v1</id>
+    <title>Transformer Survey</title>
+    <summary>Second entry summary.</summary>
+    <author><name>Carol Wang</name></author>
+    <published>2025-02-01T00:00:00Z</published>
+  </entry>
+</feed>

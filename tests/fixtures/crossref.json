@@ -1,0 +1,31 @@
+{
+  "status": "ok",
+  "message": {
+    "items": [
+      {
+        "DOI": "10.1000/JOURNAL.2024.1",
+        "title": ["A Study on <jats:italic>JATS</jats:italic> Abstracts"],
+        "author": [
+          { "given": "Ada", "family": "Lovelace" },
+          { "given": "Alan", "family": "Turing" }
+        ],
+        "issued": { "date-parts": [[2024, 3, 1]] },
+        "container-title": ["Journal of Studies"],
+        "URL": "https://doi.org/10.1000/journal.2024.1",
+        "abstract": "<jats:p>First paragraph.</jats:p> <jats:sec><jats:title>Method</jats:title><jats:p>We did things.</jats:p></jats:sec>",
+        "is-referenced-by-count": 42,
+        "type": "journal-article",
+        "link": [{ "content-type": "application/pdf", "URL": "https://example.org/pdf" }]
+      },
+      {
+        "DOI": "10.1000/preprint.1",
+        "title": ["A Posted Content Preprint"],
+        "author": [{ "family": "Hopper" }],
+        "issued": { "date-parts": [[2026, 1, 15]] },
+        "URL": "https://doi.org/10.1000/preprint.1",
+        "is-referenced-by-count": 0,
+        "type": "posted-content"
+      }
+    ]
+  }
+}

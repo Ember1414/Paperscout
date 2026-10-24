@@ -1,0 +1,27 @@
+{
+  "total": 2,
+  "data": [
+    {
+      "paperId": "abc123",
+      "title": "Attention Is All You Need",
+      "authors": [{ "name": "Ashish Vaswani" }],
+      "year": 2017,
+      "venue": "NeurIPS",
+      "abstract": "The dominant sequence transduction models...",
+      "url": "https://www.semanticscholar.org/paper/abc123",
+      "citationCount": 90000,
+      "externalIds": { "DOI": "10.5555/3295222" },
+      "openAccessPdf": { "url": "https://pdfs.semanticscholar.org/abc123.pdf" },
+      "publicationTypes": ["Conference", "JournalArticle"]
+    },
+    {
+      "paperId": "def456",
+      "title": "No DOI Paper",
+      "authors": [],
+      "year": null,
+      "citationCount": null,
+      "externalIds": {},
+      "publicationTypes": null
+    }
+  ]
+}
