@@ -5,6 +5,8 @@ import { logError, logInfo, newRequestId } from '../lib/infra/log';
 import { writeSearchLog } from '../lib/infra/metrics';
 import { getSuggestions, validateSuggestParams } from '../lib/services/suggest';
 import { getWorkDetail } from '../lib/services/work';
+import { getAvailability } from '../lib/services/availability';
+import { getContexts } from '../lib/services/contexts';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -366,6 +368,29 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
         const wt0 = Date.now();
         const detail = await getWorkDetail(wid, env);
         return new Response(JSON.stringify(okEnvelope(detail, { requestId: newRequestId(), ms: Date.now() - wt0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+      }
+
+      case 'availability': {
+        const doi0 = url.searchParams.get('doi') ?? '';
+        const at0 = Date.now();
+        try {
+          const result = await getAvailability(doi0, env);
+          return new Response(JSON.stringify(okEnvelope(result, { requestId: newRequestId(), ms: Date.now() - at0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        } catch (error) {
+          if (error instanceof AppError) return new Response(JSON.stringify(errorEnvelope(error, newRequestId())), { status: error.status, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+          throw error;
+        }
+      }
+
+      case 'citations': {
+        const cid = url.searchParams.get('id') ?? '';
+        const dir = url.searchParams.get('dir') ?? 'contexts';
+        if (!cid) return new Response(JSON.stringify(errorEnvelope(new AppError('BAD_QUERY', '缺少文献 id'), newRequestId())), { status: 400, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        const ct0 = Date.now();
+        const doi = decodeURIComponent(cid).replace(/^doi:/, '');
+        if (dir !== 'contexts') return new Response(JSON.stringify(okEnvelope({ contexts: [], available: false, note: '仅 contexts 已实现（M3-06）' }, { requestId: newRequestId(), ms: Date.now() - ct0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+        const result = await getContexts(doi);
+        return new Response(JSON.stringify(okEnvelope(result, { requestId: newRequestId(), ms: Date.now() - ct0 })), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
       }
 
       case 'suggest': {

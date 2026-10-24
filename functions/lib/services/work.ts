@@ -186,7 +186,9 @@ export async function getWorkDetail(id: string, env?: { CACHE?: KVNamespace }): 
   try {
     const cached = await l1Get<WorkDetailResult>(cacheKey);
     if (cached.value) return cached.value;
-  } catch { /* L1 失败继续取数 */ }
+  } catch (e) {
+    console.warn('work:l1-read-failed', e instanceof Error ? e.message : String(e));
+  }
 
   const oa = await fetchUpstream<any>(`https://api.openalex.org/works/${path.startsWith('doi:') ? `doi:${path.slice(4)}` : path}?${MAILTO}`, { source: 'OpenAlex', timeoutMs: SEARCH.PER_SOURCE_TIMEOUT_MS });
   if (!oa.ok) {
@@ -228,6 +230,8 @@ export async function getWorkDetail(id: string, env?: { CACHE?: KVNamespace }): 
     // 防坏缓存：三列表全空且无摘要（上游部分失败的形态）不写 24h 缓存
     const substantial = result.references.length > 0 || result.citedBy.length > 0 || result.similar.length > 0 || Boolean(work.abstract);
     if (work.title && substantial) await l1Put(cacheKey, result, 86_400); // 5.5：24h
-  } catch { /* 缓存失败不影响返回 */ }
+  } catch (e) {
+    console.warn('work:l1-write-failed', e instanceof Error ? e.message : String(e));
+  }
   return result;
 }

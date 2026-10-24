@@ -1,5 +1,6 @@
 // @ts-check
 import { workApi } from '../api.js';
+import { toBibtex, toRis, toCslJson } from '../cite-format.js';
 import { icon } from '../icons.js';
 import { isTopVenueName } from '../ui/card.js';
 
@@ -49,6 +50,9 @@ export function mount(root, ctx) {
       detail = d;
       body.innerHTML = detailHtml(d);
       bindBody(body, d);
+      void loadAvailability(body, d);
+      void loadContexts(body, d);
+      renderTrend(body, d);
     })
     .catch((e) => {
       if (/** @type {any} */ (e)?.name === 'AbortError') return;
@@ -99,10 +103,16 @@ function detailHtml(d) {
       <span style="font-size:var(--t-xs);color:var(--fg-3)">被引数据：OpenAlex · ${esc(d.metricsFetchedAt.slice(0, 10))}</span>
     </div>
 
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:var(--s-3) 0">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:var(--s-3) 0;align-items:center">
       ${w.doi ? `<a class="btn btn-sm" href="https://doi.org/${esc(w.doi)}" target="_blank" rel="noopener">${icon('external', { size: 14 })} 原文</a>` : ''}
       ${w.pdfUrl ? `<a class="btn btn-sm" href="${esc(w.pdfUrl)}" target="_blank" rel="noopener">${icon('download', { size: 14 })} PDF</a>` : ''}
-      <span class="badge" title="M3-02 交付全文探测">全文可用性探测将在下方给出</span>
+      <span style="display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap" class="js-availability"><span class="skeleton" style="width:180px;height:26px"></span></span>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:var(--s-3)">
+      <span style="font-size:var(--t-sm);color:var(--fg-2)">引用：</span>
+      <button type="button" class="btn btn-sm js-cite-menu" data-fmt="bibtex">复制 BibTeX</button>
+      <button type="button" class="btn btn-sm js-cite-menu" data-fmt="ris">复制 RIS</button>
+      <button type="button" class="btn btn-sm js-cite-menu" data-fmt="csl">复制 CSL-JSON</button>
     </div>
 
     ${w.abstract
@@ -113,6 +123,16 @@ function detailHtml(d) {
       : '<p style="color:var(--fg-3);font-size:var(--t-sm)">该来源未提供摘要。</p>'}
 
     ${w.institutions.length ? `<p style="font-size:var(--t-xs);color:var(--fg-3);margin-top:var(--s-2)">机构：${w.institutions.map(esc).join(' · ')}</p>` : ''}
+
+    <section style="margin-top:var(--s-5)" aria-labelledby="trend-h">
+      <h2 id="trend-h" style="font-size:var(--t-md)">被引趋势（近 10 年）</h2>
+      <div class="js-trend"></div>
+    </section>
+
+    <section style="margin-top:var(--s-5)" aria-labelledby="ctx-h">
+      <h2 id="ctx-h" style="font-size:var(--t-md)">引用上下文（谁在哪句话引用）</h2>
+      <div class="js-contexts"><p style="color:var(--fg-3);font-size:var(--t-sm)">加载中…</p></div>
+    </section>
 
     <section style="margin-top:var(--s-5)" aria-labelledby="refs-h">
       <h2 id="refs-h" style="font-size:var(--t-md)">参考文献（${d.references.length}）</h2>
@@ -167,10 +187,113 @@ function confidenceOf(w) {
 }
 
 /**
- * @param {HTMLElement} _body
- * @param {any} _d
+ * @param {HTMLElement} body
+ * @param {any} d
  */
-function bindBody(_body, _d) { /* M3-07 复制菜单等后续接入 */ }
+function bindBody(body, d) {
+  const w = d.work;
+  /** @type {any} */
+  const citeInput = {
+    title: w.title,
+    authors: (w.authors ?? []).map((/** @type {any} */ a) => a.name),
+    year: w.year, venue: w.venue, doi: w.doi, type: w.type, url: w.landingUrl,
+  };
+  body.querySelector('.js-cite-menu')?.addEventListener('click', (e) => {
+    const btn = /** @type {HTMLElement} */ (e.target);
+    const fmt = btn.dataset.fmt;
+    if (!fmt) return;
+    const text = fmt === 'bibtex' ? toBibtex(citeInput) : fmt === 'ris' ? toRis(citeInput) : toCslJson(citeInput);
+    navigator.clipboard?.writeText(text).then(() => {
+      const old = btn.textContent;
+      btn.textContent = '已复制';
+      setTimeout(() => { btn.textContent = old; }, 2000);
+    }).catch(() => {
+      btn.textContent = '复制失败';
+    });
+  });
+}
+
+/** M3-02 可用性探测（懒加载，失败不阻塞）
+ * @param {HTMLElement} body @param {any} d */
+async function loadAvailability(body, d) {
+  const el = body.querySelector('.js-availability');
+  if (!el || !d.work.doi) {
+    if (el) el.innerHTML = '<span class="badge">无 DOI，跳过全文探测</span>';
+    return;
+  }
+  try {
+    const res = await fetch('/api/availability?doi=' + encodeURIComponent(d.work.doi));
+    const j = await res.json();
+    const x = j?.data ?? {};
+    const kindLabel = /** @type {Record<string, string>} */ ({ publisher: '出版方', repository: '知识库', preprint: '预印本', pmc: 'PMC' });
+    const verLabel = /** @type {Record<string, string>} */ ({ published: '正式版', accepted: '接受稿', submitted: '投稿稿', unknown: '版本未知' });
+    if (x.best) {
+      el.innerHTML = `
+        <span class="badge badge-ok">${kindLabel[x.best.kind] ?? x.best.kind} · ${verLabel[x.best.version] ?? x.best.version}</span>
+        ${x.best.pdfUrl ? `<a class="btn btn-sm" href="${esc(x.best.pdfUrl)}" target="_blank" rel="noopener">${icon('download', { size: 14 })} 正版 PDF</a>` : ''}
+        ${x.best.landingUrl ? `<a class="btn btn-sm" href="${esc(x.best.landingUrl)}" target="_blank" rel="noopener">落地页</a>` : ''}
+        <span style="font-size:var(--t-xs);color:var(--fg-3)">探测：${esc((x.sources ?? []).join('/'))} · ${esc(String(x.checkedAt).slice(0, 10))}</span>`;
+    } else {
+      el.innerHTML = `<span class="badge badge-warn">未发现开放获取版本</span>
+        <span style="font-size:var(--t-xs);color:var(--fg-3)">三路建议：</span>${(x.suggestions ?? []).map((/** @type {any} */ s) => `<a class="btn btn-sm" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join('')}`;
+    }
+  } catch (e) {
+    console.warn('paper:availability-failed', e instanceof Error ? e.message : String(e));
+    el.innerHTML = '<span class="badge">全文探测暂不可用（不影响本页其余内容）</span>';
+  }
+}
+
+/** M3-06 引用上下文（S2，懒加载，失败显示暂无）
+ * @param {HTMLElement} body @param {any} d */
+async function loadContexts(body, d) {
+  const el = body.querySelector('.js-contexts');
+  if (!el || !d.work.doi) { if (el) el.innerHTML = '<p style="color:var(--fg-3);font-size:var(--t-sm)">无 DOI，跳过。</p>'; return; }
+  try {
+    const res = await fetch('/api/citations?id=' + encodeURIComponent('doi:' + d.work.doi) + '&dir=contexts');
+    const j = await res.json();
+    const x = j?.data ?? {};
+    if (!x.available) {
+      el.innerHTML = '<p style="color:var(--fg-3);font-size:var(--t-sm)">暂无引用上下文（S2 暂未收录或限流，不影响本页其余内容）。</p>';
+      return;
+    }
+    el.innerHTML = x.contexts.map((/** @type {any} */ c) => `
+      <div style="border-left:2px solid var(--line-strong);padding-left:12px;margin:10px 0">
+        <div style="font-size:var(--t-sm)">“${esc(String(c.contexts[0] ?? '').slice(0, 200))}”</div>
+        <div style="font-size:var(--t-xs);color:var(--fg-3)">— ${esc(c.citingTitle)}${c.year ? ' ' + c.year : ''}（Semantic Scholar）</div>
+      </div>`).join('');
+  } catch (e) {
+    console.warn('paper:contexts-failed', e instanceof Error ? e.message : String(e));
+    el.innerHTML = '<p style="color:var(--fg-3);font-size:var(--t-sm)">引用上下文暂不可用。</p>';
+  }
+}
+
+/** M3-05 被引增速（OpenAlex counts_by_year；口径标注 D-12）
+ * @param {HTMLElement} body @param {any} d */
+function renderTrend(body, d) {
+  const el = body.querySelector('.js-trend');
+  if (!el) return;
+  const rows = [...(d.work.countsByYear ?? [])].filter((/** @type {any[]} */ r) => r[0] >= new Date().getFullYear() - 10).sort((a, b) => a[0] - b[0]);
+  if (!rows.length) {
+    el.innerHTML = '<p style="color:var(--fg-3);font-size:var(--t-sm)">—（该来源未提供按年被引数据）</p>';
+    return;
+  }
+  const thisYear = new Date().getFullYear();
+  const recent = rows.filter((/** @type {any[]} */ r) => r[0] >= thisYear - 1);
+  const recentSum = recent.reduce((a, /** @type {any[]} */ r) => a + r[1], 0);
+  const total = d.work.citedByCount ?? rows.reduce((a, /** @type {any[]} */ r) => a + r[1], 0);
+  const ratio = total ? recentSum / total : 0;
+  const label = ratio > 0.4 ? '正在快速上升' : ratio >= 0.15 ? '稳定上升' : '经典/沉淀';
+  const max = Math.max(...rows.map((/** @type {any[]} */ r) => r[1]), 1);
+  el.innerHTML = `
+    <div style="display:flex;align-items:flex-end;gap:4px;height:80px;margin:8px 0">
+      ${rows.map((/** @type {any[]} */ r) => `<div style="flex:1;text-align:center" title="${r[0]}：被引 ${r[1]}">
+        <div style="background:var(--accent);height:${Math.max(2, Math.round((r[1] / max) * 70))}px;border-radius:2px 2px 0 0;margin:0 auto;width:70%"></div>
+        <div style="font-size:10px;color:var(--fg-3);margin-top:2px">${String(r[0]).slice(2)}</div>
+      </div>`).join('')}
+    </div>
+    <p style="font-size:var(--t-xs);color:var(--fg-3)">近 12 个月被引 ${recentSum}（占比 ${(ratio * 100).toFixed(0)}%）→ ${label} · 基于 OpenAlex counts_by_year，更新于 ${esc(d.metricsFetchedAt.slice(0, 10))}（D-12 口径标注）</p>`;
+}
+
 
 /** @type {import('../router.js').View} */
 export default { render, mount };
