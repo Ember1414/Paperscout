@@ -2,6 +2,23 @@
 
 > 模板见 REBUILD_PLAN 附录 E。每个里程碑合并 main 前更新。
 
+## [M6] 2026-10-24 · AI 与配额（分支 `v3/m6`）
+
+### 新增
+- 零幻觉架构：prompts.ts（SYSTEM_PROMPT 5 条规则/EXTRACT/DSL + buildEvidence 600字截断6000总预算）+ verifyCitations（[n] 校验含 [1-3] 范围/INSUFFICIENT 拒答/越界剔除）
+- AI 三端点：/api/ai/summarize（研究现状 300 字）/ ask（SSE 流式 + 逐句推送 + 停止 + 拒答）/ extract（四维度精读）
+- /api/ai/dsl：自然语言 → 检索式
+- 配额：D1 原子 upsert 全局(summarize 120/ask 80/extract 150) + 单 client(8/5/20)，超限 429 AI_QUOTA_EXCEEDED
+- KV 缓存 ai:{kind}:{PROMPT_VERSION}:{hash} 24h
+- SSE 流式：逐句 delta + done(citations,verified) + refusal 拒答
+- verifyCitations 10 例单测
+
+### 修复
+- 模型返回类型 cast（Workers AI union type）
+
+### 预算
+- AI neuron 消耗由配额上限控制（全局 350/天 ≈ 6000 Neurons 预算 60%）
+
 ## [M5] 2026-10-24 · 文库 / 工作区 / 产出（分支 `v3/m5`）
 
 ### 新增
