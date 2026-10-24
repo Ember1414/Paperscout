@@ -357,10 +357,19 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
 
       case 'summarize':
         if (request.method !== 'POST') return jsonResponse({ error: '请使用 POST' }, 405);
-        return await aiSummarize(env, request);
+        return await handleSummarize(request, env);
 
       case 'ask':
-        return await aiAsk(env, url);
+        if (request.method !== 'POST') return jsonResponse({ error: '请使用 POST' }, 405);
+        return await handleAsk(request, env);
+
+      case 'extract':
+        if (request.method !== 'POST') return jsonResponse({ error: '请使用 POST' }, 405);
+        return await handleExtract(request, env);
+
+      case 'dsl':
+        if (request.method !== 'POST') return jsonResponse({ error: '请使用 POST' }, 405);
+        return await handleDsl(request, env);
 
       case 'stats':
         return await keywordStats(env);
