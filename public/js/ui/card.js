@@ -55,7 +55,7 @@ export function chipsFor(w, poolCtx) {
 /** 与后端 venues.ts 对齐的轻量判定（Top 列表同步维护于 core/venues.ts） */
 const TOP_HINTS = ['neurips', 'nips', 'icml', 'iclr', 'cvpr', 'iccv', 'eccv', 'acl', 'emnlp', 'aaai', 'ijcai', 'kdd', 'sigir', 'sigmod', 'vldb', 'osdi', 'sosp', 'ccs', 'nature', 'science', 'cell', 'pnas', 'jmlr', 'tpami', 'ijcv', 'lancet', '计算机学报', '软件学报', '自动化学报'];
 /** @param {string | undefined} venue */
-function isTopVenueName(venue) {
+export function isTopVenueName(venue) {
   if (!venue) return false;
   const v = venue.toLowerCase().replace(/^proceedings\s+of\s+(the\s+)?/i, '');
   return TOP_HINTS.some((t) => new RegExp(`(^|\\b)${t}(\\b|$)`).test(v));

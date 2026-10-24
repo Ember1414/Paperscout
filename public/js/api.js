@@ -101,3 +101,13 @@ export async function searchApi(query, opts = {}) {
     parsed: /** @type {any} */ (data?.parsed ?? {}),
   };
 }
+
+/**
+ * 单篇详情（M3-01）
+ * @param {string} id doi:… / W123…
+ * @param {{ signal?: AbortSignal }} [opts]
+ */
+export async function workApi(id, opts = {}) {
+  const body = await apiGet('/api/work', { id }, opts);
+  return /** @type {any} */ (body?.data ?? body);
+}

@@ -52,3 +52,25 @@ describe('结果多样性（M2-15，同 venue 连续 ≤2）', () => {
     expect(out).toHaveLength(4);
   });
 });
+
+import { isTopVenue } from '../../functions/lib/core/venues';
+
+describe('顶刊白名单扩容（M3-09，130 条）', () => {
+  it('抽样准确率 ≥90%（DoD）', () => {
+    const checks = [
+      ['NeurIPS', true], ['Nature', true], ['ICML', true], ['论文 2024', false],
+      ['Journal of Uncertain Results', false],
+      ['IEEE Transactions on Pattern Analysis and Machine Intelligence', true],
+      ['ArXiv preprint', false], ['计算机学报', true], ['Random Workshop Proceedings', false],
+      ['Proceedings of the 35th NeurIPS', true],
+      ['Science Advances', true], ['Econometrica', true], ['Applied Energy', true],
+      ['全球剩余物质学报', false],
+    ];
+    let hit = 0;
+    for (const [v, expect] of checks) {
+      if (isTopVenue(v) === expect) hit++;
+      else console.log('MISS:', v);
+    }
+    expect(hit / checks.length).toBeGreaterThanOrEqual(0.9);
+  });
+});
