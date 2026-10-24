@@ -57,7 +57,10 @@ export async function getVenueDetail(venueId: string): Promise<VenueDetail> {
         citations: w.cited_by_count ?? 0,
       }));
     }
-  } catch { /* 增强层 */ }
+  } catch (e) {
+    // Top papers 是增强层，失败不影响主内容，留痕
+    console.warn('venue:top-papers-failed', e instanceof Error ? e.message : String(e));
+  }
 
   return {
     id: a.id?.split('/').pop() ?? clean,
