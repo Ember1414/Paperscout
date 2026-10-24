@@ -312,6 +312,9 @@ export function mount(root, ctx) {
       else if (kind === 'lang') applyPatch({ lang: 'all' });
       else applyPatch({ src: [] });
     },
+    onCompareSelected: (ids) => {
+      void import('../router.js').then(({ navigate }) => navigate('/compare?ids=' + encodeURIComponent(ids.join(','))));
+    },
     onPage: (delta) => {
       const next = current.page + delta;
       if (next < 1 || next > 10) return;
