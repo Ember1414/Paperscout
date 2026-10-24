@@ -1,0 +1,139 @@
+{
+  "probedAt": "2026-10-24T05:18:51.042Z",
+  "ua": "PaperScout/3.0-probe (+https://paperscout.pages.dev; mailto:2669788267@qq.com)",
+  "results": [
+    {
+      "id": "openalex",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1401,
+      "note": "样例字段可映射（Graph neural networks）"
+    },
+    {
+      "id": "crossref",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 2449,
+      "note": "样例字段可映射（Some Meta-Graph Structures: Mixed Graph, DiHyperGraph, Knowl）"
+    },
+    {
+      "id": "arxiv",
+      "status": "external-link",
+      "httpStatus": null,
+      "ms": 10217,
+      "note": "网络失败：Connect Timeout Error (attempted address: export.arxiv.org:443, timeout: 10000ms"
+    },
+    {
+      "id": "semanticscholar",
+      "status": "external-link",
+      "httpStatus": 429,
+      "ms": 941,
+      "note": "HTTP 429"
+    },
+    {
+      "id": "pubmed",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1702,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "dblp",
+      "status": "external-link",
+      "httpStatus": 202,
+      "ms": 1414,
+      "note": "响应不可解析为 JSON（结构不符）"
+    },
+    {
+      "id": "europepmc",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1183,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "doaj",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1376,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "hal",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1450,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "scielo",
+      "status": "external-link",
+      "httpStatus": 403,
+      "ms": 1253,
+      "note": "HTTP 403"
+    },
+    {
+      "id": "jstage",
+      "status": "external-link",
+      "httpStatus": null,
+      "ms": 10225,
+      "note": "网络失败：Connect Timeout Error (attempted address: www.jstage.jst.go.jp:443, timeout: 100"
+    },
+    {
+      "id": "biorxiv",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1593,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "openaire",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1577,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "zenodo",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 1953,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "datacite",
+      "status": "verified",
+      "httpStatus": 200,
+      "ms": 2023,
+      "note": "样例字段可映射（true）"
+    },
+    {
+      "id": "chinaxiv",
+      "status": "external-link",
+      "httpStatus": null,
+      "ms": 77,
+      "note": "网络失败：getaddrinfo ENOTFOUND oai.chinaxiv.org"
+    },
+    {
+      "id": "ieee",
+      "status": "needs-key",
+      "httpStatus": 403,
+      "ms": 1381,
+      "note": "端点可达，需免费/机构 key（设置页插槽，M8）"
+    },
+    {
+      "id": "springer",
+      "status": "needs-key",
+      "httpStatus": 401,
+      "ms": 6112,
+      "note": "端点可达，需免费/机构 key（设置页插槽，M8）"
+    },
+    {
+      "id": "scopus",
+      "status": "needs-key",
+      "httpStatus": 401,
+      "ms": 2289,
+      "note": "端点可达，需免费/机构 key（设置页插槽，M8）"
+    }
+  ]
+}
