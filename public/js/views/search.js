@@ -7,6 +7,7 @@ import { searchBarHtml, bindSearchBar } from '../ui/searchbar.js';
 import { navigate, replaceUrlSilent } from '../router.js';
 import { openDrawer, drawerContentHtml } from '../ui/drawer.js';
 import { cardHtml } from '../ui/card.js';
+import { addSearchHistory } from '../db.js';
 
 /**
  * 检索结果页（REBUILD_PLAN 4.3 三栏 / M2-05 DoD：I-01~I-12）。
@@ -36,6 +37,12 @@ export function render(ctx) {
             <button type="button" class="btn btn-sm js-view" data-view="compact" aria-pressed="${p.view === 'compact'}">紧凑</button>
             <button type="button" class="btn btn-sm js-view" data-view="table" aria-pressed="${p.view === 'table'}">表格</button>
             <button type="button" class="btn btn-sm js-stop" hidden>停止</button>
+            <form class="js-refine-form" role="search" hidden style="display:inline-flex;gap:4px;align-items:center">
+              <label class="sr-only" for="ps-refine">在结果内再搜</label>
+              <input id="ps-refine" type="search" placeholder="在结果内再搜…" style="min-height:32px;width:150px;padding:2px 6px;font-size:var(--t-xs)" maxlength="60" />
+              <button type="submit" class="btn btn-sm">过滤</button>
+              <button type="button" class="btn btn-sm btn-ghost js-refine-exit" hidden>退出</button>
+            </form>
             <label style="font-size:var(--t-xs);color:var(--fg-3);display:inline-flex;gap:4px;align-items:center">分组
               <select class="js-group" style="min-height:32px;padding:2px 4px">
                 <option value="">不分组</option>
@@ -90,19 +97,62 @@ export function mount(root, ctx) {
     return { q: current.q, citationsTopDecile: top, currentId: current.sel };
   };
 
+  /** M2-11：检索历史真正写入（A-01 用户侧闭环，D-012）——同一 requestId 只记一次 */
+  let lastLoggedRid = '';
+  /** @param {typeof state.results} r */
+  const logHistory = (r) => {
+    if (r.loading || r.error || !r.items.length || !r.requestId || r.requestId === lastLoggedRid) return;
+    lastLoggedRid = r.requestId;
+    void addSearchHistory(current.q);
+    try {
+      const raw = /** @type {string | null} */ (localStorage.getItem('ps-recent-q'));
+      const arr = raw ? /** @type {unknown} */ (JSON.parse(raw)) : [];
+      const list = Array.isArray(arr) ? arr.filter((x) => typeof x === 'string') : [];
+      const next = [current.q, ...list.filter((x) => x !== current.q)].slice(0, 5);
+      localStorage.setItem('ps-recent-q', JSON.stringify(next));
+    } catch { /* 存储不可用忽略 */ }
+  };
+
+  /** M2-11：二次检索（池内过滤，零网络请求） */
+  let refineQuery = '';
+  /** @type {typeof state.results} */
+  let refinedView = state.results;
+  const applyRefine = () => {
+    const r = state.results;
+    if (!refineQuery) {
+      refinedView = r;
+      return;
+    }
+    const terms = refineQuery.toLowerCase().split(/s+/).filter(Boolean);
+    const items = r.items.filter((w) => {
+      const hay = `${w.title} ${w.abstract ?? ''}`.toLowerCase();
+      return terms.every((t) => hay.includes(t));
+    });
+    refinedView = { ...r, items };
+  };
+
   const renderResults = () => {
     const r = state.results;
+    logHistory(r);
+    applyRefine();
+    const refineBar = refineQuery
+      ? `<div class="notice-bar notice-info" style="background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)">结果内再搜「${escapeHtml(refineQuery)}」：${refinedView.items.length}/${r.items.length} 条 <button type="button" class="btn btn-sm js-refine-exit2" style="margin-left:8px">退出</button></div>`
+      : '';
+    const effective = refineQuery ? refinedView : r;
     if (current.view === 'table') {
-      renderTable(r);
+      resultsEl.innerHTML = refineBar;
+      const tableWrap = document.createElement('div');
+      resultsEl.appendChild(tableWrap);
+      renderTableInto(tableWrap, effective);
     } else if (current.group) {
-      resultsEl.innerHTML = groupedHtml(r, current.group, current.view, current.sel);
-      registerWorks(resultsEl, r.items);
+      resultsEl.innerHTML = refineBar + groupedHtml(effective, current.group, current.view, current.sel);
+      registerWorks(resultsEl, effective.items);
     } else {
-      resultsEl.innerHTML = resultsHtml(
-        { ...r, view: current.view },
+      resultsEl.innerHTML = refineBar + resultsHtml(
+        { ...effective, view: current.view },
         { q: current.q, citationsTopDecile: poolCtx().citationsTopDecile, currentId: current.sel },
       );
-      registerWorks(resultsEl, r.items);
+      registerWorks(resultsEl, effective.items);
     }
     const srcPart = r.sources.length ? ` · ${r.sources.filter((s) => s.status === 'ok').length}/${r.sources.length} 源` : '';
     statsEl.textContent = r.loading
@@ -143,7 +193,9 @@ export function mount(root, ctx) {
   /** @type {1 | -1} */ let tableSortDir = -1;
 
   /** @param {typeof state.results} r */
-  const renderTable = (r) => {
+  const renderTable = (r) => renderTableInto(resultsEl, r);
+  /** @param {HTMLElement} el @param {typeof state.results} r */
+  const renderTableInto = (el, r) => {
     const enabled = tableCols();
     let items = [...r.items];
     if (tableSortKey) {
@@ -162,7 +214,7 @@ export function mount(root, ctx) {
         default: return '<td></td>';
       }
     };
-    resultsEl.innerHTML = `
+    el.innerHTML = `
       <details style="margin-bottom:8px">
         <summary style="cursor:pointer;font-size:var(--t-sm);color:var(--fg-2)">列显示</summary>
         <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0">
@@ -190,7 +242,7 @@ export function mount(root, ctx) {
       const key = sortBtn.dataset.key ?? '';
       if (tableSortKey === key) tableSortDir = tableSortDir === -1 ? 1 : -1;
       else { tableSortKey = key; tableSortDir = -1; }
-      renderTable(state.results);
+      renderTable(refineQuery ? refinedView : state.results);
       return;
     }
     const toggle = /** @type {HTMLInputElement | null} */ (t.closest?.('input.js-col-toggle'));
@@ -303,6 +355,31 @@ export function mount(root, ctx) {
   };
   root.addEventListener('change', onGroup);
 
+  /** 二次检索（M2-11）：提交过滤 / 退出 */
+  /** @type {(e: Event) => void} */
+  const onRefineSubmit = (e) => {
+    e.preventDefault();
+    const input = /** @type {HTMLInputElement} */ (root.querySelector('#ps-refine'));
+    refineQuery = (input?.value ?? '').trim();
+    const exit = /** @type {HTMLElement | null} */ (root.querySelector('.js-refine-exit'));
+    if (exit) exit.hidden = !refineQuery;
+    renderResults();
+  };
+  /** @type {(e: Event) => void} */
+  const onRefineClick = (e) => {
+    const t = /** @type {HTMLElement} */ (e.target);
+    if (t.closest('.js-refine-exit') || t.closest('.js-refine-exit2')) {
+      refineQuery = '';
+      const input = /** @type {HTMLInputElement | null} */ (root.querySelector('#ps-refine'));
+      if (input) input.value = '';
+      const exit = /** @type {HTMLElement | null} */ (root.querySelector('.js-refine-exit'));
+      if (exit) exit.hidden = true;
+      renderResults();
+    }
+  };
+  root.querySelector('.js-refine-form')?.addEventListener('submit', onRefineSubmit);
+  root.addEventListener('click', onRefineClick);
+
   /** 筛选面板（300ms 防抖合并，I-04/S-07） */
   const rerenderFilters = () => {
     const aside = /** @type {HTMLElement | null} */ (root.querySelector('.ps-col-filters'));
@@ -333,6 +410,7 @@ export function mount(root, ctx) {
       root.removeEventListener('click', onView);
       root.removeEventListener('click', onTable);
       root.removeEventListener('change', onGroup);
+      root.removeEventListener('click', onRefineClick);
       cancelSearch();
     },
   };
