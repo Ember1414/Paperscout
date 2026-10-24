@@ -36,6 +36,7 @@ export function render(ctx) {
             <button type="button" class="btn btn-sm js-view" data-view="list" aria-pressed="${p.view === 'list'}">列表</button>
             <button type="button" class="btn btn-sm js-view" data-view="compact" aria-pressed="${p.view === 'compact'}">紧凑</button>
             <button type="button" class="btn btn-sm js-view" data-view="table" aria-pressed="${p.view === 'table'}">表格</button>
+            <button type="button" class="btn btn-sm js-filters-toggle" aria-label="打开筛选面板">筛选</button>
             <button type="button" class="btn btn-sm js-stop" hidden>停止</button>
             <form class="js-refine-form" role="search" hidden style="display:inline-flex;gap:4px;align-items:center">
               <label class="sr-only" for="ps-refine">在结果内再搜</label>
@@ -385,8 +386,38 @@ export function mount(root, ctx) {
     const aside = /** @type {HTMLElement | null} */ (root.querySelector('.ps-col-filters'));
     if (!aside) return;
     filtersHandle?.destroy?.();
-    aside.innerHTML = filtersHtml(current);
+    aside.innerHTML = `
+      <div class="ps-sheet-handle">
+        <span style="font-size:var(--t-sm);font-weight:600">筛选</span>
+        <button type="button" class="btn btn-sm js-sheet-close">完成</button>
+      </div>` + filtersHtml(current);
     filtersHandle = bindFilters(aside, current, applyPatch);
+    // bottom sheet 开关 + 下滑关闭（S-15）
+    const closeSheet = () => {
+      aside.classList.remove('ps-sheet-open');
+      document.body.classList.remove('ps-sheet-locked');
+    };
+    root.querySelector('.js-filters-toggle')?.addEventListener('click', () => {
+      aside.classList.add('ps-sheet-open');
+      document.body.classList.add('ps-sheet-locked');
+    });
+    aside.querySelector('.js-sheet-close')?.addEventListener('click', closeSheet);
+    /** @type {number | undefined} */
+    let touchStartY;
+    aside.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0]?.clientY;
+    }, { passive: true });
+    aside.addEventListener('touchend', (e) => {
+      if (touchStartY !== undefined && e.changedTouches[0] && e.changedTouches[0].clientY - touchStartY > 80) closeSheet();
+      touchStartY = undefined;
+    }, { passive: true });
+    aside.addEventListener('click', (e) => {
+      // 移动端：应用任一筛选后自动收起 bottom sheet（避免遮挡结果）
+      const t = /** @type {HTMLElement} */ (e.target);
+      if (aside.classList.contains('ps-sheet-open') && (t.closest('input[name="f-type"]') || t.closest('input[name="f-lang"]'))) {
+        setTimeout(closeSheet, 200);
+      }
+    });
   };
   rerenderFilters();
 
