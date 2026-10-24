@@ -1,4 +1,7 @@
 import type { Env, LegacySourceId, Paper } from '../lib/types';
+import { runSearch, parseV3Params } from '../lib/services/search';
+import { AppError, errorEnvelope, internalEnvelope, okEnvelope } from '../lib/errors';
+import { logError, logInfo, newRequestId } from '../lib/infra/log';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';
@@ -12,11 +15,51 @@ import {
 
 /**
  * PaperScout API 路由（Cloudflare Pages Functions）
- * /api/search   —— 多源聚合检索
+ * /api/search   —— 多源聚合检索（env.SEARCH_V3 === '1' 时走 v3 编排器，8.5 迁移 feature flag）
  * /api/sources  —— 数据源列表
  * /api/trending —— 爬虫抓取的 arXiv 最新论文
  * /api/health   —— 健康检查
  */
+
+/** v3 /api/search：新响应信封 { ok, data, meta }；data.items 与 data.papers 双字段保证 R-08 兼容 */
+async function handleSearchV3(request: Request, env: Env): Promise<Response> {
+  const rid = newRequestId();
+  const t0 = Date.now();
+  const url = new URL(request.url);
+  try {
+    const params = parseV3Params(url);
+    const result = await runSearch(params);
+    const ms = Date.now() - t0;
+    logInfo(rid, 'search.v3', { q: params.q.slice(0, 60), ms, poolSize: result.poolSize, partial: result.partial, srcs: result.sources.length });
+    // M1-10 接入 search_log 写入（当前 L0 缓存命中时不重复统计）
+    const body = okEnvelope(
+      {
+        ...result,
+        // 兼容字段（R-08）：legacy 前端读取 items / papers 任一
+        papers: result.items,
+      },
+      { requestId: rid, ms, cache: result.partial ? 'partial' : 'l0' },
+    );
+    return new Response(JSON.stringify(body), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json; charset=utf-8', 'X-Request-Id': rid },
+    });
+  } catch (error) {
+    const ms = Date.now() - t0;
+    if (error instanceof AppError) {
+      logInfo(rid, 'search.v3', { code: error.code, ms });
+      return new Response(JSON.stringify(errorEnvelope(error, rid)), {
+        status: error.status,
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      });
+    }
+    logError(rid, 'search.v3', { ms, err: error instanceof Error ? error.message.slice(0, 120) : String(error) });
+    return new Response(JSON.stringify(internalEnvelope(rid)), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    });
+  }
+}
 
 async function handleSearch(request: Request, env: Env, ctx: EventContext<Env, any, any>): Promise<Response> {
   const url = new URL(request.url);
@@ -254,6 +297,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) => {
 
     switch (route) {
       case 'search':
+        if (env.SEARCH_V3 === '1') return await handleSearchV3(request, env);
         return await handleSearch(request, env, ctx);
 
       case 'sources':
