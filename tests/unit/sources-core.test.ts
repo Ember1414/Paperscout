@@ -32,11 +32,21 @@ describe('registry（19 源 / 四档 / 能力矩阵）', () => {
     expect(SOURCES.baiduxueshu).toBeUndefined();
     expect(Object.keys(SOURCES)).not.toContain('baiduxueshu');
   });
-  it('activeSources 只放行 probe=verified 且已接入 adapter 的源', () => {
+  it('activeSources 只放行 probe=verified 且已接入 adapter 的源（M1-03 后 12 个）', () => {
     const active = activeSources(Object.keys(SOURCES) as never);
     expect(active.every((s) => s.probe === 'verified')).toBe(true);
-    expect(active.map((s) => s.id)).not.toContain('hal'); // pending 未接入
-    expect(active.map((s) => s.id)).not.toContain('ieee'); // needs-key
+    const ids = active.map((s) => s.id);
+    // M1-02 实测排除：DBLP Anubis 封锁、SciELO/J-STAGE/ChinaXiv 不可接、IEEE/Springer/Scopus 需 key
+    expect(ids).not.toContain('dblp');
+    expect(ids).not.toContain('scielo');
+    expect(ids).not.toContain('jstage');
+    expect(ids).not.toContain('chinaxiv');
+    expect(ids).not.toContain('ieee');
+    expect(ids).not.toContain('springer');
+    expect(ids).not.toContain('scopus');
+    expect(ids).toContain('hal');
+    expect(ids).toContain('datacite');
+    expect(ids).toHaveLength(12);
   });
   it('按档位截断：核心优先，超出 MAX_ACTIVE_SOURCES 的丢弃并如实返回', () => {
     const all = Object.values(SOURCES).filter((s) => s.tier !== 'optional');

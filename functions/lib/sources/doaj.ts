@@ -1,5 +1,6 @@
-import type { Paper, SearchParams, SourceAdapter } from '../types';
+import type { FetchRawFn, Paper, RawFetchResult, RawRecord, SearchParams, SourceAdapter } from '../types';
 import { fetchWithRetry } from '../http';
+import { fetchUpstream } from '../infra/http';
 
 /**
  * DOAJ 数据源 —— 全球开放获取期刊目录（8 万+ 期刊，900 万+ 论文，全部免费全文）
@@ -56,4 +57,47 @@ export const doaj: SourceAdapter = {
 
     return papers;
   },
+};
+
+/* ==================== v3 fetchRaw 层（M1-03）==================== */
+
+export const fetchRaw: FetchRawFn = async (params, opts): Promise<RawFetchResult> => {
+  if (!params.query) return { records: [], elapsedMs: 0 };
+  const limit = Math.min(opts?.limit ?? params.limit, 30);
+  const page = Math.floor((opts?.offset ?? (params.page - 1) * limit) / limit) + 1;
+
+  const q = params.author ? `(${params.query}) AND author:"${params.author}"` : params.query;
+  const url = `https://doaj.org/api/search/articles/${encodeURIComponent(q)}?pageSize=${limit}&page=${page}`;
+
+  const res = await fetchUpstream<any>(url, { source: 'DOAJ' });
+  if (!res.ok) return { records: [], error: res.error, elapsedMs: res.elapsedMs, httpStatus: res.status };
+
+  const results = (res.data?.results ?? []) as any[];
+  const fetchedAt = Date.now();
+  let records: RawRecord[] = results.map((r) => {
+    const b = r.bibjson ?? {};
+    const fulltext = (b.link ?? []).find((l: any) => l.type === 'fulltext')?.url;
+    const doi = (b.identifier ?? []).find((x: any) => x.type === 'doi')?.id;
+    return {
+      source: 'doaj' as const,
+      sourceName: 'DOAJ',
+      fetchedAt,
+      title: String(b.title ?? ''),
+      authors: (b.author ?? []).map((a: any) => a?.name).filter(Boolean).slice(0, 25),
+      year: b.year ? Number(b.year) || undefined : undefined,
+      venue: b.journal?.title || undefined,
+      venueType: 'journal' as const,
+      abstract: b.abstract || undefined,
+      doi,
+      url: fulltext || (doi ? `https://doi.org/${doi}` : r.id ? `https://doaj.org/article/${r.id}` : undefined),
+      pdfUrl: fulltext && /\.pdf(\?|$)/i.test(fulltext) ? fulltext : undefined,
+      type: 'journal' as const,
+      openAccess: true, // DOAJ 收录的全为 OA
+      nativeId: r.id || doi,
+    };
+  });
+  // DOAJ 无原生年份过滤（客户端过滤）
+  if (params.yearFrom) records = records.filter((r) => !r.year || r.year >= params.yearFrom!);
+  if (params.yearTo) records = records.filter((r) => !r.year || r.year <= params.yearTo!);
+  return { records, elapsedMs: res.elapsedMs, httpStatus: res.status };
 };

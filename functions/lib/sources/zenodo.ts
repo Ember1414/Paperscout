@@ -1,4 +1,5 @@
-import type { Paper, SearchParams, SourceAdapter } from '../types';
+import type { FetchRawFn, Paper, RawFetchResult, RawRecord, SearchParams, SourceAdapter } from '../types';
+import { fetchUpstream } from '../infra/http';
 import { fetchWithRetry } from '../http';
 
 /**
@@ -85,4 +86,60 @@ export const zenodo: SourceAdapter = {
 
     return papers;
   },
+};
+
+/* ==================== v3 fetchRaw 层（M1-03）==================== */
+
+/**
+ * Zenodo 数据源（M1-03）—— CERN 开放科学仓库（论文/数据/软件）
+ * API: https://zenodo.org/api/records （M1-02 探测通过）
+ */
+
+export const fetchRaw: FetchRawFn = async (params, opts): Promise<RawFetchResult> => {
+  if (!params.query) return { records: [], elapsedMs: 0 };
+  const limit = Math.min(opts?.limit ?? params.limit, 25);
+  const offset = opts?.offset ?? (params.page - 1) * limit;
+
+  const sp = new URLSearchParams({
+    q: params.author ? `${params.query} creators.name:"${params.author}"` : params.query,
+    size: String(limit),
+    page: String(Math.floor(offset / limit) + 1),
+  });
+  if (params.yearFrom || params.yearTo) {
+    const from = params.yearFrom ? `${params.yearFrom}-01-01` : '1000-01-01';
+    const to = params.yearTo ? `${params.yearTo}-12-31` : '9999-12-31';
+    sp.set('q', `${sp.get('q')} AND publication_date:[${from} TO ${to}]`);
+  }
+
+  const res = await fetchUpstream<any>(`https://zenodo.org/api/records?${sp}`, { source: 'Zenodo' });
+  if (!res.ok) return { records: [], error: res.error, elapsedMs: res.elapsedMs, httpStatus: res.status };
+
+  const hits = (res.data?.hits?.hits ?? []) as any[];
+  const fetchedAt = Date.now();
+  const records: RawRecord[] = hits
+    .filter((h) => h.metadata?.title)
+    .map((h) => {
+      const m = h.metadata ?? {};
+      const doi = h.doi || m.doi || undefined;
+      const pdf = (h.files ?? []).find((f: any) => /pdf$/i.test(String(f.key ?? '')))?.links?.self;
+      const pubType = String(m.resource_type?.type ?? '');
+      return {
+        source: 'zenodo' as const,
+        sourceName: SOURCE_NAME,
+        fetchedAt,
+        title: String(m.title),
+        authors: (m.creators ?? []).map((c: any) => c?.name).filter(Boolean).slice(0, 25),
+        year: m.publication_date ? Number(String(m.publication_date).slice(0, 4)) || undefined : undefined,
+        venue: m.journal?.title || `${SOURCE_NAME} 开放科学仓库`,
+        venueType: 'repository' as const,
+        abstract: (m.description ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() || undefined,
+        doi,
+        url: h.links?.self_html || h.links?.latest_html || (doi ? `https://doi.org/${doi}` : undefined),
+        pdfUrl: pdf || undefined,
+        type: /preprint|workingpaper/i.test(pubType) ? 'preprint' : 'other',
+        openAccess: h.metadata?.access_right === 'open' ? true : undefined,
+        nativeId: String(h.id ?? ''),
+      };
+    });
+  return { records, elapsedMs: res.elapsedMs, httpStatus: res.status };
 };

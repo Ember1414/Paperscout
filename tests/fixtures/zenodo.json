@@ -1,0 +1,21 @@
+{
+  "hits": {
+    "hits": [
+      {
+        "id": 101,
+        "doi": "10.5281/zenodo.101",
+        "links": { "self_html": "https://zenodo.org/records/101" },
+        "metadata": {
+          "title": "Dataset for GNN benchmark",
+          "creators": [{ "name": "Data Maker" }],
+          "publication_date": "2025-06-01",
+          "journal": { "title": null },
+          "description": "<p>Zenodo HTML description</p>",
+          "resource_type": { "type": "dataset" },
+          "access_right": "open"
+        },
+        "files": [{ "key": "data.pdf", "links": { "self": "https://zenodo.org/api/records/101/files/data.pdf" } }]
+      }
+    ]
+  }
+}

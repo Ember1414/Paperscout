@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "resultList": {
+    "result": [
+      {
+        "id": "3788456",
+        "pmid": "3788456",
+        "pmcid": "PMC10000001",
+        "doi": "10.1038/s41591-023-00000-1",
+        "title": "Foundation models for biology",
+        "authorString": "Avants B, Lee J, Chen S",
+        "pubYear": "2023",
+        "journalTitle": "Nature Medicine",
+        "abstractText": "We review <sup>new</sup> models in biology.",
+        "citedByCount": 88,
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "source": "MED"
+      },
+      {
+        "id": "PPR1",
+        "source": "PPR",
+        "title": "A bioRxiv preprint",
+        "authorString": "Doe J",
+        "pubYear": "2026",
+        "doi": "10.1101/2026.01.01.1"
+      }
+    ]
+  }
+}

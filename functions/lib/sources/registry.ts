@@ -5,6 +5,13 @@ import { fetchRaw as arxiv } from './arxiv';
 import { fetchRaw as semanticscholar } from './semanticscholar';
 import { fetchRaw as pubmed } from './pubmed';
 import { fetchRaw as dblp } from './dblp';
+import { fetchRaw as europepmcV3 } from './europepmc';
+import { fetchRaw as doajV3 } from './doaj';
+import { fetchRaw as hal } from './hal';
+import { fetchRaw as biorxiv } from './biorxiv';
+import { fetchRaw as datacite } from './datacite';
+import { fetchRaw as zenodoV3 } from './zenodo';
+import { fetchRaw as openaireV3 } from './openaire';
 
 /**
  * v3 数据源注册表（附录 A：19 源，四档）。
@@ -61,15 +68,15 @@ export const SOURCES: Record<SourceId, SourceDef> = {
 
   /* ---------- 学科档（6）---------- */
   europepmc: {
-    id: 'europepmc', name: 'Europe PMC', tier: 'subject', mode: 'keyword', probe: 'verified', // 探测通过；M1-03 接入 fetchRaw
+    id: 'europepmc', name: 'Europe PMC', tier: 'subject', mode: 'keyword', fetchRaw: europepmcV3, probe: 'verified',
     caps: caps({ yearFilter: 'native', typeFilter: true, author: true, abstract: true, citations: true, pdf: true }),
   },
   doaj: {
-    id: 'doaj', name: 'DOAJ', tier: 'subject', mode: 'keyword', probe: 'verified', // 探测通过；M1-03 接入 fetchRaw
+    id: 'doaj', name: 'DOAJ', tier: 'subject', mode: 'keyword', fetchRaw: doajV3, probe: 'verified',
     caps: caps({ yearFilter: 'native', typeFilter: true, author: true, abstract: true, pdf: true, zhCoverage: 'medium', phrase: true }),
   },
   hal: {
-    id: 'hal', name: 'HAL', tier: 'subject', mode: 'keyword', probe: 'verified', // M1-02 探测通过
+    id: 'hal', name: 'HAL', tier: 'subject', mode: 'keyword', fetchRaw: hal, probe: 'verified', // M1-02 探测通过 + M1-03 接入
     caps: caps({ yearFilter: 'native', author: true, abstract: true, pdf: true }),
   },
   scielo: {
@@ -83,22 +90,22 @@ export const SOURCES: Record<SourceId, SourceDef> = {
     caps: caps({ author: true, abstract: true }),
   },
   biorxiv: {
-    id: 'biorxiv', name: 'bioRxiv/medRxiv', tier: 'subject', mode: 'recent', probe: 'verified', // M1-02 探测通过
+    id: 'biorxiv', name: 'bioRxiv/medRxiv', tier: 'subject', mode: 'recent', fetchRaw: biorxiv, probe: 'verified', // M1-02 探测通过 + M1-03 接入
     // 仅"最新前沿"按日期区间，不参与关键词检索（附录 A）
     caps: caps({ yearFilter: 'native', abstract: true, pdf: true }),
   },
 
   /* ---------- 开放档（4）---------- */
   openaire: {
-    id: 'openaire', name: 'OpenAIRE', tier: 'open', mode: 'keyword', probe: 'verified', // 探测通过；M1-03 接入 fetchRaw
+    id: 'openaire', name: 'OpenAIRE', tier: 'open', mode: 'keyword', fetchRaw: openaireV3, probe: 'verified',
     caps: caps({ yearFilter: 'client', author: true, abstract: true }),
   },
   zenodo: {
-    id: 'zenodo', name: 'Zenodo', tier: 'open', mode: 'keyword', probe: 'verified', // 探测通过；M1-03 接入 fetchRaw
+    id: 'zenodo', name: 'Zenodo', tier: 'open', mode: 'keyword', fetchRaw: zenodoV3, probe: 'verified',
     caps: caps({ yearFilter: 'native', author: true, abstract: true, pdf: true, zhCoverage: 'weak' }),
   },
   datacite: {
-    id: 'datacite', name: 'DataCite', tier: 'open', mode: 'keyword', probe: 'verified', // M1-02 探测通过
+    id: 'datacite', name: 'DataCite', tier: 'open', mode: 'keyword', fetchRaw: datacite, probe: 'verified', // M1-02 探测通过 + M1-03 接入
     caps: caps({ yearFilter: 'native', author: true, pdf: true }),
   },
   chinaxiv: {

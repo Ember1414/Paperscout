@@ -1,0 +1,21 @@
+{
+  "total": 2,
+  "results": [
+    {
+      "id": "doaj-abc",
+      "bibjson": {
+        "title": "Open Access Journal Article",
+        "author": [{ "name": "OA Author" }],
+        "year": "2025",
+        "journal": { "title": "Journal of Open Things" },
+        "abstract": "Full open access abstract.",
+        "identifier": [{ "type": "doi", "id": "10.5555/doaj.1" }],
+        "link": [{ "type": "fulltext", "url": "https://example.org/fulltext.pdf" }]
+      }
+    },
+    {
+      "id": "doaj-def",
+      "bibjson": { "title": "No year article", "year": null }
+    }
+  ]
+}
