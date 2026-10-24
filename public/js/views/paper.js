@@ -86,13 +86,17 @@ function detailHtml(d) {
     isTopVenueName(w.venue) ? '顶会/顶刊' : '',
     w.openAccess ? '开放获取' : '',
   ].filter(Boolean);
+  const authorLinks = (w.authors ?? []).map((/** @type {any} */ a) =>
+    `<a href="/search?q=${encodeURIComponent('author:' + a.name)}" data-link style="color:var(--fg-2)">${esc(a.name)}</a>`
+  ).join(', ');
+  const venueLink = w.venue ? `<a href="/search?q=${encodeURIComponent('venue:' + w.venue)}" data-link style="color:var(--fg-2)">${esc(w.venue)}</a>` : '出版方未知';
   return `
     <h1 class="paper-title" style="font-size:var(--t-xl);line-height:1.35">${esc(w.title)}</h1>
     <p style="color:var(--fg-2);font-size:var(--t-sm);margin:var(--s-2) 0">
-      ${authors || '作者未知'}${w.year ? ` · ${w.year}` : ''}
+      ${authorLinks || '作者未知'}${w.year ? ` · ${w.year}` : ''}
     </p>
     <p style="font-size:var(--t-sm)">
-      <span>${esc(w.venue ?? '出版方未知')}</span>
+      <span>${venueLink}</span>
       ${w.doi ? `· DOI <code>${esc(w.doi)}</code>` : ''}
       ${badges.map((b) => ` <span class="badge badge-accent">${esc(b)}</span>`).join('')}
     </p>
