@@ -16,7 +16,8 @@
     "lint:tokens": "node scripts/check-tokens.mjs",
     "a11y": "node scripts/a11y-audit.mjs",
     "budget": "node scripts/budget.mjs",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "eval": "node scripts/eval-relevance.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260903.1",

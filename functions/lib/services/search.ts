@@ -4,6 +4,7 @@ import { fetchUpstream } from '../infra/http';
 import { canonicalHash, l0Get, l0Put, l1Get, l1Put, l2Get } from '../infra/cache';
 import { Semaphore } from '../infra/semaphore';
 import { parseQuery, extractDoi } from '../query/parse';
+import { expandQuery } from '../query/dict';
 import { activeSources, DEFAULT_CORE_SOURCES, SOURCES, truncateByTier } from '../sources/registry';
 import { fuseRecords } from '../core/fusion';
 import { rankWorks } from '../core/rank';
@@ -28,6 +29,7 @@ import type { FetchRawFn, RawFetchResult, RawRecord, SourceDef, Work } from '../
 
 export interface V3SearchParams {
   q: string;
+  author?: string;
   src?: string[];
   from?: number;
   to?: number;
@@ -81,6 +83,7 @@ export function parseV3Params(url: URL): V3SearchParams {
   const sp = url.searchParams;
   const q = (sp.get('q') ?? sp.get('query') ?? '').trim();
   const doiParam = (sp.get('doi') ?? '').trim();
+  const author = (sp.get('author') ?? '').trim() || undefined;
   if (!q && !doiParam) throw new AppError('BAD_QUERY', '检索式不完整，请补充关键词');
   if (q.length > SEARCH.MAX_QUERY_LENGTH) throw new AppError('BAD_QUERY', `检索词过长（最多 ${SEARCH.MAX_QUERY_LENGTH} 字）`);
 
@@ -107,6 +110,7 @@ export function parseV3Params(url: URL): V3SearchParams {
 
   return {
     q: q || doiParam,
+    author,
     src: src.length ? src : undefined,
     from,
     to,
@@ -199,6 +203,10 @@ function mapStatus(kind: string | undefined): SourceStatus['status'] {
 
 export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps = {}): Promise<V3SearchResult> {
   const parsed = parseQuery(params.q);
+  // M2-14 查询扩展：中英互译（打分词并入 + zh 召回后缀仅给声明支持的源）
+  const expansion = expandQuery(params.q, parsed.terms, parsed.cjkWhole);
+  const scoredParsed = expansion.scoreTerms.length ? { ...parsed, terms: [...parsed.terms, ...expansion.scoreTerms] } : parsed;
+  const recallSuffix = parsed.lang === 'zh' ? expansion.recallSuffix : '';
   const t0 = Date.now();
   const totalBudget = deps.totalBudgetMs ?? SEARCH.TOTAL_BUDGET_MS;
   const sort = params.sort ?? 'smart';
@@ -214,7 +222,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       return true;
     });
 
-  const hashInput = { q: params.q, src: params.src, from: params.from, to: params.to, type: params.type, lang: params.lang, field: params.field, sort: params.sort };
+  const hashInput = { q: params.q, author: parsed.fieldTags.find((t) => t.key === 'author')?.value, src: params.src, from: params.from, to: params.to, type: params.type, lang: params.lang, field: params.field, sort: params.sort };
   const queryHash = canonicalHash(hashInput);
   const cacheKey = `pool:${queryHash}`;
   const meta = (partial: boolean): Pick<V3SearchResult, 'parsed' | 'queryHash' | 'partial'> => ({
@@ -247,7 +255,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       if (statuses.every((s) => s.status !== 'ok')) throw new AppError('UPSTREAM_TIMEOUT', 'DOI 查询的数据源暂时不可用，请稍后重试', { retryable: true });
       return { items: [], total: 0, poolSize: 0, page: params.page, limit: params.limit, hasMore: false, exhausted: true, sources: statuses, ...meta(false) };
     }
-    const works = rankWorks(applyFilters(fuseRecords(records)), parsed, sort);
+    const works = rankWorks(applyFilters(fuseRecords(records)), scoredParsed, sort);
     return {
       items: works, total: works.length, poolSize: works.length, page: 1, limit: params.limit,
       hasMore: false, exhausted: true, sources: statuses, ...meta(false),
@@ -259,13 +267,24 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   const usable = defs.filter((d) => typeof d.fetchRaw === 'function') as (SourceDef & { fetchRaw: FetchRawFn })[];
   if (!usable.length) throw new AppError('ALL_SOURCES_FAILED', '数据源暂时都不可用', { retryable: true });
 
+  // M2-14：DSL 字段标签落到源参数（author:/year:；parse 已产出 fieldTags）
+  const authorTag = parsed.fieldTags.find((t) => t.key === 'author')?.value;
+  const yearTag = parsed.fieldTags.find((t) => t.key === 'year')?.value ?? '';
+  const yearPair = yearTag.match(/^(d{4})(?:-(d{4}))?$/);
+  const effectiveAuthor = params.author ?? authorTag;
+  const effectiveFrom = params.from ?? (yearPair ? Number(yearPair[1]) : undefined);
+  const effectiveTo = params.to ?? (yearPair ? Number(yearPair[2] ?? yearPair[1]) : undefined);
+
   const searchParams = {
     ...params,
-    query: params.q,
+    query: parsed.cleanQuery || effectiveAuthor || params.q,
     sources: usable.map((d) => d.id),
     language: (params.lang ?? 'all') as 'all' | 'zh' | 'en',
     paperType: (params.type ?? 'all') as 'all' | 'journal' | 'conference' | 'preprint',
     sort: (params.sort ?? 'smart') as 'smart' | 'relevance' | 'newest' | 'citations',
+    author: effectiveAuthor,
+    yearFrom: effectiveFrom,
+    yearTo: effectiveTo,
     page: 1,
   };
 
@@ -282,7 +301,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       const startedAt = Date.now();
       let result: RawFetchResult;
       try {
-        result = await semaphore.run(() => def.fetchRaw(searchParams, { limit: SEARCH.PER_SOURCE_LIMIT, offset }));
+        result = await semaphore.run(() => def.fetchRaw(searchParams, { limit: SEARCH.PER_SOURCE_LIMIT, offset, querySuffix: recallSuffix }));
       } catch {
         // fetchRaw 契约不抛；防御性兜底仍须记录（1.5 禁止静默）
         statuses[def.id] = { id: def.id, name: def.name, status: 'error', ms: Date.now() - startedAt, count: 0 };
@@ -315,7 +334,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   if (!collected.length && statuses && !Object.values(statuses).some((s) => s.status === 'ok')) {
     throw new AppError('ALL_SOURCES_FAILED', '数据源暂时都不可用', { retryable: true });
   }
-  let poolItems = rankWorks(applyFilters(fuseRecords(collected)), parsed, sort);
+  let poolItems = rankWorks(applyFilters(fuseRecords(collected)), scoredParsed, sort);
   let pool: SearchPool = { ...createPool(queryHash, poolItems), offsets: { ...offsets } };
 
   // 追加召回（池不足且未耗尽，最多 3 轮；召回原始记录独立融合后并入，全池重排保证跨页一致）
@@ -332,9 +351,9 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       await recallRound(offsets);
       const fresh = collected.slice(before);
       if (!fresh.length) break;
-      const fusedBatch = rankWorks(applyFilters(fuseRecords(fresh)), parsed, sort);
+      const fusedBatch = rankWorks(applyFilters(fuseRecords(fresh)), scoredParsed, sort);
       pool = markOffsets(appendToPool(pool, fusedBatch), offsets);
-      pool.items = rankWorks(pool.items, parsed, sort);
+      pool.items = rankWorks(pool.items, scoredParsed, sort);
     }
   }
 

@@ -20,6 +20,8 @@ export interface ParsedQuery {
   fieldTags: { key: 'author' | 'year' | 'venue' | 'type' | 'doi'; value: string }[];
   /** 中文检索整串（BM25 精确加权 ×2，附录 B） */
   cjkWhole?: string;
+  /** 剥离短语/字段标签/排除词后的自由文本（供源检索用，保留原词形；M2-14） */
+  cleanQuery: string;
   intent: 'topic' | 'author' | 'doi' | 'title' | 'question';
   lang: 'zh' | 'en' | 'mixed' | 'unknown';
 }
@@ -98,7 +100,7 @@ export function parseQuery(raw: string): ParsedQuery {
   const hasLatin = /[a-z]/i.test(input);
   const lang: ParsedQuery['lang'] = hasCjk && hasLatin ? 'mixed' : hasCjk ? 'zh' : hasLatin ? 'en' : 'unknown';
 
-  return { raw: input, terms, phrases, excluded, fieldTags, cjkWhole, intent, lang };
+  return { raw: input, terms, phrases, excluded, fieldTags, cjkWhole, cleanQuery: rest.replace(/s+/g, ' ').trim(), intent, lang };
 }
 
 /** 提取裸 DOI（intent=doi 时用于直查） */

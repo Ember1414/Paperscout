@@ -1,0 +1,235 @@
+{
+  "base": "http://127.0.0.1:8791",
+  "label": "v3-local",
+  "at": "2026-10-24T08:59:17.845Z",
+  "rows": [
+    {
+      "id": "q01",
+      "q": "large language model hallucination",
+      "httpStatus": 200,
+      "ms": 6669,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 2,
+      "sourcesTotal": 5,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 2,
+      "sampleTitles": [
+        "Hallucination Reduction and Optimization for Large",
+        "Epistemic Field Theory: Predicting Hallucination i",
+        "Incident Response Planning Using a Lightweight Lar"
+      ]
+    },
+    {
+      "id": "q02",
+      "q": "大语言模型 幻觉",
+      "httpStatus": 200,
+      "ms": 6548,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 3,
+      "sourcesTotal": 5,
+      "top10Coverage": 0.3,
+      "offTopicRatio": 0,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "TiLamb:基于增量预训练的藏文大语言模型(TiLamb: A Tibetan Large Lan",
+        "基于大语言模型的自主智能体概述(A Survey on Large Language Model b",
+        "大语言模型技术研究与应用探讨"
+      ]
+    },
+    {
+      "id": "q03",
+      "q": "10.1038/s41586-023-06221-2",
+      "httpStatus": 200,
+      "ms": 2133,
+      "err": null,
+      "resultCount": 1,
+      "sourcesOk": 1,
+      "sourcesTotal": 1,
+      "top10Coverage": null,
+      "offTopicRatio": null,
+      "coverageNote": "skipped",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "Scientific discovery in the age of artificial inte"
+      ]
+    },
+    {
+      "id": "q04",
+      "q": "CRISPR base editing",
+      "httpStatus": 200,
+      "ms": 4543,
+      "err": null,
+      "resultCount": 0,
+      "sourcesOk": 1,
+      "sourcesTotal": 2,
+      "top10Coverage": null,
+      "offTopicRatio": null,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": []
+    },
+    {
+      "id": "q05",
+      "q": "graph neural network",
+      "httpStatus": 200,
+      "ms": 6543,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 3,
+      "sourcesTotal": 5,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "Knowledge Graph Embedding Based on Graph Neural Ne",
+        "MAGNET: Multi-Label Text Classification using Atte",
+        "Graph Embedding for Graph Neural Network in Intrus"
+      ]
+    },
+    {
+      "id": "q06",
+      "q": "LoRA fine-tuning",
+      "httpStatus": 200,
+      "ms": 6561,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 2,
+      "sourcesTotal": 5,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "LoRA-FAIR: Federated LoRA Fine-Tuning with Aggrega",
+        "LoftQ: LoRA-Fine-Tuning-Aware Quantization for Lar",
+        "LLM-NER: Advancing Named Entity Recognition with L"
+      ]
+    },
+    {
+      "id": "q07",
+      "q": "single cell RNA sequencing",
+      "httpStatus": 200,
+      "ms": 6547,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 3,
+      "sourcesTotal": 5,
+      "top10Coverage": 0.35,
+      "offTopicRatio": 0.2,
+      "coverageNote": "weak(sort!=smart)",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "Moderated estimation of fold change and dispersion",
+        "Hallmarks of Cancer: The Next Generation",
+        "STAR: ultrafast universal RNA-seq aligner"
+      ]
+    },
+    {
+      "id": "q08",
+      "q": "量子计算 纠错",
+      "httpStatus": 200,
+      "ms": 6533,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 2,
+      "sourcesTotal": 5,
+      "top10Coverage": 0.05,
+      "offTopicRatio": 0.7,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "生物大分子的量子计算模拟：并行量子计算的初步探索",
+        "量子计算论文数据集",
+        "电子计算机的安全防护措施"
+      ]
+    },
+    {
+      "id": "q09",
+      "q": "author:yoshuabengio",
+      "httpStatus": 200,
+      "ms": 11,
+      "err": null,
+      "resultCount": 1,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "Causal Discovery in Gene Regulatory Networks with "
+      ]
+    },
+    {
+      "id": "q10",
+      "q": "the of and",
+      "httpStatus": 200,
+      "ms": 6539,
+      "err": null,
+      "resultCount": 0,
+      "sourcesOk": 3,
+      "sourcesTotal": 5,
+      "top10Coverage": null,
+      "offTopicRatio": null,
+      "coverageNote": "skipped",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": []
+    },
+    {
+      "id": "q11",
+      "q": "asdfqwerzzz",
+      "httpStatus": 200,
+      "ms": 6543,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 4,
+      "sourcesTotal": 5,
+      "top10Coverage": 0,
+      "offTopicRatio": 1,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "The emerging spectrum of COVID-19 neurology: clini",
+        "Limbic-predominant age-related TDP-43 encephalopat",
+        "Risk and predictors of dementia and parkinsonism i"
+      ]
+    },
+    {
+      "id": "q12",
+      "q": "'; DROP TABLE favorites;--",
+      "httpStatus": 200,
+      "ms": 6547,
+      "err": null,
+      "resultCount": 20,
+      "sourcesOk": 2,
+      "sourcesTotal": 5,
+      "top10Coverage": 0.45,
+      "offTopicRatio": 0,
+      "coverageNote": "",
+      "dupByDoi": 0,
+      "dupByTitle": 9,
+      "sampleTitles": [
+        "drop table, n.",
+        "drop-leaf table",
+        "A Drop Slopes off – Tilting Table for the Drop Sha"
+      ]
+    }
+  ]
+}
