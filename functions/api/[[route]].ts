@@ -7,6 +7,7 @@ import { getSuggestions, validateSuggestParams } from '../lib/services/suggest';
 import { getWorkDetail } from '../lib/services/work';
 import { getAvailability } from '../lib/services/availability';
 import { getContexts } from '../lib/services/contexts';
+import { getStatus } from '../lib/services/status';
 import { parseParams, filterByLanguage, filterByType, HttpError, jsonResponse, mergeResults, sortPapers, ADAPTERS, VALID_SOURCES } from '../lib/aggregate';
 import { getTrending } from '../lib/crawler';
 import { readHealth, isCoolingDown, recordSuccess, recordFailure } from '../lib/sourceHealth';

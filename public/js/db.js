@@ -115,3 +115,18 @@ export async function deleteSearchHistory(idOrAll) {
 function reqToPromise(_store) {
   return new Promise((resolve) => resolve(undefined));
 }
+
+/** 清除全部本地数据（IndexedDB + localStorage + sessionStorage；F-37） */
+export function clearAllLocalData() {
+  try {
+    localStorage.clear();
+    sessionStorage.clear();
+    indexedDB.deleteDatabase('paperscout');
+    if ('caches' in window) {
+      caches.keys().then((keys) => keys.forEach((k) => caches.delete(k)));
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
