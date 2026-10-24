@@ -7,7 +7,7 @@
  */
 
 const DB_NAME = 'paperscout';
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 const SNAP_TTL_MS = 10 * 60 * 1000;
 
 /** @type {Promise<IDBDatabase> | null} */
@@ -40,6 +40,10 @@ function openDb() {
       }
       if (!db.objectStoreNames.contains('settings')) {
         db.createObjectStore('settings', { keyPath: 'key' });
+      }
+      if (!db.objectStoreNames.contains('recentlyViewed')) {
+        const s = db.createObjectStore('recentlyViewed', { keyPath: 'workId' });
+        s.createIndex('viewedAt', 'viewedAt');
       }
       if (!db.objectStoreNames.contains('trash')) {
         const s = db.createObjectStore('trash', { keyPath: 'id' });
@@ -295,6 +299,33 @@ export async function deleteSearchHistory(idOrAll) {
     if (idOrAll === 'all') tx(db, 'searches', 'readwrite').clear();
     else tx(db, 'searches', 'readwrite').delete(idOrAll);
   } catch (e) { console.warn('db:delete-search-failed', e instanceof Error ? e.message : String(e)); }
+}
+
+/* ---------- Recently Viewed（继续阅读 M9-18） ---------- */
+
+/** @param {string} workId @param {string} title */
+export async function trackView(workId, title) {
+  try {
+    const db = await openDb();
+    const store = tx(db, 'recentlyViewed', 'readwrite');
+    await toPromise(store.put({ workId, title, viewedAt: Date.now() }));
+    // 保留最近 20 条
+    const count = await toPromise(store.count());
+    if (/** @type {number} */ (count) > 20) {
+      const all = await toPromise(store.index('viewedAt').getAll());
+      const sorted = (/** @type {any[]} */ (all ?? [])).sort((a, b) => a.viewedAt - b.viewedAt);
+      for (const row of sorted.slice(0, /** @type {number} */ (count) - 20)) await toPromise(store.delete(row.workId));
+    }
+  } catch (e) { console.warn('db:track-view-failed', e instanceof Error ? e.message : String(e)); }
+}
+
+/** @returns {Promise<{ workId: string, title: string, viewedAt: number }[]>} */
+export async function getRecentlyViewed(limit = 5) {
+  try {
+    const db = await openDb();
+    const all = await toPromise(tx(db, 'recentlyViewed', 'readonly').index('viewedAt').getAll());
+    return (/** @type {any[]} */ (all ?? [])).sort((a, b) => b.viewedAt - a.viewedAt).slice(0, limit);
+  } catch { return []; }
 }
 
 /* ---------- 全量导出/导入（M5-08） ---------- */

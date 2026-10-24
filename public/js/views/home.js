@@ -2,6 +2,7 @@
 import { searchBarHtml, bindSearchBar } from '../ui/searchbar.js';
 import { searchUrl } from '../url.js';
 import { apiGet } from '../api.js';
+import { getRecentlyViewed } from '../db.js';
 
 /**
  * 首页（4.3 线框 / 5.13.1 信息流）。

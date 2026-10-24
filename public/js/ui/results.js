@@ -57,7 +57,14 @@ export function resultsHtml(st, ctx) {
     current: w.id === ctx.currentId,
   }, hl)).join('');
 
-  return `${staleBar}${partialBar}<div class="js-results-list" role="list" aria-live="polite" aria-busy="false">${listHtml}</div>${paginationHtml(st)}`;
+  const selectAll = `
+    <div style="display:flex;gap:8px;align-items:center;margin:8px 0;font-size:var(--t-xs);color:var(--fg-3)">
+      <label style="cursor:pointer;display:inline-flex;gap:4px;align-items:center">
+        <input type="checkbox" class="js-compare-all" /> 全选对比
+      </label>
+      <button type="button" class="btn btn-sm js-compare-selected" style="display:none">对比所选</button>
+    </div>`;
+  return `${staleBar}${partialBar}${selectAll}<div class="js-results-list" role="list" aria-live="polite" aria-busy="false">${listHtml}</div>${paginationHtml(st)}`;
 }
 
 function skeletonHtml() {
@@ -107,6 +114,16 @@ export function bindResults(root, handlers) {
     if (relax) return handlers.onRelax(relax.dataset.relax ?? 'year');
     if (t.closest('.js-prev-page')) return handlers.onPage(-1);
     if (t.closest('.js-next-page')) return handlers.onPage(1);
+    // 全选切换
+    if (t.closest('.js-compare-all') === t || (/** @type {HTMLInputElement} */ (t)).classList?.contains('js-compare-all')) {
+      const checked = /** @type {HTMLInputElement} */ (t);
+      root.querySelectorAll('.js-compare-check').forEach((c) => { (/** @type {HTMLInputElement} */ (c)).checked = checked.checked; });
+      updateCompareBtn(root);
+      return;
+    }
+    // checkbox 变化时更新对比按钮
+    const compareCheck = /** @type {HTMLInputElement | null} */ (t.closest?.('.js-compare-check'));
+    if (compareCheck) { updateCompareBtn(root); }
     const compareBtn = /** @type {HTMLElement | null} */ (t.closest?.('.js-compare-selected'));
     if (compareBtn) {
       const checked = [...root.querySelectorAll('.js-compare-check:checked')];
@@ -116,6 +133,19 @@ export function bindResults(root, handlers) {
       }
     }
   };
+  // checkbox change 事件
+  root.addEventListener('change', (e) => {
+    const t = /** @type {HTMLElement} */ (e.target);
+    if ((/** @type {HTMLInputElement} */ (t)).classList?.contains('js-compare-check')) updateCompareBtn(root);
+  });
+  /** @param {HTMLElement} rootEl */
+  function updateCompareBtn(rootEl) {
+    const btn = /** @type {HTMLButtonElement | null} */ (rootEl.querySelector('.js-compare-selected'));
+    if (!btn) return;
+    const n = root.querySelectorAll('.js-compare-check:checked').length;
+    btn.style.display = n >= 2 ? 'inline-flex' : 'none';
+    btn.textContent = `对比所选（${n}）`;
+  }
   root.addEventListener('click', onClick);
   return { destroy() { root.removeEventListener('click', onClick); } };
 }

@@ -1,5 +1,6 @@
 // @ts-check
 import { workApi } from '../api.js';
+import { trackView } from '../db.js';
 import { toBibtex, toRis, toCslJson } from '../cite-format.js';
 import { icon } from '../icons.js';
 import { isTopVenueName } from '../ui/card.js';
