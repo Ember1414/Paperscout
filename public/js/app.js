@@ -6,8 +6,21 @@
 
 import { shellHtml, bindShell } from './ui/shell.js';
 import { startRouter } from './router.js';
+import { mountPalette } from './ui/palette.js';
+import { bindGlobalKeys } from './ui/keyboard.js';
 
 const THEME_KEY = 'ps-theme';
+
+/** 切换主题并持久化（palette 命令复用） */
+export function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try {
+    localStorage.setItem('ps-theme', next);
+  } catch { /* 会话内仍生效 */ }
+  return /** @type {'light' | 'dark'} */ (next);
+}
 
 /** 主题初始化：localStorage > 系统偏好（防 FOUC 的同款逻辑也内联在 index.html） */
 export function initTheme() {
@@ -42,6 +55,8 @@ async function boot() {
   bindShell();
   const main = /** @type {HTMLElement | null} */ (document.getElementById('main'));
   if (main) await startRouter({ main });
+  mountPalette();
+  bindGlobalKeys();
 }
 
 void boot();
