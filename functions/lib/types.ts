@@ -168,3 +168,35 @@ export interface SourceDef {
   fetchRaw?: FetchRawFn;
   probe: ProbeStatus;
 }
+
+/** 源证据（5.2.1）：每源一条，不合并、不覆盖 */
+export interface Provenance {
+  source: SourceId;
+  sourceName: string;
+  fetchedAt: number;
+  raw: { url?: string; doi?: string; citations?: number; type?: string; nativeId?: string };
+}
+
+/** 融合后的唯一论文实体（5.2.1） */
+export interface Work {
+  /** 稳定主键：`doi:<归一 DOI>` > `tf:<标题指纹 hash>` */
+  id: string;
+  title: string;
+  authors: { name: string; sourceRank: number }[];
+  year?: number;
+  venue?: string;
+  venueType: 'journal' | 'conference' | 'preprint' | 'repository' | 'unknown';
+  abstract?: string;
+  doi?: string;
+  url: string;
+  pdfUrl?: string;
+  citations?: number;
+  citationsBySource: Record<string, number>;
+  type: 'journal' | 'conference' | 'preprint' | 'other';
+  openAccess: boolean;
+  lang: 'zh' | 'en';
+  sources: Provenance[];
+  confidence: 'A' | 'B' | 'C';
+  /** 排序分（M1-06 填充）：total + 分项，reason chip 由 parts 推导（禁止写死） */
+  score?: { total: number; parts: Record<string, number> };
+}
