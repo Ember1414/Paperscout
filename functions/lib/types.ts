@@ -139,6 +139,8 @@ export interface FetchRawOpts {
   limit?: number;
   /** 追加召回偏移量（结果池模型，5.4） */
   offset?: number;
+  /** 查询扩展追加串（M2-14：仅自然语言匹配语义的源使用，openalex/crossref） */
+  querySuffix?: string;
 }
 
 /** 源能力（5.1.2 能力矩阵；编排器据此决定是否调用，不做无效请求） */

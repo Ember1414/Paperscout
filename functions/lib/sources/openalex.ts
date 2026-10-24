@@ -124,25 +124,32 @@ export const fetchRaw: FetchRawFn = async (params: SearchParams, opts): Promise<
   const limit = Math.min(opts?.limit ?? params.limit, SEARCH.PER_SOURCE_LIMIT);
   const offset = opts?.offset ?? (params.page - 1) * limit;
 
-  const filters: string[] = [];
-  if (params.yearFrom) filters.push(`from_publication_date:${params.yearFrom}-01-01`);
-  if (params.yearTo) filters.push(`to_publication_date:${params.yearTo}-12-31`);
-  if (params.author) filters.push(`raw_author_name.search:${params.author}`);
-  if (params.paperType === 'journal') filters.push('type:article');
-  if (params.paperType === 'conference') filters.push('type:proceedings-article');
-  if (params.paperType === 'preprint') filters.push('type:preprint');
+  const buildUrl = (withAuthorFilter: boolean): string => {
+    const filters: string[] = [];
+    if (params.yearFrom) filters.push(`from_publication_date:${params.yearFrom}-01-01`);
+    if (params.yearTo) filters.push(`to_publication_date:${params.yearTo}-12-31`);
+    if (params.author && withAuthorFilter) filters.push(`raw_author_name.search:${params.author}`);
+    if (params.paperType === 'journal') filters.push('type:article');
+    if (params.paperType === 'conference') filters.push('type:proceedings-article');
+    if (params.paperType === 'preprint') filters.push('type:preprint');
+    const sp = new URLSearchParams({
+      search: params.query + (opts?.querySuffix ? ` ${opts.querySuffix}` : ''),
+      per_page: String(limit),
+      page: String(Math.floor(offset / limit) + 1),
+      mailto: CONTACT_EMAIL,
+    });
+    if (filters.length) sp.set('filter', filters.join(','));
+    if (params.sort === 'newest') sp.set('sort', 'publication_date:desc');
+    if (params.sort === 'citations') sp.set('sort', 'cited_by_count:desc');
+    return `https://api.openalex.org/works?${sp}`;
+  };
 
-  const sp = new URLSearchParams({
-    search: params.query,
-    per_page: String(limit),
-    page: String(Math.floor(offset / limit) + 1),
-    mailto: CONTACT_EMAIL,
-  });
-  if (filters.length) sp.set('filter', filters.join(','));
-  if (params.sort === 'newest') sp.set('sort', 'publication_date:desc');
-  if (params.sort === 'citations') sp.set('sort', 'cited_by_count:desc');
-
-  const res = await fetchUpstream<any>(`https://api.openalex.org/works?${sp}`, { source: 'OpenAlex' });
+  let res = await fetchUpstream<any>(buildUrl(true), { source: 'OpenAlex' });
+  // 作者名回退（M2-14）：handle/连写名（如 author:yoshuabengio）在 raw_author_name.search 零命中时，
+  // 降级为纯自由文本检索一次（OpenAlex 全文索引对作者名分词友好）
+  if (res.ok && params.author && !(res.data?.results ?? []).length && !/\s/.test(params.author)) {
+    res = await fetchUpstream<any>(buildUrl(false), { source: 'OpenAlex' });
+  }
   if (!res.ok) return { records: [], error: res.error, elapsedMs: res.elapsedMs, httpStatus: res.status };
 
   const results = (res.data?.results ?? []) as any[];

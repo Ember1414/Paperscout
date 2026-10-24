@@ -10,13 +10,16 @@ import { gzipSync } from 'node:zlib';
 
 const FIRST_SCREEN = [
   'public/index.html',
-  'public/style.css', // v2；v3 起移除
-  'public/app.js', // v2 入口；v3 起改为 js/app.js + js/router.js + js/store.js
-  'public/js/app.js',
-  'public/js/router.js',
-  'public/js/store.js',
   'public/css/tokens.css',
   'public/css/base.css',
+  'public/css/layout.css',
+  'public/css/components.css',
+  'public/js/app.js',
+  'public/js/icons.js',
+  'public/js/router.js',
+  'public/js/store.js',
+  'public/js/api.js',
+  'public/js/url.js',
 ];
 
 const TOTAL_BUDGET = 90 * 1024;

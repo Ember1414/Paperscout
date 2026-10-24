@@ -2,6 +2,36 @@
 
 > 模板见 REBUILD_PLAN 附录 E。每个里程碑合并 main 前更新。
 
+## [M2] 2026-10-24 · 检索与结果体验（分支 `v3/m2`）
+
+### 新增
+- 设计系统（6.2 token 全量 + 暗/亮双主题 + SVG 图标 13 枚，emoji 清零）与 AppShell
+- History 路由（滚动记忆/后退还原/`_redirects` SPA 回退/`_routes.json` Functions 分流）+ 404 视图
+- store/api/url 状态层：requestId 竞态保护 + AbortController + URL 契约编解码（4.2 全字段）
+- 首页（Hero 检索 + 六区块诚实空态）、结果页三栏（筛选 300ms 防抖合并/结果卡 chips 真实推导/骨架/空态三放宽按钮/部分失败条/分页）
+- 详情抽屉（桌面右栏/移动抽屉/sel 深链 replaceState/焦点陷阱与归还/Esc）
+- 高级检索构建器（AND/OR/NOT 条件组 + DSL 实时预览）
+- 表格视图（列自定义 localStorage 持久化 + 列头排序）、结果分组（年/venue/源，details 零请求折叠）
+- `/api/suggest`（拼写纠正/前缀/同义词/相关术语）+ 搜索联想下拉（↑↓⏎Esc）
+- IndexedDB 检索历史（A-01 用户侧闭环）+ 结果内二次检索（池内过滤零请求）
+- 命令面板（⌘K/模糊匹配/焦点陷阱）+ 全键盘（`/` `j` `k` `⏎` `g h`）
+- 移动端（筛选 bottom sheet 下滑关闭/44px 触控/无横滚）+ A11y 第一轮 0 违规
+- `legacy.html`：v2 单文件冻结回退版（7 天，M8-04 删）
+
+### 修复
+- A-18（URL 状态可分享/刷新还原基础）、A-19（html 模板转义单点 → 全组件 escapeHtml）、A-20（requestId 竞态 + AbortController）
+- A-22 第一轮（emoji→SVG、aria-label、focus-visible、跳级标题）
+- 375px 双处横向溢出（grid minmax + 工具栏 wrap）；Work.authors 对象渲染 [object Object]
+
+### 破坏性变更
+- `public/` 完全替换为 v3 前端（v2 入口保留于 legacy.html）；旧 `app.js/style.css/sw.js` 删除
+
+### 决策
+- 新增 D-014（暂无——M2 按文档执行；group 参数为 4.2 契约 additive 扩展）
+
+### 预算
+- 首屏 gzip **17.4KB / 90KB**（P-01）；单文件最大 gzip 2.3KB / 40KB
+
 ## [M1] 2026-10-24 · 数据核心（分支 `v3/m1`）
 
 ### 新增
@@ -14,6 +44,12 @@
 - D1 migrations 10 表（远程已应用）+ 原子配额 upsert + search_log/kv_write_log 统计
 - `/api/search` v3 信封（feature flag `SEARCH_V3=1`，preview 环境默认开启，生产暂保持 v2）
 - 单测 152 例（fixture 13 组 / 锚点对账 / 并发原子性）
+
+### 增补（M2-14/M2-15，验收前 owner 增补包）
+- M2-14 检索准确性/广泛性：中英互译扩展词典（76 对，`dict.ts`）、`author:`/`year:` 意图落地、OpenAlex 作者名回退、`npm run eval` 自动评测（v2 vs v3：跑题 -33%、冗余 -72%+、DOI/author 质变）、空池缓存防投毒（60s 防抖）
+- M2-15 稳定性与可读性：源级 429 isolate 内存冷却（D-015）、全源失败 stale 兜底（7.7 预案）、venue 多样性（Top10 同源连续 ≤2）、关键词高亮（B 组 P0 补齐，XSS 安全断言）、eval 多样性指标
+- M2-16 弱查询容错：同义词/相关词并入召回（llm→large language model 实测 20/20）、空结果自动拼写纠正重试（retriedFrom）、结果池 sessionStorage 快照 SWR 秒开（10min TTL）
+- 单测 152 → 201 例
 
 ### 修复
 - A-02 跨源分页错位（池切片）/ A-04 类型筛选失效（严格过滤）/ A-05 语言判定不对称 / A-06 熔断 KV 写（在线 0 写）/ A-07 缓存写挂 waitUntil / A-08 缓存 key 含分页

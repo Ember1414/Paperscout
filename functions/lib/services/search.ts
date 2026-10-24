@@ -4,6 +4,9 @@ import { fetchUpstream } from '../infra/http';
 import { canonicalHash, l0Get, l0Put, l1Get, l1Put, l2Get } from '../infra/cache';
 import { Semaphore } from '../infra/semaphore';
 import { parseQuery, extractDoi } from '../query/parse';
+import { expandQuery } from '../query/dict';
+import { coolDown, isCoolingDown } from '../infra/cooldown';
+import { diversifyByVenue } from '../core/diversify';
 import { activeSources, DEFAULT_CORE_SOURCES, SOURCES, truncateByTier } from '../sources/registry';
 import { fuseRecords } from '../core/fusion';
 import { rankWorks } from '../core/rank';
@@ -28,6 +31,7 @@ import type { FetchRawFn, RawFetchResult, RawRecord, SourceDef, Work } from '../
 
 export interface V3SearchParams {
   q: string;
+  author?: string;
   src?: string[];
   from?: number;
   to?: number;
@@ -61,6 +65,10 @@ export interface V3SearchResult {
   queryHash: string;
   /** 命中的缓存层（X-Cache 头用）；undefined = miss */
   cacheLayer?: 'l0' | 'l1' | 'l2';
+  /** 全部源失败时返回的 L1 旧池（7.7 降级，前端显示提示条） */
+  stale?: boolean;
+  /** 空结果自动拼写纠正（M2-16）：原查询词（纠正后重查一次） */
+  retriedFrom?: string;
 }
 
 export interface OrchestratorDeps {
@@ -68,8 +76,8 @@ export interface OrchestratorDeps {
   sourcesOverride?: (SourceDef & { fetchRaw: FetchRawFn })[];
   /** 测试注入：全局硬截止（毫秒） */
   totalBudgetMs?: number;
-  /** Workers 运行时注入：KV 绑定（L2 只读）与 waitUntil（L1 写挂靠，A-07） */
-  env?: { CACHE?: KVNamespace };
+  /** Workers 运行时注入：KV 绑定（L2 只读）、D1（suggest 热词池）、waitUntil（L1 写挂靠，A-07） */
+  env?: { CACHE?: KVNamespace; DB?: D1Database };
   ctx?: { waitUntil: (p: Promise<unknown>) => void };
 }
 
@@ -81,6 +89,7 @@ export function parseV3Params(url: URL): V3SearchParams {
   const sp = url.searchParams;
   const q = (sp.get('q') ?? sp.get('query') ?? '').trim();
   const doiParam = (sp.get('doi') ?? '').trim();
+  const author = (sp.get('author') ?? '').trim() || undefined;
   if (!q && !doiParam) throw new AppError('BAD_QUERY', '检索式不完整，请补充关键词');
   if (q.length > SEARCH.MAX_QUERY_LENGTH) throw new AppError('BAD_QUERY', `检索词过长（最多 ${SEARCH.MAX_QUERY_LENGTH} 字）`);
 
@@ -107,6 +116,7 @@ export function parseV3Params(url: URL): V3SearchParams {
 
   return {
     q: q || doiParam,
+    author,
     src: src.length ? src : undefined,
     from,
     to,
@@ -198,7 +208,20 @@ function mapStatus(kind: string | undefined): SourceStatus['status'] {
 }
 
 export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps = {}): Promise<V3SearchResult> {
+  return runSearchInternal(params, deps, false);
+}
+
+/**
+ * @param {V3SearchParams} params
+ * @param {OrchestratorDeps} deps
+ * @param {boolean} retried 是否已是纠正后的重试（最多一次）
+ */
+async function runSearchInternal(params: V3SearchParams, deps: OrchestratorDeps, retried: boolean): Promise<V3SearchResult> {
   const parsed = parseQuery(params.q);
+  // M2-14 查询扩展：中英互译（打分词并入 + zh 召回后缀仅给声明支持的源）
+  const expansion = expandQuery(params.q, parsed.terms, parsed.cjkWhole);
+  const scoredParsed = expansion.scoreTerms.length ? { ...parsed, terms: [...parsed.terms, ...expansion.scoreTerms] } : parsed;
+  const recallSuffix = expansion.recallSuffix; // 语言过滤由 applyFilters 负责：lang=zh 只看中文，lang=all（默认）下英文扩展词生效
   const t0 = Date.now();
   const totalBudget = deps.totalBudgetMs ?? SEARCH.TOTAL_BUDGET_MS;
   const sort = params.sort ?? 'smart';
@@ -214,7 +237,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       return true;
     });
 
-  const hashInput = { q: params.q, src: params.src, from: params.from, to: params.to, type: params.type, lang: params.lang, field: params.field, sort: params.sort };
+  const hashInput = { q: params.q, author: parsed.fieldTags.find((t) => t.key === 'author')?.value, src: params.src, from: params.from, to: params.to, type: params.type, lang: params.lang, field: params.field, sort: params.sort };
   const queryHash = canonicalHash(hashInput);
   const cacheKey = `pool:${queryHash}`;
   const meta = (partial: boolean): Pick<V3SearchResult, 'parsed' | 'queryHash' | 'partial'> => ({
@@ -247,7 +270,7 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       if (statuses.every((s) => s.status !== 'ok')) throw new AppError('UPSTREAM_TIMEOUT', 'DOI 查询的数据源暂时不可用，请稍后重试', { retryable: true });
       return { items: [], total: 0, poolSize: 0, page: params.page, limit: params.limit, hasMore: false, exhausted: true, sources: statuses, ...meta(false) };
     }
-    const works = rankWorks(applyFilters(fuseRecords(records)), parsed, sort);
+    const works = rankWorks(applyFilters(fuseRecords(records)), scoredParsed, sort);
     return {
       items: works, total: works.length, poolSize: works.length, page: 1, limit: params.limit,
       hasMore: false, exhausted: true, sources: statuses, ...meta(false),
@@ -259,13 +282,24 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   const usable = defs.filter((d) => typeof d.fetchRaw === 'function') as (SourceDef & { fetchRaw: FetchRawFn })[];
   if (!usable.length) throw new AppError('ALL_SOURCES_FAILED', '数据源暂时都不可用', { retryable: true });
 
+  // M2-14：DSL 字段标签落到源参数（author:/year:；parse 已产出 fieldTags）
+  const authorTag = parsed.fieldTags.find((t) => t.key === 'author')?.value;
+  const yearTag = parsed.fieldTags.find((t) => t.key === 'year')?.value ?? '';
+  const yearPair = yearTag.match(/^(d{4})(?:-(d{4}))?$/);
+  const effectiveAuthor = params.author ?? authorTag;
+  const effectiveFrom = params.from ?? (yearPair ? Number(yearPair[1]) : undefined);
+  const effectiveTo = params.to ?? (yearPair ? Number(yearPair[2] ?? yearPair[1]) : undefined);
+
   const searchParams = {
     ...params,
-    query: params.q,
+    query: parsed.cleanQuery || effectiveAuthor || params.q,
     sources: usable.map((d) => d.id),
     language: (params.lang ?? 'all') as 'all' | 'zh' | 'en',
     paperType: (params.type ?? 'all') as 'all' | 'journal' | 'conference' | 'preprint',
     sort: (params.sort ?? 'smart') as 'smart' | 'relevance' | 'newest' | 'citations',
+    author: effectiveAuthor,
+    yearFrom: effectiveFrom,
+    yearTo: effectiveTo,
     page: 1,
   };
 
@@ -278,11 +312,15 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
 
   const recallRound = async (baseOffsets: Record<string, number>): Promise<void> => {
     const tasks = usable.map(async (def) => {
+      if (isCoolingDown(def.id)) {
+        statuses[def.id] = { id: def.id, name: def.name, status: 'skipped', ms: 0, count: 0 };
+        return;
+      }
       const offset = baseOffsets[def.id] ?? 0;
       const startedAt = Date.now();
       let result: RawFetchResult;
       try {
-        result = await semaphore.run(() => def.fetchRaw(searchParams, { limit: SEARCH.PER_SOURCE_LIMIT, offset }));
+        result = await semaphore.run(() => def.fetchRaw(searchParams, { limit: SEARCH.PER_SOURCE_LIMIT, offset, querySuffix: recallSuffix }));
       } catch {
         // fetchRaw 契约不抛；防御性兜底仍须记录（1.5 禁止静默）
         statuses[def.id] = { id: def.id, name: def.name, status: 'error', ms: Date.now() - startedAt, count: 0 };
@@ -296,6 +334,8 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
           ms, count: result.records.length,
         };
       }
+      // M2-15：429 → 本 isolate 内冷却 60s（不写 KV；追加轮直接跳过冷却中的源）
+      if (result.error?.kind === 'rate_limited') coolDown(def.id);
       collected.push(...result.records);
       offsets[def.id] = offset + SEARCH.PER_SOURCE_LIMIT;
     });
@@ -313,9 +353,21 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   await recallRound(offsets);
   // 全部源失败且无任何结果 → 503（7.7；L1/L2 旧结果兜底在 M1-09 接入）
   if (!collected.length && statuses && !Object.values(statuses).some((s) => s.status === 'ok')) {
+    // 7.7 全部源失败：有 L1 旧池 → 返回旧结果 + stale 标记；否则 503
+    const stale = await l1Get<SearchPool>(queryHash);
+    if (stale.value?.items?.length) {
+      const sp = slicePage(stale.value, params.page, params.limit, stale.value.exhausted ?? true);
+      return {
+        items: sp.items, total: sp.items.length, poolSize: stale.value.items.length,
+        page: params.page, limit: params.limit, hasMore: sp.hasMore, exhausted: sp.exhausted,
+        stale: true, cacheLayer: 'l1', sources: Object.values(statuses), ...meta(true),
+      };
+    }
     throw new AppError('ALL_SOURCES_FAILED', '数据源暂时都不可用', { retryable: true });
   }
-  let poolItems = rankWorks(applyFilters(fuseRecords(collected)), parsed, sort);
+  let ranked0 = rankWorks(applyFilters(fuseRecords(collected)), scoredParsed, sort);
+  if (sort === 'smart') ranked0 = diversifyByVenue(ranked0, { maxInARow: 2 }); // M2-15 多样性：同 venue 连续 ≤2
+  let poolItems = ranked0;
   let pool: SearchPool = { ...createPool(queryHash, poolItems), offsets: { ...offsets } };
 
   // 追加召回（池不足且未耗尽，最多 3 轮；召回原始记录独立融合后并入，全池重排保证跨页一致）
@@ -332,9 +384,20 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
       await recallRound(offsets);
       const fresh = collected.slice(before);
       if (!fresh.length) break;
-      const fusedBatch = rankWorks(applyFilters(fuseRecords(fresh)), parsed, sort);
+      const fusedBatch = rankWorks(applyFilters(fuseRecords(fresh)), scoredParsed, sort);
       pool = markOffsets(appendToPool(pool, fusedBatch), offsets);
-      pool.items = rankWorks(pool.items, parsed, sort);
+      pool.items = sort === 'smart' ? diversifyByVenue(rankWorks(pool.items, scoredParsed, sort), { maxInARow: 2 }) : rankWorks(pool.items, scoredParsed, sort);
+    }
+  }
+
+  // M2-16 弱查询容错：彻底空结果且从未重试 → 用 suggest 拼写纠正词自动重查一次（仅 topic 意图）
+  if (!retried && parsed.intent === 'topic' && pool.items.length === 0 && collected.length === 0 && params.q.trim().length >= 3) {
+    const { getSuggestions } = await import('./suggest');
+    const sug = await getSuggestions(deps.env?.DB, params.q);
+    const spell = sug.suggestions.find((s0) => s0.kind === 'spell');
+    if (spell && spell.text.toLowerCase() !== params.q.trim().toLowerCase()) {
+      const retriedResult = await runSearchInternal({ ...params, q: spell.text }, deps, true);
+      return { ...retriedResult, retriedFrom: params.q };
     }
   }
 
@@ -345,9 +408,14 @@ export async function runSearch(params: V3SearchParams, deps: OrchestratorDeps =
   const exhausted = !anyFullPage() || rounds >= MAX_APPEND_ROUNDS || pool.items.length >= SEARCH.POOL_TARGET;
 
   pool.exhausted = exhausted;
-  l0Put(`pool:${queryHash}`, pool, SEARCH.CACHE_TTL_S);
-  if (deps.ctx) {
-    deps.ctx.waitUntil(l1Put(queryHash, pool)); // A-07：写入挂 waitUntil，防 isolate 回收丢缓存
+  // 7.6：禁止缓存空结果——空池仅 L0 防抖 60s，防上游瞬断被放大
+  if (pool.items.length === 0) {
+    l0Put(`pool:${queryHash}`, pool, SEARCH.EMPTY_RESULT_TTL_S);
+  } else {
+    l0Put(`pool:${queryHash}`, pool, SEARCH.CACHE_TTL_S);
+    if (deps.ctx) {
+      deps.ctx.waitUntil(l1Put(queryHash, pool)); // A-07：写入挂 waitUntil，防 isolate 回收丢缓存
+    }
   }
 
   const slice = slicePage(pool, params.page, params.limit, exhausted);

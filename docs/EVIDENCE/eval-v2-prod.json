@@ -1,0 +1,231 @@
+{
+  "base": "https://paperscout.pages.dev",
+  "label": "v2-prod",
+  "at": "2026-10-24T08:37:19.137Z",
+  "rows": [
+    {
+      "id": "q01",
+      "q": "large language model hallucination",
+      "httpStatus": 200,
+      "ms": 14569,
+      "err": null,
+      "resultCount": 117,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 4,
+      "sampleTitles": [
+        "Controlling Large Language Model Hallucination Bas",
+        "HalluScore: Large Language Model Hallucination Que",
+        "Combining LoRA to GPT-Neo to Reduce Large Language"
+      ]
+    },
+    {
+      "id": "q02",
+      "q": "大语言模型 幻觉",
+      "httpStatus": 200,
+      "ms": 13144,
+      "err": null,
+      "resultCount": 63,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 0.5,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 1,
+      "sampleTitles": [
+        "大语言模型技术研究与应用探讨",
+        "大语言模型在商务日语教学的互动语用情境中的应用研究",
+        "量子货币幻觉:经典货币幻觉理论的量子重构与一般化拓展(Quantum Currency Illusi"
+      ]
+    },
+    {
+      "id": "q03",
+      "q": "10.1038/s41586-023-06221-2",
+      "httpStatus": 200,
+      "ms": 13037,
+      "err": null,
+      "resultCount": 21,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 0,
+      "offTopicRatio": 1,
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "Quantum Quivers and Hall/Hole Halos",
+        "The shape dependence of Vainshtein screening in th",
+        "Ultraviolet behavior of transverse gravity"
+      ]
+    },
+    {
+      "id": "q04",
+      "q": "CRISPR base editing",
+      "httpStatus": 200,
+      "ms": 8605,
+      "err": null,
+      "resultCount": 112,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 6,
+      "sampleTitles": [
+        "CRISPR-Cas9 DNA Base-Editing and Prime-Editing",
+        "BEstimate: a computational tool for the design and",
+        "Base Editing of Somatic Cells Using CRISPR–Cas9 in"
+      ]
+    },
+    {
+      "id": "q05",
+      "q": "graph neural network",
+      "httpStatus": 200,
+      "ms": 8164,
+      "err": null,
+      "resultCount": 119,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 3,
+      "sampleTitles": [
+        "Convolutional Neural Network Outperforms Graph Neu",
+        "Graph neural network for colliding particles with ",
+        "GRAPH NEURAL NETWORK (GNN) BASED TOPOLOGY CONTROL "
+      ]
+    },
+    {
+      "id": "q06",
+      "q": "LoRA fine-tuning",
+      "httpStatus": 200,
+      "ms": 7591,
+      "err": null,
+      "resultCount": 117,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 8,
+      "sampleTitles": [
+        "LoRA-FAIR: Federated LoRA Fine-Tuning with Aggrega",
+        "RW-LoRA: Communication-Efficient Decentralized LoR",
+        "MineGrad: Gradient Inversion Attacks on LoRA Fine-"
+      ]
+    },
+    {
+      "id": "q07",
+      "q": "single cell RNA sequencing",
+      "httpStatus": 200,
+      "ms": 7820,
+      "err": null,
+      "resultCount": 118,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 2,
+      "sampleTitles": [
+        "Root Causal Inference from Single Cell RNA Sequenc",
+        "Analyzing Single Cell RNA Sequencing with Topologi",
+        "Predicting Molecular Phenotypes with Single Cell R"
+      ]
+    },
+    {
+      "id": "q08",
+      "q": "量子计算 纠错",
+      "httpStatus": 200,
+      "ms": 8062,
+      "err": null,
+      "resultCount": 58,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 0.15,
+      "offTopicRatio": 0.7,
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "生物大分子的量子计算模拟：并行量子计算的初步探索",
+        "量子计算论文数据集",
+        "基于逻辑函数的量子纠错码构造"
+      ]
+    },
+    {
+      "id": "q09",
+      "q": "author:yoshuabengio",
+      "httpStatus": 200,
+      "ms": 8116,
+      "err": null,
+      "resultCount": 40,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 0,
+      "offTopicRatio": 1,
+      "dupByDoi": 0,
+      "dupByTitle": 14,
+      "sampleTitles": [
+        "In Vitro Diagnostics for SARS-CoV-2 Infection Auth",
+        "Food Safety and Health Concerns of Synthetic Food ",
+        "RxLegal: Emergency Use Authorizations."
+      ]
+    },
+    {
+      "id": "q10",
+      "q": "the of and",
+      "httpStatus": 200,
+      "ms": 7916,
+      "err": null,
+      "resultCount": 80,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 1,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": [
+        "Erratum to: MOrphOlOgical and mOlecular evidence O",
+        "Multi-nucleon transfer in the interaction of 977 M",
+        "Contraction and expansion effects on the substitut"
+      ]
+    },
+    {
+      "id": "q11",
+      "q": "asdfqwerzzz",
+      "httpStatus": 200,
+      "ms": 7070,
+      "err": null,
+      "resultCount": 0,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": null,
+      "offTopicRatio": null,
+      "dupByDoi": 0,
+      "dupByTitle": 0,
+      "sampleTitles": []
+    },
+    {
+      "id": "q12",
+      "q": "'; DROP TABLE favorites;--",
+      "httpStatus": 200,
+      "ms": 7597,
+      "err": null,
+      "resultCount": 40,
+      "sourcesOk": 0,
+      "sourcesTotal": 0,
+      "top10Coverage": 0.425,
+      "offTopicRatio": 0,
+      "dupByDoi": 0,
+      "dupByTitle": 1,
+      "sampleTitles": [
+        "Artifacts Package - \"Why don't Developers Detect I",
+        "drop table, n.",
+        "Global Drop Packer Market 2024 To 2033"
+      ]
+    }
+  ]
+}

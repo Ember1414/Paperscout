@@ -106,6 +106,7 @@ export async function l2Get<T>(kv: KVNamespace | undefined, key: string): Promis
  */
 export function canonicalHash(params: {
   q: string;
+  author?: string;
   src?: string[];
   from?: number;
   to?: number;
@@ -116,6 +117,7 @@ export function canonicalHash(params: {
 }): string {
   const canonical: string[] = [];
   canonical.push(`q=${(params.q ?? '').trim().toLowerCase()}`);
+  if (params.author) canonical.push(`author=${params.author.toLowerCase()}`);
   if (params.src?.length) canonical.push(`src=${[...params.src].sort().join(',')}`);
   if (params.from) canonical.push(`from=${params.from}`);
   if (params.to) canonical.push(`to=${params.to}`);
