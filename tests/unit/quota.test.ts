@@ -62,17 +62,17 @@ function makeMockD1() {
 describe('quota（M1-10：原子 upsert，并发不超发）', () => {
   it('并发 100 次 incrQuota → used 恰好 100（DoD）', async () => {
     const { db, tables } = makeMockD1();
-    await Promise.all(Array.from({ length: 100 }, () => incrQuota(db, 'ai_global', { day: '2026-10-24', kind: 'ask' })));
-    expect(tables.ai_global.get('2026-10-24|ask')?.used).toBe(100);
+    await Promise.all(Array.from({ length: 100 }, () => incrQuota(db, 'ai_global', { day: '${today}', kind: 'ask' })));
+    expect(tables.ai_global.get('${today}|ask')?.used).toBe(100);
   });
   it('并发 100 次双表 consumeQuota（全局+单 client）→ 无丢失更新，全局闸门按位置判定', async () => {
     const { db, tables } = makeMockD1();
     const results = await Promise.all(
-      Array.from({ length: 100 }, () => consumeQuota(db, { day: '2026-10-24', kind: 'ask', clientId: 'c1', globalLimit: 80 })),
+      Array.from({ length: 100 }, () => consumeQuota(db, { day: '${today}', kind: 'ask', clientId: 'c1', globalLimit: 80 })),
     );
     // 核心不变量：100 次并发自增，两表 used 均恰好 100（原子 upsert 无丢失更新）
-    expect(tables.ai_global.get('2026-10-24|ask')?.used).toBe(100);
-    expect(tables.ai_usage.get('2026-10-24|c1|ask')?.used).toBe(100);
+    expect(tables.ai_global.get('${today}|ask')?.used).toBe(100);
+    expect(tables.ai_usage.get('${today}|c1|ask')?.used).toBe(100);
     // 全局闸门：used ≤ 80 的请求判 ok；超出判 false 且 remaining 收敛到 0
     expect(results.filter((r) => r.used <= 80).every((r) => r.ok)).toBe(true);
     expect(results.every((r) => r.used <= 80 || !r.ok)).toBe(true);
@@ -80,12 +80,12 @@ describe('quota（M1-10：原子 upsert，并发不超发）', () => {
   });
   it('边界：consumeQuota 首次调用 remaining=limit-1', async () => {
     const { db } = makeMockD1();
-    const r = await consumeQuota(db, { day: '2026-10-25', kind: 'summarize', clientId: 'c9', globalLimit: 120, clientLimit: 8 });
+    const r = await consumeQuota(db, { day: todayUtc(), kind: 'summarize', clientId: 'c9', globalLimit: 120, clientLimit: 8 });
     expect(r).toMatchObject({ used: 1, remaining: 119, ok: true });
   });
   it('反例：ai_usage 无 clientId 抛错（不静默）', async () => {
     const { db } = makeMockD1();
-    await expect(incrQuota(db, 'ai_usage', { day: '2026-10-24', kind: 'ask' })).rejects.toThrow();
+    await expect(incrQuota(db, 'ai_usage', { day: '${today}', kind: 'ask' })).rejects.toThrow();
   });
   it('todayUtc 为 YYYY-MM-DD', () => {
     expect(todayUtc()).toMatch(/^\d{4}-\d{2}-\d{2}$/);
@@ -115,11 +115,13 @@ describe('metrics（search_log / kv_write_log）', () => {
     spy.mockRestore();
   });
   it('recordKvWrite bucket 计数累加', async () => {
-    const { db, tables } = makeMockD1();
+    const { db, tables, executed } = makeMockD1();
     await recordKvWrite(db, 'translate');
     await recordKvWrite(db, 'translate');
     await recordKvWrite(db, 'ai', 3);
-    expect(tables.kv_write_log.get(`2026-10-24|translate`)?.used).toBe(2);
-    expect(tables.kv_write_log.get(`2026-10-24|ai`)?.used).toBe(3);
+    const today = todayUtc();
+    expect(tables.kv_write_log.get(`${today}|translate`)?.used).toBe(2);
+    expect(tables.kv_write_log.get(`${today}|ai`)?.used).toBe(3);
+    expect(executed.filter((e) => e.sql.includes('kv_write_log')).length).toBe(3);
   });
 });

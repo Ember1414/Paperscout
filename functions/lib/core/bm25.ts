@@ -1,4 +1,5 @@
 import { dice2, titleFingerprint } from './normalize';
+import { stem } from '../query/stemmer';
 import type { ParsedQuery } from '../query/parse';
 import type { Work } from '../types';
 
@@ -19,10 +20,10 @@ interface FieldDoc {
 
 function tokenizeForIndex(text: string, isCjkField: boolean): string[] {
   const lower = text.toLowerCase();
-  if (!isCjkField) return lower.split(/[^a-z0-9]+/).filter(Boolean);
+  if (!isCjkField) return lower.split(/[^a-z0-9]+/).filter(Boolean).map(stem);
   // CJK：按 2-gram + latin 词混合
   const tokens: string[] = [];
-  const latin = lower.split(/[^a-z0-9]+/).filter(Boolean);
+  const latin = lower.split(/[^a-z0-9]+/).filter(Boolean).map(stem);
   const cjkRuns = lower.match(/[\u3400-\u4dbf\u4e00-\u9fff]+/g) ?? [];
   for (const run of cjkRuns) {
     for (let i = 0; i < run.length - 1; i++) tokens.push(run.slice(i, i + 2));
@@ -47,7 +48,7 @@ export function scoreRelevance(works: Work[], parsed: ParsedQuery): number[] {
     venue: buildFieldDoc(w.venue ?? '', /[\u3400-\u4dbf\u4e00-\u9fff]/.test(w.venue ?? '')),
   }));
 
-  const terms = parsed.terms.filter(Boolean);
+  const terms = parsed.terms.filter(Boolean).map((t) => /^[a-z0-9-]+$/.test(t) ? stem(t) : t);
   if (!terms.length) return works.map(() => 0);
 
   // 池内 IDF（按字段语料）
@@ -77,19 +78,38 @@ export function scoreRelevance(works: Work[], parsed: ParsedQuery): number[] {
     return score;
   });
 
-  // 归一化到 0..1（池内最大值），再叠加短语/整串/完全匹配加成
+  // 归一化到 0..1（池内最大值），再叠加短语/整串/完全匹配加成（M10-02 调优）
   const max = Math.max(...rawScores, 1e-9);
   return works.map((w, i) => {
     let rel = rawScores[i] / max;
     const titleLc = w.title.toLowerCase();
+    const absLc = (w.abstract ?? '').toLowerCase();
     const titleFp = titleFingerprint(w.title);
     // 标题完全匹配 → 置顶（5.3.1）
     const queryFp = titleFingerprint(parsed.phrases[0] ?? parsed.raw);
     if (titleFp && queryFp && titleFp === queryFp) rel += 5;
-    // 引号短语命中 +1.5
-    for (const p of parsed.phrases) if (titleLc.includes(p) || (w.abstract ?? '').toLowerCase().includes(p)) rel += 1.5;
-    // 中文整串命中 ×2 加成（附录 B）
-    if (parsed.cjkWhole && titleLc.includes(parsed.cjkWhole)) rel += 0.5;
+    // M10-02 引号短语：标题命中 +2.0；摘要命中 +0.8（标题远强于摘要）
+    for (const p of parsed.phrases) {
+      if (titleLc.includes(p)) rel += 2.0;
+      else if (absLc.includes(p)) rel += 0.8;
+    }
+    // M10-02 中文整串：标题 +1.0；摘要 +0.3（附录 B ×2 语义 → 标题/摘要分级）
+    if (parsed.cjkWhole) {
+      if (titleLc.includes(parsed.cjkWhole)) rel += 1.0;
+      else if (absLc.includes(parsed.cjkWhole)) rel += 0.3;
+    }
+    // M10-04 标题含全部查询词（英文 ≥2 词）→ +1.5（强信号：标题完整覆盖）
+    const queryEnTerms = parsed.terms.filter((t) => /^[a-z0-9-]+$/.test(t));
+    if (queryEnTerms.length >= 2) {
+      const allInTitle = queryEnTerms.every((t) => titleLc.includes(t) || titleLc.includes(stem(t)));
+      if (allInTitle) rel += 1.5;
+    }
+    // M10-04 中文：标题含全部 2-gram → +1.0
+    const cjkTerms = parsed.terms.filter((t) => /[\u4e00-\u9fff]/.test(t));
+    if (cjkTerms.length >= 2) {
+      const allCjkInTitle = cjkTerms.every((g) => titleLc.includes(g));
+      if (allCjkInTitle) rel += 1.0;
+    }
     return rel;
   });
 }
